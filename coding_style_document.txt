@@ -1,0 +1,57 @@
+HEADER>>>>
+
+informations: (should have a line between the informations)
+	- file name;
+	- package of the class;
+	- short description of the class;
+	- author and contributers;
+	
+	example:
+	
+/* Example.class
+*
+* package: APP/example;
+*
+* description: this is a example class.
+*
+* author:Zé
+* contributers: none
+*/
+
+INDENTATION>>>>
+
+Indentation should consist of 4 spaces.
+
+MAXIMUM LINE LENGTH>>>>
+
+The maximum length of any line of code is 115 characters.
+
+COMENTARY>>>>
+
+	single line comments
+	
+	- It starts with a '//' followed by a space.
+	- The first letter should be uppercase.
+	- In the end should have a final dot.
+	- Variables, functions and classes names must be mentioned with quotation marks. 
+	- In coded lines put a space before the comment.
+
+	multiple line comments
+	
+	- It starts with a '/*' followed by a empty line.
+	- Each line should be started with a '*' followed by a space.
+	- Variables, functions and classes names must be mentioned with quotation marks. 
+	
+SPACE>>>>
+
+	- Put spaces on either side of binary operators.
+	- Control structures if, while, for, foreach, switch, catch etc. should be followed by a space.
+	- Do not put spaces next to parentheses on the inside. Do not put a space following a function name.
+	
+
+	
+	
+	
+	
+
+
