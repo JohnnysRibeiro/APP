@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="2.0.3" sequence="1" timestamp="1397533270957" analysisTimestamp="1397533270022" release="">
+  <Project projectName="APP">
+    <Jar>/Users/eduardocastro/Documents/UnB/TecProg/projetoFinal/APP/bin/classes</Jar>
+    <AuxClasspathEntry>/Users/eduardocastro/Downloads/facebook-android-sdk-3.8.0/facebook/libs/android-support-v4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/eduardocastro/Documents/Android/adt-bundle-mac-x86_64-20140321/eclipse/plugins/org.junit_4.11.0.v201303080030/junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/eduardocastro/Documents/Android/adt-bundle-mac-x86_64-20140321/eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/eduardocastro/Documents/UnB/TecProg/projetoFinal/APP/bin/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/eduardocastro/Documents/Android/adt-bundle-mac-x86_64-20140321/sdk/platforms/android-19/android.jar</AuxClasspathEntry>
+    <SrcDir>/Users/eduardocastro/Documents/UnB/TecProg/projetoFinal/APP/src</SrcDir>
+    <SrcDir>/Users/eduardocastro/Documents/UnB/TecProg/projetoFinal/APP/view</SrcDir>
+    <SrcDir>/Users/eduardocastro/Documents/UnB/TecProg/projetoFinal/APP/gen</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.facebook.android.R$attr">
+      <SourceLine classname="com.facebook.android.R$attr" start="9" end="9" sourcefile="R.java" sourcepath="com/facebook/android/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.facebook.android.R$color">
+      <SourceLine classname="com.facebook.android.R$color" start="9" end="9" sourcefile="R.java" sourcepath="com/facebook/android/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.facebook.android.R$dimen">
+      <SourceLine classname="com.facebook.android.R$dimen" start="9" end="9" sourcefile="R.java" sourcepath="com/facebook/android/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.facebook.android.R$drawable">
+      <SourceLine classname="com.facebook.android.R$drawable" start="9" end="9" sourcefile="R.java" sourcepath="com/facebook/android/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.facebook.android.R$id">
+      <SourceLine classname="com.facebook.android.R$id" start="9" end="9" sourcefile="R.java" sourcepath="com/facebook/android/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.facebook.android.R$layout">
+      <SourceLine classname="com.facebook.android.R$layout" start="9" end="9" sourcefile="R.java" sourcepath="com/facebook/android/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.facebook.android.R$string">
+      <SourceLine classname="com.facebook.android.R$string" start="9" end="9" sourcefile="R.java" sourcepath="com/facebook/android/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.facebook.android.R$style">
+      <SourceLine classname="com.facebook.android.R$style" start="9" end="9" sourcefile="R.java" sourcepath="com/facebook/android/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.facebook.android.R$styleable">
+      <SourceLine classname="com.facebook.android.R$styleable" start="9" end="185" sourcefile="R.java" sourcepath="com/facebook/android/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$array">
+      <SourceLine classname="com.mds.app.R$array" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$attr">
+      <SourceLine classname="com.mds.app.R$attr" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$color">
+      <SourceLine classname="com.mds.app.R$color" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$dimen">
+      <SourceLine classname="com.mds.app.R$dimen" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$drawable">
+      <SourceLine classname="com.mds.app.R$drawable" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$id">
+      <SourceLine classname="com.mds.app.R$id" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$layout">
+      <SourceLine classname="com.mds.app.R$layout" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$menu">
+      <SourceLine classname="com.mds.app.R$menu" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$string">
+      <SourceLine classname="com.mds.app.R$string" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$style">
+      <SourceLine classname="com.mds.app.R$style" start="10" end="10" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.R$styleable">
+      <SourceLine classname="com.mds.app.R$styleable" start="10" end="762" sourcefile="R.java" sourcepath="com/mds/app/R.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.BuscaController">
+      <SourceLine classname="com.mds.app.controller.BuscaController" sourcefile="BuscaController.java" sourcepath="com/mds/app/controller/BuscaController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.BuscaController" name="recebeHTTP" signature="Lcom/mds/app/services/RecebeHTTP;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.BuscaController" start="18" end="18" startBytecode="0" endBytecode="0" sourcefile="BuscaController.java" sourcepath="com/mds/app/controller/BuscaController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.BuscaController">
+      <SourceLine classname="com.mds.app.controller.BuscaController" sourcefile="BuscaController.java" sourcepath="com/mds/app/controller/BuscaController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.BuscaController" name="temConexao" signature="Z" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.BuscaController" start="20" end="20" startBytecode="0" endBytecode="0" sourcefile="BuscaController.java" sourcepath="com/mds/app/controller/BuscaController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.BuscaController">
+      <SourceLine classname="com.mds.app.controller.BuscaController" sourcefile="BuscaController.java" sourcepath="com/mds/app/controller/BuscaController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.BuscaController" name="textoOffline" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.BuscaController" start="21" end="21" startBytecode="0" endBytecode="0" sourcefile="BuscaController.java" sourcepath="com/mds/app/controller/BuscaController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.BuscaController">
+      <SourceLine classname="com.mds.app.controller.BuscaController" sourcefile="BuscaController.java" sourcepath="com/mds/app/controller/BuscaController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.BuscaController" name="xmlParser" signature="Lcom/mds/app/services/XMLParser;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.BuscaController" start="19" end="19" startBytecode="0" endBytecode="0" sourcefile="BuscaController.java" sourcepath="com/mds/app/controller/BuscaController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.FavoritosController">
+      <SourceLine classname="com.mds.app.controller.FavoritosController" sourcefile="FavoritosController.java" sourcepath="com/mds/app/controller/FavoritosController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.FavoritosController" name="persistencia" signature="Lcom/mds/app/persistencia/Persistencia;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.FavoritosController" start="18" end="18" startBytecode="0" endBytecode="0" sourcefile="FavoritosController.java" sourcepath="com/mds/app/controller/FavoritosController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.FavoritosController">
+      <SourceLine classname="com.mds.app.controller.FavoritosController" sourcefile="FavoritosController.java" sourcepath="com/mds/app/controller/FavoritosController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.FavoritosController" name="projetosFavoritados" signature="LArrayList;" isStatic="true">
+      <SourceLine classname="com.mds.app.controller.FavoritosController" start="15" end="15" startBytecode="0" endBytecode="0" sourcefile="FavoritosController.java" sourcepath="com/mds/app/controller/FavoritosController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.FavoritosController">
+      <SourceLine classname="com.mds.app.controller.FavoritosController" sourcefile="FavoritosController.java" sourcepath="com/mds/app/controller/FavoritosController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.FavoritosController" name="projetosFavoritadosCompletoStr" signature="LArrayList;" isStatic="true">
+      <SourceLine classname="com.mds.app.controller.FavoritosController" start="16" end="16" startBytecode="0" endBytecode="0" sourcefile="FavoritosController.java" sourcepath="com/mds/app/controller/FavoritosController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.HistoricoController">
+      <SourceLine classname="com.mds.app.controller.HistoricoController" sourcefile="HistoricoController.java" sourcepath="com/mds/app/controller/HistoricoController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.HistoricoController" name="persistencia" signature="Lcom/mds/app/persistencia/Persistencia;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.HistoricoController" start="18" end="18" startBytecode="0" endBytecode="0" sourcefile="HistoricoController.java" sourcepath="com/mds/app/controller/HistoricoController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.HistoricoController">
+      <SourceLine classname="com.mds.app.controller.HistoricoController" sourcefile="HistoricoController.java" sourcepath="com/mds/app/controller/HistoricoController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.HistoricoController" name="projetosHistorico" signature="LArrayList;" isStatic="true">
+      <SourceLine classname="com.mds.app.controller.HistoricoController" start="16" end="16" startBytecode="0" endBytecode="0" sourcefile="HistoricoController.java" sourcepath="com/mds/app/controller/HistoricoController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.HistoricoController">
+      <SourceLine classname="com.mds.app.controller.HistoricoController" sourcefile="HistoricoController.java" sourcepath="com/mds/app/controller/HistoricoController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.HistoricoController" name="projetosHistoricoCompletoStr" signature="LArrayList;" isStatic="true">
+      <SourceLine classname="com.mds.app.controller.HistoricoController" start="17" end="17" startBytecode="0" endBytecode="0" sourcefile="HistoricoController.java" sourcepath="com/mds/app/controller/HistoricoController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.ListaController">
+      <SourceLine classname="com.mds.app.controller.ListaController" sourcefile="ListaController.java" sourcepath="com/mds/app/controller/ListaController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.ListaController" name="listaProjetos" signature="LList;" isStatic="true">
+      <SourceLine classname="com.mds.app.controller.ListaController" start="11" end="11" startBytecode="0" endBytecode="0" sourcefile="ListaController.java" sourcepath="com/mds/app/controller/ListaController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.ListaController">
+      <SourceLine classname="com.mds.app.controller.ListaController" sourcefile="ListaController.java" sourcepath="com/mds/app/controller/ListaController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.ListaController" name="projetoAtual" signature="Lcom/mds/app/model/ProjetoModel;" isStatic="true">
+      <SourceLine classname="com.mds.app.controller.ListaController" start="12" end="12" startBytecode="0" endBytecode="0" sourcefile="ListaController.java" sourcepath="com/mds/app/controller/ListaController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.ProposicaoController">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.ProposicaoController" name="buffer" signature="LStringBuffer;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" start="15" end="15" startBytecode="0" endBytecode="0" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.ProposicaoController">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.ProposicaoController" name="listaProjetos" signature="LArrayList;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" start="17" end="17" startBytecode="0" endBytecode="0" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.ProposicaoController">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.ProposicaoController" name="parlamentar" signature="Lcom/mds/app/model/ParlamentarModel;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" start="19" end="19" startBytecode="0" endBytecode="0" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.ProposicaoController">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.ProposicaoController" name="partido" signature="Lcom/mds/app/model/PartidoModel;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" start="20" end="20" startBytecode="0" endBytecode="0" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.controller.ProposicaoController">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Class>
+    <Field classname="com.mds.app.controller.ProposicaoController" name="projeto" signature="Lcom/mds/app/model/ProjetoModel;" isStatic="false">
+      <SourceLine classname="com.mds.app.controller.ProposicaoController" start="18" end="18" startBytecode="0" endBytecode="0" sourcefile="ProposicaoController.java" sourcepath="com/mds/app/controller/ProposicaoController.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ParlamentarModel">
+      <SourceLine classname="com.mds.app.model.ParlamentarModel" sourcefile="ParlamentarModel.java" sourcepath="com/mds/app/model/ParlamentarModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ParlamentarModel" name="nome" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ParlamentarModel" start="5" end="5" startBytecode="0" endBytecode="0" sourcefile="ParlamentarModel.java" sourcepath="com/mds/app/model/ParlamentarModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ParlamentarModel">
+      <SourceLine classname="com.mds.app.model.ParlamentarModel" sourcefile="ParlamentarModel.java" sourcepath="com/mds/app/model/ParlamentarModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ParlamentarModel" name="partido" signature="Lcom/mds/app/model/PartidoModel;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ParlamentarModel" start="6" end="6" startBytecode="0" endBytecode="0" sourcefile="ParlamentarModel.java" sourcepath="com/mds/app/model/ParlamentarModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.PartidoModel">
+      <SourceLine classname="com.mds.app.model.PartidoModel" sourcefile="PartidoModel.java" sourcepath="com/mds/app/model/PartidoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.PartidoModel" name="siglaPartido" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.PartidoModel" start="5" end="5" startBytecode="0" endBytecode="0" sourcefile="PartidoModel.java" sourcepath="com/mds/app/model/PartidoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.PartidoModel">
+      <SourceLine classname="com.mds.app.model.PartidoModel" sourcefile="PartidoModel.java" sourcepath="com/mds/app/model/PartidoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.PartidoModel" name="uf" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.PartidoModel" start="6" end="6" startBytecode="0" endBytecode="0" sourcefile="PartidoModel.java" sourcepath="com/mds/app/model/PartidoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProcuraParlamentarModel">
+      <SourceLine classname="com.mds.app.model.ProcuraParlamentarModel" sourcefile="ProcuraParlamentarModel.java" sourcepath="com/mds/app/model/ProcuraParlamentarModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProcuraParlamentarModel" name="nome" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.model.ProcuraParlamentarModel" start="5" end="5" startBytecode="0" endBytecode="0" sourcefile="ProcuraParlamentarModel.java" sourcepath="com/mds/app/model/ProcuraParlamentarModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProcuraPartidoModel">
+      <SourceLine classname="com.mds.app.model.ProcuraPartidoModel" sourcefile="ProcuraPartidoModel.java" sourcepath="com/mds/app/model/ProcuraPartidoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProcuraPartidoModel" name="sigla" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.model.ProcuraPartidoModel" start="6" end="6" startBytecode="0" endBytecode="0" sourcefile="ProcuraPartidoModel.java" sourcepath="com/mds/app/model/ProcuraPartidoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProcuraPartidoModel">
+      <SourceLine classname="com.mds.app.model.ProcuraPartidoModel" sourcefile="ProcuraPartidoModel.java" sourcepath="com/mds/app/model/ProcuraPartidoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProcuraPartidoModel" name="uf" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.model.ProcuraPartidoModel" start="5" end="5" startBytecode="0" endBytecode="0" sourcefile="ProcuraPartidoModel.java" sourcepath="com/mds/app/model/ProcuraPartidoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProcuraProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProcuraProjetoModel" sourcefile="ProcuraProjetoModel.java" sourcepath="com/mds/app/model/ProcuraProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProcuraProjetoModel" name="ano" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.model.ProcuraProjetoModel" start="5" end="5" startBytecode="0" endBytecode="0" sourcefile="ProcuraProjetoModel.java" sourcepath="com/mds/app/model/ProcuraProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProcuraProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProcuraProjetoModel" sourcefile="ProcuraProjetoModel.java" sourcepath="com/mds/app/model/ProcuraProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProcuraProjetoModel" name="dataInicio" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.model.ProcuraProjetoModel" start="8" end="8" startBytecode="0" endBytecode="0" sourcefile="ProcuraProjetoModel.java" sourcepath="com/mds/app/model/ProcuraProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProcuraProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProcuraProjetoModel" sourcefile="ProcuraProjetoModel.java" sourcepath="com/mds/app/model/ProcuraProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProcuraProjetoModel" name="id" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.model.ProcuraProjetoModel" start="6" end="6" startBytecode="0" endBytecode="0" sourcefile="ProcuraProjetoModel.java" sourcepath="com/mds/app/model/ProcuraProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProcuraProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProcuraProjetoModel" sourcefile="ProcuraProjetoModel.java" sourcepath="com/mds/app/model/ProcuraProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProcuraProjetoModel" name="sigla" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.model.ProcuraProjetoModel" start="7" end="7" startBytecode="0" endBytecode="0" sourcefile="ProcuraProjetoModel.java" sourcepath="com/mds/app/model/ProcuraProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="ano" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="6" end="6" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="cont" signature="I" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="14" end="14" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="contId" signature="I" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="15" end="15" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="data" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="10" end="10" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="explicacao" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="11" end="11" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="id" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="5" end="5" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="nome" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="8" end="8" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="numero" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="7" end="7" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="parlamentar" signature="Lcom/mds/app/model/ParlamentarModel;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="13" end="13" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="sigla" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="9" end="9" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.model.ProjetoModel">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Class>
+    <Field classname="com.mds.app.model.ProjetoModel" name="status" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="com.mds.app.model.ProjetoModel" start="12" end="12" startBytecode="0" endBytecode="0" sourcefile="ProjetoModel.java" sourcepath="com/mds/app/model/ProjetoModel.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.persistencia.Persistencia">
+      <SourceLine classname="com.mds.app.persistencia.Persistencia" sourcefile="Persistencia.java" sourcepath="com/mds/app/persistencia/Persistencia.java"/>
+    </Class>
+    <Field classname="com.mds.app.persistencia.Persistencia" name="charset" signature="LCharset;" isStatic="false">
+      <SourceLine classname="com.mds.app.persistencia.Persistencia" start="28" end="28" startBytecode="0" endBytecode="0" sourcefile="Persistencia.java" sourcepath="com/mds/app/persistencia/Persistencia.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.persistencia.Persistencia">
+      <SourceLine classname="com.mds.app.persistencia.Persistencia" sourcefile="Persistencia.java" sourcepath="com/mds/app/persistencia/Persistencia.java"/>
+    </Class>
+    <Field classname="com.mds.app.persistencia.Persistencia" name="context" signature="LContext;" isStatic="false">
+      <SourceLine classname="com.mds.app.persistencia.Persistencia" start="26" end="26" startBytecode="0" endBytecode="0" sourcefile="Persistencia.java" sourcepath="com/mds/app/persistencia/Persistencia.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.persistencia.Persistencia">
+      <SourceLine classname="com.mds.app.persistencia.Persistencia" sourcefile="Persistencia.java" sourcepath="com/mds/app/persistencia/Persistencia.java"/>
+    </Class>
+    <Field classname="com.mds.app.persistencia.Persistencia" name="fileFavoritos" signature="LFile;" isStatic="false">
+      <SourceLine classname="com.mds.app.persistencia.Persistencia" start="30" end="30" startBytecode="0" endBytecode="0" sourcefile="Persistencia.java" sourcepath="com/mds/app/persistencia/Persistencia.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.persistencia.Persistencia">
+      <SourceLine classname="com.mds.app.persistencia.Persistencia" sourcefile="Persistencia.java" sourcepath="com/mds/app/persistencia/Persistencia.java"/>
+    </Class>
+    <Field classname="com.mds.app.persistencia.Persistencia" name="fileHistorico" signature="LFile;" isStatic="false">
+      <SourceLine classname="com.mds.app.persistencia.Persistencia" start="31" end="31" startBytecode="0" endBytecode="0" sourcefile="Persistencia.java" sourcepath="com/mds/app/persistencia/Persistencia.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="ano" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="23" end="23" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="autor" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="26" end="26" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="codigoEstado" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="31" end="31" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="codigoOrgaoEstado" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="32" end="32" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="dataFinal" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="25" end="25" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="dataInicio" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="24" end="24" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="generoAutor" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="30" end="30" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="nomeAutor" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="27" end="27" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="numero" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="22" end="22" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="sigla" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="21" end="21" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="siglaPartido" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="28" end="28" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" first="1">
+    <Class classname="com.mds.app.services.Endereco">
+      <SourceLine classname="com.mds.app.services.Endereco" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Class>
+    <Field classname="com.mds.app.services.Endereco" name="siglaUF" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="com.mds.app.services.Endereco" start="29" end="29" startBytecode="0" endBytecode="0" sourcefile="Endereco.java" sourcepath="com/mds/app/services/Endereco.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.util.CancelTaskOnCancelListener">
+      <SourceLine classname="com.mds.app.util.CancelTaskOnCancelListener" sourcefile="CancelTaskOnCancelListener.java" sourcepath="com/mds/app/util/CancelTaskOnCancelListener.java"/>
+    </Class>
+    <Field classname="com.mds.app.util.CancelTaskOnCancelListener" name="task" signature="LAsyncTask;" isStatic="false">
+      <SourceLine classname="com.mds.app.util.CancelTaskOnCancelListener" start="9" end="9" startBytecode="0" endBytecode="0" sourcefile="CancelTaskOnCancelListener.java" sourcepath="com/mds/app/util/CancelTaskOnCancelListener.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="com.mds.app.util.ConexaoInternet">
+      <SourceLine classname="com.mds.app.util.ConexaoInternet" sourcefile="ConexaoInternet.java" sourcepath="com/mds/app/util/ConexaoInternet.java"/>
+    </Class>
+    <Method classname="com.mds.app.util.ConexaoInternet" name="ChecarConexaoInternet" signature="()Z" isStatic="false">
+      <SourceLine classname="com.mds.app.util.ConexaoInternet" start="20" end="20" startBytecode="0" endBytecode="51" sourcefile="ConexaoInternet.java" sourcepath="com/mds/app/util/ConexaoInternet.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.util.ConexaoInternet">
+      <SourceLine classname="com.mds.app.util.ConexaoInternet" sourcefile="ConexaoInternet.java" sourcepath="com/mds/app/util/ConexaoInternet.java"/>
+    </Class>
+    <Field classname="com.mds.app.util.ConexaoInternet" name="context" signature="LContext;" isStatic="false">
+      <SourceLine classname="com.mds.app.util.ConexaoInternet" start="8" end="8" startBytecode="0" endBytecode="0" sourcefile="ConexaoInternet.java" sourcepath="com/mds/app/util/ConexaoInternet.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.util.StableArrayAdapter">
+      <SourceLine classname="com.mds.app.util.StableArrayAdapter" sourcefile="StableArrayAdapter.java" sourcepath="com/mds/app/util/StableArrayAdapter.java"/>
+    </Class>
+    <Field classname="com.mds.app.util.StableArrayAdapter" name="mIdMap" signature="LHashMap;" isStatic="false">
+      <SourceLine classname="com.mds.app.util.StableArrayAdapter" start="11" end="11" startBytecode="0" endBytecode="0" sourcefile="StableArrayAdapter.java" sourcepath="com/mds/app/util/StableArrayAdapter.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Busca">
+      <SourceLine classname="com.mds.app.view.Busca" sourcefile="Busca.java" sourcepath="com/mds/app/view/Busca.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Busca" name="botaoPesquisar" signature="LImageButton;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Busca" start="30" end="30" startBytecode="0" endBytecode="0" sourcefile="Busca.java" sourcepath="com/mds/app/view/Busca.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Busca">
+      <SourceLine classname="com.mds.app.view.Busca" sourcefile="Busca.java" sourcepath="com/mds/app/view/Busca.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Busca" name="buscaController" signature="Lcom/mds/app/controller/BuscaController;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Busca" start="31" end="31" startBytecode="0" endBytecode="0" sourcefile="Busca.java" sourcepath="com/mds/app/view/Busca.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Busca">
+      <SourceLine classname="com.mds.app.view.Busca" sourcefile="Busca.java" sourcepath="com/mds/app/view/Busca.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Busca" name="conexao" signature="Lcom/mds/app/util/ConexaoInternet;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Busca" start="32" end="32" startBytecode="0" endBytecode="0" sourcefile="Busca.java" sourcepath="com/mds/app/view/Busca.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Busca">
+      <SourceLine classname="com.mds.app.view.Busca" sourcefile="Busca.java" sourcepath="com/mds/app/view/Busca.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Busca" name="progressDialog" signature="LProgressDialog;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Busca" start="29" end="29" startBytecode="0" endBytecode="0" sourcefile="Busca.java" sourcepath="com/mds/app/view/Busca.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Lista">
+      <SourceLine classname="com.mds.app.view.Lista" sourcefile="Lista.java" sourcepath="com/mds/app/view/Lista.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Lista" name="listaController" signature="Lcom/mds/app/controller/ListaController;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Lista" start="21" end="21" startBytecode="0" endBytecode="0" sourcefile="Lista.java" sourcepath="com/mds/app/view/Lista.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Lista">
+      <SourceLine classname="com.mds.app.view.Lista" sourcefile="Lista.java" sourcepath="com/mds/app/view/Lista.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Lista" name="stringProjetos" signature="LArrayList;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Lista" start="22" end="22" startBytecode="0" endBytecode="0" sourcefile="Lista.java" sourcepath="com/mds/app/view/Lista.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.MenuPrincipal">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.MenuPrincipal" name="busca" signature="LImageButton;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" start="22" end="22" startBytecode="0" endBytecode="0" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.MenuPrincipal">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.MenuPrincipal" name="context" signature="LContext;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" start="21" end="21" startBytecode="0" endBytecode="0" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.MenuPrincipal">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.MenuPrincipal" name="favoritos" signature="LImageButton;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" start="24" end="24" startBytecode="0" endBytecode="0" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.MenuPrincipal">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.MenuPrincipal" name="historico" signature="LImageButton;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" start="25" end="25" startBytecode="0" endBytecode="0" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.MenuPrincipal">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.MenuPrincipal" name="sobre" signature="LImageButton;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.MenuPrincipal" start="23" end="23" startBytecode="0" endBytecode="0" sourcefile="MenuPrincipal.java" sourcepath="com/mds/app/view/MenuPrincipal.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="botaoFacebook" signature="LImageButton;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="39" end="39" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="callback" signature="LSession/StatusCallback;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="45" end="45" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="context" signature="LContext;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="41" end="41" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="estrelaFavorito" signature="LImageButton;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="38" end="38" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="favoritado" signature="Z" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="40" end="40" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="isResumed" signature="Z" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="42" end="42" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="listaController" signature="Lcom/mds/app/controller/ListaController;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="28" end="28" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="projetoAtual" signature="Lcom/mds/app/model/ProjetoModel;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="29" end="29" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="stringProjetoCompleto" signature="LString;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="30" end="30" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="texto1" signature="LTextView;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="31" end="31" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="texto2" signature="LTextView;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="32" end="32" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="texto3" signature="LTextView;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="33" end="33" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="texto4" signature="LTextView;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="34" end="34" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="texto5" signature="LTextView;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="35" end="35" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="texto6" signature="LTextView;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="36" end="36" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="texto7" signature="LTextView;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="37" end="37" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Perfil">
+      <SourceLine classname="com.mds.app.view.Perfil" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Perfil" name="uiHelper" signature="LUiLifecycleHelper;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Perfil" start="44" end="44" startBytecode="0" endBytecode="0" sourcefile="Perfil.java" sourcepath="com/mds/app/view/Perfil.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="com.mds.app.view.Sobre">
+      <SourceLine classname="com.mds.app.view.Sobre" sourcefile="Sobre.java" sourcepath="com/mds/app/view/Sobre.java"/>
+    </Class>
+    <Field classname="com.mds.app.view.Sobre" name="voltar" signature="LImageButton;" isStatic="false">
+      <SourceLine classname="com.mds.app.view.Sobre" start="12" end="12" startBytecode="0" endBytecode="0" sourcefile="Sobre.java" sourcepath="com/mds/app/view/Sobre.java"/>
+    </Field>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Tue, 15 Apr 2014 00:19:04 -0300" total_classes="52" referenced_classes="59" total_bugs="108" total_size="1039" num_packages="9" vm_version="20.65-b04-462" cpu_seconds="5.71" clock_seconds="28.21" peak_mbytes="274.84" alloc_mbytes="759.69" gc_seconds="0.07" priority_2="108">
+    <PackageStats package="com.facebook.android" total_bugs="9" total_types="10" total_size="196" priority_2="9">
+      <ClassStats class="com.facebook.android.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="com.facebook.android.R$attr" sourceFile="R.java" interface="false" size="21" bugs="1" priority_2="1"/>
+      <ClassStats class="com.facebook.android.R$color" sourceFile="R.java" interface="false" size="10" bugs="1" priority_2="1"/>
+      <ClassStats class="com.facebook.android.R$dimen" sourceFile="R.java" interface="false" size="16" bugs="1" priority_2="1"/>
+      <ClassStats class="com.facebook.android.R$drawable" sourceFile="R.java" interface="false" size="36" bugs="1" priority_2="1"/>
+      <ClassStats class="com.facebook.android.R$id" sourceFile="R.java" interface="false" size="27" bugs="1" priority_2="1"/>
+      <ClassStats class="com.facebook.android.R$layout" sourceFile="R.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="com.facebook.android.R$string" sourceFile="R.java" interface="false" size="28" bugs="1" priority_2="1"/>
+      <ClassStats class="com.facebook.android.R$style" sourceFile="R.java" interface="false" size="5" bugs="1" priority_2="1"/>
+      <ClassStats class="com.facebook.android.R$styleable" sourceFile="R.java" interface="false" size="33" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="com.mds.app" total_bugs="11" total_types="13" total_size="311" priority_2="11">
+      <ClassStats class="com.mds.app.BuildConfig" sourceFile="BuildConfig.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="com.mds.app.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="com.mds.app.R$array" sourceFile="R.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$attr" sourceFile="R.java" interface="false" size="21" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$color" sourceFile="R.java" interface="false" size="10" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$dimen" sourceFile="R.java" interface="false" size="18" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$drawable" sourceFile="R.java" interface="false" size="61" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$id" sourceFile="R.java" interface="false" size="58" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$layout" sourceFile="R.java" interface="false" size="22" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$menu" sourceFile="R.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$string" sourceFile="R.java" interface="false" size="56" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$style" sourceFile="R.java" interface="false" size="7" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.R$styleable" sourceFile="R.java" interface="false" size="39" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="com.mds.app.controller" total_bugs="17" total_types="9" total_size="168" priority_2="17">
+      <ClassStats class="com.mds.app.controller.AlteraArquivos" sourceFile="AlteraArquivos.java" interface="true" size="8" bugs="0"/>
+      <ClassStats class="com.mds.app.controller.BuscaController" sourceFile="BuscaController.java" interface="false" size="29" bugs="4" priority_2="4"/>
+      <ClassStats class="com.mds.app.controller.FavoritosController" sourceFile="FavoritosController.java" interface="false" size="25" bugs="3" priority_2="3"/>
+      <ClassStats class="com.mds.app.controller.HistoricoController" sourceFile="HistoricoController.java" interface="false" size="34" bugs="3" priority_2="3"/>
+      <ClassStats class="com.mds.app.controller.ListaController" sourceFile="ListaController.java" interface="false" size="23" bugs="2" priority_2="2"/>
+      <ClassStats class="com.mds.app.controller.ProcuraParlamentarController" sourceFile="ProcuraParlamentarController.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.mds.app.controller.ProcuraPartidoController" sourceFile="ProcuraPartidoController.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.mds.app.controller.ProcuraProjetoController" sourceFile="ProcuraProjetoController.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.mds.app.controller.ProposicaoController" sourceFile="ProposicaoController.java" interface="false" size="34" bugs="5" priority_2="5"/>
+    </PackageStats>
+    <PackageStats package="com.mds.app.exception" total_bugs="0" total_types="1" total_size="23">
+      <ClassStats class="com.mds.app.exception.ValidaEntrada" sourceFile="ValidaEntrada.java" interface="false" size="23" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.mds.app.model" total_bugs="22" total_types="6" total_size="133" priority_2="22">
+      <ClassStats class="com.mds.app.model.ParlamentarModel" sourceFile="ParlamentarModel.java" interface="false" size="14" bugs="2" priority_2="2"/>
+      <ClassStats class="com.mds.app.model.PartidoModel" sourceFile="PartidoModel.java" interface="false" size="14" bugs="2" priority_2="2"/>
+      <ClassStats class="com.mds.app.model.ProcuraParlamentarModel" sourceFile="ProcuraParlamentarModel.java" interface="false" size="8" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.model.ProcuraPartidoModel" sourceFile="ProcuraPartidoModel.java" interface="false" size="13" bugs="2" priority_2="2"/>
+      <ClassStats class="com.mds.app.model.ProcuraProjetoModel" sourceFile="ProcuraProjetoModel.java" interface="false" size="23" bugs="4" priority_2="4"/>
+      <ClassStats class="com.mds.app.model.ProjetoModel" sourceFile="ProjetoModel.java" interface="false" size="61" bugs="11" priority_2="11"/>
+    </PackageStats>
+    <PackageStats package="com.mds.app.persistencia" total_bugs="4" total_types="1" total_size="35" priority_2="4">
+      <ClassStats class="com.mds.app.persistencia.Persistencia" sourceFile="Persistencia.java" interface="false" size="35" bugs="4" priority_2="4"/>
+    </PackageStats>
+    <PackageStats package="com.mds.app.services" total_bugs="12" total_types="3" total_size="46" priority_2="12">
+      <ClassStats class="com.mds.app.services.Endereco" sourceFile="Endereco.java" interface="false" size="34" bugs="12" priority_2="12"/>
+      <ClassStats class="com.mds.app.services.RecebeHTTP" sourceFile="RecebeHTTP.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.mds.app.services.XMLParser" sourceFile="XMLParser.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.mds.app.util" total_bugs="4" total_types="3" total_size="26" priority_2="4">
+      <ClassStats class="com.mds.app.util.CancelTaskOnCancelListener" sourceFile="CancelTaskOnCancelListener.java" interface="false" size="9" bugs="1" priority_2="1"/>
+      <ClassStats class="com.mds.app.util.ConexaoInternet" sourceFile="ConexaoInternet.java" interface="false" size="9" bugs="2" priority_2="2"/>
+      <ClassStats class="com.mds.app.util.StableArrayAdapter" sourceFile="StableArrayAdapter.java" interface="false" size="8" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="com.mds.app.view" total_bugs="29" total_types="6" total_size="101" priority_2="29">
+      <ClassStats class="com.mds.app.view.Busca" sourceFile="Busca.java" interface="false" size="13" bugs="4" priority_2="4"/>
+      <ClassStats class="com.mds.app.view.Busca$PesquisarProjetoTask" sourceFile="Busca.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="com.mds.app.view.Lista" sourceFile="Lista.java" interface="false" size="11" bugs="2" priority_2="2"/>
+      <ClassStats class="com.mds.app.view.MenuPrincipal" sourceFile="MenuPrincipal.java" interface="false" size="20" bugs="5" priority_2="5"/>
+      <ClassStats class="com.mds.app.view.Perfil" sourceFile="Perfil.java" interface="false" size="40" bugs="17" priority_2="17"/>
+      <ClassStats class="com.mds.app.view.Sobre" sourceFile="Sobre.java" interface="false" size="8" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="154" invocations="2" avgMicrosecondsPerInvocation="77482" maxMicrosecondsPerInvocation="120349" standardDeviationMircosecondsPerInvocation="42867"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="52" invocations="282" avgMicrosecondsPerInvocation="184" maxMicrosecondsPerInvocation="11611" standardDeviationMircosecondsPerInvocation="711"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="47" invocations="224" avgMicrosecondsPerInvocation="213" maxMicrosecondsPerInvocation="1335" standardDeviationMircosecondsPerInvocation="115"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="46" invocations="224" avgMicrosecondsPerInvocation="208" maxMicrosecondsPerInvocation="1725" standardDeviationMircosecondsPerInvocation="155"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="44" invocations="224" avgMicrosecondsPerInvocation="198" maxMicrosecondsPerInvocation="12276" standardDeviationMircosecondsPerInvocation="816"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="40" invocations="224" avgMicrosecondsPerInvocation="179" maxMicrosecondsPerInvocation="11703" standardDeviationMircosecondsPerInvocation="775"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="37" invocations="224" avgMicrosecondsPerInvocation="169" maxMicrosecondsPerInvocation="864" standardDeviationMircosecondsPerInvocation="88"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="33" invocations="224" avgMicrosecondsPerInvocation="150" maxMicrosecondsPerInvocation="2067" standardDeviationMircosecondsPerInvocation="150"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="24" invocations="52" avgMicrosecondsPerInvocation="468" maxMicrosecondsPerInvocation="14047" standardDeviationMircosecondsPerInvocation="1913"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="19" invocations="222" avgMicrosecondsPerInvocation="85" maxMicrosecondsPerInvocation="294" standardDeviationMircosecondsPerInvocation="34"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="18" invocations="52" avgMicrosecondsPerInvocation="364" maxMicrosecondsPerInvocation="11904" standardDeviationMircosecondsPerInvocation="1621"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="17" invocations="283" avgMicrosecondsPerInvocation="62" maxMicrosecondsPerInvocation="296" standardDeviationMircosecondsPerInvocation="31"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="14" invocations="229" avgMicrosecondsPerInvocation="64" maxMicrosecondsPerInvocation="610" standardDeviationMircosecondsPerInvocation="48"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="14" invocations="224" avgMicrosecondsPerInvocation="62" maxMicrosecondsPerInvocation="1136" standardDeviationMircosecondsPerInvocation="77"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindSqlInjection" totalMilliseconds="13" invocations="52" avgMicrosecondsPerInvocation="253" maxMicrosecondsPerInvocation="1290" standardDeviationMircosecondsPerInvocation="283"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="11" invocations="52" avgMicrosecondsPerInvocation="218" maxMicrosecondsPerInvocation="679" standardDeviationMircosecondsPerInvocation="158"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1397533270954" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>
