@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">APP</string>
-    <string name="app_id">399084896860704</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_sobre">Sobre</string>
-    <string name="hintProjeto">Insira um tipo de projeto (PL, PLP, PEC, PDC, PRC)</string>
-    <string name="hintAno">Insira o ano</string>
-    <string name="hintNumero">Insira o numero do projeto</string>
-    <string name="hintDataInicio">Insira a data de início</string>
-    <string name="hintNomeAutor">Insira o nome do parlamentar</string>
-    <string name="hintSiglaPartido">Insira a sigla do partido</string>
-    <string name="hintUF">Insira a UF</string>
-    <string name="TextoBusca">Preencha os dados para realizar a pesquisa</string>
-    <string name="imgbuttonVoltar">imgbuttonVoltar</string>
-    <string name="imgbuttonOK">imgbuttonOK</string>
-    <string name="imgbuttonBUSCA">imgbuttonBUSCA</string>
-    <string name="imgbuttonSOBRE">imgbuttonSOBRE</string>
-    <string name="imgviewLOGO">imgviewLOGO</string>
-    <string name="imgviewSOBREPROV">imgviewSOBREPROV</string>
-    <string name="title_activity_perfil">Perfil</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="projetoFrase">Escolha um tipo</string>
-    <string name="partidos">Escolha um partido</string>
-    <string-array name="partidos">
+    <string name="app_name" translatable="false" >APP</string>
+    <string name="app_id" translatable="false" >399084896860704</string>
+    <string name="action_settings" translatable="false" >Settings</string>
+    <string name="title_activity_sobre" translatable="false" >Sobre</string>
+    <string name="hintProjeto" translatable="false" >Insira um tipo de projeto (PL, PLP, PEC, PDC, PRC)</string>
+    <string name="hintAno" translatable="false" >Insira o ano</string>
+    <string name="hintNumero" translatable="false" >Insira o numero do projeto</string>
+    <string name="hintDataInicio" translatable="false" >Insira a data de início</string>
+    <string name="hintNomeAutor" translatable="false" >Insira o nome do parlamentar</string>
+    <string name="hintSiglaPartido" translatable="false" >Insira a sigla do partido</string>
+    <string name="hintUF" translatable="false" >Insira a UF</string>
+    <string name="TextoBusca" translatable="false" >Preencha os dados para realizar a pesquisa</string>
+    <string name="imgbuttonVoltar" translatable="false" >imgbuttonVoltar</string>
+    <string name="imgbuttonOK" translatable="false" >imgbuttonOK</string>
+    <string name="imgbuttonBUSCA" translatable="false" >imgbuttonBUSCA</string>
+    <string name="imgbuttonSOBRE" translatable="false" >imgbuttonSOBRE</string>
+    <string name="imgviewLOGO" translatable="false" >imgviewLOGO</string>
+    <string name="imgviewSOBREPROV" translatable="false" >imgviewSOBREPROV</string>
+    <string name="title_activity_perfil" translatable="false" >Perfil</string>
+    <string name="hello_world" translatable="false" >Hello world!</string>
+    <string name="projetoFrase" translatable="false" >Escolha um tipo</string>
+    <string name="partidos" translatable="false" >Escolha um partido</string>
+    <string-array name="partidos" translatable="false" >
         <item>Todos os Partidos</item>
         <item>PMDB</item>
         <item>PT</item>
@@ -58,7 +58,7 @@
         <item>PROS</item>
         <item>SDD</item>
     </string-array>
-    <string-array name="projetos">
+    <string-array name="projetos" translatable="false" >
         <item>Projeto de Lei</item>
         <item>Projeto de Emenda à Constituição</item>
         <item>Projeto de Lei Complementar</item>
@@ -66,12 +66,12 @@
         <item>Projeto de Resolução</item>
     </string-array>
 
-    <string name="imgbuttonFavorito">imgbuttonFavorito</string>
-    <string name="imgbuttonPesquisar">imgbuttonPesquisar</string>
-    <string name="imgbuttonNaoFavorito">imgbuttonNaoFavorito</string>
-    <string name="estadoFrase">Escolha um estado</string>
+    <string name="imgbuttonFavorito" translatable="false" >imgbuttonFavorito</string>
+    <string name="imgbuttonPesquisar" translatable="false" >imgbuttonPesquisar</string>
+    <string name="imgbuttonNaoFavorito" translatable="false" >imgbuttonNaoFavorito</string>
+    <string name="estadoFrase" translatable="false" >Escolha um estado</string>
 
-    <string-array name="estados">
+    <string-array name="estados" translatable="false" >
         <item>Todos os Estados</item>
         <item>Acre</item>
         <item>Alagoas</item>
@@ -100,7 +100,7 @@
         <item>Sergipe</item>
         <item>Tocantins</item>
     </string-array>
-        <string name="apptext">Acompanhamento de Projetos Parlamentares</string>
-        <string name="textoTitulo">Prrencha os dados para fazer a pesquisa</string>
+        <string name="apptext" translatable="false" >Acompanhamento de Projetos Parlamentares</string>
+        <string name="textoTitulo" translatable="false" >Prrencha os dados para fazer a pesquisa</string>
 
 </resources>
