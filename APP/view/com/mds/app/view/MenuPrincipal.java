@@ -58,7 +58,7 @@ public class MenuPrincipal extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(MenuPrincipal.this, Busca.class);
+				Intent i = new Intent(MenuPrincipal.this, SearchView.class);
 				startActivity(i);
 			}
 		});

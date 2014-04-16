@@ -24,14 +24,14 @@ import com.mds.app.model.ProjetoModel;
 import com.mds.app.util.CancelTaskOnCancelListener;
 import com.mds.app.util.ConexaoInternet;
 
-public class Busca extends Activity {
+public class SearchView extends Activity {
 
 	private ProgressDialog progressDialog;
 	private ImageButton botaoPesquisar;
 	private BuscaController buscaController;
 	private ConexaoInternet conexao;
 
-	public Busca() {
+	public SearchView() {
 
 	}
 
@@ -79,7 +79,7 @@ public class Busca extends Activity {
 					new PesquisarProjetoTask().execute();
 				}
 				else {
-					Toast.makeText(Busca.this, "Dados Invalidos", Toast.LENGTH_SHORT).show();
+					Toast.makeText(SearchView.this, "Dados Invalidos", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -96,7 +96,7 @@ public class Busca extends Activity {
 
 		@Override
 		protected void onPreExecute() {
-			progressDialog = ProgressDialog.show(Busca.this, "Aguarde...", "Recebendo dados", true, true);
+			progressDialog = ProgressDialog.show(SearchView.this, "Aguarde...", "Recebendo dados", true, true);
 			progressDialog.setOnCancelListener(new CancelTaskOnCancelListener(this));
 		}
 
@@ -114,7 +114,7 @@ public class Busca extends Activity {
 				public void run() {
 					progressDialog.dismiss();
 					ListaController.setListaProjetos(result);
-					Intent intent = new Intent(Busca.this, Lista.class);
+					Intent intent = new Intent(SearchView.this, Lista.class);
 					startActivity(intent);
 				}
 			});
