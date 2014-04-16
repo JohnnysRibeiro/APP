@@ -23,7 +23,7 @@ import com.mds.app.controller.HistoricoController;
 import com.mds.app.controller.ListaController;
 import com.mds.app.model.ProjetoModel;
 
-public class Perfil extends Activity {
+public class ProjectDescriptionView extends Activity {
 
 	private ListaController listaController;
 	private ProjetoModel projetoAtual;

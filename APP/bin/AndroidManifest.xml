@@ -41,7 +41,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.mds.app.view.Perfil"
+            android:name="com.mds.app.view.ProjectDescriptionView"
             android:screenOrientation="portrait"
             android:label="@string/app_name" >
         </activity>

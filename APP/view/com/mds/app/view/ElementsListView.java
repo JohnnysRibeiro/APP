@@ -44,7 +44,7 @@ public class ElementsListView extends Activity {
 					public void run() {
 						if (!stringProjetos.get(position).equals("Nada encontrado.")) {
 							ListaController.setProjetoAtual(ListaController.getListaProjetos().get(position));
-							Intent i = new Intent(ElementsListView.this, Perfil.class);
+							Intent i = new Intent(ElementsListView.this, ProjectDescriptionView.class);
 							startActivity(i);
 						}
 						else {
