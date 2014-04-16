@@ -70,7 +70,7 @@ public class MenuPrincipal extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(MenuPrincipal.this, Sobre.class);
+				Intent i = new Intent(MenuPrincipal.this, AboutView.class);
 				startActivity(i);
 			}
 		});
