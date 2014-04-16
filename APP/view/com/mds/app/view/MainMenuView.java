@@ -16,7 +16,7 @@ import com.mds.app.controller.HistoricoController;
 import com.mds.app.controller.ListaController;
 import com.mds.app.persistencia.Persistencia;
 
-public class MainMenu extends Activity {
+public class MainMenuView extends Activity {
 
 	Context context = this;
 	ImageButton busca;
@@ -58,7 +58,7 @@ public class MainMenu extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(MainMenu.this, SearchView.class);
+				Intent i = new Intent(MainMenuView.this, SearchView.class);
 				startActivity(i);
 			}
 		});
@@ -70,7 +70,7 @@ public class MainMenu extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(MainMenu.this, AboutApplicationView.class);
+				Intent i = new Intent(MainMenuView.this, AboutApplicationView.class);
 				startActivity(i);
 			}
 		});
@@ -90,7 +90,7 @@ public class MainMenu extends Activity {
 				ListaController.setListaProjetos(FavoritosController.getProjetosFavoritados());
 				Log.i("ADDL-F", FavoritosController.getProjetosFavoritados().toString());
 				Log.i("ADDL-F", ListaController.getListaProjetos().toString());
-				Intent i = new Intent(MainMenu.this, ProjectListView.class);
+				Intent i = new Intent(MainMenuView.this, ProjectListView.class);
 				startActivity(i);
 			}
 		});
@@ -108,7 +108,7 @@ public class MainMenu extends Activity {
 				Log.i("LOGGER", "Conteudo historico: " + strConteudoHistorico);
 
 				ListaController.setListaProjetos(HistoricoController.getProjetosHistorico());
-				Intent i = new Intent(MainMenu.this, ProjectListView.class);
+				Intent i = new Intent(MainMenuView.this, ProjectListView.class);
 				startActivity(i);
 			}
 		});
