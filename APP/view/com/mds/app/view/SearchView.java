@@ -114,7 +114,7 @@ public class SearchView extends Activity {
 				public void run() {
 					progressDialog.dismiss();
 					ListaController.setListaProjetos(result);
-					Intent intent = new Intent(SearchView.this, ElementsListView.class);
+					Intent intent = new Intent(SearchView.this, ProjectListView.class);
 					startActivity(intent);
 				}
 			});

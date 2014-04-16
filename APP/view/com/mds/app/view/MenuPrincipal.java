@@ -70,7 +70,7 @@ public class MenuPrincipal extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(MenuPrincipal.this, AboutView.class);
+				Intent i = new Intent(MenuPrincipal.this, AboutApplicationView.class);
 				startActivity(i);
 			}
 		});
@@ -90,7 +90,7 @@ public class MenuPrincipal extends Activity {
 				ListaController.setListaProjetos(FavoritosController.getProjetosFavoritados());
 				Log.i("ADDL-F", FavoritosController.getProjetosFavoritados().toString());
 				Log.i("ADDL-F", ListaController.getListaProjetos().toString());
-				Intent i = new Intent(MenuPrincipal.this, ElementsListView.class);
+				Intent i = new Intent(MenuPrincipal.this, ProjectListView.class);
 				startActivity(i);
 			}
 		});
@@ -108,7 +108,7 @@ public class MenuPrincipal extends Activity {
 				Log.i("LOGGER", "Conteudo historico: " + strConteudoHistorico);
 
 				ListaController.setListaProjetos(HistoricoController.getProjetosHistorico());
-				Intent i = new Intent(MenuPrincipal.this, ElementsListView.class);
+				Intent i = new Intent(MenuPrincipal.this, ProjectListView.class);
 				startActivity(i);
 			}
 		});

@@ -16,7 +16,7 @@ import com.mds.app.R;
 import com.mds.app.controller.ListaController;
 import com.mds.app.util.StableArrayAdapter;
 
-public class ElementsListView extends Activity {
+public class ProjectListView extends Activity {
 
 	private ListaController listaController;
 	private ArrayList<String> stringProjetos;
@@ -44,7 +44,7 @@ public class ElementsListView extends Activity {
 					public void run() {
 						if (!stringProjetos.get(position).equals("Nada encontrado.")) {
 							ListaController.setProjetoAtual(ListaController.getListaProjetos().get(position));
-							Intent i = new Intent(ElementsListView.this, ProjectDescriptionView.class);
+							Intent i = new Intent(ProjectListView.this, ProjectDescriptionView.class);
 							startActivity(i);
 						}
 						else {
@@ -69,7 +69,7 @@ public class ElementsListView extends Activity {
 	}
 
 	private void longToast(CharSequence message) {
-		Toast.makeText(ElementsListView.this, message, Toast.LENGTH_LONG).show();
+		Toast.makeText(ProjectListView.this, message, Toast.LENGTH_LONG).show();
 	}
 
 }

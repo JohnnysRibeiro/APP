@@ -7,7 +7,7 @@ import android.widget.ImageButton;
 
 import com.mds.app.R;
 
-public class AboutView extends Activity {
+public class AboutApplicationView extends Activity {
 
 	ImageButton voltar;
 

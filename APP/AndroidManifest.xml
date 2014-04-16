@@ -36,7 +36,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.mds.app.view.ElementsListView"
+            android:name="com.mds.app.view.ProjectListView"
             android:screenOrientation="portrait"
             android:label="@string/app_name" >
         </activity>
@@ -66,7 +66,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mds.app.view.AboutView"
+            android:name="com.mds.app.view.AboutApplicationView"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_sobre" >
         </activity>
