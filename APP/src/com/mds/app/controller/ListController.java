@@ -7,122 +7,122 @@ import com.mds.app.model.ProjetoModel;
 
 public class ListController {
 
-	private static final String SEPARADOR = "~";
-	private static List<ProjetoModel> listaProjetos;
-	private static ProjetoModel projetoAtual;
+	private static final String SEPARATOR = "~";
+	private static List<ProjetoModel> projectsList;
+	private static ProjetoModel actualProject;
 
 	public ListController() {
 	}
 
 	public ListController(List<ProjetoModel> result) {
-		setListaProjetos(result);
+		setProjectsList(result);
 	}
 
-	/* Transforma List<ProjetoModel> listaProjetos em um ArrayList<String> */
-	public ArrayList<String> transformarLista() {
-		ArrayList<String> stringProjetos = new ArrayList<String>();
+	/* Transforms List<ProjetoModel> ProjectList into an ArrayList<String> */
+	public ArrayList<String> transformAProjectListIntoAnArrayList() {
+		ArrayList<String> projectsString = new ArrayList<String>();
 
-		if (getListaProjetos() != null) {
-			for (int i = 0; i < getListaProjetos().size(); i++) {
-				String stringProjeto = "";
-				stringProjeto += getListaProjetos().get(i).getNome();
-				stringProjeto += " - ";
-				stringProjeto += getListaProjetos().get(i).getNumero();
-				stringProjeto += " - ";
-				stringProjeto += getListaProjetos().get(i).getParlamentar().getNome();
-				stringProjetos.add(stringProjeto);
+		if (getProjectsList() != null) {
+			for (int i = 0; i < getProjectsList().size(); i++) {
+				String projectString = "";
+				projectString += getProjectsList().get(i).getNome();
+				projectString += " - ";
+				projectString += getProjectsList().get(i).getNumero();
+				projectString += " - ";
+				projectString += getProjectsList().get(i).getParlamentar().getNome();
+				projectsString.add(projectString);
 			}
 		}
 		else {
-			String stringProjeto = "Nada encontrado.";
-			stringProjetos.add(stringProjeto);
+			String projectString = "Nada encontrado.";
+			projectsString.add(projectString);
 		}
 
-		return stringProjetos;
+		return projectsString;
 	}
 
-	public String getStringCompletaParaPerfil() {
-		String stringProjeto = "";
+	public String getCompleteStringForProfile() {
+		String projectString = "";
 
-		if (getProjetoAtual() != null) {
-			stringProjeto += getProjetoAtual().getNome();
-			stringProjeto += "\nNumero: ";
-			stringProjeto += getProjetoAtual().getNumero();
-			stringProjeto += "\nAno:  ";
-			stringProjeto += getProjetoAtual().getAno();
-			stringProjeto += "\nSigla: ";
-			stringProjeto += getProjetoAtual().getSigla();
-			stringProjeto += "\nData de Apresentação: ";
-			stringProjeto += getProjetoAtual().getData();
-			stringProjeto += "\nDescrição: ";
-			stringProjeto += getProjetoAtual().getExplicacao();
-			stringProjeto += "\nParlamentar: ";
-			stringProjeto += getProjetoAtual().getParlamentar().getNome();
-			stringProjeto += "\nPartido: ";
-			stringProjeto += getProjetoAtual().getParlamentar().getPartido().getSiglaPartido();
-			stringProjeto += "\nEstado: ";
-			stringProjeto += getProjetoAtual().getParlamentar().getPartido().getUf();
-		}
-		else {
-			stringProjeto = "Nada encontrado.";
-		}
-
-		return stringProjeto;
-
-	}
-
-	public String getStringCompletaParaArquivo() {
-		String stringProjeto = "";
-
-		if (getProjetoAtual() != null) {
-			stringProjeto += getProjetoAtual().getNome();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getNumero();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getAno();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getSigla();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getData();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getExplicacao();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getStatus();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getParlamentar().getNome();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getParlamentar().getPartido().getSiglaPartido();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getParlamentar().getPartido().getUf();
-			stringProjeto += SEPARADOR;
-			stringProjeto += getProjetoAtual().getId();
-			stringProjeto += SEPARADOR;
+		if (getActualProject() != null) {
+			projectString += getActualProject().getNome();
+			projectString += "\nNumero: ";
+			projectString += getActualProject().getNumero();
+			projectString += "\nAno:  ";
+			projectString += getActualProject().getAno();
+			projectString += "\nSigla: ";
+			projectString += getActualProject().getSigla();
+			projectString += "\nData de Apresentação: ";
+			projectString += getActualProject().getData();
+			projectString += "\nDescrição: ";
+			projectString += getActualProject().getExplicacao();
+			projectString += "\nParlamentar: ";
+			projectString += getActualProject().getParlamentar().getNome();
+			projectString += "\nPartido: ";
+			projectString += getActualProject().getParlamentar().getPartido().getSiglaPartido();
+			projectString += "\nEstado: ";
+			projectString += getActualProject().getParlamentar().getPartido().getUf();
 		}
 		else {
-			stringProjeto = null;
+			projectString = "Nada encontrado.";
 		}
 
-		return stringProjeto;
+		return projectString;
+
 	}
 
-	public static List<ProjetoModel> getListaProjetos() {
-		return listaProjetos;
+	public String getCompleteStringForAFile() {
+		String projectString = "";
+
+		if (getActualProject() != null) {
+			projectString += getActualProject().getNome();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getNumero();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getAno();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getSigla();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getData();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getExplicacao();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getStatus();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getParlamentar().getNome();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getParlamentar().getPartido().getSiglaPartido();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getParlamentar().getPartido().getUf();
+			projectString += SEPARATOR;
+			projectString += getActualProject().getId();
+			projectString += SEPARATOR;
+		}
+		else {
+			projectString = null;
+		}
+
+		return projectString;
 	}
 
-	public static void setListaProjetos(List<ProjetoModel> novaListaProjetos) {
-		listaProjetos = novaListaProjetos;
+	public static List<ProjetoModel> getProjectsList() {
+		return projectsList;
 	}
 
-	public static ProjetoModel getProjetoAtual() {
-		return projetoAtual;
+	public static void setProjectsList(List<ProjetoModel> newProjectsList) {
+		projectsList = newProjectsList;
 	}
 
-	public static void setProjetoAtual(ProjetoModel projetoAtual) {
-		ListController.projetoAtual = projetoAtual;
+	public static ProjetoModel getActualProject() {
+		return actualProject;
 	}
 
-	public static String getSeparador() {
-		return SEPARADOR;
+	public static void setActualProject(ProjetoModel actualProject) {
+		ListController.actualProject = actualProject;
+	}
+
+	public static String getSeparator() {
+		return SEPARATOR;
 	}
 
 }
