@@ -157,7 +157,7 @@ int id textoTitulo 0x7f04000b
 int layout activity_busca 0x7f030000
 int layout activity_for_aboutapplicationview 0x7f030001
 int layout activity_lista 0x7f030002
-int layout activity_menu_principal 0x7f030003
+int layout activity_main_menu 0x7f030003
 int layout activity_perfil 0x7f030004
 int layout com_facebook_friendpickerfragment 0x7f030005
 int layout com_facebook_login_activity_layout 0x7f030006

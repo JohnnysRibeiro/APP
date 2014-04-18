@@ -27,7 +27,7 @@ public class MainMenuView extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_menu_principal);
+		setContentView(R.layout.activity_main_menu);
 
 		Persistencia persistencia = new Persistencia(context);
 		String conteudoHistorico = persistencia.lerDoArquivo(Persistencia.getFileNameHistorico());
