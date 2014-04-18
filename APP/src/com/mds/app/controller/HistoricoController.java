@@ -31,7 +31,7 @@ public class HistoricoController implements AlteraArquivos {
 			if (!projetosHistorico.contains(projeto)) {
 				projetosHistoricoCompletoStr.add(conteudo);
 				projetosHistorico.add(projeto);
-				persistence.escreverNoArquivo(Persistence.getFileNameHistorico(), conteudo);
+				persistence.writeInFile(Persistence.getHistoricNameFile(), conteudo);
 			}
 			else {
 				Log.i("LOGGER", "ELSE DENTRO ADICIONAR HISTORICO");
@@ -58,7 +58,7 @@ public class HistoricoController implements AlteraArquivos {
 				projetosHistoricoCompletoStr.remove(stringProjeto);
 				projetosHistorico.remove(projeto);
 				String conteudoArquivo = projetosEmString();
-				persistence.reescreverArquivo(Persistence.getFileNameHistorico(), conteudoArquivo);
+				persistence.rewriteFile(Persistence.getHistoricNameFile(), conteudoArquivo);
 			}
 			else {
 				System.out.println("ELSE DENTRO REMOVER HISTORICO");

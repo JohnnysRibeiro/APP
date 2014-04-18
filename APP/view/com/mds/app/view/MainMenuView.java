@@ -30,8 +30,8 @@ public class MainMenuView extends Activity {
 		setContentView(R.layout.activity_main_menu);
 
 		Persistence persistence = new Persistence(context);
-		String historicContent = persistence.lerDoArquivo(Persistence.getFileNameHistorico());
-		String favoritesContent = persistence.lerDoArquivo(Persistence.getFileNameFavoritos());
+		String historicContent = persistence.readFromFile(Persistence.getHistoricNameFile());
+		String favoritesContent = persistence.readFromFile(Persistence.getFavoritesNameFile());
 
 		FavoritosController favoritesController = new FavoritosController(context);
 		favoritesController.popularProjetos(favoritesContent);
@@ -84,7 +84,7 @@ public class MainMenuView extends Activity {
 			public void onClick(View v) {
 				Persistence persistence = new Persistence(context);
 
-				String favoritesContentString = persistence.lerDoArquivo(Persistence.getFileNameFavoritos());
+				String favoritesContentString = persistence.readFromFile(Persistence.getFavoritesNameFile());
 				Log.i("LOGGER", "Conteudo historico: " + favoritesContentString);
 
 				ListaController.setListaProjetos(FavoritosController.getProjetosFavoritados());
@@ -104,7 +104,7 @@ public class MainMenuView extends Activity {
 			public void onClick(View v) {
 				Persistence persistence = new Persistence(context);
 
-				String historicContentString = persistence.lerDoArquivo(Persistence.getFileNameHistorico());
+				String historicContentString = persistence.readFromFile(Persistence.getHistoricNameFile());
 				Log.i("LOGGER", "Conteudo historico: " + historicContentString);
 
 				ListaController.setListaProjetos(HistoricoController.getProjetosHistorico());

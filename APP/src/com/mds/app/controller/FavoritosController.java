@@ -32,7 +32,7 @@ public class FavoritosController implements AlteraArquivos {
 				projetosFavoritadosCompletoStr.add(conteudo);
 				projetosFavoritados.add(projeto);
 
-				persistence.escreverNoArquivo(Persistence.getFileNameFavoritos(), conteudo);
+				persistence.writeInFile(Persistence.getFavoritesNameFile(), conteudo);
 			}
 			else {
 				System.out.println("ELSE DENTRO ADICIONAR FAVORITOS");
@@ -52,7 +52,7 @@ public class FavoritosController implements AlteraArquivos {
 				projetosFavoritadosCompletoStr.remove(stringProjeto);
 				projetosFavoritados.remove(projeto);
 				String conteudoArquivo = projetosEmString();
-				persistence.reescreverArquivo(Persistence.getFileNameFavoritos(), conteudoArquivo);
+				persistence.rewriteFile(Persistence.getFavoritesNameFile(), conteudoArquivo);
 			}
 			else {
 				System.out.println("ELSE DENTRO REMOVER FAVORITOS");
