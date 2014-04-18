@@ -13,12 +13,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.mds.app.R;
-import com.mds.app.controller.ListaController;
+import com.mds.app.controller.ListController;
 import com.mds.app.util.StableArrayAdapter;
 
 public class ProjectListView extends Activity {
 
-	private ListaController listaController;
+	private ListController listaController;
 	private ArrayList<String> stringProjetos;
 
 	@Override
@@ -26,7 +26,7 @@ public class ProjectListView extends Activity {
 		super.onCreate(savedInstanceState);
 
 		ListView listView = new ListView(this);
-		listaController = new ListaController();
+		listaController = new ListController();
 
 		stringProjetos = listaController.transformarLista();
 		Log.i("LISTA", stringProjetos.toString());
@@ -43,7 +43,7 @@ public class ProjectListView extends Activity {
 					@Override
 					public void run() {
 						if (!stringProjetos.get(position).equals("Nada encontrado.")) {
-							ListaController.setProjetoAtual(ListaController.getListaProjetos().get(position));
+							ListController.setProjetoAtual(ListController.getListaProjetos().get(position));
 							Intent i = new Intent(ProjectListView.this, ProjectDescriptionView.class);
 							startActivity(i);
 						}

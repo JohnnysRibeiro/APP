@@ -20,12 +20,12 @@ import com.facebook.widget.FacebookDialog;
 import com.mds.app.R;
 import com.mds.app.controller.FavoritesController;
 import com.mds.app.controller.HistoricoController;
-import com.mds.app.controller.ListaController;
+import com.mds.app.controller.ListController;
 import com.mds.app.model.ProjetoModel;
 
 public class ProjectDescriptionView extends Activity {
 
-	private ListaController listaController;
+	private ListController listaController;
 	private ProjetoModel projetoAtual;
 	private String stringProjetoCompleto;
 	private TextView texto1;
@@ -58,8 +58,8 @@ public class ProjectDescriptionView extends Activity {
 
 		facebook_addListener();
 
-		projetoAtual = ListaController.getProjetoAtual();
-		listaController = new ListaController();
+		projetoAtual = ListController.getProjetoAtual();
+		listaController = new ListController();
 
 		stringProjetoCompleto = listaController.getStringCompletaParaPerfil();
 

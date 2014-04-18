@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 import com.mds.app.R;
 import com.mds.app.controller.BuscaController;
-import com.mds.app.controller.ListaController;
+import com.mds.app.controller.ListController;
 import com.mds.app.model.ProjetoModel;
 import com.mds.app.util.CancelTaskOnCancelListener;
 import com.mds.app.util.ConexaoInternet;
@@ -113,7 +113,7 @@ public class SearchView extends Activity {
 				@Override
 				public void run() {
 					progressDialog.dismiss();
-					ListaController.setListaProjetos(result);
+					ListController.setListaProjetos(result);
 					Intent intent = new Intent(SearchView.this, ProjectListView.class);
 					startActivity(intent);
 				}

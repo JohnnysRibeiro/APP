@@ -5,16 +5,16 @@ import java.util.List;
 
 import com.mds.app.model.ProjetoModel;
 
-public class ListaController {
+public class ListController {
 
 	private static final String SEPARADOR = "~";
 	private static List<ProjetoModel> listaProjetos;
 	private static ProjetoModel projetoAtual;
 
-	public ListaController() {
+	public ListController() {
 	}
 
-	public ListaController(List<ProjetoModel> result) {
+	public ListController(List<ProjetoModel> result) {
 		setListaProjetos(result);
 	}
 
@@ -118,7 +118,7 @@ public class ListaController {
 	}
 
 	public static void setProjetoAtual(ProjetoModel projetoAtual) {
-		ListaController.projetoAtual = projetoAtual;
+		ListController.projetoAtual = projetoAtual;
 	}
 
 	public static String getSeparador() {
