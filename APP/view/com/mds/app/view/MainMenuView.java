@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 
 import com.mds.app.R;
 import com.mds.app.controller.FavoritesController;
-import com.mds.app.controller.HistoricoController;
+import com.mds.app.controller.HistoricController;
 import com.mds.app.controller.ListController;
 import com.mds.app.persistence.Persistence;
 
@@ -36,7 +36,7 @@ public class MainMenuView extends Activity {
 		FavoritesController favoritesController = new FavoritesController(context);
 		favoritesController.populateProjects(favoritesContent);
 
-		HistoricoController historicController = new HistoricoController(context);
+		HistoricController historicController = new HistoricController(context);
 		historicController.populateProjects(historicContent);
 
 		search_addListener();
@@ -107,7 +107,7 @@ public class MainMenuView extends Activity {
 				String historicContentString = persistence.readFromFile(Persistence.getHistoricNameFile());
 				Log.i("LOGGER", "Conteudo historico: " + historicContentString);
 
-				ListController.setProjectsList(HistoricoController.getProjetosHistorico());
+				ListController.setProjectsList(HistoricController.getProjetosHistorico());
 				Intent i = new Intent(MainMenuView.this, ProjectListView.class);
 				startActivity(i);
 			}

@@ -10,18 +10,18 @@ import com.mds.app.model.PartidoModel;
 import com.mds.app.model.ProjetoModel;
 import com.mds.app.persistence.Persistence;
 
-public class HistoricoController implements AlteraArquivos {
+public class HistoricController implements AlteraArquivos {
 
 	private static final int MAX_PROJETOS = 10;
 	private static ArrayList<ProjetoModel> projetosHistorico = new ArrayList<ProjetoModel>(MAX_PROJETOS);
 	private static ArrayList<String> projetosHistoricoCompletoStr = new ArrayList<String>();
 	private Persistence persistence;
 
-	public HistoricoController(Context context) {
+	public HistoricController(Context context) {
 		persistence = new Persistence(context);
 	}
 
-	public HistoricoController() {
+	public HistoricController() {
 
 	}
 
@@ -177,7 +177,7 @@ public class HistoricoController implements AlteraArquivos {
 	}
 
 	public static void setProjetosHistorico(ArrayList<ProjetoModel> projetosHistorico) {
-		HistoricoController.projetosHistorico = projetosHistorico;
+		HistoricController.projetosHistorico = projetosHistorico;
 	}
 
 	public static ArrayList<String> getProjetosHistoricoCompletoStr() {
@@ -185,7 +185,7 @@ public class HistoricoController implements AlteraArquivos {
 	}
 
 	public static void setProjetosHistoricoCompletoStr(ArrayList<String> projetosHistoricoCompletoStr) {
-		HistoricoController.projetosHistoricoCompletoStr = projetosHistoricoCompletoStr;
+		HistoricController.projetosHistoricoCompletoStr = projetosHistoricoCompletoStr;
 	}
 
 	public static int getNumeroDeProjetosNoHistorico() {

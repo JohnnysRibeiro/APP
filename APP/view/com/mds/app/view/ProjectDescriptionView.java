@@ -19,7 +19,7 @@ import com.facebook.UiLifecycleHelper;
 import com.facebook.widget.FacebookDialog;
 import com.mds.app.R;
 import com.mds.app.controller.FavoritesController;
-import com.mds.app.controller.HistoricoController;
+import com.mds.app.controller.HistoricController;
 import com.mds.app.controller.ListController;
 import com.mds.app.model.ProjetoModel;
 
@@ -84,10 +84,10 @@ public class ProjectDescriptionView extends Activity {
 
 		favoritar_addListener();
 
-		final int projetosNoHistorico = HistoricoController.getNumeroDeProjetosNoHistorico();
-		final int maxProjetos = HistoricoController.getMaxProjetos();
+		final int projetosNoHistorico = HistoricController.getNumeroDeProjetosNoHistorico();
+		final int maxProjetos = HistoricController.getMaxProjetos();
 		String stringProjetoParaHistorico = listaController.getCompleteStringForAFile();
-		HistoricoController historicoController = new HistoricoController(context);
+		HistoricController historicoController = new HistoricController(context);
 
 		/*
 		 * Arrumar a remocao, se acima do limite permitido na
@@ -97,9 +97,9 @@ public class ProjectDescriptionView extends Activity {
 			historicoController.addProject(projetoAtual, stringProjetoParaHistorico);
 		}
 		else {
-			Log.i("LOGGER", "Removendo do historico: " + HistoricoController.getProjetoMaisVelho().getNumero());
-			historicoController.removeProject(HistoricoController.getProjetoMaisVelho(),
-					HistoricoController.getStringProjetoMaisVelho());
+			Log.i("LOGGER", "Removendo do historico: " + HistoricController.getProjetoMaisVelho().getNumero());
+			historicoController.removeProject(HistoricController.getProjetoMaisVelho(),
+					HistoricController.getStringProjetoMaisVelho());
 			historicoController.addProject(projetoAtual, stringProjetoParaHistorico);
 		}
 		Log.i("LOGGER", "Adicionando ao historico: " + projetoAtual.getNumero());
