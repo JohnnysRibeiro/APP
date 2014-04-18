@@ -58,10 +58,10 @@ public class ProjectDescriptionView extends Activity {
 
 		facebook_addListener();
 
-		projetoAtual = ListController.getProjetoAtual();
+		projetoAtual = ListController.getActualProject();
 		listaController = new ListController();
 
-		stringProjetoCompleto = listaController.getStringCompletaParaPerfil();
+		stringProjetoCompleto = listaController.getCompleteStringForProfile();
 
 		texto1 = (TextView) findViewById(R.id.textoTipoProjeto);
 		texto1.setText(projetoAtual.getNome());
@@ -86,7 +86,7 @@ public class ProjectDescriptionView extends Activity {
 
 		final int projetosNoHistorico = HistoricoController.getNumeroDeProjetosNoHistorico();
 		final int maxProjetos = HistoricoController.getMaxProjetos();
-		String stringProjetoParaHistorico = listaController.getStringCompletaParaArquivo();
+		String stringProjetoParaHistorico = listaController.getCompleteStringForAFile();
 		HistoricoController historicoController = new HistoricoController(context);
 
 		/*
@@ -148,7 +148,7 @@ public class ProjectDescriptionView extends Activity {
 	private void favoritar_addListener() {
 		estrelaFavorito = (ImageButton) findViewById(R.id.naoFavorito);
 
-		String stringProjetoParaFavorito = listaController.getStringCompletaParaArquivo();
+		String stringProjetoParaFavorito = listaController.getCompleteStringForAFile();
 		if (FavoritesController.getFavoritedProjectsCompleteString().contains(stringProjetoParaFavorito)) {
 			estrelaFavorito.setImageResource(R.drawable.favorited_img);
 			favoritado = true;
@@ -164,7 +164,7 @@ public class ProjectDescriptionView extends Activity {
 			public void onClick(View v) {
 
 				FavoritesController favoritosController = new FavoritesController(context);
-				String stringProjetoParaFavorito = listaController.getStringCompletaParaArquivo();
+				String stringProjetoParaFavorito = listaController.getCompleteStringForAFile();
 
 				if (!favoritado) {
 					estrelaFavorito.setImageResource(R.drawable.favorited_img);

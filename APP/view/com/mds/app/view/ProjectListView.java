@@ -28,7 +28,7 @@ public class ProjectListView extends Activity {
 		ListView listView = new ListView(this);
 		listaController = new ListController();
 
-		stringProjetos = listaController.transformarLista();
+		stringProjetos = listaController.transformAProjectListIntoAnArrayList();
 		Log.i("LISTA", stringProjetos.toString());
 
 		final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1,
@@ -43,7 +43,7 @@ public class ProjectListView extends Activity {
 					@Override
 					public void run() {
 						if (!stringProjetos.get(position).equals("Nada encontrado.")) {
-							ListController.setProjetoAtual(ListController.getListaProjetos().get(position));
+							ListController.setActualProject(ListController.getProjectsList().get(position));
 							Intent i = new Intent(ProjectListView.this, ProjectDescriptionView.class);
 							startActivity(i);
 						}

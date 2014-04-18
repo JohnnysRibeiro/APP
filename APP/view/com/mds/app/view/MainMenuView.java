@@ -87,9 +87,9 @@ public class MainMenuView extends Activity {
 				String favoritesContentString = persistence.readFromFile(Persistence.getFavoritesNameFile());
 				Log.i("LOGGER", "Conteudo historico: " + favoritesContentString);
 
-				ListController.setListaProjetos(FavoritesController.getFavoritedProjects());
+				ListController.setProjectsList(FavoritesController.getFavoritedProjects());
 				Log.i("ADDL-F", FavoritesController.getFavoritedProjects().toString());
-				Log.i("ADDL-F", ListController.getListaProjetos().toString());
+				Log.i("ADDL-F", ListController.getProjectsList().toString());
 				Intent i = new Intent(MainMenuView.this, ProjectListView.class);
 				startActivity(i);
 			}
@@ -107,7 +107,7 @@ public class MainMenuView extends Activity {
 				String historicContentString = persistence.readFromFile(Persistence.getHistoricNameFile());
 				Log.i("LOGGER", "Conteudo historico: " + historicContentString);
 
-				ListController.setListaProjetos(HistoricoController.getProjetosHistorico());
+				ListController.setProjectsList(HistoricoController.getProjetosHistorico());
 				Intent i = new Intent(MainMenuView.this, ProjectListView.class);
 				startActivity(i);
 			}
