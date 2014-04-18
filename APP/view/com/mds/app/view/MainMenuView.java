@@ -14,7 +14,7 @@ import com.mds.app.R;
 import com.mds.app.controller.FavoritosController;
 import com.mds.app.controller.HistoricoController;
 import com.mds.app.controller.ListaController;
-import com.mds.app.persistencia.Persistencia;
+import com.mds.app.persistence.Persistence;
 
 public class MainMenuView extends Activity {
 
@@ -29,9 +29,9 @@ public class MainMenuView extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_menu);
 
-		Persistencia persistencia = new Persistencia(context);
-		String conteudoHistorico = persistencia.lerDoArquivo(Persistencia.getFileNameHistorico());
-		String conteudoFavoritos = persistencia.lerDoArquivo(Persistencia.getFileNameFavoritos());
+		Persistence persistence = new Persistence(context);
+		String conteudoHistorico = persistence.lerDoArquivo(Persistence.getFileNameHistorico());
+		String conteudoFavoritos = persistence.lerDoArquivo(Persistence.getFileNameFavoritos());
 
 		FavoritosController favoritosController = new FavoritosController(context);
 		favoritosController.popularProjetos(conteudoFavoritos);
@@ -82,9 +82,9 @@ public class MainMenuView extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Persistencia persistencia = new Persistencia(context);
+				Persistence persistencia = new Persistence(context);
 
-				String strConteudoFavoritos = persistencia.lerDoArquivo(Persistencia.getFileNameFavoritos());
+				String strConteudoFavoritos = persistencia.lerDoArquivo(Persistence.getFileNameFavoritos());
 				Log.i("LOGGER", "Conteudo historico: " + strConteudoFavoritos);
 
 				ListaController.setListaProjetos(FavoritosController.getProjetosFavoritados());
@@ -102,9 +102,9 @@ public class MainMenuView extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Persistencia persistencia = new Persistencia(context);
+				Persistence persistencia = new Persistence(context);
 
-				String strConteudoHistorico = persistencia.lerDoArquivo(Persistencia.getFileNameHistorico());
+				String strConteudoHistorico = persistencia.lerDoArquivo(Persistence.getFileNameHistorico());
 				Log.i("LOGGER", "Conteudo historico: " + strConteudoHistorico);
 
 				ListaController.setListaProjetos(HistoricoController.getProjetosHistorico());

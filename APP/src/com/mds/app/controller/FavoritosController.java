@@ -8,17 +8,17 @@ import android.util.Log;
 import com.mds.app.model.ParlamentarModel;
 import com.mds.app.model.PartidoModel;
 import com.mds.app.model.ProjetoModel;
-import com.mds.app.persistencia.Persistencia;
+import com.mds.app.persistence.Persistence;
 
 public class FavoritosController implements AlteraArquivos {
 
 	private static ArrayList<ProjetoModel> projetosFavoritados = new ArrayList<ProjetoModel>();
 	private static ArrayList<String> projetosFavoritadosCompletoStr = new ArrayList<String>();
 
-	private Persistencia persistencia;
+	private Persistence persistence;
 
 	public FavoritosController(Context context) {
-		persistencia = new Persistencia(context);
+		persistence = new Persistence(context);
 	}
 
 	public FavoritosController() {
@@ -32,7 +32,7 @@ public class FavoritosController implements AlteraArquivos {
 				projetosFavoritadosCompletoStr.add(conteudo);
 				projetosFavoritados.add(projeto);
 
-				persistencia.escreverNoArquivo(Persistencia.getFileNameFavoritos(), conteudo);
+				persistence.escreverNoArquivo(Persistence.getFileNameFavoritos(), conteudo);
 			}
 			else {
 				System.out.println("ELSE DENTRO ADICIONAR FAVORITOS");
@@ -52,7 +52,7 @@ public class FavoritosController implements AlteraArquivos {
 				projetosFavoritadosCompletoStr.remove(stringProjeto);
 				projetosFavoritados.remove(projeto);
 				String conteudoArquivo = projetosEmString();
-				persistencia.reescreverArquivo(Persistencia.getFileNameFavoritos(), conteudoArquivo);
+				persistence.reescreverArquivo(Persistence.getFileNameFavoritos(), conteudoArquivo);
 			}
 			else {
 				System.out.println("ELSE DENTRO REMOVER FAVORITOS");

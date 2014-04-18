@@ -8,17 +8,17 @@ import android.util.Log;
 import com.mds.app.model.ParlamentarModel;
 import com.mds.app.model.PartidoModel;
 import com.mds.app.model.ProjetoModel;
-import com.mds.app.persistencia.Persistencia;
+import com.mds.app.persistence.Persistence;
 
 public class HistoricoController implements AlteraArquivos {
 
 	private static final int MAX_PROJETOS = 10;
 	private static ArrayList<ProjetoModel> projetosHistorico = new ArrayList<ProjetoModel>(MAX_PROJETOS);
 	private static ArrayList<String> projetosHistoricoCompletoStr = new ArrayList<String>();
-	private Persistencia persistencia;
+	private Persistence persistence;
 
 	public HistoricoController(Context context) {
-		persistencia = new Persistencia(context);
+		persistence = new Persistence(context);
 	}
 
 	public HistoricoController() {
@@ -31,7 +31,7 @@ public class HistoricoController implements AlteraArquivos {
 			if (!projetosHistorico.contains(projeto)) {
 				projetosHistoricoCompletoStr.add(conteudo);
 				projetosHistorico.add(projeto);
-				persistencia.escreverNoArquivo(Persistencia.getFileNameHistorico(), conteudo);
+				persistence.escreverNoArquivo(Persistence.getFileNameHistorico(), conteudo);
 			}
 			else {
 				Log.i("LOGGER", "ELSE DENTRO ADICIONAR HISTORICO");
@@ -58,7 +58,7 @@ public class HistoricoController implements AlteraArquivos {
 				projetosHistoricoCompletoStr.remove(stringProjeto);
 				projetosHistorico.remove(projeto);
 				String conteudoArquivo = projetosEmString();
-				persistencia.reescreverArquivo(Persistencia.getFileNameHistorico(), conteudoArquivo);
+				persistence.reescreverArquivo(Persistence.getFileNameHistorico(), conteudoArquivo);
 			}
 			else {
 				System.out.println("ELSE DENTRO REMOVER HISTORICO");

@@ -1,4 +1,4 @@
-package com.mds.app.persistencia;
+package com.mds.app.persistence;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,12 +12,12 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.util.Log;
 
-public class Persistencia extends Activity {
+public class Persistence extends Activity {
 
 	/*
 	 * Pros parametros "fileName" dos metodos, passar ou:
-	 * Persistencia.getFileFavoritos() para gravar no arquivo dos favoritos, ou
-	 * Persistencia.getFileHistorico para gravar no arquivo do historico
+	 * Persistence.getFileFavoritos() para gravar no arquivo dos favoritos, ou
+	 * Persistence.getFileHistorico para gravar no arquivo do historico
 	 */
 
 	private static final String fileNameFavoritos = "favoritos";
@@ -30,7 +30,7 @@ public class Persistencia extends Activity {
 	private File fileFavoritos;
 	private File fileHistorico;
 
-	public Persistencia(Context context) {
+	public Persistence(Context context) {
 		this.context = context;
 		fileFavoritos = new File(this.context.getFilesDir(), fileNameFavoritos);
 		fileHistorico = new File(this.context.getFilesDir(), fileNameHistorico);
@@ -132,10 +132,10 @@ public class Persistencia extends Activity {
 
 	private boolean deletarArquivo(String fileName) {
 		final String strPath;
-		if (fileName.equals(Persistencia.getFileNameFavoritos())) {
+		if (fileName.equals(Persistence.getFileNameFavoritos())) {
 			strPath = fileFavoritos.getAbsolutePath();
 		}
-		else if (fileName.equals(Persistencia.getFileNameHistorico())) {
+		else if (fileName.equals(Persistence.getFileNameHistorico())) {
 			strPath = fileHistorico.getAbsolutePath();
 		}
 		else {
@@ -150,8 +150,8 @@ public class Persistencia extends Activity {
 	}
 
 	private void verificarFileName(String fileName) {
-		if (!fileName.equals(Persistencia.getFileNameFavoritos())
-				&& !fileName.equals(Persistencia.getFileNameHistorico())) {
+		if (!fileName.equals(Persistence.getFileNameFavoritos())
+				&& !fileName.equals(Persistence.getFileNameHistorico())) {
 			throw new IllegalArgumentException("Deve ser passado o arquivo dos favoritos ou do historico!");
 		}
 	}
