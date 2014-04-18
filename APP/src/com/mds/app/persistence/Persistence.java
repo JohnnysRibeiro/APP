@@ -20,28 +20,28 @@ public class Persistence extends Activity {
 	 * Persistence.getFileHistorico para gravar no arquivo do historico
 	 */
 
-	private static final String fileNameFavoritos = "favoritos";
-	private static final String fileNameHistorico = "historico";
+	private static final String favoritesNameFile = "favoritos";
+	private static final String historicNameFile = "historico";
 
 	private Context context;
 	
 	private final Charset charset = Charset.forName("UTF-8");
 
-	private File fileFavoritos;
-	private File fileHistorico;
+	private File favoritesFile;
+	private File historicFile;
 
 	public Persistence(Context context) {
 		this.context = context;
-		fileFavoritos = new File(this.context.getFilesDir(), fileNameFavoritos);
-		fileHistorico = new File(this.context.getFilesDir(), fileNameHistorico);
+		favoritesFile = new File(this.context.getFilesDir(), favoritesNameFile);
+		historicFile = new File(this.context.getFilesDir(), historicNameFile);
 	}
 
-	public void escreverNoArquivo(String fileName, String data) {
+	public void writeInFile(String fileName, String data) {
 		final String TAG = "WRITE";
 		FileOutputStream fileOutputStream = null;
 
 		try {
-			verificarFileName(fileName);
+			verifyFileName(fileName);
 		} catch (IllegalArgumentException e) {
 			Log.i(TAG, e.getMessage());
 			e.printStackTrace();
@@ -76,17 +76,17 @@ public class Persistence extends Activity {
 
 	}
 
-	public void reescreverArquivo(String fileName, String novoConteudo) {
-		deletarArquivo(fileName);
-		escreverNoArquivo(fileName, novoConteudo);
+	public void rewriteFile(String fileName, String newContent) {
+		deleteAFile(fileName);
+		writeInFile(fileName, newContent);
 	}
 
-	public String lerDoArquivo(String fileName) {
+	public String readFromFile(String fileName) {
 		final String TAG = "READ";
 		FileInputStream fileInputStream;
 
 		try {
-			verificarFileName(fileName);
+			verifyFileName(fileName);
 		} catch (IllegalArgumentException e) {
 			Log.i(TAG, e.getMessage());
 			e.printStackTrace();
@@ -130,28 +130,28 @@ public class Persistence extends Activity {
 		return fileContent;
 	}
 
-	private boolean deletarArquivo(String fileName) {
-		final String strPath;
-		if (fileName.equals(Persistence.getFileNameFavoritos())) {
-			strPath = fileFavoritos.getAbsolutePath();
+	private boolean deleteAFile(String fileName) {
+		final String pathString;
+		if (fileName.equals(Persistence.getFavoritesNameFile())) {
+			pathString = favoritesFile.getAbsolutePath();
 		}
-		else if (fileName.equals(Persistence.getFileNameHistorico())) {
-			strPath = fileHistorico.getAbsolutePath();
+		else if (fileName.equals(Persistence.getHistoricNameFile())) {
+			pathString = historicFile.getAbsolutePath();
 		}
 		else {
 			throw new IllegalArgumentException("Deve ser passado o arquivo dos favoritos ou do historico!");
 		}
 
-		File file = new File(strPath);
+		File file = new File(pathString);
 		boolean deleted = file.delete();
-		String deletedStr = (deleted) ? "deleted" : "NOTdeleted";
-		Log.i("DELETE", strPath + ": " + deletedStr);
+		String deletedString = (deleted) ? "deleted" : "NOTdeleted";
+		Log.i("DELETE", pathString + ": " + deletedString);
 		return deleted;
 	}
 
-	private void verificarFileName(String fileName) {
-		if (!fileName.equals(Persistence.getFileNameFavoritos())
-				&& !fileName.equals(Persistence.getFileNameHistorico())) {
+	private void verifyFileName(String fileName) {
+		if (!fileName.equals(Persistence.getFavoritesNameFile())
+				&& !fileName.equals(Persistence.getHistoricNameFile())) {
 			throw new IllegalArgumentException("Deve ser passado o arquivo dos favoritos ou do historico!");
 		}
 	}
@@ -166,28 +166,28 @@ public class Persistence extends Activity {
 		this.context = context;
 	}
 
-	public File getFileFavoritos() {
-		return fileFavoritos;
+	public File getFavoritesFile() {
+		return favoritesFile;
 	}
 
-	public void setFileFavoritos(File fileFavoritos) {
-		this.fileFavoritos = fileFavoritos;
+	public void setFavoritesFile(File favoritesFile) {
+		this.favoritesFile = favoritesFile;
 	}
 
-	public File getFileHistorico() {
-		return fileHistorico;
+	public File getHistoricFile() {
+		return historicFile;
 	}
 
-	public void setFileHistorico(File fileHistorico) {
-		this.fileHistorico = fileHistorico;
+	public void setHistoricFile(File historicFile) {
+		this.historicFile = historicFile;
 	}
 
-	public static String getFileNameFavoritos() {
-		return fileNameFavoritos;
+	public static String getFavoritesNameFile() {
+		return favoritesNameFile;
 	}
 
-	public static String getFileNameHistorico() {
-		return fileNameHistorico;
+	public static String getHistoricNameFile() {
+		return historicNameFile;
 	}
 
 }
