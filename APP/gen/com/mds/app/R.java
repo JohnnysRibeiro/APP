@@ -326,7 +326,7 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment=0x7f030012;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
+        public static final int main_menu=0x7f0a0000;
         public static final int menu_about=0x7f0a0001;
         public static final int perfil=0x7f0a0002;
     }

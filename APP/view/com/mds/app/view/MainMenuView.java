@@ -30,29 +30,29 @@ public class MainMenuView extends Activity {
 		setContentView(R.layout.activity_main_menu);
 
 		Persistence persistence = new Persistence(context);
-		String conteudoHistorico = persistence.lerDoArquivo(Persistence.getFileNameHistorico());
-		String conteudoFavoritos = persistence.lerDoArquivo(Persistence.getFileNameFavoritos());
+		String historicContent = persistence.lerDoArquivo(Persistence.getFileNameHistorico());
+		String favoritesContent = persistence.lerDoArquivo(Persistence.getFileNameFavoritos());
 
-		FavoritosController favoritosController = new FavoritosController(context);
-		favoritosController.popularProjetos(conteudoFavoritos);
+		FavoritosController favoritesController = new FavoritosController(context);
+		favoritesController.popularProjetos(favoritesContent);
 
-		HistoricoController historicoController = new HistoricoController(context);
-		historicoController.popularProjetos(conteudoHistorico);
+		HistoricoController historicController = new HistoricoController(context);
+		historicController.popularProjetos(historicContent);
 
-		busca_addListener();
-		sobre_addListener();
-		favoritos_addListener();
-		historico_addListener();
+		search_addListener();
+		about_addListener();
+		favorites_addListener();
+		historic_addListener();
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.main_menu, menu);
 		return true;
 	}
 
-	private void busca_addListener() {
+	private void search_addListener() {
 		searchButton = (ImageButton) findViewById(R.id.search_button_id);
 		searchButton.setOnClickListener(new OnClickListener() {
 
@@ -64,7 +64,7 @@ public class MainMenuView extends Activity {
 		});
 	}
 
-	private void sobre_addListener() {
+	private void about_addListener() {
 		aboutButton = (ImageButton) findViewById(R.id.about_button_id);
 		aboutButton.setOnClickListener(new OnClickListener() {
 
@@ -76,16 +76,16 @@ public class MainMenuView extends Activity {
 		});
 	}
 
-	private void favoritos_addListener() {
+	private void favorites_addListener() {
 		favoritesButton = (ImageButton) findViewById(R.id.favorites_button_id);
 		favoritesButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Persistence persistencia = new Persistence(context);
+				Persistence persistence = new Persistence(context);
 
-				String strConteudoFavoritos = persistencia.lerDoArquivo(Persistence.getFileNameFavoritos());
-				Log.i("LOGGER", "Conteudo historico: " + strConteudoFavoritos);
+				String favoritesContentString = persistence.lerDoArquivo(Persistence.getFileNameFavoritos());
+				Log.i("LOGGER", "Conteudo historico: " + favoritesContentString);
 
 				ListaController.setListaProjetos(FavoritosController.getProjetosFavoritados());
 				Log.i("ADDL-F", FavoritosController.getProjetosFavoritados().toString());
@@ -96,16 +96,16 @@ public class MainMenuView extends Activity {
 		});
 	}
 
-	private void historico_addListener() {
+	private void historic_addListener() {
 		historicButton = (ImageButton) findViewById(R.id.historic_button_id);
 		historicButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Persistence persistencia = new Persistence(context);
+				Persistence persistence = new Persistence(context);
 
-				String strConteudoHistorico = persistencia.lerDoArquivo(Persistence.getFileNameHistorico());
-				Log.i("LOGGER", "Conteudo historico: " + strConteudoHistorico);
+				String historicContentString = persistence.lerDoArquivo(Persistence.getFileNameHistorico());
+				Log.i("LOGGER", "Conteudo historico: " + historicContentString);
 
 				ListaController.setListaProjetos(HistoricoController.getProjetosHistorico());
 				Intent i = new Intent(MainMenuView.this, ProjectListView.class);
