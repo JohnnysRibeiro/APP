@@ -26,7 +26,7 @@ public class HistoricoController implements AlteraArquivos {
 	}
 
 	@Override
-	public void adicionar(ProjetoModel projeto, String conteudo) {
+	public void addProject(ProjetoModel projeto, String conteudo) {
 		if (!projetosHistoricoCompletoStr.contains(conteudo)) {
 			if (!projetosHistorico.contains(projeto)) {
 				projetosHistoricoCompletoStr.add(conteudo);
@@ -52,12 +52,12 @@ public class HistoricoController implements AlteraArquivos {
 	}
 
 	@Override
-	public void remover(ProjetoModel projeto, String stringProjeto) {
+	public void removeProject(ProjetoModel projeto, String stringProjeto) {
 		if (projetosHistoricoCompletoStr.contains(stringProjeto)) {
 			if (projetosHistorico.contains(projeto)) {
 				projetosHistoricoCompletoStr.remove(stringProjeto);
 				projetosHistorico.remove(projeto);
-				String conteudoArquivo = projetosEmString();
+				String conteudoArquivo = transformProjectsIntoString();
 				persistence.rewriteFile(Persistence.getHistoricNameFile(), conteudoArquivo);
 			}
 			else {
@@ -71,7 +71,7 @@ public class HistoricoController implements AlteraArquivos {
 	}
 
 	@Override
-	public String projetosEmString() {
+	public String transformProjectsIntoString() {
 		String conteudoProjetosHistorico = "";
 
 		for (int i = 0; i < projetosHistoricoCompletoStr.size(); i++) {
@@ -82,7 +82,7 @@ public class HistoricoController implements AlteraArquivos {
 	}
 
 	@Override
-	public void popularProjetos(String strConteudoHistorico) {
+	public void populateProjects(String strConteudoHistorico) {
 		ArrayList<String> splitParts;
 
 		Log.i("POPPROJ-H", "Conteudo historico:");
@@ -139,11 +139,11 @@ public class HistoricoController implements AlteraArquivos {
 			Log.i("POPPROJ-H", "Historico esta vazio");
 		}
 
-		popularListaComProjetos();
+		populateListWithProjects();
 	}
 
 	@Override
-	public void popularListaComProjetos() {
+	public void populateListWithProjects() {
 		if (!(projetosHistorico == null)) {
 			for (int i = 0; i < projetosHistorico.size(); i++) {
 				String stringProjeto = "";

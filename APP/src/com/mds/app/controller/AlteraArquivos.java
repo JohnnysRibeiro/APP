@@ -4,14 +4,14 @@ import com.mds.app.model.ProjetoModel;
 
 public interface AlteraArquivos {
 
-	public void adicionar(ProjetoModel projeto, String conteudo);
+	public void addProject(ProjetoModel projeto, String conteudo);
 
-	public void remover(ProjetoModel projeto, String conteudo);
+	public void removeProject(ProjetoModel projeto, String conteudo);
 
-	public String projetosEmString();
+	public String transformProjectsIntoString();
 
-	public void popularProjetos(String conteudoArquivo);
+	public void populateProjects(String conteudoArquivo);
 
-	public void popularListaComProjetos();
+	public void populateListWithProjects();
 
 }

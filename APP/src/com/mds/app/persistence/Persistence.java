@@ -77,7 +77,7 @@ public class Persistence extends Activity {
 	}
 
 	public void rewriteFile(String fileName, String newContent) {
-		deleteAFile(fileName);
+		removeAFile(fileName);
 		writeInFile(fileName, newContent);
 	}
 
@@ -130,7 +130,7 @@ public class Persistence extends Activity {
 		return fileContent;
 	}
 
-	private boolean deleteAFile(String fileName) {
+	private boolean removeAFile(String fileName) {
 		final String pathString;
 		if (fileName.equals(Persistence.getFavoritesNameFile())) {
 			pathString = favoritesFile.getAbsolutePath();

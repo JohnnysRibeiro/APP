@@ -18,7 +18,7 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.widget.FacebookDialog;
 import com.mds.app.R;
-import com.mds.app.controller.FavoritosController;
+import com.mds.app.controller.FavoritesController;
 import com.mds.app.controller.HistoricoController;
 import com.mds.app.controller.ListaController;
 import com.mds.app.model.ProjetoModel;
@@ -94,13 +94,13 @@ public class ProjectDescriptionView extends Activity {
 		 * HistoricoController. E nao adicionar dois projetos iguais
 		 */
 		if (projetosNoHistorico < maxProjetos) {
-			historicoController.adicionar(projetoAtual, stringProjetoParaHistorico);
+			historicoController.addProject(projetoAtual, stringProjetoParaHistorico);
 		}
 		else {
 			Log.i("LOGGER", "Removendo do historico: " + HistoricoController.getProjetoMaisVelho().getNumero());
-			historicoController.remover(HistoricoController.getProjetoMaisVelho(),
+			historicoController.removeProject(HistoricoController.getProjetoMaisVelho(),
 					HistoricoController.getStringProjetoMaisVelho());
-			historicoController.adicionar(projetoAtual, stringProjetoParaHistorico);
+			historicoController.addProject(projetoAtual, stringProjetoParaHistorico);
 		}
 		Log.i("LOGGER", "Adicionando ao historico: " + projetoAtual.getNumero());
 
@@ -149,7 +149,7 @@ public class ProjectDescriptionView extends Activity {
 		estrelaFavorito = (ImageButton) findViewById(R.id.naoFavorito);
 
 		String stringProjetoParaFavorito = listaController.getStringCompletaParaArquivo();
-		if (FavoritosController.getProjetosFavoritadosCompletoStr().contains(stringProjetoParaFavorito)) {
+		if (FavoritesController.getFavoritedProjectsCompleteString().contains(stringProjetoParaFavorito)) {
 			estrelaFavorito.setImageResource(R.drawable.favorited_img);
 			favoritado = true;
 		}
@@ -163,19 +163,19 @@ public class ProjectDescriptionView extends Activity {
 			@Override
 			public void onClick(View v) {
 
-				FavoritosController favoritosController = new FavoritosController(context);
+				FavoritesController favoritosController = new FavoritesController(context);
 				String stringProjetoParaFavorito = listaController.getStringCompletaParaArquivo();
 
 				if (!favoritado) {
 					estrelaFavorito.setImageResource(R.drawable.favorited_img);
 					favoritado = true;
-					favoritosController.adicionar(projetoAtual, stringProjetoParaFavorito);
+					favoritosController.addProject(projetoAtual, stringProjetoParaFavorito);
 					Log.i("LOGGER", "Favoritando: " + projetoAtual.getNumero());
 				}
 				else {
 					estrelaFavorito.setImageResource(R.drawable.naofavorito);
 					favoritado = false;
-					favoritosController.remover(projetoAtual, stringProjetoParaFavorito);
+					favoritosController.removeProject(projetoAtual, stringProjetoParaFavorito);
 					Log.i("LOGGER", "Desfavoritando: " + projetoAtual.getNumero());
 				}
 			}

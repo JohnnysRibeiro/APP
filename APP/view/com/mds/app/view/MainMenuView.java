@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 
 import com.mds.app.R;
-import com.mds.app.controller.FavoritosController;
+import com.mds.app.controller.FavoritesController;
 import com.mds.app.controller.HistoricoController;
 import com.mds.app.controller.ListaController;
 import com.mds.app.persistence.Persistence;
@@ -33,11 +33,11 @@ public class MainMenuView extends Activity {
 		String historicContent = persistence.readFromFile(Persistence.getHistoricNameFile());
 		String favoritesContent = persistence.readFromFile(Persistence.getFavoritesNameFile());
 
-		FavoritosController favoritesController = new FavoritosController(context);
-		favoritesController.popularProjetos(favoritesContent);
+		FavoritesController favoritesController = new FavoritesController(context);
+		favoritesController.populateProjects(favoritesContent);
 
 		HistoricoController historicController = new HistoricoController(context);
-		historicController.popularProjetos(historicContent);
+		historicController.populateProjects(historicContent);
 
 		search_addListener();
 		about_addListener();
@@ -87,8 +87,8 @@ public class MainMenuView extends Activity {
 				String favoritesContentString = persistence.readFromFile(Persistence.getFavoritesNameFile());
 				Log.i("LOGGER", "Conteudo historico: " + favoritesContentString);
 
-				ListaController.setListaProjetos(FavoritosController.getProjetosFavoritados());
-				Log.i("ADDL-F", FavoritosController.getProjetosFavoritados().toString());
+				ListaController.setListaProjetos(FavoritesController.getFavoritedProjects());
+				Log.i("ADDL-F", FavoritesController.getFavoritedProjects().toString());
 				Log.i("ADDL-F", ListaController.getListaProjetos().toString());
 				Intent i = new Intent(MainMenuView.this, ProjectListView.class);
 				startActivity(i);
