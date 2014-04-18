@@ -150,7 +150,7 @@ public class ProjectDescriptionView extends Activity {
 
 		String stringProjetoParaFavorito = listaController.getStringCompletaParaArquivo();
 		if (FavoritosController.getProjetosFavoritadosCompletoStr().contains(stringProjetoParaFavorito)) {
-			estrelaFavorito.setImageResource(R.drawable.favorito);
+			estrelaFavorito.setImageResource(R.drawable.favorited_img);
 			favoritado = true;
 		}
 		else {
@@ -167,7 +167,7 @@ public class ProjectDescriptionView extends Activity {
 				String stringProjetoParaFavorito = listaController.getStringCompletaParaArquivo();
 
 				if (!favoritado) {
-					estrelaFavorito.setImageResource(R.drawable.favorito);
+					estrelaFavorito.setImageResource(R.drawable.favorited_img);
 					favoritado = true;
 					favoritosController.adicionar(projetoAtual, stringProjetoParaFavorito);
 					Log.i("LOGGER", "Favoritando: " + projetoAtual.getNumero());

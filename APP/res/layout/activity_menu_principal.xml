@@ -29,39 +29,39 @@
         android:src="@drawable/fundo_menu_botoes" />
 
     <ImageButton
-        android:id="@+id/imgbutton_busca"
+        android:id="@+id/search_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="50dp"
         android:layout_y="258dp"
-        android:background="@drawable/botao_busca"
+        android:background="@drawable/button_img_search"
         android:contentDescription="busca" />
     
     <ImageButton
-        android:id="@+id/favoritos"
+        android:id="@+id/favorites_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="52dp"
         android:layout_y="326dp"
-        android:background="@drawable/botao_favoritos"
+        android:background="@drawable/button_img_favorites"
         android:contentDescription="favoritos" />
 
      <ImageButton
-         android:id="@+id/imgbutton_sobre"
+         android:id="@+id/about_button_id"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_x="150dp"
          android:layout_y="258dp"
-         android:background="@drawable/botao_sobre"
+         android:background="@drawable/button_img_about"
          android:contentDescription="sobre" />
 
      <ImageButton
-         android:id="@+id/historico"
+         android:id="@+id/historic_button_id"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_x="150dp"
          android:layout_y="326dp"
-         android:background="@drawable/botao_historico"
+         android:background="@drawable/button_img_historic"
          android:contentDescription="historico" />
 
      <TextView

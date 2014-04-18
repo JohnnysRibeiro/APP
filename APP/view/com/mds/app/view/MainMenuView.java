@@ -19,10 +19,10 @@ import com.mds.app.persistencia.Persistencia;
 public class MainMenuView extends Activity {
 
 	Context context = this;
-	ImageButton busca;
-	ImageButton sobre;
-	ImageButton favoritos;
-	ImageButton historico;
+	ImageButton searchButton;
+	ImageButton aboutButton;
+	ImageButton favoritesButton;
+	ImageButton historicButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +53,8 @@ public class MainMenuView extends Activity {
 	}
 
 	private void busca_addListener() {
-		busca = (ImageButton) findViewById(R.id.imgbutton_busca);
-		busca.setOnClickListener(new OnClickListener() {
+		searchButton = (ImageButton) findViewById(R.id.search_button_id);
+		searchButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -65,8 +65,8 @@ public class MainMenuView extends Activity {
 	}
 
 	private void sobre_addListener() {
-		sobre = (ImageButton) findViewById(R.id.imgbutton_sobre);
-		sobre.setOnClickListener(new OnClickListener() {
+		aboutButton = (ImageButton) findViewById(R.id.about_button_id);
+		aboutButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -77,8 +77,8 @@ public class MainMenuView extends Activity {
 	}
 
 	private void favoritos_addListener() {
-		favoritos = (ImageButton) findViewById(R.id.favoritos);
-		favoritos.setOnClickListener(new OnClickListener() {
+		favoritesButton = (ImageButton) findViewById(R.id.favorites_button_id);
+		favoritesButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -97,8 +97,8 @@ public class MainMenuView extends Activity {
 	}
 
 	private void historico_addListener() {
-		historico = (ImageButton) findViewById(R.id.historico);
-		historico.setOnClickListener(new OnClickListener() {
+		historicButton = (ImageButton) findViewById(R.id.historic_button_id);
+		historicButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {

@@ -190,12 +190,12 @@ containing a value of this type.
     public static final class drawable {
         public static final int app_bg=0x7f020000;
         public static final int app_logo=0x7f020001;
-        public static final int botao_busca=0x7f020002;
-        public static final int botao_favoritos=0x7f020003;
-        public static final int botao_historico=0x7f020004;
-        public static final int botao_pesquisar=0x7f020005;
-        public static final int botao_sobre=0x7f020006;
-        public static final int button_busca_smaller=0x7f020007;
+        public static final int botao_pesquisar=0x7f020002;
+        public static final int button_busca_smaller=0x7f020003;
+        public static final int button_img_about=0x7f020004;
+        public static final int button_img_favorites=0x7f020005;
+        public static final int button_img_historic=0x7f020006;
+        public static final int button_img_search=0x7f020007;
         public static final int button_sobre_smaller=0x7f020008;
         public static final int com_facebook_button_blue=0x7f020009;
         public static final int com_facebook_button_blue_focused=0x7f02000a;
@@ -231,7 +231,7 @@ containing a value of this type.
         public static final int com_facebook_top_button=0x7f020027;
         public static final int com_facebook_usersettingsfragment_background_gradient=0x7f020028;
         public static final int facebook=0x7f020029;
-        public static final int favorito=0x7f02002a;
+        public static final int favorited_img=0x7f02002a;
         public static final int fundo_menu_botoes=0x7f02002b;
         public static final int ic_launcher=0x7f02002c;
         public static final int naofavorito=0x7f02002d;
@@ -248,6 +248,7 @@ containing a value of this type.
         public static final int voltar=0x7f020038;
     }
     public static final class id {
+        public static final int about_button_id=0x7f040015;
         public static final int action_settings=0x7f040036;
         public static final int com_facebook_login_activity_progress_bar=0x7f040023;
         public static final int com_facebook_picker_activity_circle=0x7f040022;
@@ -269,15 +270,13 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_login_button=0x7f040035;
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f040033;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040034;
-        public static final int favoritos=0x7f040014;
+        public static final int favorites_button_id=0x7f040014;
         public static final int fundo_menu_botoes=0x7f040012;
-        public static final int historico=0x7f040016;
+        public static final int historic_button_id=0x7f040016;
         public static final int horizontalScrollView1=0x7f04000d;
         public static final int imageView1=0x7f04000e;
         public static final int imageView2=0x7f04000f;
         public static final int imageView3=0x7f040010;
-        public static final int imgbutton_busca=0x7f040013;
-        public static final int imgbutton_sobre=0x7f040015;
         public static final int imgviewLogo=0x7f040011;
         public static final int large=0x7f040002;
         public static final int linearLayout=0x7f040003;
@@ -286,6 +285,7 @@ containing a value of this type.
         public static final int normal=0x7f040001;
         public static final int okbutton=0x7f04000c;
         public static final int picker_subtitle=0x7f040030;
+        public static final int search_button_id=0x7f040013;
         public static final int small=0x7f040000;
         public static final int spinner1=0x7f040009;
         public static final int spinner2=0x7f04000a;
