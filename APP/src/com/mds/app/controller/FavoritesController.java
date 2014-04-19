@@ -10,7 +10,7 @@ import com.mds.app.model.PartidoModel;
 import com.mds.app.model.ProjetoModel;
 import com.mds.app.persistence.Persistence;
 
-public class FavoritesController implements AlteraArquivos {
+public class FavoritesController implements ModifyFilesController {
 
 	private static ArrayList<ProjetoModel> favoritedProjects = new ArrayList<ProjetoModel>();
 	private static ArrayList<String> favoritedProjectsCompleteString = new ArrayList<String>();

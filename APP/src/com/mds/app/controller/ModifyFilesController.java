@@ -2,7 +2,7 @@ package com.mds.app.controller;
 
 import com.mds.app.model.ProjetoModel;
 
-public interface AlteraArquivos {
+public interface ModifyFilesController {
 
 	public void addProject(ProjetoModel projeto, String conteudo);
 

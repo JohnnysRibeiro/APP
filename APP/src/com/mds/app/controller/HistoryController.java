@@ -10,7 +10,7 @@ import com.mds.app.model.PartidoModel;
 import com.mds.app.model.ProjetoModel;
 import com.mds.app.persistence.Persistence;
 
-public class HistoryController implements AlteraArquivos {
+public class HistoryController implements ModifyFilesController {
 
 	private static final int MAX_NUMBER_OF_PROJECTS = 10;
 	private static ArrayList<ProjetoModel> historyOfProjects = new ArrayList<ProjetoModel>(MAX_NUMBER_OF_PROJECTS);
