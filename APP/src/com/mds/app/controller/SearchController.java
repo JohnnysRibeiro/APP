@@ -185,7 +185,7 @@ public class SearchController {
 
 		if (errors == "") {
 			ProcuraProjetoController.atualizarDadosPesquisaProjeto(year, kindOfProjectAcronym, number, initialDate);
-			ProcuraPartidoController.atualizaDadosPesquisaPartido(stateAbbreviation, politicalPartyAcronym);
+			SearchForPoliticalPartyController.updateDataForPoliticalPartySearch(stateAbbreviation, politicalPartyAcronym);
 			SearchForParliamentaryController.updateDataFromParliamentarySearch(authorName);
 			return true;
 		}
