@@ -84,8 +84,8 @@ public class ProjectDescriptionView extends Activity {
 
 		favoritar_addListener();
 
-		final int projetosNoHistorico = HistoryController.getNumeroDeProjetosNoHistorico();
-		final int maxProjetos = HistoryController.getMaxProjetos();
+		final int projetosNoHistorico = HistoryController.getNumberOfProjectsIntoHistory();
+		final int maxProjetos = HistoryController.getMaxNumberOfProjects();
 		String stringProjetoParaHistorico = listaController.getCompleteStringForAFile();
 		HistoryController historicoController = new HistoryController(context);
 
@@ -97,9 +97,9 @@ public class ProjectDescriptionView extends Activity {
 			historicoController.addProject(projetoAtual, stringProjetoParaHistorico);
 		}
 		else {
-			Log.i("LOGGER", "Removendo do historico: " + HistoryController.getProjetoMaisVelho().getNumero());
-			historicoController.removeProject(HistoryController.getProjetoMaisVelho(),
-					HistoryController.getStringProjetoMaisVelho());
+			Log.i("LOGGER", "Removendo do historico: " + HistoryController.getOldestProject().getNumero());
+			historicoController.removeProject(HistoryController.getOldestProject(),
+					HistoryController.getOldestProjectAsString());
 			historicoController.addProject(projetoAtual, stringProjetoParaHistorico);
 		}
 		Log.i("LOGGER", "Adicionando ao historico: " + projetoAtual.getNumero());

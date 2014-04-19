@@ -107,7 +107,7 @@ public class MainMenuView extends Activity {
 				String historicContentString = persistence.readFromFile(Persistence.getHistoryNameFile());
 				Log.i("LOGGER", "Conteudo historico: " + historicContentString);
 
-				ListController.setProjectsList(HistoryController.getProjetosHistorico());
+				ListController.setProjectsList(HistoryController.getHistoryOfProjects());
 				Intent i = new Intent(MainMenuView.this, ProjectListView.class);
 				startActivity(i);
 			}
