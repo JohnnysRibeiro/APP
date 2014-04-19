@@ -184,7 +184,7 @@ public class SearchController {
 		politicalPartyAcronym = ValidaEntrada.garanteResultadoPartido(authorName,politicalPartyAcronym);
 
 		if (errors == "") {
-			ProcuraProjetoController.atualizarDadosPesquisaProjeto(year, kindOfProjectAcronym, number, initialDate);
+			SearchForProjectController.updateDataFromProjectSearch(year, kindOfProjectAcronym, number, initialDate);
 			SearchForPoliticalPartyController.updateDataForPoliticalPartySearch(stateAbbreviation, politicalPartyAcronym);
 			SearchForParliamentaryController.updateDataFromParliamentarySearch(authorName);
 			return true;
