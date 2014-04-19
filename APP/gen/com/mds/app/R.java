@@ -194,7 +194,7 @@ containing a value of this type.
         public static final int button_busca_smaller=0x7f020003;
         public static final int button_img_about=0x7f020004;
         public static final int button_img_favorites=0x7f020005;
-        public static final int button_img_historic=0x7f020006;
+        public static final int button_img_history=0x7f020006;
         public static final int button_img_search=0x7f020007;
         public static final int button_sobre_smaller=0x7f020008;
         public static final int com_facebook_button_blue=0x7f020009;
@@ -272,7 +272,7 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040034;
         public static final int favorites_button_id=0x7f040014;
         public static final int fundo_menu_botoes=0x7f040012;
-        public static final int historic_button_id=0x7f040016;
+        public static final int history_button_id=0x7f040016;
         public static final int horizontalScrollView1=0x7f04000d;
         public static final int imageView1=0x7f04000e;
         public static final int imageView2=0x7f04000f;

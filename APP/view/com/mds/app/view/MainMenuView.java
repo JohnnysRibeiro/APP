@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 
 import com.mds.app.R;
 import com.mds.app.controller.FavoritesController;
-import com.mds.app.controller.HistoricController;
+import com.mds.app.controller.HistoryController;
 import com.mds.app.controller.ListController;
 import com.mds.app.persistence.Persistence;
 
@@ -22,7 +22,7 @@ public class MainMenuView extends Activity {
 	ImageButton searchButton;
 	ImageButton aboutButton;
 	ImageButton favoritesButton;
-	ImageButton historicButton;
+	ImageButton historyButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class MainMenuView extends Activity {
 		FavoritesController favoritesController = new FavoritesController(context);
 		favoritesController.populateProjects(favoritesContent);
 
-		HistoricController historicController = new HistoricController(context);
+		HistoryController historicController = new HistoryController(context);
 		historicController.populateProjects(historicContent);
 
 		search_addListener();
@@ -97,8 +97,8 @@ public class MainMenuView extends Activity {
 	}
 
 	private void historic_addListener() {
-		historicButton = (ImageButton) findViewById(R.id.historic_button_id);
-		historicButton.setOnClickListener(new OnClickListener() {
+		historyButton = (ImageButton) findViewById(R.id.history_button_id);
+		historyButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -107,7 +107,7 @@ public class MainMenuView extends Activity {
 				String historicContentString = persistence.readFromFile(Persistence.getHistoricNameFile());
 				Log.i("LOGGER", "Conteudo historico: " + historicContentString);
 
-				ListController.setProjectsList(HistoricController.getProjetosHistorico());
+				ListController.setProjectsList(HistoryController.getProjetosHistorico());
 				Intent i = new Intent(MainMenuView.this, ProjectListView.class);
 				startActivity(i);
 			}
