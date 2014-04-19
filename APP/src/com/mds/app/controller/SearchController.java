@@ -13,14 +13,14 @@ import com.mds.app.services.Endereco;
 import com.mds.app.services.RecebeHTTP;
 import com.mds.app.services.XMLParser;
 
-public class BuscaController {
+public class SearchController {
 
 	private RecebeHTTP recebeHTTP;
 	private XMLParser xmlParser;
 	private boolean temConexao;
 	private String textoOffline;
 
-	public BuscaController() {
+	public SearchController() {
 		xmlParser = new XMLParser();
 	}
 

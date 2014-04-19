@@ -18,7 +18,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.mds.app.R;
-import com.mds.app.controller.BuscaController;
+import com.mds.app.controller.SearchController;
 import com.mds.app.controller.ListController;
 import com.mds.app.model.ProjetoModel;
 import com.mds.app.util.CancelTaskOnCancelListener;
@@ -28,7 +28,7 @@ public class SearchView extends Activity {
 
 	private ProgressDialog progressDialog;
 	private ImageButton searchButton;
-	private BuscaController searchController;
+	private SearchController searchController;
 	private ConexaoInternet connection;
 
 	public SearchView() {
@@ -42,7 +42,7 @@ public class SearchView extends Activity {
 		StrictMode.setThreadPolicy(policy);
 		setContentView(R.layout.activity_busca);
 
-		searchController = new BuscaController();
+		searchController = new SearchController();
 		connection = new ConexaoInternet(this);
 
 		searchButton_addListener();
