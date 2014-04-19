@@ -18,21 +18,21 @@ import com.mds.app.util.StableArrayAdapter;
 
 public class ProjectListView extends Activity {
 
-	private ListController listaController;
-	private ArrayList<String> stringProjetos;
+	private ListController listController;
+	private ArrayList<String> stringOfAProject;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		ListView listView = new ListView(this);
-		listaController = new ListController();
+		listController = new ListController();
 
-		stringProjetos = listaController.transformAProjectListIntoAnArrayList();
-		Log.i("LISTA", stringProjetos.toString());
+		stringOfAProject = listController.transformAProjectListIntoAnArrayList();
+		Log.i("LISTA", stringOfAProject.toString());
 
 		final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1,
-				stringProjetos);
+				stringOfAProject);
 
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -42,7 +42,7 @@ public class ProjectListView extends Activity {
 				view.animate().setDuration(1).alpha(1).withEndAction(new Runnable() {
 					@Override
 					public void run() {
-						if (!stringProjetos.get(position).equals("Nada encontrado.")) {
+						if (!stringOfAProject.get(position).equals("Nada encontrado.")) {
 							ListController.setActualProject(ListController.getProjectsList().get(position));
 							Intent i = new Intent(ProjectListView.this, ProjectDescriptionView.class);
 							startActivity(i);
