@@ -15,25 +15,25 @@ import android.util.Log;
 public class Persistence extends Activity {
 
 	/*
-	 * Pros parametros "fileName" dos metodos, passar ou:
-	 * Persistence.getFileFavoritos() para gravar no arquivo dos favoritos, ou
-	 * Persistence.getFileHistorico para gravar no arquivo do historico
+	 * For "fileName" parameters from methods we need to pass
+	 * Persistence.getFavoritesFile() to save the favorite into the file
+	 * or Persistence.getHistoryFile() to save into the history file
 	 */
 
 	private static final String favoritesNameFile = "favoritos";
-	private static final String historicNameFile = "historico";
+	private static final String historyNameFile = "historico";
 
 	private Context context;
 	
 	private final Charset charset = Charset.forName("UTF-8");
 
 	private File favoritesFile;
-	private File historicFile;
+	private File historyFile;
 
 	public Persistence(Context context) {
 		this.context = context;
 		favoritesFile = new File(this.context.getFilesDir(), favoritesNameFile);
-		historicFile = new File(this.context.getFilesDir(), historicNameFile);
+		historyFile = new File(this.context.getFilesDir(), historyNameFile);
 	}
 
 	public void writeInFile(String fileName, String data) {
@@ -135,8 +135,8 @@ public class Persistence extends Activity {
 		if (fileName.equals(Persistence.getFavoritesNameFile())) {
 			pathString = favoritesFile.getAbsolutePath();
 		}
-		else if (fileName.equals(Persistence.getHistoricNameFile())) {
-			pathString = historicFile.getAbsolutePath();
+		else if (fileName.equals(Persistence.getHistoryNameFile())) {
+			pathString = historyFile.getAbsolutePath();
 		}
 		else {
 			throw new IllegalArgumentException("Deve ser passado o arquivo dos favoritos ou do historico!");
@@ -151,12 +151,10 @@ public class Persistence extends Activity {
 
 	private void verifyFileName(String fileName) {
 		if (!fileName.equals(Persistence.getFavoritesNameFile())
-				&& !fileName.equals(Persistence.getHistoricNameFile())) {
+				&& !fileName.equals(Persistence.getHistoryNameFile())) {
 			throw new IllegalArgumentException("Deve ser passado o arquivo dos favoritos ou do historico!");
 		}
 	}
-
-	// ////////////////////////////////
 
 	public Context getContext() {
 		return context;
@@ -174,20 +172,20 @@ public class Persistence extends Activity {
 		this.favoritesFile = favoritesFile;
 	}
 
-	public File getHistoricFile() {
-		return historicFile;
+	public File getHistoryFile() {
+		return historyFile;
 	}
 
-	public void setHistoricFile(File historicFile) {
-		this.historicFile = historicFile;
+	public void setHistoryFile(File historyFile) {
+		this.historyFile = historyFile;
 	}
 
 	public static String getFavoritesNameFile() {
 		return favoritesNameFile;
 	}
 
-	public static String getHistoricNameFile() {
-		return historicNameFile;
+	public static String getHistoryNameFile() {
+		return historyNameFile;
 	}
 
 }

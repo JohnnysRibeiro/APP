@@ -13,8 +13,8 @@ import com.mds.app.persistence.Persistence;
 public class HistoryController implements AlteraArquivos {
 
 	private static final int MAX_PROJECTS = 10;
-	private static ArrayList<ProjetoModel> historicOfProjects = new ArrayList<ProjetoModel>(MAX_PROJECTS);
-	private static ArrayList<String> historicOfProjectsCompleteString = new ArrayList<String>();
+	private static ArrayList<ProjetoModel> historyOfProjects = new ArrayList<ProjetoModel>(MAX_PROJECTS);
+	private static ArrayList<String> historyOfProjectsCompleteString = new ArrayList<String>();
 	private Persistence persistence;
 
 	public HistoryController(Context context) {
@@ -27,11 +27,11 @@ public class HistoryController implements AlteraArquivos {
 
 	@Override
 	public void addProject(ProjetoModel project, String content) {
-		if (!historicOfProjectsCompleteString.contains(content)) {
-			if (!historicOfProjects.contains(project)) {
-				historicOfProjectsCompleteString.add(content);
-				historicOfProjects.add(project);
-				persistence.writeInFile(Persistence.getHistoricNameFile(), content);
+		if (!historyOfProjectsCompleteString.contains(content)) {
+			if (!historyOfProjects.contains(project)) {
+				historyOfProjectsCompleteString.add(content);
+				historyOfProjects.add(project);
+				persistence.writeInFile(Persistence.getHistoryNameFile(), content);
 			}
 			else {
 				Log.i("LOGGER", "ELSE DENTRO ADICIONAR HISTORICO");
@@ -43,11 +43,11 @@ public class HistoryController implements AlteraArquivos {
 			 * goes to the end of the line
 			 */
 			Log.i("LOGGER", "ELSE ADICIONAR HISTORICO");
-			historicOfProjects.remove(project);
+			historyOfProjects.remove(project);
 			ArrayList<ProjetoModel> historicOfProjectsUpdated = new ArrayList<ProjetoModel>(MAX_PROJECTS);
 			historicOfProjectsUpdated.add(0, project);
-			for (int i = 1; i < historicOfProjects.size(); i++) {
-				historicOfProjectsUpdated.add(i, historicOfProjects.get(i - 1));
+			for (int i = 1; i < historyOfProjects.size(); i++) {
+				historicOfProjectsUpdated.add(i, historyOfProjects.get(i - 1));
 			}
 			setProjetosHistorico(historicOfProjectsUpdated);
 		}
@@ -55,12 +55,12 @@ public class HistoryController implements AlteraArquivos {
 
 	@Override
 	public void removeProject(ProjetoModel projeto, String stringProjeto) {
-		if (historicOfProjectsCompleteString.contains(stringProjeto)) {
-			if (historicOfProjects.contains(projeto)) {
-				historicOfProjectsCompleteString.remove(stringProjeto);
-				historicOfProjects.remove(projeto);
+		if (historyOfProjectsCompleteString.contains(stringProjeto)) {
+			if (historyOfProjects.contains(projeto)) {
+				historyOfProjectsCompleteString.remove(stringProjeto);
+				historyOfProjects.remove(projeto);
 				String conteudoArquivo = transformProjectsIntoString();
-				persistence.rewriteFile(Persistence.getHistoricNameFile(), conteudoArquivo);
+				persistence.rewriteFile(Persistence.getHistoryNameFile(), conteudoArquivo);
 			}
 			else {
 				System.out.println("ELSE DENTRO REMOVER HISTORICO");
@@ -76,8 +76,8 @@ public class HistoryController implements AlteraArquivos {
 	public String transformProjectsIntoString() {
 		String conteudoProjetosHistorico = "";
 
-		for (int i = 0; i < historicOfProjectsCompleteString.size(); i++) {
-			conteudoProjetosHistorico += historicOfProjectsCompleteString.get(i);
+		for (int i = 0; i < historyOfProjectsCompleteString.size(); i++) {
+			conteudoProjetosHistorico += historyOfProjectsCompleteString.get(i);
 		}
 
 		return conteudoProjetosHistorico;
@@ -92,7 +92,7 @@ public class HistoryController implements AlteraArquivos {
 		final int separadoresPorProjeto = 11;
 		final int numeroDeProjetosNoArquivo;
 		int numeroDeSeparadores = 0;
-		historicOfProjects = new ArrayList<ProjetoModel>();
+		historyOfProjects = new ArrayList<ProjetoModel>();
 
 		if (strConteudoHistorico.contains("~")) {
 			for (int i = 0; i < strConteudoHistorico.length(); i++) {
@@ -132,7 +132,7 @@ public class HistoryController implements AlteraArquivos {
 				projeto.setStatus(statusProjeto);
 				projeto.setId(idProjeto);
 
-				historicOfProjects.add(projeto);
+				historyOfProjects.add(projeto);
 
 				Log.i("POPPROJ-H", "Adicionando: " + projeto.toString());
 			}
@@ -146,27 +146,27 @@ public class HistoryController implements AlteraArquivos {
 
 	@Override
 	public void populateListWithProjects() {
-		if (!(historicOfProjects == null)) {
-			for (int i = 0; i < historicOfProjects.size(); i++) {
+		if (!(historyOfProjects == null)) {
+			for (int i = 0; i < historyOfProjects.size(); i++) {
 				String stringProjeto = "";
-				stringProjeto += historicOfProjects.get(i).getNome();
+				stringProjeto += historyOfProjects.get(i).getNome();
 				stringProjeto += "\nNumero: ";
-				stringProjeto += historicOfProjects.get(i).getNumero();
+				stringProjeto += historyOfProjects.get(i).getNumero();
 				stringProjeto += "\nAno:  ";
-				stringProjeto += historicOfProjects.get(i).getAno();
+				stringProjeto += historyOfProjects.get(i).getAno();
 				stringProjeto += "\nSigla: ";
-				stringProjeto += historicOfProjects.get(i).getSigla();
+				stringProjeto += historyOfProjects.get(i).getSigla();
 				stringProjeto += "\nData de Apresentação: ";
-				stringProjeto += historicOfProjects.get(i).getData();
+				stringProjeto += historyOfProjects.get(i).getData();
 				stringProjeto += "\nDescrição: ";
-				stringProjeto += historicOfProjects.get(i).getExplicacao();
+				stringProjeto += historyOfProjects.get(i).getExplicacao();
 				stringProjeto += "\nParlamentar: ";
-				stringProjeto += historicOfProjects.get(i).getParlamentar().getNome();
+				stringProjeto += historyOfProjects.get(i).getParlamentar().getNome();
 				stringProjeto += "\nPartido: ";
-				stringProjeto += historicOfProjects.get(i).getParlamentar().getPartido().getSiglaPartido();
+				stringProjeto += historyOfProjects.get(i).getParlamentar().getPartido().getSiglaPartido();
 				stringProjeto += "\nEstado: ";
-				stringProjeto += historicOfProjects.get(i).getParlamentar().getPartido().getUf();
-				historicOfProjectsCompleteString.add(i, stringProjeto);
+				stringProjeto += historyOfProjects.get(i).getParlamentar().getPartido().getUf();
+				historyOfProjectsCompleteString.add(i, stringProjeto);
 			}
 		}
 		else {
@@ -175,23 +175,23 @@ public class HistoryController implements AlteraArquivos {
 	}
 
 	public static ArrayList<ProjetoModel> getProjetosHistorico() {
-		return historicOfProjects;
+		return historyOfProjects;
 	}
 
 	public static void setProjetosHistorico(ArrayList<ProjetoModel> projetosHistorico) {
-		HistoryController.historicOfProjects = projetosHistorico;
+		HistoryController.historyOfProjects = projetosHistorico;
 	}
 
 	public static ArrayList<String> getProjetosHistoricoCompletoStr() {
-		return historicOfProjectsCompleteString;
+		return historyOfProjectsCompleteString;
 	}
 
 	public static void setProjetosHistoricoCompletoStr(ArrayList<String> projetosHistoricoCompletoStr) {
-		HistoryController.historicOfProjectsCompleteString = projetosHistoricoCompletoStr;
+		HistoryController.historyOfProjectsCompleteString = projetosHistoricoCompletoStr;
 	}
 
 	public static int getNumeroDeProjetosNoHistorico() {
-		return historicOfProjects.size();
+		return historyOfProjects.size();
 	}
 
 	public static int getMaxProjetos() {
@@ -199,14 +199,14 @@ public class HistoryController implements AlteraArquivos {
 	}
 
 	public static ProjetoModel getProjetoMaisVelho() throws NullPointerException {
-		ProjetoModel projeto = historicOfProjects.get(0);
-		projeto = historicOfProjects.get(0);
+		ProjetoModel projeto = historyOfProjects.get(0);
+		projeto = historyOfProjects.get(0);
 		return projeto;
 	}
 
 	public static String getStringProjetoMaisVelho() throws IndexOutOfBoundsException {
 		String projetoString = "";
-		projetoString = historicOfProjectsCompleteString.get(0);
+		projetoString = historyOfProjectsCompleteString.get(0);
 		return projetoString;
 	}
 }
