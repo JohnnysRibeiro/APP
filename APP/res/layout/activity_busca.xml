@@ -98,13 +98,13 @@
 	/>
 
     <ImageButton
-        android:id="@+id/okbutton"
+        android:id="@+id/search_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/spinner2"
         android:contentDescription="@string/imgbuttonOK"
-        android:src="@drawable/pesquisar2"
+        android:src="@drawable/button_img_search_2"
         android:background="?android:attr/selectableItemBackground" />
     
 </RelativeLayout>

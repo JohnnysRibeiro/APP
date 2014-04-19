@@ -27,9 +27,9 @@ import com.mds.app.util.ConexaoInternet;
 public class SearchView extends Activity {
 
 	private ProgressDialog progressDialog;
-	private ImageButton botaoPesquisar;
-	private BuscaController buscaController;
-	private ConexaoInternet conexao;
+	private ImageButton searchButton;
+	private BuscaController searchController;
+	private ConexaoInternet connection;
 
 	public SearchView() {
 
@@ -42,41 +42,41 @@ public class SearchView extends Activity {
 		StrictMode.setThreadPolicy(policy);
 		setContentView(R.layout.activity_busca);
 
-		buscaController = new BuscaController();
-		conexao = new ConexaoInternet(this);
+		searchController = new BuscaController();
+		connection = new ConexaoInternet(this);
 
-		botaoPesquisar_addListener();
+		searchButton_addListener();
 
-		if (conexao.ChecarConexaoInternet()) {
-			buscaController.setTemConexao(true);
+		if (connection.ChecarConexaoInternet()) {
+			searchController.setTemConexao(true);
 		}
 		else {
-			/* implementar nova persistencia */
+			/* implement a new persistence */
 		}
 	}
 
-	private void botaoPesquisar_addListener() {
-		botaoPesquisar = (ImageButton) findViewById(R.id.okbutton);
-		botaoPesquisar.setOnClickListener(new OnClickListener() {
+	private void searchButton_addListener() {
+		searchButton = (ImageButton) findViewById(R.id.search_button);
+		searchButton.setOnClickListener(new OnClickListener() {
 
 			Spinner spinner1 = (Spinner) findViewById(R.id.spinner1);
 			Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-			EditText numeroTexto = (EditText) findViewById(R.id.textNumero);
-			EditText anoTexto = (EditText) findViewById(R.id.textAno);
-			EditText dataInicialTexto = (EditText) findViewById(R.id.textDataIni);
-			EditText nomeAutorTexto = (EditText) findViewById(R.id.textNomeAutor);
-			Spinner siglaPartidoTexto = (Spinner) findViewById(R.id.textSiglaPartido);
+			EditText textNumber = (EditText) findViewById(R.id.textNumero);
+			EditText textYear = (EditText) findViewById(R.id.textAno);
+			EditText textInitialDate = (EditText) findViewById(R.id.textDataIni);
+			EditText textAuthorName = (EditText) findViewById(R.id.textNomeAutor);
+			Spinner textPoliticalPartyAcronym = (Spinner) findViewById(R.id.textSiglaPartido);
 
 			@Override
 			public void onClick(View v) {
 
-				boolean validacao = buscaController.atualizarDadosDaPesquisa(anoTexto.getText().toString(),
-						String.valueOf(spinner1.getSelectedItem()), numeroTexto.getText().toString(),
-						dataInicialTexto.getText().toString(), nomeAutorTexto.getText().toString(),
-						String.valueOf(siglaPartidoTexto.getSelectedItem()),
+				boolean validation = searchController.atualizarDadosDaPesquisa(textYear.getText().toString(),
+						String.valueOf(spinner1.getSelectedItem()), textNumber.getText().toString(),
+						textInitialDate.getText().toString(), textAuthorName.getText().toString(),
+						String.valueOf(textPoliticalPartyAcronym.getSelectedItem()),
 						String.valueOf(spinner2.getSelectedItem()));
-				if (validacao) {
-					new PesquisarProjetoTask().execute();
+				if (validation) {
+					new SearchForProjectsTask().execute();
 				}
 				else {
 					Toast.makeText(SearchView.this, "Dados Invalidos", Toast.LENGTH_SHORT).show();
@@ -92,7 +92,7 @@ public class SearchView extends Activity {
 		return true;
 	}
 
-	private class PesquisarProjetoTask extends AsyncTask<Void, Void, List<ProjetoModel>> {
+	private class SearchForProjectsTask extends AsyncTask<Void, Void, List<ProjetoModel>> {
 
 		@Override
 		protected void onPreExecute() {
@@ -103,8 +103,8 @@ public class SearchView extends Activity {
 		@Override
 		protected List<ProjetoModel> doInBackground(Void... params) {
 			Log.i("LOGGER", "Starting...doInBackground loadList");
-			List<ProjetoModel> listaProjetos = buscaController.procurar();
-			return listaProjetos;
+			List<ProjetoModel> projectsList = searchController.procurar();
+			return projectsList;
 		}
 
 		@Override
