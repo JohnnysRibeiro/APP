@@ -10,16 +10,16 @@ import com.mds.app.model.ParlamentarModel;
 import com.mds.app.model.PartidoModel;
 import com.mds.app.model.ProjetoModel;
 
-public class ProposicaoController extends DefaultHandler {
+public class PropositionController extends DefaultHandler {
 
 	private StringBuffer buffer;
 
-	private ArrayList<ProjetoModel> listaProjetos;
-	private ProjetoModel projeto;
-	private ParlamentarModel parlamentar;
-	private PartidoModel partido;
+	private ArrayList<ProjetoModel> listOfProjects;
+	private ProjetoModel project;
+	private ParlamentarModel parliamentary;
+	private PartidoModel politicalParty;
 
-	public ProposicaoController() {
+	public PropositionController() {
 		buffer = new StringBuffer();
 	}
 
@@ -30,12 +30,12 @@ public class ProposicaoController extends DefaultHandler {
 		buffer.setLength(0);
 
 		if (localName.equals("proposicoes")) {
-			listaProjetos = new ArrayList<ProjetoModel>();
+			listOfProjects = new ArrayList<ProjetoModel>();
 		}
 		else if (localName.equals("proposicao")) {
-			projeto = new ProjetoModel();
-			parlamentar = new ParlamentarModel();
-			partido = new PartidoModel();
+			project = new ProjetoModel();
+			parliamentary = new ParlamentarModel();
+			politicalParty = new PartidoModel();
 		}
 		else {
 			// throw new IllegalArgumentException("localName "+ localName +" invalida");
@@ -46,42 +46,42 @@ public class ProposicaoController extends DefaultHandler {
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 
 		if (localName.equals("proposicao")) {
-			listaProjetos.add(projeto);
-			projeto.setParlamentar(parlamentar);
-			parlamentar.setPartido(partido);
+			listOfProjects.add(project);
+			project.setParlamentar(parliamentary);
+			parliamentary.setPartido(politicalParty);
 		}
 		else if (localName.equals("id")) {
-			projeto.setId(buffer.toString());
+			project.setId(buffer.toString());
 		}
 		else if (localName.equals("ano")) {
-			projeto.setAno(buffer.toString());
+			project.setAno(buffer.toString());
 		}
 		else if (localName.equals("nome")) {
-			projeto.setNome(buffer.toString());
+			project.setNome(buffer.toString());
 		}
 		else if (localName.equals("sigla")) {
-			projeto.setSigla(buffer.toString());
+			project.setSigla(buffer.toString());
 		}
 		else if (localName.equals("numero")) {
-			projeto.setNumero(buffer.toString());
+			project.setNumero(buffer.toString());
 		}
 		else if (localName.equals("datApresentacao")) {
-			projeto.setData(buffer.toString());
+			project.setData(buffer.toString());
 		}
 		else if (localName.equals("descricao")) {
-			projeto.setStatus(buffer.toString());
+			project.setStatus(buffer.toString());
 		}
 		else if (localName.equals("txtEmenta")) {
-			projeto.setExplicacao(buffer.toString());
+			project.setExplicacao(buffer.toString());
 		}
 		else if (localName.equals("txtNomeAutor")) {
-			parlamentar.setNome(buffer.toString());
+			parliamentary.setNome(buffer.toString());
 		}
 		else if (localName.equals("txtSiglaPartido")) {
-			partido.setSiglaPartido(buffer.toString());
+			politicalParty.setSiglaPartido(buffer.toString());
 		}
 		else if (localName.equals("txtSiglaUF")) {
-			partido.setUf(buffer.toString());
+			politicalParty.setUf(buffer.toString());
 		}
 		else {
 			// throw new IllegalArgumentException("localName "+ localName +" invalida!");
@@ -94,8 +94,8 @@ public class ProposicaoController extends DefaultHandler {
 		buffer.append(ch, start, length);
 	}
 
-	public ArrayList<ProjetoModel> getListaProjetos() {
-		return listaProjetos;
+	public ArrayList<ProjetoModel> getListOfProjects() {
+		return listOfProjects;
 	}
 
 	public StringBuffer getBuffer() {
@@ -106,32 +106,32 @@ public class ProposicaoController extends DefaultHandler {
 		this.buffer = buffer;
 	}
 
-	public ProjetoModel getProjeto() {
-		return projeto;
+	public ProjetoModel getProject() {
+		return project;
 	}
 
-	public void setProjeto(ProjetoModel projeto) {
-		this.projeto = projeto;
+	public void setProject(ProjetoModel project) {
+		this.project = project;
 	}
 
-	public ParlamentarModel getParlamentar() {
-		return parlamentar;
+	public ParlamentarModel getParliamentary() {
+		return parliamentary;
 	}
 
-	public void setParlamentar(ParlamentarModel parlamentar) {
-		this.parlamentar = parlamentar;
+	public void setParliamentary(ParlamentarModel parliamentary) {
+		this.parliamentary = parliamentary;
 	}
 
-	public PartidoModel getPartido() {
-		return partido;
+	public PartidoModel getPoliticalParty() {
+		return politicalParty;
 	}
 
-	public void setPartido(PartidoModel partido) {
-		this.partido = partido;
+	public void setPoliticalParty(PartidoModel politicalParty) {
+		this.politicalParty = politicalParty;
 	}
 
-	public void setListaProjetos(ArrayList<ProjetoModel> listaProjetos) {
-		this.listaProjetos = listaProjetos;
+	public void setListOfProjects(ArrayList<ProjetoModel> listOfProjects) {
+		this.listOfProjects = listOfProjects;
 	}
 
 }

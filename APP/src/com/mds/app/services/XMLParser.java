@@ -11,7 +11,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
-import com.mds.app.controller.ProposicaoController;
+import com.mds.app.controller.PropositionController;
 import com.mds.app.model.ProjetoModel;
 
 public class XMLParser {
@@ -34,14 +34,14 @@ public class XMLParser {
 
 			XMLReader leitorXml = inicializarLeitor();
 
-			ProposicaoController projeto = new ProposicaoController();
+			PropositionController projeto = new PropositionController();
 
 			// atribuir o nosso manipulador
 			leitorXml.setContentHandler(projeto);
 			// Sincronizando o parser com o XML
 			leitorXml.parse(new InputSource(new StringReader(xml)));
 
-			return projeto.getListaProjetos();
+			return projeto.getListOfProjects();
 
 		} catch (Exception e) {
 			e.printStackTrace();
