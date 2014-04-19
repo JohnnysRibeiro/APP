@@ -25,19 +25,19 @@ import com.mds.app.model.ProjetoModel;
 
 public class ProjectDescriptionView extends Activity {
 
-	private ListController listaController;
-	private ProjetoModel projetoAtual;
-	private String stringProjetoCompleto;
-	private TextView texto1;
-	private TextView texto2;
-	private TextView texto3;
-	private TextView texto4;
-	private TextView texto5;
-	private TextView texto6;
-	private TextView texto7;
-	private ImageButton estrelaFavorito;
-	private ImageButton botaoFacebook;
-	private boolean favoritado;
+	private ListController listController;
+	private ProjetoModel actualProject;
+	private String completeProjectAsString;
+	private TextView text1;
+	private TextView text2;
+	private TextView text3;
+	private TextView text4;
+	private TextView text5;
+	private TextView text6;
+	private TextView text7;
+	private ImageButton favoriteStarImgButton;
+	private ImageButton facebookShareButton;
+	private boolean favoritedProject;
 	Context context = this;
 	private boolean isResumed = false;
 
@@ -51,58 +51,59 @@ public class ProjectDescriptionView extends Activity {
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_perfil);
+		setContentView(R.layout.activity_for_project_profile);
 
 		uiHelper = new UiLifecycleHelper(this, callback);
 		uiHelper.onCreate(savedInstanceState);
 
-		facebook_addListener();
+		shareOnFacebook_addListener();
 
-		projetoAtual = ListController.getActualProject();
-		listaController = new ListController();
+		actualProject = ListController.getActualProject();
+		listController = new ListController();
 
-		stringProjetoCompleto = listaController.getCompleteStringForProfile();
+		completeProjectAsString = listController.getCompleteStringForProfile();
 
-		texto1 = (TextView) findViewById(R.id.textoTipoProjeto);
-		texto1.setText(projetoAtual.getNome());
-		texto2 = (TextView) findViewById(R.id.textoCarcteristicasProjeto);
-		texto2.setText("Número: " + projetoAtual.getNumero() + "\n" + "Ano: " + projetoAtual.getAno() + "\n"
-				+ "Sigla: " + projetoAtual.getSigla() + "\n" + "Data de Apresentação: " + "\n"
-				+ projetoAtual.getData());
-		texto3 = (TextView) findViewById(R.id.textoDescricao);
-		texto3.setText("Descrição:" + "\n" + projetoAtual.getExplicacao());
-		texto4 = (TextView) findViewById(R.id.textoParlamentar);
-		texto4.setText("Parlamentar");
-		texto5 = (TextView) findViewById(R.id.textoCarcteristicasParlamentar);
-		texto5.setText("Nome: " + projetoAtual.getParlamentar().getNome() + "\n" + "Partido: "
-				+ projetoAtual.getParlamentar().getPartido().getSiglaPartido());
-		texto6 = (TextView) findViewById(R.id.textoMais);
-		texto6.setText("Para visualizar o perfil completo do projeto acesse: "
-				+ "http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=" + projetoAtual.getId());
-		texto7 = (TextView) findViewById(R.id.textoStatus);
-		texto7.setText("Status: " + projetoAtual.getStatus());
+		text1 = (TextView) findViewById(R.id.textoTipoProjeto);
+		text1.setText(actualProject.getNome());
+		text2 = (TextView) findViewById(R.id.textoCarcteristicasProjeto);
+		text2.setText("Número: " + actualProject.getNumero() + "\n" + "Ano: " + actualProject.getAno() + "\n"
+				+ "Sigla: " + actualProject.getSigla() + "\n" + "Data de Apresentação: " + "\n"
+				+ actualProject.getData());
+		text3 = (TextView) findViewById(R.id.textoDescricao);
+		text3.setText("Descrição:" + "\n" + actualProject.getExplicacao());
+		text4 = (TextView) findViewById(R.id.textoParlamentar);
+		text4.setText("Parlamentar");
+		text5 = (TextView) findViewById(R.id.textoCarcteristicasParlamentar);
+		text5.setText("Nome: " + actualProject.getParlamentar().getNome() + "\n" + "Partido: "
+				+ actualProject.getParlamentar().getPartido().getSiglaPartido());
+		text6 = (TextView) findViewById(R.id.textoMais);
+		text6.setText("Para visualizar o perfil completo do projeto acesse: "
+				+ "http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=" + actualProject.getId());
+		text7 = (TextView) findViewById(R.id.textoStatus);
+		text7.setText("Status: " + actualProject.getStatus());
 
-		favoritar_addListener();
+		favoriteAProject_addListener();
 
-		final int projetosNoHistorico = HistoryController.getNumberOfProjectsIntoHistory();
-		final int maxProjetos = HistoryController.getMaxNumberOfProjects();
-		String stringProjetoParaHistorico = listaController.getCompleteStringForAFile();
-		HistoryController historicoController = new HistoryController(context);
+		final int numberOfProjectsIntoHistory = HistoryController.getNumberOfProjectsIntoHistory();
+		final int maxNumberOfProjects = HistoryController.getMaxNumberOfProjects();
+		String completeStringFromProjectFromHistory = listController.getCompleteStringForAFile();
+		HistoryController historyController = new HistoryController(context);
 
 		/*
-		 * Arrumar a remocao, se acima do limite permitido na
-		 * HistoricoController. E nao adicionar dois projetos iguais
+		 * Fix removing if higher than the allowed limit at HistoryController
+		 * and dont add the same project more than one time.
 		 */
-		if (projetosNoHistorico < maxProjetos) {
-			historicoController.addProject(projetoAtual, stringProjetoParaHistorico);
+		
+		if (numberOfProjectsIntoHistory < maxNumberOfProjects) {
+			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
 		}
 		else {
 			Log.i("LOGGER", "Removendo do historico: " + HistoryController.getOldestProject().getNumero());
-			historicoController.removeProject(HistoryController.getOldestProject(),
+			historyController.removeProject(HistoryController.getOldestProject(),
 					HistoryController.getOldestProjectAsString());
-			historicoController.addProject(projetoAtual, stringProjetoParaHistorico);
+			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
 		}
-		Log.i("LOGGER", "Adicionando ao historico: " + projetoAtual.getNumero());
+		Log.i("LOGGER", "Adicionando ao historico: " + actualProject.getNumero());
 
 	}
 
@@ -129,54 +130,54 @@ public class ProjectDescriptionView extends Activity {
 		return true;
 	}
 
-	private void facebook_addListener() {
+	private void shareOnFacebook_addListener() {
 		final Activity activity = this;
-		botaoFacebook = (ImageButton) findViewById(R.id.logoFacebook);
+		facebookShareButton = (ImageButton) findViewById(R.id.logoFacebook);
 
-		botaoFacebook.setOnClickListener(new OnClickListener() {
+		facebookShareButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(activity).setLink(
 						"http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao="
-								+ projetoAtual.getId()).build();
+								+ actualProject.getId()).build();
 				uiHelper.trackPendingDialogCall(shareDialog.present());
 			}
 		});
 
 	}
 
-	private void favoritar_addListener() {
-		estrelaFavorito = (ImageButton) findViewById(R.id.naoFavorito);
+	private void favoriteAProject_addListener() {
+		favoriteStarImgButton = (ImageButton) findViewById(R.id.notFavoritedProjectStar);
 
-		String stringProjetoParaFavorito = listaController.getCompleteStringForAFile();
-		if (FavoritesController.getFavoritedProjectsCompleteString().contains(stringProjetoParaFavorito)) {
-			estrelaFavorito.setImageResource(R.drawable.favorited_img);
-			favoritado = true;
+		String stringFromFavoritedProject = listController.getCompleteStringForAFile();
+		if (FavoritesController.getFavoritedProjectsCompleteString().contains(stringFromFavoritedProject)) {
+			favoriteStarImgButton.setImageResource(R.drawable.favorited_star_img);
+			favoritedProject = true;
 		}
 		else {
-			estrelaFavorito.setImageResource(R.drawable.naofavorito);
-			favoritado = false;
+			favoriteStarImgButton.setImageResource(R.drawable.not_favorited_star_img);
+			favoritedProject = false;
 		}
 
-		estrelaFavorito.setOnClickListener(new OnClickListener() {
+		favoriteStarImgButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 
-				FavoritesController favoritosController = new FavoritesController(context);
-				String stringProjetoParaFavorito = listaController.getCompleteStringForAFile();
+				FavoritesController favoritesController = new FavoritesController(context);
+				String stringFromProjectToBeFavorited = listController.getCompleteStringForAFile();
 
-				if (!favoritado) {
-					estrelaFavorito.setImageResource(R.drawable.favorited_img);
-					favoritado = true;
-					favoritosController.addProject(projetoAtual, stringProjetoParaFavorito);
-					Log.i("LOGGER", "Favoritando: " + projetoAtual.getNumero());
+				if (!favoritedProject) {
+					favoriteStarImgButton.setImageResource(R.drawable.favorited_star_img);
+					favoritedProject = true;
+					favoritesController.addProject(actualProject, stringFromProjectToBeFavorited);
+					Log.i("LOGGER", "Favoritando: " + actualProject.getNumero());
 				}
 				else {
-					estrelaFavorito.setImageResource(R.drawable.naofavorito);
-					favoritado = false;
-					favoritosController.removeProject(projetoAtual, stringProjetoParaFavorito);
-					Log.i("LOGGER", "Desfavoritando: " + projetoAtual.getNumero());
+					favoriteStarImgButton.setImageResource(R.drawable.not_favorited_star_img);
+					favoritedProject = false;
+					favoritesController.removeProject(actualProject, stringFromProjectToBeFavorited);
+					Log.i("LOGGER", "Desfavoritando: " + actualProject.getNumero());
 				}
 			}
 		});

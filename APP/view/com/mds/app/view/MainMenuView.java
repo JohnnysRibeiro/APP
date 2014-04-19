@@ -30,19 +30,19 @@ public class MainMenuView extends Activity {
 		setContentView(R.layout.activity_main_menu);
 
 		Persistence persistence = new Persistence(context);
-		String historicContent = persistence.readFromFile(Persistence.getHistoryNameFile());
+		String historyContent = persistence.readFromFile(Persistence.getHistoryNameFile());
 		String favoritesContent = persistence.readFromFile(Persistence.getFavoritesNameFile());
 
 		FavoritesController favoritesController = new FavoritesController(context);
 		favoritesController.populateProjects(favoritesContent);
 
-		HistoryController historicController = new HistoryController(context);
-		historicController.populateProjects(historicContent);
+		HistoryController historyController = new HistoryController(context);
+		historyController.populateProjects(historyContent);
 
 		search_addListener();
 		about_addListener();
 		favorites_addListener();
-		historic_addListener();
+		history_addListener();
 	}
 
 	@Override
@@ -96,7 +96,7 @@ public class MainMenuView extends Activity {
 		});
 	}
 
-	private void historic_addListener() {
+	private void history_addListener() {
 		historyButton = (ImageButton) findViewById(R.id.history_button_id);
 		historyButton.setOnClickListener(new OnClickListener() {
 
@@ -104,8 +104,8 @@ public class MainMenuView extends Activity {
 			public void onClick(View v) {
 				Persistence persistence = new Persistence(context);
 
-				String historicContentString = persistence.readFromFile(Persistence.getHistoryNameFile());
-				Log.i("LOGGER", "Conteudo historico: " + historicContentString);
+				String historyContentString = persistence.readFromFile(Persistence.getHistoryNameFile());
+				Log.i("LOGGER", "Conteudo historico: " + historyContentString);
 
 				ListController.setProjectsList(HistoryController.getHistoryOfProjects());
 				Intent i = new Intent(MainMenuView.this, ProjectListView.class);

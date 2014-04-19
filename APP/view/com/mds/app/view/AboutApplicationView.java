@@ -17,7 +17,7 @@ public class AboutApplicationView extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_for_aboutapplicationview);
+		setContentView(R.layout.activity_for_about_view);
 	}
 
 	@Override

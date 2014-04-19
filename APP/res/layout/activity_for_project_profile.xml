@@ -149,19 +149,27 @@
 </LinearLayout>
 </ScrollView>
 
-    <ImageButton
-        android:id="@+id/naoFavorito"
+     <ImageButton
+        android:id="@+id/FavoritedProjectStar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:background="@drawable/naofavorito"
+        android:background="@drawable/favorited_star_img"
+        android:contentDescription="@string/imgbuttonFavorito" />
+     
+    <ImageButton
+        android:id="@+id/notFavoritedProjectStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/not_favorited_star_img"
         android:contentDescription="@string/imgbuttonNaoFavorito" />
 
     <ImageButton
         android:id="@+id/logoFacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/naoFavorito"
+        android:layout_toLeftOf="@+id/notFavoritedProject"
         android:background="@drawable/facebook"
         android:contentDescription="Compartilhar" />
 
