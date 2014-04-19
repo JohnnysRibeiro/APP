@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import android.util.Log;
 
-import com.mds.app.exception.ValidaEntrada;
+import com.mds.app.exception.ValidateEntry;
 import com.mds.app.model.ProcuraParlamentarModel;
 import com.mds.app.model.ProcuraPartidoModel;
 import com.mds.app.model.ProcuraProjetoModel;
@@ -177,11 +177,11 @@ public class SearchController {
 		kindOfProjectAcronym = transformAcronym(kindOfProjectAcronym);
 
 		String errors = "";
-		errors = ValidaEntrada.identificarErros(year, kindOfProjectAcronym, number, initialDate, authorName, politicalPartyAcronym, stateAbbreviation);
+		errors = ValidateEntry.identificarErros(year, kindOfProjectAcronym, number, initialDate, authorName, politicalPartyAcronym, stateAbbreviation);
 		System.out.println(errors);
 		System.out.println(initialDate);
-		politicalPartyAcronym = ValidaEntrada.garanteResultadoPartido(stateAbbreviation,politicalPartyAcronym);
-		politicalPartyAcronym = ValidaEntrada.garanteResultadoPartido(authorName,politicalPartyAcronym);
+		politicalPartyAcronym = ValidateEntry.garanteResultadoPartido(stateAbbreviation,politicalPartyAcronym);
+		politicalPartyAcronym = ValidateEntry.garanteResultadoPartido(authorName,politicalPartyAcronym);
 
 		if (errors == "") {
 			SearchForProjectController.updateDataFromProjectSearch(year, kindOfProjectAcronym, number, initialDate);

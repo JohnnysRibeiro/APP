@@ -1,6 +1,6 @@
 package com.mds.app.exception;
 
-public abstract class ValidaEntrada {
+public abstract class ValidateEntry {
 
 	public static boolean validaData(String data) {
 		if (data.equals("")) {
