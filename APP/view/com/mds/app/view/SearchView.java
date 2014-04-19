@@ -48,7 +48,7 @@ public class SearchView extends Activity {
 		searchButton_addListener();
 
 		if (connection.ChecarConexaoInternet()) {
-			searchController.setTemConexao(true);
+			searchController.setConnection(true);
 		}
 		else {
 			/* implement a new persistence */
@@ -70,7 +70,7 @@ public class SearchView extends Activity {
 			@Override
 			public void onClick(View v) {
 
-				boolean validation = searchController.atualizarDadosDaPesquisa(textYear.getText().toString(),
+				boolean validation = searchController.updateDataInsideTheSearch(textYear.getText().toString(),
 						String.valueOf(spinner1.getSelectedItem()), textNumber.getText().toString(),
 						textInitialDate.getText().toString(), textAuthorName.getText().toString(),
 						String.valueOf(textPoliticalPartyAcronym.getSelectedItem()),
@@ -103,7 +103,7 @@ public class SearchView extends Activity {
 		@Override
 		protected List<ProjetoModel> doInBackground(Void... params) {
 			Log.i("LOGGER", "Starting...doInBackground loadList");
-			List<ProjetoModel> projectsList = searchController.procurar();
+			List<ProjetoModel> projectsList = searchController.searchIntoXML();
 			return projectsList;
 		}
 

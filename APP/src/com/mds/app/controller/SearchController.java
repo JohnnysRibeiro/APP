@@ -15,174 +15,178 @@ import com.mds.app.services.XMLParser;
 
 public class SearchController {
 
-	private RecebeHTTP recebeHTTP;
+	private RecebeHTTP receiveHTTP;
 	private XMLParser xmlParser;
-	private boolean temConexao;
-	private String textoOffline;
+	private boolean thereIsConnection;
+	private String offlineText;
 
 	public SearchController() {
 		xmlParser = new XMLParser();
 	}
 
-	public String transformaSigla(String sigla) {
+	public String transformAcronym(String kindOfProjectAcronym) {
 		
-		if (sigla.equalsIgnoreCase("Projeto de Lei")) {
-			sigla = "PL";
+		if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Lei")) {
+			kindOfProjectAcronym = "PL";
 		}
-		else if (sigla.equalsIgnoreCase("Projeto de Emenda à Constituição")) {
-			sigla = "PEC";
+		else if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Emenda à Constituição")) {
+			kindOfProjectAcronym = "PEC";
 		}
-		else if (sigla.equalsIgnoreCase("Projeto de Lei Complementar")) {
-			sigla = "PLP";
+		else if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Lei Complementar")) {
+			kindOfProjectAcronym = "PLP";
 		}
-		else if (sigla.equalsIgnoreCase("Projetos de Decreto Legislativo")) {
-			sigla = "PDC";
+		else if (kindOfProjectAcronym.equalsIgnoreCase("Projetos de Decreto Legislativo")) {
+			kindOfProjectAcronym = "PDC";
 		}
-		else if (sigla.equalsIgnoreCase("Projeto de Resolução")) {
-			sigla = "PRC";
+		else if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Resolução")) {
+			kindOfProjectAcronym = "PRC";
 		}
 		else {
 			// não tem outras opções
 			throw new IllegalArgumentException("Sigla inserida invalida!");
 		}
-		return sigla;
+		return kindOfProjectAcronym;
 	}
 
-	public String transformaUF(String uf) {
-		System.out.println(uf);
+	/*
+	 * If a State is named Distrito Federal so it's State Abbreviation is
+	 * 'DF'. In portuguese we call it "UF".
+	 */
+	public String transformStateAbbreviation(String stateAbbreviation) {
+		System.out.println(stateAbbreviation);
 
-		if (uf.equalsIgnoreCase("Todos os Estados")) {
-			uf = "";
+		if (stateAbbreviation.equalsIgnoreCase("Todos os Estados")) {
+			stateAbbreviation = "";
 		}
-		else if (uf.equalsIgnoreCase("Acre")) {
-			uf = "AC";
+		else if (stateAbbreviation.equalsIgnoreCase("Acre")) {
+			stateAbbreviation = "AC";
 		}
-		else if (uf.equalsIgnoreCase("Alagoas")) {
-			uf = "AL";
+		else if (stateAbbreviation.equalsIgnoreCase("Alagoas")) {
+			stateAbbreviation = "AL";
 		}
-		else if (uf.equalsIgnoreCase("Amapá")) {
-			uf = "AP";
+		else if (stateAbbreviation.equalsIgnoreCase("Amapá")) {
+			stateAbbreviation = "AP";
 		}
-		else if (uf.equalsIgnoreCase("Amazonas")) {
-			uf = "AM";
+		else if (stateAbbreviation.equalsIgnoreCase("Amazonas")) {
+			stateAbbreviation = "AM";
 		}
-		else if (uf.equalsIgnoreCase("Bahia")) {
-			uf = "BA";
+		else if (stateAbbreviation.equalsIgnoreCase("Bahia")) {
+			stateAbbreviation = "BA";
 		}
-		else if (uf.equalsIgnoreCase("Ceará")) {
-			uf = "CE";
+		else if (stateAbbreviation.equalsIgnoreCase("Ceará")) {
+			stateAbbreviation = "CE";
 		}
-		else if (uf.equalsIgnoreCase("Distrito Federal")) {
-			uf = "DF";
+		else if (stateAbbreviation.equalsIgnoreCase("Distrito Federal")) {
+			stateAbbreviation = "DF";
 		}
-		else if (uf.equalsIgnoreCase("Espírito Santo")) {
-			uf = "ES";
+		else if (stateAbbreviation.equalsIgnoreCase("Espírito Santo")) {
+			stateAbbreviation = "ES";
 		}
-		else if (uf.equalsIgnoreCase("Goiás")) {
-			uf = "GO";
+		else if (stateAbbreviation.equalsIgnoreCase("Goiás")) {
+			stateAbbreviation = "GO";
 		}
-		else if (uf.equalsIgnoreCase("Maranhão")) {
-			uf = "MA";
+		else if (stateAbbreviation.equalsIgnoreCase("Maranhão")) {
+			stateAbbreviation = "MA";
 		}
-		else if (uf.equalsIgnoreCase("Mato Grosso")) {
-			uf = "MT";
+		else if (stateAbbreviation.equalsIgnoreCase("Mato Grosso")) {
+			stateAbbreviation = "MT";
 		}
-		else if (uf.equalsIgnoreCase("Mato Grosso do Sul")) {
-			uf = "MS";
+		else if (stateAbbreviation.equalsIgnoreCase("Mato Grosso do Sul")) {
+			stateAbbreviation = "MS";
 		}
-		else if (uf.equalsIgnoreCase("Minas Gerais")) {
-			uf = "MG";
+		else if (stateAbbreviation.equalsIgnoreCase("Minas Gerais")) {
+			stateAbbreviation = "MG";
 		}
-		else if (uf.equalsIgnoreCase("Pará")) {
-			uf = "PA";
+		else if (stateAbbreviation.equalsIgnoreCase("Pará")) {
+			stateAbbreviation = "PA";
 		}
-		else if (uf.equalsIgnoreCase("Paraíba")) {
-			uf = "PB";
+		else if (stateAbbreviation.equalsIgnoreCase("Paraíba")) {
+			stateAbbreviation = "PB";
 		}
-		else if (uf.equalsIgnoreCase("Paraná")) {
-			uf = "PR";
+		else if (stateAbbreviation.equalsIgnoreCase("Paraná")) {
+			stateAbbreviation = "PR";
 		}
-		else if (uf.equalsIgnoreCase("Pernambuco")) {
-			uf = "PE";
+		else if (stateAbbreviation.equalsIgnoreCase("Pernambuco")) {
+			stateAbbreviation = "PE";
 		}
-		else if (uf.equalsIgnoreCase("Piauí")) {
-			uf = "PI";
+		else if (stateAbbreviation.equalsIgnoreCase("Piauí")) {
+			stateAbbreviation = "PI";
 		}
-		else if (uf.equalsIgnoreCase("Rio de Janeiro")) {
-			uf = "RJ";
+		else if (stateAbbreviation.equalsIgnoreCase("Rio de Janeiro")) {
+			stateAbbreviation = "RJ";
 		}
-		else if (uf.equalsIgnoreCase("Rio Grande do Norte")) {
-			uf = "RN";
+		else if (stateAbbreviation.equalsIgnoreCase("Rio Grande do Norte")) {
+			stateAbbreviation = "RN";
 		}
-		else if (uf.equalsIgnoreCase("Rio Grande do Sul")) {
-			uf = "RS";
+		else if (stateAbbreviation.equalsIgnoreCase("Rio Grande do Sul")) {
+			stateAbbreviation = "RS";
 		}
-		else if (uf.equalsIgnoreCase("Rondônia")) {
-			uf = "RO";
+		else if (stateAbbreviation.equalsIgnoreCase("Rondônia")) {
+			stateAbbreviation = "RO";
 		}
-		else if (uf.equalsIgnoreCase("Roraima")) {
-			uf = "RR";
+		else if (stateAbbreviation.equalsIgnoreCase("Roraima")) {
+			stateAbbreviation = "RR";
 		}
-		else if (uf.equalsIgnoreCase("Santa Catarina")) {
-			uf = "SC";
+		else if (stateAbbreviation.equalsIgnoreCase("Santa Catarina")) {
+			stateAbbreviation = "SC";
 		}
-		else if (uf.equalsIgnoreCase("São Paulo")) {
-			uf = "SP";
+		else if (stateAbbreviation.equalsIgnoreCase("São Paulo")) {
+			stateAbbreviation = "SP";
 		}
-		else if (uf.equalsIgnoreCase("Sergipe")) {
-			uf = "SE";
+		else if (stateAbbreviation.equalsIgnoreCase("Sergipe")) {
+			stateAbbreviation = "SE";
 		}
-		else if (uf.equalsIgnoreCase("Tocantins")) {
-			uf = "TO";
+		else if (stateAbbreviation.equalsIgnoreCase("Tocantins")) {
+			stateAbbreviation = "TO";
 		}
 		else {
-			// Nao tem outras opcoes
+			// There is no other option
 			throw new IllegalArgumentException("uf invalida");
 		}
 
-		return uf;
+		return stateAbbreviation;
 	}
 
-	public boolean atualizarDadosDaPesquisa(String ano, String sigla, String numero, String dataIni,
-			String nomeAutor, String siglaPartido, String uf) {
+	public boolean updateDataInsideTheSearch(String year, String kindOfProjectAcronym, String number, String initialDate,
+			String authorName, String politicalPartyAcronym, String stateAbbreviation) {
 
-		if (ano.isEmpty()) {
-			ano = "2013";
+		if (year.isEmpty()) {
+			year = "2013";
 		}
-		if (numero.isEmpty()) {
-			numero = "";
+		if (number.isEmpty()) {
+			number = "";
 		}
-		if (dataIni.isEmpty()) {
-			dataIni = "";
+		if (initialDate.isEmpty()) {
+			initialDate = "";
 		}
-		if (nomeAutor.isEmpty()) {
-			nomeAutor = "";
+		if (authorName.isEmpty()) {
+			authorName = "";
 		}
-		if (siglaPartido.isEmpty()) {
-			siglaPartido = "";
+		if (politicalPartyAcronym.isEmpty()) {
+			politicalPartyAcronym = "";
 		}
-		if (siglaPartido.equals("Todos os Partidos")) {
-			siglaPartido = "";
+		if (politicalPartyAcronym.equals("Todos os Partidos")) {
+			politicalPartyAcronym = "";
 		}
 
-		if (sigla.isEmpty() || uf.isEmpty()) {
+		if (kindOfProjectAcronym.isEmpty() || stateAbbreviation.isEmpty()) {
 			Log.i("BSCC", "atencao");
 		}
 
-		uf = transformaUF(uf);
-		sigla = transformaSigla(sigla);
+		stateAbbreviation = transformStateAbbreviation(stateAbbreviation);
+		kindOfProjectAcronym = transformAcronym(kindOfProjectAcronym);
 
-		String erros = "";
-		erros = ValidaEntrada.identificarErros(ano, sigla, numero, dataIni, nomeAutor, siglaPartido, uf);
-		System.out.println(erros);
-		System.out.println(dataIni);
-		siglaPartido = ValidaEntrada.garanteResultadoPartido(uf,siglaPartido);
-		siglaPartido = ValidaEntrada.garanteResultadoPartido(nomeAutor,siglaPartido);
+		String errors = "";
+		errors = ValidaEntrada.identificarErros(year, kindOfProjectAcronym, number, initialDate, authorName, politicalPartyAcronym, stateAbbreviation);
+		System.out.println(errors);
+		System.out.println(initialDate);
+		politicalPartyAcronym = ValidaEntrada.garanteResultadoPartido(stateAbbreviation,politicalPartyAcronym);
+		politicalPartyAcronym = ValidaEntrada.garanteResultadoPartido(authorName,politicalPartyAcronym);
 
-		if (erros == "") {
-			ProcuraProjetoController.atualizarDadosPesquisaProjeto(ano, sigla, numero, dataIni);
-			ProcuraPartidoController.atualizaDadosPesquisaPartido(uf, siglaPartido);
-			ProcuraParlamentarController.atualizarDadosPesquisaParlamentar(nomeAutor);
+		if (errors == "") {
+			ProcuraProjetoController.atualizarDadosPesquisaProjeto(year, kindOfProjectAcronym, number, initialDate);
+			ProcuraPartidoController.atualizaDadosPesquisaPartido(stateAbbreviation, politicalPartyAcronym);
+			ProcuraParlamentarController.atualizarDadosPesquisaParlamentar(authorName);
 			return true;
 		}
 		else {
@@ -191,25 +195,25 @@ public class SearchController {
 
 	}
 
-	public String receberXml() {
+	public String receiveXML() {
 
-		String sigla = ProcuraProjetoModel.getSigla().toUpperCase();
-		String ano = ProcuraProjetoModel.getAno();
-		String dataInicio = ProcuraProjetoModel.getDataInicio();
-		String numero = ProcuraProjetoModel.getId();
-		String nomeAutor = ProcuraParlamentarModel.getNome();
-		String siglaPartido = ProcuraPartidoModel.getSigla();
-		String siglaUF = ProcuraPartidoModel.getUf();
+		String kindOfProjectAcronym = ProcuraProjetoModel.getSigla().toUpperCase();
+		String year = ProcuraProjetoModel.getAno();
+		String initialDate = ProcuraProjetoModel.getDataInicio();
+		String number = ProcuraProjetoModel.getId();
+		String authorName = ProcuraParlamentarModel.getNome();
+		String politicalPartyAcronym = ProcuraPartidoModel.getSigla();
+		String stateAbbreviation = ProcuraPartidoModel.getUf();
 
-		Endereco.sigla = sigla;
-		Endereco.numero = numero;
-		Endereco.ano = ano;
-		Endereco.dataInicio = dataInicio;
+		Endereco.sigla = kindOfProjectAcronym;
+		Endereco.numero = number;
+		Endereco.ano = year;
+		Endereco.dataInicio = initialDate;
 		Endereco.dataFinal = "";
 		Endereco.autor = "";
-		Endereco.nomeAutor = nomeAutor;
-		Endereco.siglaPartido = siglaPartido;
-		Endereco.siglaUF = siglaUF;
+		Endereco.nomeAutor = authorName;
+		Endereco.siglaPartido = politicalPartyAcronym;
+		Endereco.siglaUF = stateAbbreviation;
 		Endereco.generoAutor = "";
 		Endereco.codigoEstado = "";
 		Endereco.codigoOrgaoEstado = "";
@@ -217,37 +221,37 @@ public class SearchController {
 		System.out.println(url);
 
 		String response = null;
-		recebeHTTP = new RecebeHTTP();
-		if (temConexao) {
-			response = recebeHTTP.recebe(url);
+		receiveHTTP = new RecebeHTTP();
+		if (thereIsConnection) {
+			response = receiveHTTP.recebe(url);
 		}
 		else {
-			response = textoOffline;
+			response = offlineText;
 		}
 
 		return response;
 
 	}
 
-	public ArrayList<ProjetoModel> procurar() {
-		String xmlProjeto = receberXml();
+	public ArrayList<ProjetoModel> searchIntoXML() {
+		String xmlProjeto = receiveXML();
 		return xmlParser.parseProjeto(xmlProjeto);
 	}
 
-	public boolean isTemConexao() {
-		return temConexao;
+	public boolean isThereConnection() {
+		return thereIsConnection;
 	}
 
-	public void setTemConexao(boolean temConexao) {
-		this.temConexao = temConexao;
+	public void setConnection(boolean thereIsConnection) {
+		this.thereIsConnection = thereIsConnection;
 	}
 
-	public String getTextoOffline() {
-		return textoOffline;
+	public String getOfflineText() {
+		return offlineText;
 	}
 
-	public void setTextoOffline(String textoOffline) {
-		this.textoOffline = textoOffline;
+	public void setOfflineText(String offlineText) {
+		this.offlineText = offlineText;
 	}
 
 	public XMLParser getXmlParser() {
