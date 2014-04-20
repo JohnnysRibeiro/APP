@@ -177,11 +177,11 @@ public class SearchController {
 		kindOfProjectAcronym = transformAcronym(kindOfProjectAcronym);
 
 		String errors = "";
-		errors = ValidateEntry.identificarErros(year, kindOfProjectAcronym, number, initialDate, authorName, politicalPartyAcronym, stateAbbreviation);
+		errors = ValidateEntry.discoverErrors(year, kindOfProjectAcronym, number, initialDate, authorName, politicalPartyAcronym, stateAbbreviation);
 		System.out.println(errors);
 		System.out.println(initialDate);
-		politicalPartyAcronym = ValidateEntry.garanteResultadoPartido(stateAbbreviation,politicalPartyAcronym);
-		politicalPartyAcronym = ValidateEntry.garanteResultadoPartido(authorName,politicalPartyAcronym);
+		politicalPartyAcronym = ValidateEntry.ensurePoliticalPartyResult(stateAbbreviation,politicalPartyAcronym);
+		politicalPartyAcronym = ValidateEntry.ensurePoliticalPartyResult(authorName,politicalPartyAcronym);
 
 		if (errors == "") {
 			SearchForProjectController.updateDataFromProjectSearch(year, kindOfProjectAcronym, number, initialDate);

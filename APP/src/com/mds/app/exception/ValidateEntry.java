@@ -2,7 +2,7 @@ package com.mds.app.exception;
 
 public abstract class ValidateEntry {
 
-	public static boolean validaData(String data) {
+	public static boolean validateEntry(String data) {
 		if (data.equals("")) {
 			return true;
 		}
@@ -10,113 +10,113 @@ public abstract class ValidateEntry {
 		return data.matches("\\d{2}/\\d{2}/\\d{4}");
 	}
 
-	public static boolean validaAutor(String autor) {
-		if (autor.equals("")) {
+	public static boolean validateAuthor(String author) {
+		if (author.equals("")) {
 			return true;
 		}
 
-		return autor.matches("[a-zA-Z]*");
+		return author.matches("[a-zA-Z]*");
 	}
 
-	public static boolean validaNumero(String numero) {
-		if (numero.equals("")) {
+	public static boolean validateNumber(String number) {
+		if (number.equals("")) {
 			return true;
 		}
 
-		return numero.matches("\\d{4}");
+		return number.matches("\\d{4}");
 	}
 
-	public static boolean validaAno(String ano) {
-		return ano.matches("\\d{4}");
+	public static boolean validateYear(String year) {
+		return year.matches("\\d{4}");
 	}
 
-	public static boolean validaSigla(String sigla) {
-		return sigla.matches("[a-zA-Z]*");
+	public static boolean validateAcronym(String acronym) {
+		return acronym.matches("[a-zA-Z]*");
 	}
 
-	public static boolean validaUf(String uf) {
-		if (uf.equals("")) {
+	public static boolean validateStateAbbreviation(String stateAbbreviation) {
+		if (stateAbbreviation.equals("")) {
 			return true;
 		}
-		return uf.matches("\\w{2}[a-zA-Z]*");
+		return stateAbbreviation.matches("\\w{2}[a-zA-Z]*");
 
 	}
 
-	public static boolean[] validandoEntradas(String ano, String sigla, String numero, String dataIni,
-			String autor, String partido, String uf) {
-		boolean entradas[] = { false, false, false, false, false, false, false };
+	public static boolean[] validateEntries(String year, String acronym, String number, String initialDate,
+			String author, String politicalParty, String stateAbbreviation) {
+		boolean entries[] = { false, false, false, false, false, false, false };
 
-		if (!validaAno(ano)) {
-			entradas[0] = true;
+		if (!validateYear(year)) {
+			entries[0] = true;
 		}
-		if (!validaSigla(sigla)) {
-			entradas[1] = true;
+		if (!validateAcronym(acronym)) {
+			entries[1] = true;
 		}
-		if (!validaNumero(numero)) {
-			entradas[2] = true;
+		if (!validateNumber(number)) {
+			entries[2] = true;
 		}
-		if (!validaData(dataIni)) {
-			entradas[3] = true;
+		if (!validateEntry(initialDate)) {
+			entries[3] = true;
 		}
-		if (!validaAutor(autor)) {
-			entradas[4] = true;
+		if (!validateAuthor(author)) {
+			entries[4] = true;
 		}
-		if (!validaSigla(partido)) {
-			entradas[5] = true;
+		if (!validateAcronym(politicalParty)) {
+			entries[5] = true;
 		}
-		if (!validaUf(uf)) {
-			entradas[6] = true;
+		if (!validateStateAbbreviation(stateAbbreviation)) {
+			entries[6] = true;
 		}
-		return entradas;
+		return entries;
 	}
 
-	public static String garanteResultadoPartido(String uf, String partido) {
-		if (!uf.isEmpty() && !partido.isEmpty()) {
+	public static String ensurePoliticalPartyResult(String stateAbbreviation, String politicalParty) {
+		if (!stateAbbreviation.isEmpty() && !politicalParty.isEmpty()) {
 			return "";
 		}
 		else {
-			return partido;
+			return politicalParty;
 		}
 	}
 	
-	public static String garanteResultadoAutor(String autor, String partido) {
-		if (!autor.isEmpty() && !partido.isEmpty()) {
+	public static String ensureAuthorResult(String author, String politicalParty) {
+		if (!author.isEmpty() && !politicalParty.isEmpty()) {
 			return "";
 		}
 		else {
-			return partido;
+			return politicalParty;
 		}
 	}
 
-	public static String identificarErros(String ano, String sigla, String numero, String dataIni, String autor,
-			String partido, String uf) {
-		boolean recebeValidacao[];
+	public static String discoverErrors(String year, String acronym, String number, String initialDate, String date,
+			String politicalParty, String stateAbbreviation) {
+		boolean receiveValidation[];
 
-		recebeValidacao = validandoEntradas(ano, sigla, numero, dataIni, autor, partido, uf);
-		String erros = "";
+		receiveValidation = validateEntries(year, acronym, number, initialDate, date, politicalParty, stateAbbreviation);
+		String errors = "";
 
-		if (recebeValidacao[0] == true) {
-			erros += " Ano invalido ";
+		if (receiveValidation[0] == true) {
+			errors += " Ano invalido ";
 		}
-		if (recebeValidacao[1] == true) {
-			erros += " Sigla Invalida ";
+		if (receiveValidation[1] == true) {
+			errors += " Sigla Invalida ";
 		}
-		if (recebeValidacao[2] == true) {
-			erros += " Numero invalido ";
+		if (receiveValidation[2] == true) {
+			errors += " Numero invalido ";
 		}
-		if (recebeValidacao[3] == true) {
-			erros += " Data inicial invalida ";
+		if (receiveValidation[3] == true) {
+			errors += " Data inicial invalida ";
 		}
-		if (recebeValidacao[4] == true) {
-			erros += " Autor invalido ";
+		if (receiveValidation[4] == true) {
+			errors += " Autor invalido ";
 		}
-		if (recebeValidacao[5] == true) {
-			erros += " Partido invalido ";
+		if (receiveValidation[5] == true) {
+			errors += " Partido invalido ";
 		}
-		if (recebeValidacao[6] == true) {
-			erros += " UF invalida ";
+		if (receiveValidation[6] == true) {
+			errors += " UF invalida ";
 		}
 
-		return erros;
+		return errors;
 	}
 }
