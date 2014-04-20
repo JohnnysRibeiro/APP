@@ -59,9 +59,9 @@ public class ListController {
 			projectString += "\nParlamentar: ";
 			projectString += getActualProject().getParlamentar().getName();
 			projectString += "\nPartido: ";
-			projectString += getActualProject().getParlamentar().getPoliticalParty().getSiglaPartido();
+			projectString += getActualProject().getParlamentar().getPoliticalParty().getPoliticalPartyAcronym();
 			projectString += "\nEstado: ";
-			projectString += getActualProject().getParlamentar().getPoliticalParty().getUf();
+			projectString += getActualProject().getParlamentar().getPoliticalParty().getStateAbbreviation();
 		}
 		else {
 			projectString = "Nada encontrado.";
@@ -91,9 +91,9 @@ public class ListController {
 			projectString += SEPARATOR;
 			projectString += getActualProject().getParlamentar().getName();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getParlamentar().getPoliticalParty().getSiglaPartido();
+			projectString += getActualProject().getParlamentar().getPoliticalParty().getPoliticalPartyAcronym();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getParlamentar().getPoliticalParty().getUf();
+			projectString += getActualProject().getParlamentar().getPoliticalParty().getStateAbbreviation();
 			projectString += SEPARATOR;
 			projectString += getActualProject().getId();
 			projectString += SEPARATOR;

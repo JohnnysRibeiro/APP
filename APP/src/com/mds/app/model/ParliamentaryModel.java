@@ -3,13 +3,13 @@ package com.mds.app.model;
 public class ParliamentaryModel {
 
 	private String name;
-	private PartidoModel politicalParty;
+	private PoliticalPartyModel politicalParty;
 
 	public ParliamentaryModel() {
 
 	}
 
-	public ParliamentaryModel(String name, PartidoModel politicalParty) {
+	public ParliamentaryModel(String name, PoliticalPartyModel politicalParty) {
 		this.name = name;
 		this.politicalParty = politicalParty;
 	}
@@ -22,11 +22,11 @@ public class ParliamentaryModel {
 		this.name = name;
 	}
 
-	public PartidoModel getPoliticalParty() {
+	public PoliticalPartyModel getPoliticalParty() {
 		return politicalParty;
 	}
 
-	public void setPoliticalParty(PartidoModel politicalParty) {
+	public void setPoliticalParty(PoliticalPartyModel politicalParty) {
 		this.politicalParty = politicalParty;
 	}
 

@@ -6,7 +6,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.mds.app.model.ParliamentaryModel;
-import com.mds.app.model.PartidoModel;
+import com.mds.app.model.PoliticalPartyModel;
 import com.mds.app.model.ProjetoModel;
 import com.mds.app.persistence.Persistence;
 
@@ -125,7 +125,7 @@ public class HistoryController implements ModifyFilesController {
 				String projectStatus = splitParts.get(6);
 				String projectId = splitParts.get(10);
 
-				PartidoModel politicalParty = new PartidoModel(politicalPartyAcronym, politicalPartyStateAbbreviation);
+				PoliticalPartyModel politicalParty = new PoliticalPartyModel(politicalPartyAcronym, politicalPartyStateAbbreviation);
 				ParliamentaryModel parliamentary = new ParliamentaryModel(parliamentaryName, politicalParty);
 				ProjetoModel project = new ProjetoModel(projectYear, projectName, projectAcronym, projectDate,
 						projectNumber, projectExplanation, parliamentary);
@@ -163,9 +163,9 @@ public class HistoryController implements ModifyFilesController {
 				projectString += "\nParlamentar: ";
 				projectString += historyOfProjects.get(i).getParlamentar().getName();
 				projectString += "\nPartido: ";
-				projectString += historyOfProjects.get(i).getParlamentar().getPoliticalParty().getSiglaPartido();
+				projectString += historyOfProjects.get(i).getParlamentar().getPoliticalParty().getPoliticalPartyAcronym();
 				projectString += "\nEstado: ";
-				projectString += historyOfProjects.get(i).getParlamentar().getPoliticalParty().getUf();
+				projectString += historyOfProjects.get(i).getParlamentar().getPoliticalParty().getStateAbbreviation();
 				historyOfProjectsCompleteString.add(i, projectString);
 			}
 		}

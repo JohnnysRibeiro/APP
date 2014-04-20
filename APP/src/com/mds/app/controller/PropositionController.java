@@ -7,7 +7,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import com.mds.app.model.ParliamentaryModel;
-import com.mds.app.model.PartidoModel;
+import com.mds.app.model.PoliticalPartyModel;
 import com.mds.app.model.ProjetoModel;
 
 public class PropositionController extends DefaultHandler {
@@ -17,7 +17,7 @@ public class PropositionController extends DefaultHandler {
 	private ArrayList<ProjetoModel> listOfProjects;
 	private ProjetoModel project;
 	private ParliamentaryModel parliamentary;
-	private PartidoModel politicalParty;
+	private PoliticalPartyModel politicalParty;
 
 	public PropositionController() {
 		buffer = new StringBuffer();
@@ -35,7 +35,7 @@ public class PropositionController extends DefaultHandler {
 		else if (localName.equals("proposicao")) {
 			project = new ProjetoModel();
 			parliamentary = new ParliamentaryModel();
-			politicalParty = new PartidoModel();
+			politicalParty = new PoliticalPartyModel();
 		}
 		else {
 			// throw new IllegalArgumentException("localName "+ localName +" invalida");
@@ -78,10 +78,10 @@ public class PropositionController extends DefaultHandler {
 			parliamentary.setName(buffer.toString());
 		}
 		else if (localName.equals("txtSiglaPartido")) {
-			politicalParty.setSiglaPartido(buffer.toString());
+			politicalParty.setPoliticalPartyAcronym(buffer.toString());
 		}
 		else if (localName.equals("txtSiglaUF")) {
-			politicalParty.setUf(buffer.toString());
+			politicalParty.setStateAbbreviation(buffer.toString());
 		}
 		else {
 			// throw new IllegalArgumentException("localName "+ localName +" invalida!");
@@ -122,11 +122,11 @@ public class PropositionController extends DefaultHandler {
 		this.parliamentary = parliamentary;
 	}
 
-	public PartidoModel getPoliticalParty() {
+	public PoliticalPartyModel getPoliticalParty() {
 		return politicalParty;
 	}
 
-	public void setPoliticalParty(PartidoModel politicalParty) {
+	public void setPoliticalParty(PoliticalPartyModel politicalParty) {
 		this.politicalParty = politicalParty;
 	}
 
