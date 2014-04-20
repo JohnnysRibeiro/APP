@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.mds.app.exception.ValidateEntry;
 import com.mds.app.model.SearchForParliamentaryModel;
-import com.mds.app.model.ProcuraPartidoModel;
+import com.mds.app.model.SearchForPoliticalPartyModel;
 import com.mds.app.model.ProcuraProjetoModel;
 import com.mds.app.model.ProjetoModel;
 import com.mds.app.services.Endereco;
@@ -202,8 +202,8 @@ public class SearchController {
 		String initialDate = ProcuraProjetoModel.getDataInicio();
 		String number = ProcuraProjetoModel.getId();
 		String authorName = SearchForParliamentaryModel.getName();
-		String politicalPartyAcronym = ProcuraPartidoModel.getSigla();
-		String stateAbbreviation = ProcuraPartidoModel.getUf();
+		String politicalPartyAcronym = SearchForPoliticalPartyModel.getPoliticalpartyAcronym();
+		String stateAbbreviation = SearchForPoliticalPartyModel.getUf();
 
 		Endereco.sigla = kindOfProjectAcronym;
 		Endereco.numero = number;

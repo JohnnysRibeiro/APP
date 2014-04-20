@@ -1,6 +1,6 @@
 package com.mds.app.controller;
 
-import com.mds.app.model.ProcuraPartidoModel;
+import com.mds.app.model.SearchForPoliticalPartyModel;
 
 public class SearchForPoliticalPartyController {
 
@@ -10,8 +10,8 @@ public class SearchForPoliticalPartyController {
 
 	public static void updateDataForPoliticalPartySearch(String stateAbbreviation, String politicalPartyAcronym) {
 
-		ProcuraPartidoModel.setUf(stateAbbreviation);
-		ProcuraPartidoModel.setSigla(politicalPartyAcronym);
+		SearchForPoliticalPartyModel.setUf(stateAbbreviation);
+		SearchForPoliticalPartyModel.setPoliticalpartyAcronym(politicalPartyAcronym);
 
 	}
 
