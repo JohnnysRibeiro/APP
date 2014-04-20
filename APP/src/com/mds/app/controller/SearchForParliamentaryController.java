@@ -1,6 +1,6 @@
 package com.mds.app.controller;
 
-import com.mds.app.model.ProcuraParlamentarModel;
+import com.mds.app.model.SearchForParliamentaryModel;
 
 public class SearchForParliamentaryController {
 
@@ -9,7 +9,7 @@ public class SearchForParliamentaryController {
 
 	public static void updateDataFromParliamentarySearch(String authorName) {
 
-		ProcuraParlamentarModel.setNome(authorName);
+		SearchForParliamentaryModel.setName(authorName);
 
 	}
 	

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import android.util.Log;
 
 import com.mds.app.exception.ValidateEntry;
-import com.mds.app.model.ProcuraParlamentarModel;
+import com.mds.app.model.SearchForParliamentaryModel;
 import com.mds.app.model.ProcuraPartidoModel;
 import com.mds.app.model.ProcuraProjetoModel;
 import com.mds.app.model.ProjetoModel;
@@ -201,7 +201,7 @@ public class SearchController {
 		String year = ProcuraProjetoModel.getAno();
 		String initialDate = ProcuraProjetoModel.getDataInicio();
 		String number = ProcuraProjetoModel.getId();
-		String authorName = ProcuraParlamentarModel.getNome();
+		String authorName = SearchForParliamentaryModel.getName();
 		String politicalPartyAcronym = ProcuraPartidoModel.getSigla();
 		String stateAbbreviation = ProcuraPartidoModel.getUf();
 
