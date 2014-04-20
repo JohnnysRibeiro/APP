@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.util.Log;
 
-import com.mds.app.model.ParlamentarModel;
+import com.mds.app.model.ParliamentaryModel;
 import com.mds.app.model.PartidoModel;
 import com.mds.app.model.ProjetoModel;
 import com.mds.app.persistence.Persistence;
@@ -120,7 +120,7 @@ public class FavoritesController implements ModifyFilesController {
 				String projectId = splitParts.get(10);
 
 				PartidoModel politicalParty = new PartidoModel(politicalPartyAcronym, politicalPartyStateAbbreviation);
-				ParlamentarModel parliamentary = new ParlamentarModel(parliamentaryName, politicalParty);
+				ParliamentaryModel parliamentary = new ParliamentaryModel(parliamentaryName, politicalParty);
 				ProjetoModel project = new ProjetoModel(projectYear, projectName, projectAcronym, projectDate,
 						projectNumber, projectExplanation, parliamentary);
 				project.setStatus(projectStatus);
@@ -155,11 +155,11 @@ public class FavoritesController implements ModifyFilesController {
 				projectString += "\nDescrição: ";
 				projectString += favoritedProjects.get(i).getExplicacao();
 				projectString += "\nParlamentar: ";
-				projectString += favoritedProjects.get(i).getParlamentar().getNome();
+				projectString += favoritedProjects.get(i).getParlamentar().getName();
 				projectString += "\nPartido: ";
-				projectString += favoritedProjects.get(i).getParlamentar().getPartido().getSiglaPartido();
+				projectString += favoritedProjects.get(i).getParlamentar().getPoliticalParty().getSiglaPartido();
 				projectString += "\nEstado: ";
-				projectString += favoritedProjects.get(i).getParlamentar().getPartido().getUf();
+				projectString += favoritedProjects.get(i).getParlamentar().getPoliticalParty().getUf();
 				favoritedProjectsCompleteString.add(i, projectString);
 			}
 		}

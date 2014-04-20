@@ -29,7 +29,7 @@ public class ListController {
 				projectString += " - ";
 				projectString += getProjectsList().get(i).getNumero();
 				projectString += " - ";
-				projectString += getProjectsList().get(i).getParlamentar().getNome();
+				projectString += getProjectsList().get(i).getParlamentar().getName();
 				projectsString.add(projectString);
 			}
 		}
@@ -57,11 +57,11 @@ public class ListController {
 			projectString += "\nDescrição: ";
 			projectString += getActualProject().getExplicacao();
 			projectString += "\nParlamentar: ";
-			projectString += getActualProject().getParlamentar().getNome();
+			projectString += getActualProject().getParlamentar().getName();
 			projectString += "\nPartido: ";
-			projectString += getActualProject().getParlamentar().getPartido().getSiglaPartido();
+			projectString += getActualProject().getParlamentar().getPoliticalParty().getSiglaPartido();
 			projectString += "\nEstado: ";
-			projectString += getActualProject().getParlamentar().getPartido().getUf();
+			projectString += getActualProject().getParlamentar().getPoliticalParty().getUf();
 		}
 		else {
 			projectString = "Nada encontrado.";
@@ -89,11 +89,11 @@ public class ListController {
 			projectString += SEPARATOR;
 			projectString += getActualProject().getStatus();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getParlamentar().getNome();
+			projectString += getActualProject().getParlamentar().getName();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getParlamentar().getPartido().getSiglaPartido();
+			projectString += getActualProject().getParlamentar().getPoliticalParty().getSiglaPartido();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getParlamentar().getPartido().getUf();
+			projectString += getActualProject().getParlamentar().getPoliticalParty().getUf();
 			projectString += SEPARATOR;
 			projectString += getActualProject().getId();
 			projectString += SEPARATOR;

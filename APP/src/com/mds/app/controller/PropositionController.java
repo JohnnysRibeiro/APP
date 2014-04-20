@@ -6,7 +6,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.mds.app.model.ParlamentarModel;
+import com.mds.app.model.ParliamentaryModel;
 import com.mds.app.model.PartidoModel;
 import com.mds.app.model.ProjetoModel;
 
@@ -16,7 +16,7 @@ public class PropositionController extends DefaultHandler {
 
 	private ArrayList<ProjetoModel> listOfProjects;
 	private ProjetoModel project;
-	private ParlamentarModel parliamentary;
+	private ParliamentaryModel parliamentary;
 	private PartidoModel politicalParty;
 
 	public PropositionController() {
@@ -34,7 +34,7 @@ public class PropositionController extends DefaultHandler {
 		}
 		else if (localName.equals("proposicao")) {
 			project = new ProjetoModel();
-			parliamentary = new ParlamentarModel();
+			parliamentary = new ParliamentaryModel();
 			politicalParty = new PartidoModel();
 		}
 		else {
@@ -48,7 +48,7 @@ public class PropositionController extends DefaultHandler {
 		if (localName.equals("proposicao")) {
 			listOfProjects.add(project);
 			project.setParlamentar(parliamentary);
-			parliamentary.setPartido(politicalParty);
+			parliamentary.setPoliticalParty(politicalParty);
 		}
 		else if (localName.equals("id")) {
 			project.setId(buffer.toString());
@@ -75,7 +75,7 @@ public class PropositionController extends DefaultHandler {
 			project.setExplicacao(buffer.toString());
 		}
 		else if (localName.equals("txtNomeAutor")) {
-			parliamentary.setNome(buffer.toString());
+			parliamentary.setName(buffer.toString());
 		}
 		else if (localName.equals("txtSiglaPartido")) {
 			politicalParty.setSiglaPartido(buffer.toString());
@@ -114,11 +114,11 @@ public class PropositionController extends DefaultHandler {
 		this.project = project;
 	}
 
-	public ParlamentarModel getParliamentary() {
+	public ParliamentaryModel getParliamentary() {
 		return parliamentary;
 	}
 
-	public void setParliamentary(ParlamentarModel parliamentary) {
+	public void setParliamentary(ParliamentaryModel parliamentary) {
 		this.parliamentary = parliamentary;
 	}
 

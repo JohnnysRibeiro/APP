@@ -74,8 +74,8 @@ public class ProjectDescriptionView extends Activity {
 		text4 = (TextView) findViewById(R.id.textoParlamentar);
 		text4.setText("Parlamentar");
 		text5 = (TextView) findViewById(R.id.textoCarcteristicasParlamentar);
-		text5.setText("Nome: " + actualProject.getParlamentar().getNome() + "\n" + "Partido: "
-				+ actualProject.getParlamentar().getPartido().getSiglaPartido());
+		text5.setText("Nome: " + actualProject.getParlamentar().getName() + "\n" + "Partido: "
+				+ actualProject.getParlamentar().getPoliticalParty().getSiglaPartido());
 		text6 = (TextView) findViewById(R.id.textoMais);
 		text6.setText("Para visualizar o perfil completo do projeto acesse: "
 				+ "http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=" + actualProject.getId());

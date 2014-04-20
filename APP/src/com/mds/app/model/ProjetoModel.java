@@ -10,7 +10,7 @@ public class ProjetoModel {
 	private String data;
 	private String explicacao;
 	private String status;
-	private ParlamentarModel parlamentar;
+	private ParliamentaryModel parlamentar;
 	private int cont = 0;
 	private int contId = 0;
 	
@@ -19,7 +19,7 @@ public class ProjetoModel {
 	}
 
 	public ProjetoModel(String ano, String nome, String sigla, String data, String numero, String explicacao,
-			ParlamentarModel parlamentar) {
+			ParliamentaryModel parlamentar) {
 		this.ano = ano;
 		this.nome = nome;
 		this.sigla = sigla;
@@ -99,11 +99,11 @@ public class ProjetoModel {
 		this.explicacao = explicacao;
 	}
 
-	public ParlamentarModel getParlamentar() {
+	public ParliamentaryModel getParlamentar() {
 		return parlamentar;
 	}
 
-	public void setParlamentar(ParlamentarModel parlamentar) {
+	public void setParlamentar(ParliamentaryModel parlamentar) {
 		this.parlamentar = parlamentar;
 	}
 
@@ -126,7 +126,7 @@ public class ProjetoModel {
 	@Override
 	public String toString() {
 		return "ProjetoModel [ano=" + ano + ", numero=" + numero + ", nome=" + nome + ", sigla=" + sigla
-				+ ", data=" + data + ", explicacao=" + explicacao + ", parlamentar=" + parlamentar.getNome() + "]";
+				+ ", data=" + data + ", explicacao=" + explicacao + ", parlamentar=" + parlamentar.getName() + "]";
 	}
 	
 	public String getStatus() {
