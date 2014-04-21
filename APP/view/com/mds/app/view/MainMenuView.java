@@ -27,7 +27,7 @@ public class MainMenuView extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main_menu);
+		setContentView(R.layout.activity_for_main_menu);
 
 		Persistence persistence = new Persistence(context);
 		String historyContent = persistence.readFromFile(Persistence.getHistoryNameFile());
