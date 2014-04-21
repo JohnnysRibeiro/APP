@@ -9,7 +9,7 @@ import com.mds.app.model.SearchForParliamentaryModel;
 import com.mds.app.model.SearchForPoliticalPartyModel;
 import com.mds.app.model.SearchForProjectModel;
 import com.mds.app.model.ProjectModel;
-import com.mds.app.services.Endereco;
+import com.mds.app.services.Address;
 import com.mds.app.services.ReceiveHTTP;
 import com.mds.app.services.XMLParser;
 
@@ -205,19 +205,19 @@ public class SearchController {
 		String politicalPartyAcronym = SearchForPoliticalPartyModel.getPoliticalpartyAcronym();
 		String stateAbbreviation = SearchForPoliticalPartyModel.getUf();
 
-		Endereco.sigla = kindOfProjectAcronym;
-		Endereco.numero = number;
-		Endereco.ano = year;
-		Endereco.dataInicio = initialDate;
-		Endereco.dataFinal = "";
-		Endereco.autor = "";
-		Endereco.nomeAutor = authorName;
-		Endereco.siglaPartido = politicalPartyAcronym;
-		Endereco.siglaUF = stateAbbreviation;
-		Endereco.generoAutor = "";
-		Endereco.codigoEstado = "";
-		Endereco.codigoOrgaoEstado = "";
-		String url = Endereco.construirEndereco();
+		Address.kindOfProjectAcronym = kindOfProjectAcronym;
+		Address.number = number;
+		Address.year = year;
+		Address.initialDate = initialDate;
+		Address.finalDate = "";
+		Address.author = "";
+		Address.authorName = authorName;
+		Address.politicalPartyAcronym = politicalPartyAcronym;
+		Address.stateAbbreviation = stateAbbreviation;
+		Address.authorGender = "";
+		Address.stateCode = "";
+		Address.organStateCode = "";
+		String url = Address.construirEndereco();
 		System.out.println(url);
 
 		String response = null;
