@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/app_bg"
+    android:background="@drawable/app_background"
     tools:context=".AboutApplicationView" >
 
     <HorizontalScrollView
@@ -26,21 +26,21 @@
                 android:layout_width="294dp"
                 android:layout_height="404dp"
                 android:contentDescription="@string/imgviewSOBREPROV"
-                android:src="@drawable/sobre1" />
+                android:src="@drawable/about1" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="295dp"
                 android:layout_height="401dp"
                 android:contentDescription="@string/imgviewSOBREPROV"
-                android:src="@drawable/sobre2" />
+                android:src="@drawable/about2" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="297dp"
                 android:layout_height="413dp"
                 android:contentDescription="@string/imgviewSOBREPROV"
-                android:src="@drawable/sobre3" />
+                android:src="@drawable/about3" />
 
         </LinearLayout>
 

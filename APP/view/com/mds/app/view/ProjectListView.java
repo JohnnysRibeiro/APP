@@ -55,7 +55,7 @@ public class ProjectListView extends Activity {
 			}
 		});
 
-		listView.setBackgroundResource(R.drawable.app_bg);
+		listView.setBackgroundResource(R.drawable.app_background);
 
 		setContentView(listView);
 
