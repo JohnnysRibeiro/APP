@@ -10,12 +10,12 @@ import com.mds.app.model.SearchForPoliticalPartyModel;
 import com.mds.app.model.SearchForProjectModel;
 import com.mds.app.model.ProjectModel;
 import com.mds.app.services.Endereco;
-import com.mds.app.services.RecebeHTTP;
+import com.mds.app.services.ReceiveHTTP;
 import com.mds.app.services.XMLParser;
 
 public class SearchController {
 
-	private RecebeHTTP receiveHTTP;
+	private ReceiveHTTP receiveHTTP;
 	private XMLParser xmlParser;
 	private boolean thereIsConnection;
 	private String offlineText;
@@ -221,9 +221,9 @@ public class SearchController {
 		System.out.println(url);
 
 		String response = null;
-		receiveHTTP = new RecebeHTTP();
+		receiveHTTP = new ReceiveHTTP();
 		if (thereIsConnection) {
-			response = receiveHTTP.recebe(url);
+			response = receiveHTTP.receive(url);
 		}
 		else {
 			response = offlineText;

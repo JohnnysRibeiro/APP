@@ -12,21 +12,21 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-public class RecebeHTTP {
+public class ReceiveHTTP {
 
-	public RecebeHTTP() {
+	public ReceiveHTTP() {
 	}
 
-	public String recebe(String url) {
+	public String receive(String url) {
 
 		BufferedReader inputStream = null;
-		String dado = null;
-		HttpClient cliente = new DefaultHttpClient();
-		HttpGet requisicao = null;
-		HttpResponse resposta = null;
+		String data = null;
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = null;
+		HttpResponse answer = null;
 		URI website = null;
-		StringBuffer dadoStringBuffer = null;
-		String anexar = null;
+		StringBuffer dataStringBuffer = null;
+		String append = null;
 
 		try {
 			website = new URI(url);
@@ -36,17 +36,17 @@ public class RecebeHTTP {
 			npe.printStackTrace();
 		}
 
-		requisicao = new HttpGet();
-		requisicao.setURI(website);
+		request = new HttpGet();
+		request.setURI(website);
 
 		try {
-			resposta = cliente.execute(requisicao);
-			inputStream = new BufferedReader(new InputStreamReader(resposta.getEntity().getContent()));
+			answer = client.execute(request);
+			inputStream = new BufferedReader(new InputStreamReader(answer.getEntity().getContent()));
 
-			dadoStringBuffer = new StringBuffer("");
-			anexar = "";
-			while ((anexar = inputStream.readLine()) != null) {
-				dadoStringBuffer.append(anexar);
+			dataStringBuffer = new StringBuffer("");
+			append = "";
+			while ((append = inputStream.readLine()) != null) {
+				dataStringBuffer.append(append);
 			}
 
 			inputStream.close();
@@ -56,8 +56,8 @@ public class RecebeHTTP {
 			ioe.printStackTrace();
 		}
 
-		dado = dadoStringBuffer.toString();
+		data = dataStringBuffer.toString();
 
-		return dado;
+		return data;
 	}
 }
