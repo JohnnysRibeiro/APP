@@ -308,9 +308,9 @@ containing a value of this type.
     }
     public static final class layout {
         public static final int activity_for_about_view=0x7f030000;
-        public static final int activity_for_project_profile=0x7f030001;
-        public static final int activity_for_search=0x7f030002;
-        public static final int activity_lista=0x7f030003;
+        public static final int activity_for_list=0x7f030001;
+        public static final int activity_for_project_profile=0x7f030002;
+        public static final int activity_for_search=0x7f030003;
         public static final int activity_main_menu=0x7f030004;
         public static final int com_facebook_friendpickerfragment=0x7f030005;
         public static final int com_facebook_login_activity_layout=0x7f030006;
