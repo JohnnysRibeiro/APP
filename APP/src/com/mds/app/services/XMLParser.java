@@ -16,32 +16,32 @@ import com.mds.app.model.ProjectModel;
 
 public class XMLParser {
 
-	public XMLReader inicializarLeitor() throws ParserConfigurationException, SAXException {
-		SAXParserFactory criaParser = SAXParserFactory.newInstance();
+	public XMLReader readerStarter() throws ParserConfigurationException, SAXException {
+		SAXParserFactory createParser = SAXParserFactory.newInstance();
 
-		// Instanciando e criando o parser
-		SAXParser parser = criaParser.newSAXParser();
+		// Instancing and creating parser
+		SAXParser parser = createParser.newSAXParser();
 
-		// Criando o método de entrada para ler o XML
-		XMLReader leitorXml = parser.getXMLReader();
+		// Creating the enter method to read XML file
+		XMLReader xmlReader = parser.getXMLReader();
 
-		return leitorXml;
+		return xmlReader;
 	}
 
-	public ArrayList<ProjectModel> parseProjeto(String xml) {
+	public ArrayList<ProjectModel> projectParser(String xml) {
 
 		try {
 
-			XMLReader leitorXml = inicializarLeitor();
+			XMLReader xmlReader = readerStarter();
 
-			PropositionController projeto = new PropositionController();
+			PropositionController project = new PropositionController();
 
-			// atribuir o nosso manipulador
-			leitorXml.setContentHandler(projeto);
-			// Sincronizando o parser com o XML
-			leitorXml.parse(new InputSource(new StringReader(xml)));
+			// assign our manipulator
+			xmlReader.setContentHandler(project);
+			// Sync parser with XML
+			xmlReader.parse(new InputSource(new StringReader(xml)));
 
-			return projeto.getListOfProjects();
+			return project.getListOfProjects();
 
 		} catch (Exception e) {
 			e.printStackTrace();

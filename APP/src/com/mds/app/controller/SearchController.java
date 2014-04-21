@@ -235,7 +235,7 @@ public class SearchController {
 
 	public ArrayList<ProjectModel> searchIntoXML() {
 		String xmlProjeto = receiveXML();
-		return xmlParser.parseProjeto(xmlProjeto);
+		return xmlParser.projectParser(xmlProjeto);
 	}
 
 	public boolean isThereConnection() {
