@@ -22,14 +22,14 @@ import com.mds.app.controller.SearchController;
 import com.mds.app.controller.ListController;
 import com.mds.app.model.ProjectModel;
 import com.mds.app.util.CancelTaskOnCancelListener;
-import com.mds.app.util.ConexaoInternet;
+import com.mds.app.util.InternetConnection;
 
 public class SearchView extends Activity {
 
 	private ProgressDialog progressDialog;
 	private ImageButton searchButton;
 	private SearchController searchController;
-	private ConexaoInternet connection;
+	private InternetConnection connection;
 
 	public SearchView() {
 
@@ -43,11 +43,11 @@ public class SearchView extends Activity {
 		setContentView(R.layout.activity_busca);
 
 		searchController = new SearchController();
-		connection = new ConexaoInternet(this);
+		connection = new InternetConnection(this);
 
 		searchButton_addListener();
 
-		if (connection.ChecarConexaoInternet()) {
+		if (connection.checkInternetConnection()) {
 			searchController.setConnection(true);
 		}
 		else {

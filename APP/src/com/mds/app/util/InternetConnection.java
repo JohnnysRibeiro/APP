@@ -3,23 +3,23 @@ package com.mds.app.util;
 import android.content.Context;
 import android.net.ConnectivityManager;
 
-public class ConexaoInternet {
+public class InternetConnection {
 
 	private Context context;
 
-	public ConexaoInternet() {
+	public InternetConnection() {
 	}
 
-	public ConexaoInternet(Context context) {
+	public InternetConnection(Context context) {
 		this.context = context;
 	}
 
-	public boolean ChecarConexaoInternet() {
+	public boolean checkInternetConnection() {
 		boolean hasConnection = false;
 
-		ConnectivityManager conexao = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo wifi = conexao.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-		android.net.NetworkInfo mobile = conexao.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+		ConnectivityManager connection = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		android.net.NetworkInfo wifi = connection.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+		android.net.NetworkInfo mobile = connection.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
 		if (wifi.isConnected() || mobile.isConnected()) {
 			System.out.println("TEM CONEXAO COM A INTERNET");
