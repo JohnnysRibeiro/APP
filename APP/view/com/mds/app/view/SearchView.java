@@ -40,7 +40,7 @@ public class SearchView extends Activity {
 		super.onCreate(savedInstanceState);
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build();
 		StrictMode.setThreadPolicy(policy);
-		setContentView(R.layout.activity_busca);
+		setContentView(R.layout.activity_for_search);
 
 		searchController = new SearchController();
 		connection = new InternetConnection(this);
