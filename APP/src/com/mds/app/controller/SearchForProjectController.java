@@ -1,6 +1,6 @@
 package com.mds.app.controller;
 
-import com.mds.app.model.ProcuraProjetoModel;
+import com.mds.app.model.SearchForProjectModel;
 
 public class SearchForProjectController {
 
@@ -9,10 +9,10 @@ public class SearchForProjectController {
 
 	public static void updateDataFromProjectSearch(String year, String kindofProjectAcronym, String number, String initialDate) {
 
-		ProcuraProjetoModel.setAno(year);
-		ProcuraProjetoModel.setSigla(kindofProjectAcronym);
-		ProcuraProjetoModel.setId(number);
-		ProcuraProjetoModel.setDataInicio(initialDate);
+		SearchForProjectModel.setYear(year);
+		SearchForProjectModel.setKindOfProjectAcronym(kindofProjectAcronym);
+		SearchForProjectModel.setId(number);
+		SearchForProjectModel.setInitialDate(initialDate);
 
 	}
 

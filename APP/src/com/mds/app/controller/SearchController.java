@@ -7,7 +7,7 @@ import android.util.Log;
 import com.mds.app.exception.ValidateEntry;
 import com.mds.app.model.SearchForParliamentaryModel;
 import com.mds.app.model.SearchForPoliticalPartyModel;
-import com.mds.app.model.ProcuraProjetoModel;
+import com.mds.app.model.SearchForProjectModel;
 import com.mds.app.model.ProjetoModel;
 import com.mds.app.services.Endereco;
 import com.mds.app.services.RecebeHTTP;
@@ -197,10 +197,10 @@ public class SearchController {
 
 	public String receiveXML() {
 
-		String kindOfProjectAcronym = ProcuraProjetoModel.getSigla().toUpperCase();
-		String year = ProcuraProjetoModel.getAno();
-		String initialDate = ProcuraProjetoModel.getDataInicio();
-		String number = ProcuraProjetoModel.getId();
+		String kindOfProjectAcronym = SearchForProjectModel.getKindOfProjectAcronym().toUpperCase();
+		String year = SearchForProjectModel.getYear();
+		String initialDate = SearchForProjectModel.getInitialDate();
+		String number = SearchForProjectModel.getId();
 		String authorName = SearchForParliamentaryModel.getName();
 		String politicalPartyAcronym = SearchForPoliticalPartyModel.getPoliticalpartyAcronym();
 		String stateAbbreviation = SearchForPoliticalPartyModel.getUf();
