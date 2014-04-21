@@ -7,12 +7,12 @@ import android.util.Log;
 
 import com.mds.app.model.ParliamentaryModel;
 import com.mds.app.model.PoliticalPartyModel;
-import com.mds.app.model.ProjetoModel;
+import com.mds.app.model.ProjectModel;
 import com.mds.app.persistence.Persistence;
 
 public class FavoritesController implements ModifyFilesController {
 
-	private static ArrayList<ProjetoModel> favoritedProjects = new ArrayList<ProjetoModel>();
+	private static ArrayList<ProjectModel> favoritedProjects = new ArrayList<ProjectModel>();
 	private static ArrayList<String> favoritedProjectsCompleteString = new ArrayList<String>();
 
 	private Persistence persistence;
@@ -26,7 +26,7 @@ public class FavoritesController implements ModifyFilesController {
 	}
 
 	@Override
-	public void addProject(ProjetoModel project, String content) {
+	public void addProject(ProjectModel project, String content) {
 		if (!favoritedProjectsCompleteString.contains(content)) {
 			if (!favoritedProjects.contains(project)) {
 				favoritedProjectsCompleteString.add(content);
@@ -48,7 +48,7 @@ public class FavoritesController implements ModifyFilesController {
 	}
 
 	@Override
-	public void removeProject(ProjetoModel project, String projectString) {
+	public void removeProject(ProjectModel project, String projectString) {
 		if (favoritedProjectsCompleteString.contains(projectString)) {
 			if (favoritedProjects.contains(project)) {
 				favoritedProjectsCompleteString.remove(projectString);
@@ -86,7 +86,7 @@ public class FavoritesController implements ModifyFilesController {
 		final int separatorsPerProject = 11;
 		final int numberOfProjectsInTheFile;
 		int numberOfSeparators = 0;
-		favoritedProjects = new ArrayList<ProjetoModel>();
+		favoritedProjects = new ArrayList<ProjectModel>();
 
 		if (favoritedContentString.contains("~")) {
 			for (int i = 0; i < favoritedContentString.length(); i++) {
@@ -121,7 +121,7 @@ public class FavoritesController implements ModifyFilesController {
 
 				PoliticalPartyModel politicalParty = new PoliticalPartyModel(politicalPartyAcronym, politicalPartyStateAbbreviation);
 				ParliamentaryModel parliamentary = new ParliamentaryModel(parliamentaryName, politicalParty);
-				ProjetoModel project = new ProjetoModel(projectYear, projectName, projectAcronym, projectDate,
+				ProjectModel project = new ProjectModel(projectYear, projectName, projectAcronym, projectDate,
 						projectNumber, projectExplanation, parliamentary);
 				project.setStatus(projectStatus);
 				project.setId(projectId);
@@ -143,23 +143,23 @@ public class FavoritesController implements ModifyFilesController {
 		if (!(favoritedProjects == null)) {
 			for (int i = 0; i < favoritedProjects.size(); i++) {
 				String projectString = "";
-				projectString += favoritedProjects.get(i).getNome();
+				projectString += favoritedProjects.get(i).getName();
 				projectString += "\nNumero: ";
-				projectString += favoritedProjects.get(i).getNumero();
+				projectString += favoritedProjects.get(i).getNumber();
 				projectString += "\nAno:  ";
-				projectString += favoritedProjects.get(i).getAno();
+				projectString += favoritedProjects.get(i).getYear();
 				projectString += "\nSigla: ";
-				projectString += favoritedProjects.get(i).getSigla();
+				projectString += favoritedProjects.get(i).getKindOfProjectAcronym();
 				projectString += "\nData de Apresentação: ";
-				projectString += favoritedProjects.get(i).getData();
+				projectString += favoritedProjects.get(i).getDate();
 				projectString += "\nDescrição: ";
-				projectString += favoritedProjects.get(i).getExplicacao();
+				projectString += favoritedProjects.get(i).getExplanation();
 				projectString += "\nParlamentar: ";
-				projectString += favoritedProjects.get(i).getParlamentar().getName();
+				projectString += favoritedProjects.get(i).getParliamentary().getName();
 				projectString += "\nPartido: ";
-				projectString += favoritedProjects.get(i).getParlamentar().getPoliticalParty().getPoliticalPartyAcronym();
+				projectString += favoritedProjects.get(i).getParliamentary().getPoliticalParty().getPoliticalPartyAcronym();
 				projectString += "\nEstado: ";
-				projectString += favoritedProjects.get(i).getParlamentar().getPoliticalParty().getStateAbbreviation();
+				projectString += favoritedProjects.get(i).getParliamentary().getPoliticalParty().getStateAbbreviation();
 				favoritedProjectsCompleteString.add(i, projectString);
 			}
 		}
@@ -168,11 +168,11 @@ public class FavoritesController implements ModifyFilesController {
 		}
 	}
 
-	public static ArrayList<ProjetoModel> getFavoritedProjects() {
+	public static ArrayList<ProjectModel> getFavoritedProjects() {
 		return favoritedProjects;
 	}
 
-	public static void setFavoritedProjects(ArrayList<ProjetoModel> favoritedProjects) {
+	public static void setFavoritedProjects(ArrayList<ProjectModel> favoritedProjects) {
 		FavoritesController.favoritedProjects = favoritedProjects;
 	}
 

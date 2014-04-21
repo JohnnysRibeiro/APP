@@ -8,14 +8,14 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import com.mds.app.model.ParliamentaryModel;
 import com.mds.app.model.PoliticalPartyModel;
-import com.mds.app.model.ProjetoModel;
+import com.mds.app.model.ProjectModel;
 
 public class PropositionController extends DefaultHandler {
 
 	private StringBuffer buffer;
 
-	private ArrayList<ProjetoModel> listOfProjects;
-	private ProjetoModel project;
+	private ArrayList<ProjectModel> listOfProjects;
+	private ProjectModel project;
 	private ParliamentaryModel parliamentary;
 	private PoliticalPartyModel politicalParty;
 
@@ -30,10 +30,10 @@ public class PropositionController extends DefaultHandler {
 		buffer.setLength(0);
 
 		if (localName.equals("proposicoes")) {
-			listOfProjects = new ArrayList<ProjetoModel>();
+			listOfProjects = new ArrayList<ProjectModel>();
 		}
 		else if (localName.equals("proposicao")) {
-			project = new ProjetoModel();
+			project = new ProjectModel();
 			parliamentary = new ParliamentaryModel();
 			politicalParty = new PoliticalPartyModel();
 		}
@@ -47,32 +47,32 @@ public class PropositionController extends DefaultHandler {
 
 		if (localName.equals("proposicao")) {
 			listOfProjects.add(project);
-			project.setParlamentar(parliamentary);
+			project.setParliamentary(parliamentary);
 			parliamentary.setPoliticalParty(politicalParty);
 		}
 		else if (localName.equals("id")) {
 			project.setId(buffer.toString());
 		}
 		else if (localName.equals("ano")) {
-			project.setAno(buffer.toString());
+			project.setYear(buffer.toString());
 		}
 		else if (localName.equals("nome")) {
-			project.setNome(buffer.toString());
+			project.setName(buffer.toString());
 		}
 		else if (localName.equals("sigla")) {
-			project.setSigla(buffer.toString());
+			project.setKindOfProjectAcronym(buffer.toString());
 		}
 		else if (localName.equals("numero")) {
-			project.setNumero(buffer.toString());
+			project.setNumber(buffer.toString());
 		}
 		else if (localName.equals("datApresentacao")) {
-			project.setData(buffer.toString());
+			project.setDate(buffer.toString());
 		}
 		else if (localName.equals("descricao")) {
 			project.setStatus(buffer.toString());
 		}
 		else if (localName.equals("txtEmenta")) {
-			project.setExplicacao(buffer.toString());
+			project.setExplanation(buffer.toString());
 		}
 		else if (localName.equals("txtNomeAutor")) {
 			parliamentary.setName(buffer.toString());
@@ -94,7 +94,7 @@ public class PropositionController extends DefaultHandler {
 		buffer.append(ch, start, length);
 	}
 
-	public ArrayList<ProjetoModel> getListOfProjects() {
+	public ArrayList<ProjectModel> getListOfProjects() {
 		return listOfProjects;
 	}
 
@@ -106,11 +106,11 @@ public class PropositionController extends DefaultHandler {
 		this.buffer = buffer;
 	}
 
-	public ProjetoModel getProject() {
+	public ProjectModel getProject() {
 		return project;
 	}
 
-	public void setProject(ProjetoModel project) {
+	public void setProject(ProjectModel project) {
 		this.project = project;
 	}
 
@@ -130,7 +130,7 @@ public class PropositionController extends DefaultHandler {
 		this.politicalParty = politicalParty;
 	}
 
-	public void setListOfProjects(ArrayList<ProjetoModel> listOfProjects) {
+	public void setListOfProjects(ArrayList<ProjectModel> listOfProjects) {
 		this.listOfProjects = listOfProjects;
 	}
 

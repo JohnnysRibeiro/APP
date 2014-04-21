@@ -21,12 +21,12 @@ import com.mds.app.R;
 import com.mds.app.controller.FavoritesController;
 import com.mds.app.controller.HistoryController;
 import com.mds.app.controller.ListController;
-import com.mds.app.model.ProjetoModel;
+import com.mds.app.model.ProjectModel;
 
 public class ProjectDescriptionView extends Activity {
 
 	private ListController listController;
-	private ProjetoModel actualProject;
+	private ProjectModel actualProject;
 	private String completeProjectAsString;
 	private TextView text1;
 	private TextView text2;
@@ -64,18 +64,18 @@ public class ProjectDescriptionView extends Activity {
 		completeProjectAsString = listController.getCompleteStringForProfile();
 
 		text1 = (TextView) findViewById(R.id.textoTipoProjeto);
-		text1.setText(actualProject.getNome());
+		text1.setText(actualProject.getName());
 		text2 = (TextView) findViewById(R.id.textoCarcteristicasProjeto);
-		text2.setText("Número: " + actualProject.getNumero() + "\n" + "Ano: " + actualProject.getAno() + "\n"
-				+ "Sigla: " + actualProject.getSigla() + "\n" + "Data de Apresentação: " + "\n"
-				+ actualProject.getData());
+		text2.setText("Número: " + actualProject.getNumber() + "\n" + "Ano: " + actualProject.getYear() + "\n"
+				+ "Sigla: " + actualProject.getKindOfProjectAcronym() + "\n" + "Data de Apresentação: " + "\n"
+				+ actualProject.getDate());
 		text3 = (TextView) findViewById(R.id.textoDescricao);
-		text3.setText("Descrição:" + "\n" + actualProject.getExplicacao());
+		text3.setText("Descrição:" + "\n" + actualProject.getExplanation());
 		text4 = (TextView) findViewById(R.id.textoParlamentar);
 		text4.setText("Parlamentar");
 		text5 = (TextView) findViewById(R.id.textoCarcteristicasParlamentar);
-		text5.setText("Nome: " + actualProject.getParlamentar().getName() + "\n" + "Partido: "
-				+ actualProject.getParlamentar().getPoliticalParty().getPoliticalPartyAcronym());
+		text5.setText("Nome: " + actualProject.getParliamentary().getName() + "\n" + "Partido: "
+				+ actualProject.getParliamentary().getPoliticalParty().getPoliticalPartyAcronym());
 		text6 = (TextView) findViewById(R.id.textoMais);
 		text6.setText("Para visualizar o perfil completo do projeto acesse: "
 				+ "http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=" + actualProject.getId());
@@ -98,12 +98,12 @@ public class ProjectDescriptionView extends Activity {
 			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
 		}
 		else {
-			Log.i("LOGGER", "Removendo do historico: " + HistoryController.getOldestProject().getNumero());
+			Log.i("LOGGER", "Removendo do historico: " + HistoryController.getOldestProject().getNumber());
 			historyController.removeProject(HistoryController.getOldestProject(),
 					HistoryController.getOldestProjectAsString());
 			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
 		}
-		Log.i("LOGGER", "Adicionando ao historico: " + actualProject.getNumero());
+		Log.i("LOGGER", "Adicionando ao historico: " + actualProject.getNumber());
 
 	}
 
@@ -171,13 +171,13 @@ public class ProjectDescriptionView extends Activity {
 					favoriteStarImgButton.setImageResource(R.drawable.favorited_star_img);
 					favoritedProject = true;
 					favoritesController.addProject(actualProject, stringFromProjectToBeFavorited);
-					Log.i("LOGGER", "Favoritando: " + actualProject.getNumero());
+					Log.i("LOGGER", "Favoritando: " + actualProject.getNumber());
 				}
 				else {
 					favoriteStarImgButton.setImageResource(R.drawable.not_favorited_star_img);
 					favoritedProject = false;
 					favoritesController.removeProject(actualProject, stringFromProjectToBeFavorited);
-					Log.i("LOGGER", "Desfavoritando: " + actualProject.getNumero());
+					Log.i("LOGGER", "Desfavoritando: " + actualProject.getNumber());
 				}
 			}
 		});

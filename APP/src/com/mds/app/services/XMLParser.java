@@ -12,7 +12,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
 import com.mds.app.controller.PropositionController;
-import com.mds.app.model.ProjetoModel;
+import com.mds.app.model.ProjectModel;
 
 public class XMLParser {
 
@@ -28,7 +28,7 @@ public class XMLParser {
 		return leitorXml;
 	}
 
-	public ArrayList<ProjetoModel> parseProjeto(String xml) {
+	public ArrayList<ProjectModel> parseProjeto(String xml) {
 
 		try {
 

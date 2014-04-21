@@ -8,7 +8,7 @@ import com.mds.app.exception.ValidateEntry;
 import com.mds.app.model.SearchForParliamentaryModel;
 import com.mds.app.model.SearchForPoliticalPartyModel;
 import com.mds.app.model.SearchForProjectModel;
-import com.mds.app.model.ProjetoModel;
+import com.mds.app.model.ProjectModel;
 import com.mds.app.services.Endereco;
 import com.mds.app.services.RecebeHTTP;
 import com.mds.app.services.XMLParser;
@@ -233,7 +233,7 @@ public class SearchController {
 
 	}
 
-	public ArrayList<ProjetoModel> searchIntoXML() {
+	public ArrayList<ProjectModel> searchIntoXML() {
 		String xmlProjeto = receiveXML();
 		return xmlParser.parseProjeto(xmlProjeto);
 	}

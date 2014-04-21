@@ -3,18 +3,18 @@ package com.mds.app.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mds.app.model.ProjetoModel;
+import com.mds.app.model.ProjectModel;
 
 public class ListController {
 
 	private static final String SEPARATOR = "~";
-	private static List<ProjetoModel> projectsList;
-	private static ProjetoModel actualProject;
+	private static List<ProjectModel> projectsList;
+	private static ProjectModel actualProject;
 
 	public ListController() {
 	}
 
-	public ListController(List<ProjetoModel> result) {
+	public ListController(List<ProjectModel> result) {
 		setProjectsList(result);
 	}
 
@@ -25,11 +25,11 @@ public class ListController {
 		if (getProjectsList() != null) {
 			for (int i = 0; i < getProjectsList().size(); i++) {
 				String projectString = "";
-				projectString += getProjectsList().get(i).getNome();
+				projectString += getProjectsList().get(i).getName();
 				projectString += " - ";
-				projectString += getProjectsList().get(i).getNumero();
+				projectString += getProjectsList().get(i).getNumber();
 				projectString += " - ";
-				projectString += getProjectsList().get(i).getParlamentar().getName();
+				projectString += getProjectsList().get(i).getParliamentary().getName();
 				projectsString.add(projectString);
 			}
 		}
@@ -45,23 +45,23 @@ public class ListController {
 		String projectString = "";
 
 		if (getActualProject() != null) {
-			projectString += getActualProject().getNome();
+			projectString += getActualProject().getName();
 			projectString += "\nNumero: ";
-			projectString += getActualProject().getNumero();
+			projectString += getActualProject().getNumber();
 			projectString += "\nAno:  ";
-			projectString += getActualProject().getAno();
+			projectString += getActualProject().getYear();
 			projectString += "\nSigla: ";
-			projectString += getActualProject().getSigla();
+			projectString += getActualProject().getKindOfProjectAcronym();
 			projectString += "\nData de Apresentação: ";
-			projectString += getActualProject().getData();
+			projectString += getActualProject().getDate();
 			projectString += "\nDescrição: ";
-			projectString += getActualProject().getExplicacao();
+			projectString += getActualProject().getExplanation();
 			projectString += "\nParlamentar: ";
-			projectString += getActualProject().getParlamentar().getName();
+			projectString += getActualProject().getParliamentary().getName();
 			projectString += "\nPartido: ";
-			projectString += getActualProject().getParlamentar().getPoliticalParty().getPoliticalPartyAcronym();
+			projectString += getActualProject().getParliamentary().getPoliticalParty().getPoliticalPartyAcronym();
 			projectString += "\nEstado: ";
-			projectString += getActualProject().getParlamentar().getPoliticalParty().getStateAbbreviation();
+			projectString += getActualProject().getParliamentary().getPoliticalParty().getStateAbbreviation();
 		}
 		else {
 			projectString = "Nada encontrado.";
@@ -75,25 +75,25 @@ public class ListController {
 		String projectString = "";
 
 		if (getActualProject() != null) {
-			projectString += getActualProject().getNome();
+			projectString += getActualProject().getName();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getNumero();
+			projectString += getActualProject().getNumber();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getAno();
+			projectString += getActualProject().getYear();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getSigla();
+			projectString += getActualProject().getKindOfProjectAcronym();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getData();
+			projectString += getActualProject().getDate();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getExplicacao();
+			projectString += getActualProject().getExplanation();
 			projectString += SEPARATOR;
 			projectString += getActualProject().getStatus();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getParlamentar().getName();
+			projectString += getActualProject().getParliamentary().getName();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getParlamentar().getPoliticalParty().getPoliticalPartyAcronym();
+			projectString += getActualProject().getParliamentary().getPoliticalParty().getPoliticalPartyAcronym();
 			projectString += SEPARATOR;
-			projectString += getActualProject().getParlamentar().getPoliticalParty().getStateAbbreviation();
+			projectString += getActualProject().getParliamentary().getPoliticalParty().getStateAbbreviation();
 			projectString += SEPARATOR;
 			projectString += getActualProject().getId();
 			projectString += SEPARATOR;
@@ -105,19 +105,19 @@ public class ListController {
 		return projectString;
 	}
 
-	public static List<ProjetoModel> getProjectsList() {
+	public static List<ProjectModel> getProjectsList() {
 		return projectsList;
 	}
 
-	public static void setProjectsList(List<ProjetoModel> newProjectsList) {
+	public static void setProjectsList(List<ProjectModel> newProjectsList) {
 		projectsList = newProjectsList;
 	}
 
-	public static ProjetoModel getActualProject() {
+	public static ProjectModel getActualProject() {
 		return actualProject;
 	}
 
-	public static void setActualProject(ProjetoModel actualProject) {
+	public static void setActualProject(ProjectModel actualProject) {
 		ListController.actualProject = actualProject;
 	}
 

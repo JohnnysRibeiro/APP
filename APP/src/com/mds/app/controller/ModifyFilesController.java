@@ -1,12 +1,12 @@
 package com.mds.app.controller;
 
-import com.mds.app.model.ProjetoModel;
+import com.mds.app.model.ProjectModel;
 
 public interface ModifyFilesController {
 
-	public void addProject(ProjetoModel projeto, String conteudo);
+	public void addProject(ProjectModel projeto, String conteudo);
 
-	public void removeProject(ProjetoModel projeto, String conteudo);
+	public void removeProject(ProjectModel projeto, String conteudo);
 
 	public String transformProjectsIntoString();
 

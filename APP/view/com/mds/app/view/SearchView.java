@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.mds.app.R;
 import com.mds.app.controller.SearchController;
 import com.mds.app.controller.ListController;
-import com.mds.app.model.ProjetoModel;
+import com.mds.app.model.ProjectModel;
 import com.mds.app.util.CancelTaskOnCancelListener;
 import com.mds.app.util.ConexaoInternet;
 
@@ -92,7 +92,7 @@ public class SearchView extends Activity {
 		return true;
 	}
 
-	private class SearchForProjectsTask extends AsyncTask<Void, Void, List<ProjetoModel>> {
+	private class SearchForProjectsTask extends AsyncTask<Void, Void, List<ProjectModel>> {
 
 		@Override
 		protected void onPreExecute() {
@@ -101,14 +101,14 @@ public class SearchView extends Activity {
 		}
 
 		@Override
-		protected List<ProjetoModel> doInBackground(Void... params) {
+		protected List<ProjectModel> doInBackground(Void... params) {
 			Log.i("LOGGER", "Starting...doInBackground loadList");
-			List<ProjetoModel> projectsList = searchController.searchIntoXML();
+			List<ProjectModel> projectsList = searchController.searchIntoXML();
 			return projectsList;
 		}
 
 		@Override
-		protected void onPostExecute(final List<ProjetoModel> result) {
+		protected void onPostExecute(final List<ProjectModel> result) {
 			runOnUiThread(new Runnable() {
 				@Override
 				public void run() {

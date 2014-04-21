@@ -7,13 +7,13 @@ import android.util.Log;
 
 import com.mds.app.model.ParliamentaryModel;
 import com.mds.app.model.PoliticalPartyModel;
-import com.mds.app.model.ProjetoModel;
+import com.mds.app.model.ProjectModel;
 import com.mds.app.persistence.Persistence;
 
 public class HistoryController implements ModifyFilesController {
 
 	private static final int MAX_NUMBER_OF_PROJECTS = 10;
-	private static ArrayList<ProjetoModel> historyOfProjects = new ArrayList<ProjetoModel>(MAX_NUMBER_OF_PROJECTS);
+	private static ArrayList<ProjectModel> historyOfProjects = new ArrayList<ProjectModel>(MAX_NUMBER_OF_PROJECTS);
 	private static ArrayList<String> historyOfProjectsCompleteString = new ArrayList<String>();
 	private Persistence persistence;
 
@@ -26,7 +26,7 @@ public class HistoryController implements ModifyFilesController {
 	}
 
 	@Override
-	public void addProject(ProjetoModel project, String content) {
+	public void addProject(ProjectModel project, String content) {
 		if (!historyOfProjectsCompleteString.contains(content)) {
 			if (!historyOfProjects.contains(project)) {
 				historyOfProjectsCompleteString.add(content);
@@ -44,7 +44,7 @@ public class HistoryController implements ModifyFilesController {
 			 */
 			Log.i("LOGGER", "ELSE ADICIONAR HISTORICO");
 			historyOfProjects.remove(project);
-			ArrayList<ProjetoModel> historyOfProjectsUpdated = new ArrayList<ProjetoModel>(MAX_NUMBER_OF_PROJECTS);
+			ArrayList<ProjectModel> historyOfProjectsUpdated = new ArrayList<ProjectModel>(MAX_NUMBER_OF_PROJECTS);
 			historyOfProjectsUpdated.add(0, project);
 			for (int i = 1; i < historyOfProjects.size(); i++) {
 				historyOfProjectsUpdated.add(i, historyOfProjects.get(i - 1));
@@ -54,7 +54,7 @@ public class HistoryController implements ModifyFilesController {
 	}
 
 	@Override
-	public void removeProject(ProjetoModel project, String projectString) {
+	public void removeProject(ProjectModel project, String projectString) {
 		if (historyOfProjectsCompleteString.contains(projectString)) {
 			if (historyOfProjects.contains(project)) {
 				historyOfProjectsCompleteString.remove(projectString);
@@ -92,7 +92,7 @@ public class HistoryController implements ModifyFilesController {
 		final int separatorsPerProject = 11;
 		final int numberOfProjectsInTheFile;
 		int numberOfSeparators = 0;
-		historyOfProjects = new ArrayList<ProjetoModel>();
+		historyOfProjects = new ArrayList<ProjectModel>();
 
 		if (historyContentString.contains("~")) {
 			for (int i = 0; i < historyContentString.length(); i++) {
@@ -127,7 +127,7 @@ public class HistoryController implements ModifyFilesController {
 
 				PoliticalPartyModel politicalParty = new PoliticalPartyModel(politicalPartyAcronym, politicalPartyStateAbbreviation);
 				ParliamentaryModel parliamentary = new ParliamentaryModel(parliamentaryName, politicalParty);
-				ProjetoModel project = new ProjetoModel(projectYear, projectName, projectAcronym, projectDate,
+				ProjectModel project = new ProjectModel(projectYear, projectName, projectAcronym, projectDate,
 						projectNumber, projectExplanation, parliamentary);
 				project.setStatus(projectStatus);
 				project.setId(projectId);
@@ -149,23 +149,23 @@ public class HistoryController implements ModifyFilesController {
 		if (!(historyOfProjects == null)) {
 			for (int i = 0; i < historyOfProjects.size(); i++) {
 				String projectString = "";
-				projectString += historyOfProjects.get(i).getNome();
+				projectString += historyOfProjects.get(i).getName();
 				projectString += "\nNumero: ";
-				projectString += historyOfProjects.get(i).getNumero();
+				projectString += historyOfProjects.get(i).getNumber();
 				projectString += "\nAno:  ";
-				projectString += historyOfProjects.get(i).getAno();
+				projectString += historyOfProjects.get(i).getYear();
 				projectString += "\nSigla: ";
-				projectString += historyOfProjects.get(i).getSigla();
+				projectString += historyOfProjects.get(i).getKindOfProjectAcronym();
 				projectString += "\nData de Apresentação: ";
-				projectString += historyOfProjects.get(i).getData();
+				projectString += historyOfProjects.get(i).getDate();
 				projectString += "\nDescrição: ";
-				projectString += historyOfProjects.get(i).getExplicacao();
+				projectString += historyOfProjects.get(i).getExplanation();
 				projectString += "\nParlamentar: ";
-				projectString += historyOfProjects.get(i).getParlamentar().getName();
+				projectString += historyOfProjects.get(i).getParliamentary().getName();
 				projectString += "\nPartido: ";
-				projectString += historyOfProjects.get(i).getParlamentar().getPoliticalParty().getPoliticalPartyAcronym();
+				projectString += historyOfProjects.get(i).getParliamentary().getPoliticalParty().getPoliticalPartyAcronym();
 				projectString += "\nEstado: ";
-				projectString += historyOfProjects.get(i).getParlamentar().getPoliticalParty().getStateAbbreviation();
+				projectString += historyOfProjects.get(i).getParliamentary().getPoliticalParty().getStateAbbreviation();
 				historyOfProjectsCompleteString.add(i, projectString);
 			}
 		}
@@ -174,11 +174,11 @@ public class HistoryController implements ModifyFilesController {
 		}
 	}
 
-	public static ArrayList<ProjetoModel> getHistoryOfProjects() {
+	public static ArrayList<ProjectModel> getHistoryOfProjects() {
 		return historyOfProjects;
 	}
 
-	public static void setHistoryOfProjects(ArrayList<ProjetoModel> historyOfProjects) {
+	public static void setHistoryOfProjects(ArrayList<ProjectModel> historyOfProjects) {
 		HistoryController.historyOfProjects = historyOfProjects;
 	}
 
@@ -198,8 +198,8 @@ public class HistoryController implements ModifyFilesController {
 		return MAX_NUMBER_OF_PROJECTS;
 	}
 
-	public static ProjetoModel getOldestProject() throws NullPointerException {
-		ProjetoModel project = historyOfProjects.get(0);
+	public static ProjectModel getOldestProject() throws NullPointerException {
+		ProjectModel project = historyOfProjects.get(0);
 		project = historyOfProjects.get(0);
 		return project;
 	}
