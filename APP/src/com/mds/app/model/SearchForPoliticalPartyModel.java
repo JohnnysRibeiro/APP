@@ -1,3 +1,17 @@
+/* File: SearchForPoliticalPartyModel.java
+ * 
+ * Package: com.mds.app.model
+ * 
+ * Description: This is a model class for the search of a political party object
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.model;
 
 public abstract class SearchForPoliticalPartyModel {
