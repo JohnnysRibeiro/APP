@@ -1,3 +1,17 @@
+/* File: HistoryController.java
+ * 
+ * Package: com.mds.app.controller
+ * 
+ * Description: This is a controller class for the history list of the projects
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.controller;
 
 import java.util.ArrayList;
@@ -156,9 +170,9 @@ public class HistoryController implements ModifyFilesController {
 				projectString += historyOfProjects.get(i).getYear();
 				projectString += "\nSigla: ";
 				projectString += historyOfProjects.get(i).getKindOfProjectAcronym();
-				projectString += "\nData de Apresentação: ";
+				projectString += "\nData de Apresentaï¿½ï¿½o: ";
 				projectString += historyOfProjects.get(i).getDate();
-				projectString += "\nDescrição: ";
+				projectString += "\nDescriï¿½ï¿½o: ";
 				projectString += historyOfProjects.get(i).getExplanation();
 				projectString += "\nParlamentar: ";
 				projectString += historyOfProjects.get(i).getParliamentary().getName();
