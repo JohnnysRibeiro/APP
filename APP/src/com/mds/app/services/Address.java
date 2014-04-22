@@ -1,3 +1,17 @@
+/* File: Address.java
+ * 
+ * Package: com.mds.app.services
+ * 
+ * Description: This is a service class for the URL address of the "Camara" governmental site
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.services;
 
 public abstract class Address {
