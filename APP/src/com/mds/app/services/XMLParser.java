@@ -1,3 +1,17 @@
+/* File: XMLParser.java
+ * 
+ * Package: com.mds.app.services
+ * 
+ * Description: This is a service class to parse the XML information to something useful
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.services;
 
 import java.io.StringReader;
