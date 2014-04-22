@@ -1,3 +1,17 @@
+/* File: StableArrayAdapter.java
+ * 
+ * Package: com.mds.app.util
+ * 
+ * Description: This is a util class to stable the ArrayAdapter
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.util;
 
 import java.util.ArrayList;
