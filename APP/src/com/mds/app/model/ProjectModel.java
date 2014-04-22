@@ -1,3 +1,17 @@
+/* File: ProjectModel.java
+ * 
+ * Package: com.mds.app.model
+ * 
+ * Description: This is a model class for the project object
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.model;
 
 public class ProjectModel {
