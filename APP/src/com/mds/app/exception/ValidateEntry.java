@@ -1,3 +1,17 @@
+/* File: ValidateEntry.java
+ * 
+ * Package: com.mds.app.exception
+ * 
+ * Description: This is an exception class that verifies and validate the entries data
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.exception;
 
 public abstract class ValidateEntry {
