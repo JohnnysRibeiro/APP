@@ -1,3 +1,17 @@
+/* File: PropositionController.java
+ * 
+ * Package: com.mds.app.controller
+ * 
+ * Description: This is a controller class for the proposition of projects
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.controller;
 
 import java.util.ArrayList;
