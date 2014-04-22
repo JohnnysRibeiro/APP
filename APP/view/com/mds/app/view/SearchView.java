@@ -1,3 +1,17 @@
+/* File: SearchView.java
+ * 
+ * Package: com.mds.app.view
+ * 
+ * Description: This is a view class with the search view interface
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.view;
 
 import java.util.List;
