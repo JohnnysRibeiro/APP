@@ -1,3 +1,17 @@
+/* File: FavoritesController.java
+ * 
+ * Package: com.mds.app.controller
+ * 
+ * Description: This is a controller class for the favorites projects list
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.controller;
 
 import java.util.ArrayList;
@@ -150,9 +164,9 @@ public class FavoritesController implements ModifyFilesController {
 				projectString += favoritedProjects.get(i).getYear();
 				projectString += "\nSigla: ";
 				projectString += favoritedProjects.get(i).getKindOfProjectAcronym();
-				projectString += "\nData de Apresentação: ";
+				projectString += "\nData de Apresentaï¿½ï¿½o: ";
 				projectString += favoritedProjects.get(i).getDate();
-				projectString += "\nDescrição: ";
+				projectString += "\nDescriï¿½ï¿½o: ";
 				projectString += favoritedProjects.get(i).getExplanation();
 				projectString += "\nParlamentar: ";
 				projectString += favoritedProjects.get(i).getParliamentary().getName();
