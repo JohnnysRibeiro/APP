@@ -1,3 +1,17 @@
+/* File: ListController.java
+ * 
+ * Package: com.mds.app.controller
+ * 
+ * Description: This is a controller class for the project list 
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.controller;
 
 import java.util.ArrayList;
@@ -52,9 +66,9 @@ public class ListController {
 			projectString += getActualProject().getYear();
 			projectString += "\nSigla: ";
 			projectString += getActualProject().getKindOfProjectAcronym();
-			projectString += "\nData de Apresentação: ";
+			projectString += "\nData de Apresentaï¿½ï¿½o: ";
 			projectString += getActualProject().getDate();
-			projectString += "\nDescrição: ";
+			projectString += "\nDescriï¿½ï¿½o: ";
 			projectString += getActualProject().getExplanation();
 			projectString += "\nParlamentar: ";
 			projectString += getActualProject().getParliamentary().getName();
