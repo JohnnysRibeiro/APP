@@ -1,3 +1,17 @@
+/* File: InternetConnection.java
+ * 
+ * Package: com.mds.app.util
+ * 
+ * Description: This is a util class connect and check the internet connection
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.util;
 
 import android.content.Context;
