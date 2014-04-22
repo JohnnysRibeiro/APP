@@ -1,3 +1,17 @@
+/* File: ProjectDescriptionView.java
+ * 
+ * Package: com.mds.app.view
+ * 
+ * Description: This is a view class with informations and descriptions about the projects
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.view;
 
 import android.app.Activity;
@@ -66,11 +80,11 @@ public class ProjectDescriptionView extends Activity {
 		text1 = (TextView) findViewById(R.id.textoTipoProjeto);
 		text1.setText(actualProject.getName());
 		text2 = (TextView) findViewById(R.id.textoCarcteristicasProjeto);
-		text2.setText("Número: " + actualProject.getNumber() + "\n" + "Ano: " + actualProject.getYear() + "\n"
-				+ "Sigla: " + actualProject.getKindOfProjectAcronym() + "\n" + "Data de Apresentação: " + "\n"
+		text2.setText("Nï¿½mero: " + actualProject.getNumber() + "\n" + "Ano: " + actualProject.getYear() + "\n"
+				+ "Sigla: " + actualProject.getKindOfProjectAcronym() + "\n" + "Data de Apresentaï¿½ï¿½o: " + "\n"
 				+ actualProject.getDate());
 		text3 = (TextView) findViewById(R.id.textoDescricao);
-		text3.setText("Descrição:" + "\n" + actualProject.getExplanation());
+		text3.setText("Descriï¿½ï¿½o:" + "\n" + actualProject.getExplanation());
 		text4 = (TextView) findViewById(R.id.textoParlamentar);
 		text4.setText("Parlamentar");
 		text5 = (TextView) findViewById(R.id.textoCarcteristicasParlamentar);
