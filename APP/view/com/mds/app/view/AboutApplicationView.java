@@ -1,9 +1,23 @@
+/* File: AboutApplicationView.java
+ * 
+ * Package: com.mds.app.view
+ * 
+ * Description: This is a view class with informations about the application
+ * 
+ * Author: 
+ * 
+ * Creation date:
+ * 
+ * Version: 2.0
+ * 
+ */
+
 package com.mds.app.view;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
-import android.widget.ImageButton;
+//import android.widget.ImageButton;
 
 import com.mds.app.R;
 
