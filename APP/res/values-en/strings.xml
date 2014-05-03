@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false" >APP</string>
+    <string name="app_id" translatable="false" >399084896860704</string>
+    <string name="action_settings" translatable="false" >Settings</string>
+    <string name="title_activity_sobre" translatable="false" >Sobre</string>
+    <string name="hintProjeto" translatable="false" >Insira um tipo de projeto (PL, PLP, PEC, PDC, PRC)</string>
+    <string name="hintAno" translatable="false" >Insira o ano</string>
+    <string name="hintNumero" translatable="false" >Insira o numero do projeto</string>
+    <string name="hintDataInicio" translatable="false" >Insira a data de início</string>
+    <string name="hintNomeAutor" translatable="false" >Insira o nome do parlamentar</string>
+    <string name="hintSiglaPartido" translatable="false" >Insira a sigla do partido</string>
+    <string name="hintUF" translatable="false" >Insira a UF</string>
+    <string name="TextoBusca" translatable="false" >Preencha os dados para realizar a pesquisa</string>
+    <string name="imgbuttonVoltar" translatable="false" >imgbuttonVoltar</string>
+    <string name="imgbuttonOK" translatable="false" >imgbuttonOK</string>
+    <string name="imgbuttonBUSCA" translatable="false" >imgbuttonBUSCA</string>
+    <string name="imgbuttonSOBRE" translatable="false" >imgbuttonSOBRE</string>
+    <string name="imgviewLOGO" translatable="false" >imgviewLOGO</string>
+    <string name="imgviewSOBREPROV" translatable="false" >imgviewSOBREPROV</string>
+    <string name="title_activity_perfil" translatable="false" >Perfil</string>
+    <string name="hello_world" translatable="false" >Hello world!</string>
+    <string name="projetoFrase" translatable="false" >Escolha um tipo</string>
+    <string name="partidos" translatable="false" >Escolha um partido</string>
+    <string-array name="partidos" translatable="false" >
+        <item>Todos os Partidos</item>
+        <item>PMDB</item>
+        <item>PT</item>
+        <item>PP</item>
+        <item>PSDB</item>
+        <item>PDT</item>
+        <item>PTB</item>
+        <item>PTdoB</item>
+        <item>DEM</item>
+        <item>PR</item>
+        <item>PSB</item>
+        <item>PPS</item>
+        <item>PSC</item>
+        <item>PCdoB</item>
+        <item>PV</item>
+        <item>PRB</item>
+        <item>PRP</item>
+        <item>PMN</item>
+        <item>PSL</item>
+        <item>PSD</item>
+        <item>PTC</item>
+        <item>PSDC</item>
+        <item>PHS</item>
+        <item>PTN</item>
+        <item>PRTB</item>
+        <item>PSOL</item>
+        <item>PSTU</item>
+        <item>PCB</item>
+        <item>PPL</item>
+        <item>PCO</item>
+        <item>PPEN</item>
+        <item>PROS</item>
+        <item>SDD</item>
+    </string-array>
+    <string-array name="projetos" translatable="false" >
+        <item>Projeto de Lei</item>
+        <item>Projeto de Emenda à Constituição</item>
+        <item>Projeto de Lei Complementar</item>
+        <item>Projetos de Decreto Legislativo</item>
+        <item>Projeto de Resolução</item>
+    </string-array>
+
+    <string name="imgbuttonFavorito" translatable="false" >imgbuttonFavorito</string>
+    <string name="imgbuttonPesquisar" translatable="false" >imgbuttonPesquisar</string>
+    <string name="imgbuttonNaoFavorito" translatable="false" >imgbuttonNaoFavorito</string>
+    <string name="estadoFrase" translatable="false" >Escolha um estado</string>
+
+    <string-array name="estados" translatable="false" >
+        <item>Todos os Estados</item>
+        <item>Acre</item>
+        <item>Alagoas</item>
+        <item>Amapá</item>
+        <item>Amazonas</item>
+        <item>Bahia</item>
+        <item>Ceará</item>
+        <item>Distrito Federal</item>
+        <item>Espirito Santo</item>
+        <item>Goias</item>
+        <item>Maranhão</item>
+        <item>Mato Grosso</item>
+        <item>Mato Grosso do Sul</item>
+        <item>Minas Gerais</item>
+        <item>Pará</item>
+        <item>Paraíba</item>
+        <item>Pernambuco</item>
+        <item>Piauí</item>
+        <item>Rio de Janeiro</item>
+        <item>Rio Grande do Norte</item>
+        <item>Rio Grande do Sul</item>
+        <item>Rondônia</item>
+        <item>Roraima</item>
+        <item>Santa Catarina</item>
+        <item>São Paulo</item>
+        <item>Sergipe</item>
+        <item>Tocantins</item>
+    </string-array>
+        <string name="apptext" translatable="false" >Acompanhamento de Projetos Parlamentares</string>
+        <string name="textoTitulo" translatable="false" >Prrencha os dados para fazer a pesquisa</string>
+
+</resources>
