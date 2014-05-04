@@ -10,17 +10,17 @@
     tools:context=".MainMenuView" >
 
     <ImageView
-        android:id="@+id/imgviewLogo"
+        android:id="@+id/imgViewLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="34dp"
         android:layout_y="30dp"
-        android:contentDescription="@string/imgviewLOGO"
+        android:contentDescription="@string/imgViewLogo"
         android:scaleType="fitStart"
         android:src="@drawable/app_logo" />
 
     <ImageView
-        android:id="@+id/fundo_menu_botoes"
+        android:id="@+id/background_menu_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_x="34dp"
@@ -65,7 +65,7 @@
          android:contentDescription="historico" />
 
      <TextView
-         android:id="@+id/textmenuprincipal"
+         android:id="@+id/main_menu_text"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_x="0dp"

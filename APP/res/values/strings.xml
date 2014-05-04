@@ -17,7 +17,7 @@
     <string name="imgbuttonOK">imgbuttonOK</string>
     <string name="imgbuttonBUSCA">imgbuttonBUSCA</string>
     <string name="imgbuttonSOBRE">imgbuttonSOBRE</string>
-    <string name="imgviewLOGO">imgviewLOGO</string>
+    <string name="imgViewLogo">imgViewLogo</string>
     <string name="imgviewSOBREPROV">imgviewSOBREPROV</string>
     <string name="title_activity_perfil">Perfil</string>
     <string name="hello_world">Hello world!</string>
