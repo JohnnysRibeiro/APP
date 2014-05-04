@@ -102,6 +102,7 @@ int drawable third_square_from_menu 0x7f020038
 int id FavoritedProjectStar 0x7f040015
 int id about_button_id 0x7f04000b
 int id action_settings 0x7f040038
+int id authorNameText 0x7f04001a
 int id com_facebook_login_activity_progress_bar 0x7f040025
 int id com_facebook_picker_activity_circle 0x7f040024
 int id com_facebook_picker_checkbox 0x7f040027
@@ -138,9 +139,11 @@ int id moreText 0x7f040014
 int id normal 0x7f040001
 int id notFavoritedProject 0x7f040018
 int id notFavoritedProjectStar 0x7f040016
+int id numberText 0x7f04001d
 int id parliamentaryCharacteristicsText 0x7f040013
 int id parliamentaryText 0x7f040012
 int id picker_subtitle 0x7f040032
+int id politicalPartyAcronymText 0x7f04001b
 int id projectCharacteristicsText 0x7f04000f
 int id projectTypeText 0x7f04000e
 int id search_button 0x7f040022
@@ -148,14 +151,11 @@ int id search_button_id 0x7f040009
 int id small 0x7f040000
 int id spinner1 0x7f04001f
 int id spinner2 0x7f040020
-int id textAno 0x7f04001e
-int id textDataIni 0x7f04001c
-int id textNomeAutor 0x7f04001a
-int id textNumero 0x7f04001d
-int id textSiglaPartido 0x7f04001b
+int id startDateText 0x7f04001c
 int id textStatus 0x7f040011
 int id textmenuprincipal 0x7f04000d
 int id textoTitulo 0x7f040021
+int id yearText 0x7f04001e
 int layout activity_for_about_view 0x7f030000
 int layout activity_for_list 0x7f030001
 int layout activity_for_main_menu 0x7f030002

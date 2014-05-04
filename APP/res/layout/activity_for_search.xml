@@ -18,11 +18,11 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/textNomeAutor"
+        android:id="@+id/authorNameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textSiglaPartido"
-        android:layout_alignLeft="@id/textSiglaPartido"
+        android:layout_below="@id/politicalPartyAcronymText"
+        android:layout_alignLeft="@id/politicalPartyAcronymText"
         android:layout_marginBottom="15dp"
         android:ems="10"
         android:hint="@string/hintNomeAutor" >
@@ -31,36 +31,36 @@
     </EditText>
 
     <Spinner
-        android:id="@+id/textSiglaPartido"
+        android:id="@+id/politicalPartyAcronymText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textDataIni"
-        android:layout_alignLeft="@+id/textDataIni"
+        android:layout_below="@+id/startDateText"
+        android:layout_alignLeft="@+id/startDateText"
       	android:entries="@array/partidos"
         android:prompt="@string/partidos" />
 
 
     <EditText
-        android:id="@+id/textDataIni"
+        android:id="@+id/startDateText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textNumero"
-        android:layout_alignLeft="@+id/textNumero"
+        android:layout_below="@+id/numberText"
+        android:layout_alignLeft="@+id/numberText"
         android:ems="10"
         android:hint="@string/hintDataInicio" />
     
 
     <EditText
-        android:id="@+id/textNumero"
+        android:id="@+id/numberText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textAno"
-        android:layout_alignLeft="@+id/textAno"
+        android:layout_below="@+id/yearText"
+        android:layout_alignLeft="@+id/yearText"
         android:ems="10"
         android:hint="@string/hintNumero" />
     
     <EditText
-        android:id="@+id/textAno"
+        android:id="@+id/yearText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner1"

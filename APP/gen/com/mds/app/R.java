@@ -251,6 +251,7 @@ containing a value of this type.
         public static final int FavoritedProjectStar=0x7f040015;
         public static final int about_button_id=0x7f04000b;
         public static final int action_settings=0x7f040038;
+        public static final int authorNameText=0x7f04001a;
         public static final int com_facebook_login_activity_progress_bar=0x7f040025;
         public static final int com_facebook_picker_activity_circle=0x7f040024;
         public static final int com_facebook_picker_checkbox=0x7f040027;
@@ -287,9 +288,11 @@ containing a value of this type.
         public static final int normal=0x7f040001;
         public static final int notFavoritedProject=0x7f040018;
         public static final int notFavoritedProjectStar=0x7f040016;
+        public static final int numberText=0x7f04001d;
         public static final int parliamentaryCharacteristicsText=0x7f040013;
         public static final int parliamentaryText=0x7f040012;
         public static final int picker_subtitle=0x7f040032;
+        public static final int politicalPartyAcronymText=0x7f04001b;
         public static final int projectCharacteristicsText=0x7f04000f;
         public static final int projectTypeText=0x7f04000e;
         public static final int search_button=0x7f040022;
@@ -297,14 +300,11 @@ containing a value of this type.
         public static final int small=0x7f040000;
         public static final int spinner1=0x7f04001f;
         public static final int spinner2=0x7f040020;
-        public static final int textAno=0x7f04001e;
-        public static final int textDataIni=0x7f04001c;
-        public static final int textNomeAutor=0x7f04001a;
-        public static final int textNumero=0x7f04001d;
-        public static final int textSiglaPartido=0x7f04001b;
+        public static final int startDateText=0x7f04001c;
         public static final int textStatus=0x7f040011;
         public static final int textmenuprincipal=0x7f04000d;
         public static final int textoTitulo=0x7f040021;
+        public static final int yearText=0x7f04001e;
     }
     public static final class layout {
         public static final int activity_for_about_view=0x7f030000;

@@ -75,11 +75,11 @@ public class SearchView extends Activity {
 
 			Spinner spinner1 = (Spinner) findViewById(R.id.spinner1);
 			Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-			EditText textNumber = (EditText) findViewById(R.id.textNumero);
-			EditText textYear = (EditText) findViewById(R.id.textAno);
-			EditText textInitialDate = (EditText) findViewById(R.id.textDataIni);
-			EditText textAuthorName = (EditText) findViewById(R.id.textNomeAutor);
-			Spinner textPoliticalPartyAcronym = (Spinner) findViewById(R.id.textSiglaPartido);
+			EditText textNumber = (EditText) findViewById(R.id.numberText);
+			EditText textYear = (EditText) findViewById(R.id.yearText);
+			EditText textInitialDate = (EditText) findViewById(R.id.startDateText);
+			EditText textAuthorName = (EditText) findViewById(R.id.authorNameText);
+			Spinner textPoliticalPartyAcronym = (Spinner) findViewById(R.id.politicalPartyAcronymText);
 
 			@Override
 			public void onClick(View v) {
@@ -93,7 +93,7 @@ public class SearchView extends Activity {
 					new SearchForProjectsTask().execute();
 				}
 				else {
-					Toast.makeText(SearchView.this, "Dados Invalidos", Toast.LENGTH_SHORT).show();
+					Toast.makeText(SearchView.this, "Dados inv‡lidos", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -110,7 +110,7 @@ public class SearchView extends Activity {
 
 		@Override
 		protected void onPreExecute() {
-			progressDialog = ProgressDialog.show(SearchView.this, "Aguarde...", "Recebendo dados", true, true);
+			progressDialog = ProgressDialog.show(SearchView.this, "Espere...", "Recebendo dados", true, true);
 			progressDialog.setOnCancelListener(new CancelTaskOnCancelListener(this));
 		}
 
