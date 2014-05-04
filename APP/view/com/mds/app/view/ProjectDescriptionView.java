@@ -41,7 +41,7 @@ public class ProjectDescriptionView extends Activity {
 
 	private ListController listController;
 	private ProjectModel actualProject;
-	private String completeProjectAsString;
+	// private String completeProjectAsString; (never used)
 	private TextView text1;
 	private TextView text2;
 	private TextView text3;
@@ -75,7 +75,7 @@ public class ProjectDescriptionView extends Activity {
 		actualProject = ListController.getActualProject();
 		listController = new ListController();
 
-		completeProjectAsString = listController.getCompleteStringForProfile();
+		// completeProjectAsString = listController.getCompleteStringForProfile(); (never used)
 
 		text1 = (TextView) findViewById(R.id.projectTypeText);
 		text1.setText(actualProject.getName());
