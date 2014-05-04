@@ -4,15 +4,15 @@
     <string name="app_name">APP</string>
     <string name="app_id">399084896860704</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_sobre">Sobre</string>
-    <string name="hintProjeto">Insira um tipo de projeto (PL, PLP, PEC, PDC, PRC)</string>
-    <string name="hintAno">Insira o ano</string>
-    <string name="hintNumero">Insira o numero do projeto</string>
-    <string name="hintDataInicio">Insira a data de início</string>
-    <string name="hintNomeAutor">Insira o nome do parlamentar</string>
-    <string name="hintSiglaPartido">Insira a sigla do partido</string>
-    <string name="hintUF">Insira a UF</string>
-    <string name="TextoBusca">Preencha os dados para realizar a pesquisa</string>
+    <string name="title_activity_sobre">About</string>
+    <string name="hintProjeto">Insert a type of project(PL, PLP, PEC, PDC, PRC)</string>
+    <string name="hintAno">Insert the year</string>
+    <string name="hintNumero">Insert the project number</string>
+    <string name="hintDataInicio">Insert the start date</string>
+    <string name="hintNomeAutor">Insert the parliamentary name</string>
+    <string name="hintSiglaPartido">Insert the political party acronym</string>
+    <string name="hintUF">Insert the state abbreviation</string>
+    <string name="TextoBusca">Fill the data for the search</string>
     <string name="imgbuttonVoltar">imgbuttonVoltar</string>
     <string name="imgbuttonOK">imgbuttonOK</string>
     <string name="imgbuttonBUSCA">imgbuttonBUSCA</string>
@@ -21,10 +21,10 @@
     <string name="imgviewSOBREPROV">imgviewSOBREPROV</string>
     <string name="title_activity_perfil">Perfil</string>
     <string name="hello_world">Hello world!</string>
-    <string name="projetoFrase">Escolha um tipo</string>
-    <string name="partidos">Escolha um partido</string>
+    <string name="projetoFrase">Choose a type</string>
+    <string name="partidos">Choose a political party</string>
     <string-array name="partidos">
-        <item>Todos os Partidos</item>
+        <item>All the political parties</item>
         <item>PMDB</item>
         <item>PT</item>
         <item>PP</item>
@@ -59,20 +59,20 @@
         <item>SDD</item>
     </string-array>
     <string-array name="projetos">
-        <item>Projeto de Lei</item>
-        <item>Projeto de Emenda à Constituição</item>
-        <item>Projeto de Lei Complementar</item>
-        <item>Projetos de Decreto Legislativo</item>
-        <item>Projeto de Resolução</item>
+        <item>Law Project</item>
+        <item>Constitutional Amendment Project</item>
+        <item>Complementary Law Project</item>
+        <item>Legislative Decree Projects</item>
+        <item>Resolution Project</item>
     </string-array>
 
     <string name="imgbuttonFavorito">imgbuttonFavorito</string>
     <string name="imgbuttonPesquisar">imgbuttonPesquisar</string>
     <string name="imgbuttonNaoFavorito">imgbuttonNaoFavorito</string>
-    <string name="estadoFrase">Escolha um estado</string>
+    <string name="estadoFrase">Choose a state</string>
 
     <string-array name="estados">
-        <item>Todos os Estados</item>
+        <item>All the states</item>
         <item>Acre</item>
         <item>Alagoas</item>
         <item>Amapá</item>
@@ -101,6 +101,6 @@
         <item>Tocantins</item>
     </string-array>
         <string name="apptext">Acompanhamento de Projetos Parlamentares</string>
-        <string name="textoTitulo">Prrencha os dados para fazer a pesquisa</string>
+        <string name="textoTitulo">Fill the data for the search</string>
 
 </resources>
