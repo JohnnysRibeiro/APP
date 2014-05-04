@@ -271,6 +271,7 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_login_button=0x7f040037;
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f040035;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040036;
+        public static final int descriptionText=0x7f040010;
         public static final int favorites_button_id=0x7f04000a;
         public static final int fundo_menu_botoes=0x7f040008;
         public static final int history_button_id=0x7f04000c;
@@ -282,10 +283,15 @@ containing a value of this type.
         public static final int large=0x7f040002;
         public static final int linearLayout=0x7f040019;
         public static final int logoFacebook=0x7f040017;
+        public static final int moreText=0x7f040014;
         public static final int normal=0x7f040001;
         public static final int notFavoritedProject=0x7f040018;
         public static final int notFavoritedProjectStar=0x7f040016;
+        public static final int parliamentaryCharacteristicsText=0x7f040013;
+        public static final int parliamentaryText=0x7f040012;
         public static final int picker_subtitle=0x7f040032;
+        public static final int projectCharacteristicsText=0x7f04000f;
+        public static final int projectTypeText=0x7f04000e;
         public static final int search_button=0x7f040022;
         public static final int search_button_id=0x7f040009;
         public static final int small=0x7f040000;
@@ -296,14 +302,8 @@ containing a value of this type.
         public static final int textNomeAutor=0x7f04001a;
         public static final int textNumero=0x7f04001d;
         public static final int textSiglaPartido=0x7f04001b;
+        public static final int textStatus=0x7f040011;
         public static final int textmenuprincipal=0x7f04000d;
-        public static final int textoCarcteristicasParlamentar=0x7f040013;
-        public static final int textoCarcteristicasProjeto=0x7f04000f;
-        public static final int textoDescricao=0x7f040010;
-        public static final int textoMais=0x7f040014;
-        public static final int textoParlamentar=0x7f040012;
-        public static final int textoStatus=0x7f040011;
-        public static final int textoTipoProjeto=0x7f04000e;
         public static final int textoTitulo=0x7f040021;
     }
     public static final class layout {

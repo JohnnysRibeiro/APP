@@ -26,7 +26,7 @@
                 android:background="@drawable/first_square_from_menu">
 
                 <TextView 
-                    android:id="@+id/textoTipoProjeto"
+                    android:id="@+id/projectTypeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" 
                     android:textSize="18sp" 
@@ -45,7 +45,7 @@
                 android:background="@drawable/first_square_from_menu">
 
                 <TextView 
-                    android:id="@+id/textoCarcteristicasProjeto"
+                    android:id="@+id/projectCharacteristicsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" 
                     android:textSize="18sp" 
@@ -63,7 +63,7 @@
                 android:background="@drawable/fourth_square_from_menu">
 
                 <TextView 
-                    android:id="@+id/textoDescricao"
+                    android:id="@+id/descriptionText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" 
                     android:textSize="18sp" 
@@ -81,7 +81,7 @@
                 android:background="@drawable/fourth_square_from_menu">
 
                 <TextView 
-                    android:id="@+id/textoStatus"
+                    android:id="@+id/textStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" 
                     android:textSize="18sp" 
@@ -100,7 +100,7 @@
                 android:background="@drawable/first_square_from_menu">
 
                 <TextView 
-                    android:id="@+id/textoParlamentar"
+                    android:id="@+id/parliamentaryText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" 
                     android:textSize="18sp" 
@@ -118,7 +118,7 @@
                 android:background="@drawable/first_square_from_menu">
 
                 <TextView 
-                    android:id="@+id/textoCarcteristicasParlamentar"
+                    android:id="@+id/parliamentaryCharacteristicsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" 
                     android:textSize="18sp" 
@@ -136,7 +136,7 @@
                 android:background="@drawable/first_square_from_menu">
 
                 <TextView 
-                    android:id="@+id/textoMais"
+                    android:id="@+id/moreText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" 
                     android:textSize="18sp" 

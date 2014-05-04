@@ -77,23 +77,23 @@ public class ProjectDescriptionView extends Activity {
 
 		completeProjectAsString = listController.getCompleteStringForProfile();
 
-		text1 = (TextView) findViewById(R.id.textoTipoProjeto);
+		text1 = (TextView) findViewById(R.id.projectTypeText);
 		text1.setText(actualProject.getName());
-		text2 = (TextView) findViewById(R.id.textoCarcteristicasProjeto);
+		text2 = (TextView) findViewById(R.id.projectCharacteristicsText);
 		text2.setText("N�mero: " + actualProject.getNumber() + "\n" + "Ano: " + actualProject.getYear() + "\n"
 				+ "Sigla: " + actualProject.getKindOfProjectAcronym() + "\n" + "Data de Apresenta��o: " + "\n"
 				+ actualProject.getDate());
-		text3 = (TextView) findViewById(R.id.textoDescricao);
+		text3 = (TextView) findViewById(R.id.descriptionText);
 		text3.setText("Descri��o:" + "\n" + actualProject.getExplanation());
-		text4 = (TextView) findViewById(R.id.textoParlamentar);
+		text4 = (TextView) findViewById(R.id.parliamentaryText);
 		text4.setText("Parlamentar");
-		text5 = (TextView) findViewById(R.id.textoCarcteristicasParlamentar);
+		text5 = (TextView) findViewById(R.id.parliamentaryCharacteristicsText);
 		text5.setText("Nome: " + actualProject.getParliamentary().getName() + "\n" + "Partido: "
 				+ actualProject.getParliamentary().getPoliticalParty().getPoliticalPartyAcronym());
-		text6 = (TextView) findViewById(R.id.textoMais);
+		text6 = (TextView) findViewById(R.id.moreText);
 		text6.setText("Para visualizar o perfil completo do projeto acesse: "
 				+ "http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=" + actualProject.getId());
-		text7 = (TextView) findViewById(R.id.textoStatus);
+		text7 = (TextView) findViewById(R.id.textStatus);
 		text7.setText("Status: " + actualProject.getStatus());
 
 		favoriteAProject_addListener();
