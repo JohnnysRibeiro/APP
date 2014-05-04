@@ -43,7 +43,7 @@ public class ProjectListView extends Activity {
 		listController = new ListController();
 
 		stringOfAProject = listController.transformAProjectListIntoAnArrayList();
-		Log.i("LISTA", stringOfAProject.toString());
+		Log.i("LIST", stringOfAProject.toString());
 
 		final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1,
 				stringOfAProject);
