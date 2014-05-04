@@ -112,12 +112,12 @@ public class ProjectDescriptionView extends Activity {
 			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
 		}
 		else {
-			Log.i("LOGGER", "Removendo do historico: " + HistoryController.getOldestProject().getNumber());
+			Log.i("LOGGER", "Remove from history: " + HistoryController.getOldestProject().getNumber());
 			historyController.removeProject(HistoryController.getOldestProject(),
 					HistoryController.getOldestProjectAsString());
 			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
 		}
-		Log.i("LOGGER", "Adicionando ao historico: " + actualProject.getNumber());
+		Log.i("LOGGER", "Adding to the history: " + actualProject.getNumber());
 
 	}
 
@@ -185,13 +185,13 @@ public class ProjectDescriptionView extends Activity {
 					favoriteStarImgButton.setImageResource(R.drawable.favorited_star_img);
 					favoritedProject = true;
 					favoritesController.addProject(actualProject, stringFromProjectToBeFavorited);
-					Log.i("LOGGER", "Favoritando: " + actualProject.getNumber());
+					Log.i("LOGGER", "Favoriting: " + actualProject.getNumber());
 				}
 				else {
 					favoriteStarImgButton.setImageResource(R.drawable.not_favorited_star_img);
 					favoritedProject = false;
 					favoritesController.removeProject(actualProject, stringFromProjectToBeFavorited);
-					Log.i("LOGGER", "Desfavoritando: " + actualProject.getNumber());
+					Log.i("LOGGER", "Unfavoriting: " + actualProject.getNumber());
 				}
 			}
 		});
