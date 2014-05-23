@@ -2,13 +2,7 @@
  * 
  * Package: com.mds.app.view
  * 
- * Description: This is a view class which contains the main manu
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
+ * Description: This is a view class responsible for showing the Main Menu from the application.
  * 
  */
 
