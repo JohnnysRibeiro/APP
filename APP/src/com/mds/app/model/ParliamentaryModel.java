@@ -2,14 +2,8 @@
  * 
  * Package: com.mds.app.model
  * 
- * Description: This is a model class for the parliamentary object
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a model class from a Parliamentary with all its atributes like name and political party.
+ *
  */
 
 package com.mds.app.model;
