@@ -2,14 +2,8 @@
  * 
  * Package: com.mds.app.util
  * 
- * Description: This is a util class connect and check the internet connection
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is an util class responsible for checking and creating an internet connection throught 2G/3G/4G or wifi.
+ *
  */
 
 package com.mds.app.util;
