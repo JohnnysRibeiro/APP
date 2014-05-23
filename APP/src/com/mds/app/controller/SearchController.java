@@ -2,14 +2,9 @@
  * 
  * Package: com.mds.app.controller
  * 
- * Description: This is a controller class for the project search  
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a controller class responsible for managing a search of a project from the application.
+ * It receives some params related to the kind of project, state, political party, date, author, etc.
+ *   
  */
 
 package com.mds.app.controller;
@@ -43,7 +38,7 @@ public class SearchController {
 		if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Lei")) {
 			kindOfProjectAcronym = "PL";
 		}
-		else if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Emenda � Constitui��o")) {
+		else if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Emenda Constitucional")) {
 			kindOfProjectAcronym = "PEC";
 		}
 		else if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Lei Complementar")) {
@@ -52,7 +47,7 @@ public class SearchController {
 		else if (kindOfProjectAcronym.equalsIgnoreCase("Projetos de Decreto Legislativo")) {
 			kindOfProjectAcronym = "PDC";
 		}
-		else if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Resolu��o")) {
+		else if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Resolucao")) {
 			kindOfProjectAcronym = "PRC";
 		}
 		else {
@@ -78,7 +73,7 @@ public class SearchController {
 		else if (stateAbbreviation.equalsIgnoreCase("Alagoas")) {
 			stateAbbreviation = "AL";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Amap�")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Amapa")) {
 			stateAbbreviation = "AP";
 		}
 		else if (stateAbbreviation.equalsIgnoreCase("Amazonas")) {
@@ -87,19 +82,19 @@ public class SearchController {
 		else if (stateAbbreviation.equalsIgnoreCase("Bahia")) {
 			stateAbbreviation = "BA";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Cear�")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Ceara")) {
 			stateAbbreviation = "CE";
 		}
 		else if (stateAbbreviation.equalsIgnoreCase("Distrito Federal")) {
 			stateAbbreviation = "DF";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Esp�rito Santo")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Espirito Santo")) {
 			stateAbbreviation = "ES";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Goi�s")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Goias")) {
 			stateAbbreviation = "GO";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Maranh�o")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Maranhao")) {
 			stateAbbreviation = "MA";
 		}
 		else if (stateAbbreviation.equalsIgnoreCase("Mato Grosso")) {
@@ -111,19 +106,19 @@ public class SearchController {
 		else if (stateAbbreviation.equalsIgnoreCase("Minas Gerais")) {
 			stateAbbreviation = "MG";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Par�")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Para")) {
 			stateAbbreviation = "PA";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Para�ba")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Paraiba")) {
 			stateAbbreviation = "PB";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Paran�")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Parana")) {
 			stateAbbreviation = "PR";
 		}
 		else if (stateAbbreviation.equalsIgnoreCase("Pernambuco")) {
 			stateAbbreviation = "PE";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Piau�")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Piaui")) {
 			stateAbbreviation = "PI";
 		}
 		else if (stateAbbreviation.equalsIgnoreCase("Rio de Janeiro")) {
@@ -135,7 +130,7 @@ public class SearchController {
 		else if (stateAbbreviation.equalsIgnoreCase("Rio Grande do Sul")) {
 			stateAbbreviation = "RS";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("Rond�nia")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Rondonia")) {
 			stateAbbreviation = "RO";
 		}
 		else if (stateAbbreviation.equalsIgnoreCase("Roraima")) {
@@ -144,7 +139,7 @@ public class SearchController {
 		else if (stateAbbreviation.equalsIgnoreCase("Santa Catarina")) {
 			stateAbbreviation = "SC";
 		}
-		else if (stateAbbreviation.equalsIgnoreCase("S�o Paulo")) {
+		else if (stateAbbreviation.equalsIgnoreCase("Sao Paulo")) {
 			stateAbbreviation = "SP";
 		}
 		else if (stateAbbreviation.equalsIgnoreCase("Sergipe")) {

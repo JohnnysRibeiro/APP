@@ -2,14 +2,8 @@
  * 
  * Package: com.mds.app.controller
  * 
- * Description: This is a controller class for the proposition of projects
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a controller class responsible for some propositions used by the XMLParser.
+ *
  */
 
 package com.mds.app.controller;
