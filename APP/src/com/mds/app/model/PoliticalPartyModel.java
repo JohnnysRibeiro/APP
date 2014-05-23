@@ -2,13 +2,7 @@
  * 
  * Package: com.mds.app.model
  * 
- * Description: This is a model class for the political party object
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
+ * Description: This is a model class from a Political Party with all its atributes like name, acronym, abbreviation, etc.
  * 
  */
 
