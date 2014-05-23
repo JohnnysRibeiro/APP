@@ -2,13 +2,7 @@
  * 
  * Package: com.mds.app.util
  * 
- * Description: This is a util class to cancel the task
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
+ * Description: This is an util class responsible for canceling/killing a task requested by the user or the application. Usually an asyncrounous task.
  * 
  */
 
