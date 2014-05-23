@@ -2,13 +2,7 @@
  * 
  * Package: com.mds.app.view
  * 
- * Description: This is a view class with informations about the application
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
+ * Description: This is a view class that shows the about page from the application
  * 
  */
 
