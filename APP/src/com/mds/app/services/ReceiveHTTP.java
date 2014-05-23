@@ -2,14 +2,8 @@
  * 
  * Package: com.mds.app.services
  * 
- * Description: This is a service class to receive the HTTP
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a service class responsible for receiving a HTTP/url address.
+ *
  */
 
 package com.mds.app.services;
