@@ -2,13 +2,8 @@
  * 
  * Package: com.mds.app.view
  * 
- * Description: This is a view class with the search view interface
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
+ * Description: This is a view class responsible for showing the search page for looking for a project from 
+ * the application.
  * 
  */
 
