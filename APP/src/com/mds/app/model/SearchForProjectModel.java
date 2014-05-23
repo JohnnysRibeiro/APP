@@ -2,14 +2,8 @@
  * 
  * Package: com.mds.app.model
  * 
- * Description: This is a model class for the search of a project object
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a model class responsible for managing a search of projects into the application. Basically manages the year, id, kind of project of a project.
+ *
  */
 
 package com.mds.app.model;
