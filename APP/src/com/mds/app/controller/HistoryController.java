@@ -2,13 +2,8 @@
  * 
  * Package: com.mds.app.controller
  * 
- * Description: This is a controller class for the history list of the projects
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
+ * Description: This is a controller class responsible for managing the history of projects that was seen
+ * favorited, searched, etc at the application.
  * 
  */
 
