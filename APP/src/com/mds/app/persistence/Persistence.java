@@ -2,14 +2,8 @@
  * 
  * Package: com.mds.app.persistence
  * 
- * Description: This is a persistence class to persist the database created
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a persistence class responsible for managing the persistence between the application and the database.
+ *
  */
 
 package com.mds.app.persistence;
