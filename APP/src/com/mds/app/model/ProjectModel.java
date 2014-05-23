@@ -2,14 +2,9 @@
  * 
  * Package: com.mds.app.model
  * 
- * Description: This is a model class for the project object
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a model class from a Project that sets all its atributes like id, year, number,
+ * name, kind of project, date, a brief explanation, status, parliamentary, etc.
+ *
  */
 
 package com.mds.app.model;
