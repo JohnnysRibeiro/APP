@@ -2,14 +2,9 @@
  * 
  * Package: com.mds.app.services
  * 
- * Description: This is a service class to parse the XML information to something useful
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a service class responsible for parsing an XML information to something useful for the application. It is used
+ * for passing informations about projects, parliamentaries, etc.
+ *
  */
 
 package com.mds.app.services;
