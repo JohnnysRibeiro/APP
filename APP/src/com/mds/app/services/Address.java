@@ -2,14 +2,9 @@
  * 
  * Package: com.mds.app.services
  * 
- * Description: This is a service class for the URL address of the "Camara" governmental site
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a service class responsible for catching the real information at the "Chamber of deputies"/"C‰mara dos Deputados" website and returning
+ * it to the application.
+ *
  */
 
 package com.mds.app.services;
