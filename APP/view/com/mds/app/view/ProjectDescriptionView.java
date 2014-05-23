@@ -2,13 +2,7 @@
  * 
  * Package: com.mds.app.view
  * 
- * Description: This is a view class with informations and descriptions about the projects
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
+ * Description: This is a view class responsible for showing the description page of a project from the application.
  * 
  */
 
