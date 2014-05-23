@@ -18,7 +18,7 @@ import com.mds.app.model.PoliticalPartyModel;
 import com.mds.app.model.ProjectModel;
 import com.mds.app.persistence.Persistence;
 
-public class FavoritesController implements ModifyFilesController {
+public class FavoritesController implements ManageProjectsController {
 
 	private static ArrayList<ProjectModel> favoritedProjects = new ArrayList<ProjectModel>();
 	private static ArrayList<String> favoritedProjectsCompleteString = new ArrayList<String>();

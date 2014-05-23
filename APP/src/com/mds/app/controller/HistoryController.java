@@ -19,7 +19,7 @@ import com.mds.app.model.PoliticalPartyModel;
 import com.mds.app.model.ProjectModel;
 import com.mds.app.persistence.Persistence;
 
-public class HistoryController implements ModifyFilesController {
+public class HistoryController implements ManageProjectsController {
 
 	private static final int MAX_NUMBER_OF_PROJECTS = 10;
 	private static ArrayList<ProjectModel> historyOfProjects = new ArrayList<ProjectModel>(MAX_NUMBER_OF_PROJECTS);
