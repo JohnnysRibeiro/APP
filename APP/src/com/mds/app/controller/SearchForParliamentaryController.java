@@ -2,14 +2,8 @@
  * 
  * Package: com.mds.app.controller
  * 
- * Description: This is a controller class for the parliamentary search
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a controller class responsible for managing a search from any parliamentary from the project.
+ *
  */
 
 package com.mds.app.controller;
