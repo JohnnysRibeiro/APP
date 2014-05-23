@@ -2,14 +2,8 @@
  * 
  * Package: com.mds.app.controller
  * 
- * Description: This is a controller class for the favorites projects list
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a controller class responsible for managing the favorited projects from the application.
+ *
  */
 
 package com.mds.app.controller;
