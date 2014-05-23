@@ -2,14 +2,9 @@
  * 
  * Package: com.mds.app.controller
  * 
- * Description: This is a controller class for the project list 
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is a controller class responsible for managing a list of projects from the application when
+ * the user requests it. It receives the arguments, do the search and returns it for the view class. 
+ *
  */
 
 package com.mds.app.controller;

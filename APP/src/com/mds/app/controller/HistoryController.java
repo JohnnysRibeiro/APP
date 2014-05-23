@@ -3,7 +3,7 @@
  * Package: com.mds.app.controller
  * 
  * Description: This is a controller class responsible for managing the history of projects that was seen
- * favorited, searched, etc at the application.
+ * favorited, searched, viewed, etc at the application.
  * 
  */
 
