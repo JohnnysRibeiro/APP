@@ -29,6 +29,12 @@ public class ProjectListView extends Activity {
 	private ListController listController;
 	private ArrayList<String> stringOfAProject;
 
+	/*
+	 * Basically prepares a list of projects to be shown after a search and opens its
+	 * on a Description View if requested by the user or show that nothing was found if
+	 * it wasnt.
+	 */
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
