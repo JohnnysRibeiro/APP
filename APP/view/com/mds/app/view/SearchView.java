@@ -35,6 +35,13 @@ import com.mds.app.util.InternetConnection;
 
 public class SearchView extends Activity {
 
+	/*
+	 * Variables that will be used by the search. The progressDialog shows a dialog saying that
+	 * the search is being doing. The searchButton it is the button that it is supposed to be pressed
+	 * when the user requests the search and the others variables will be used as instances for setting 
+	 * up/checking connection and calling the controller.
+	 */
+	
 	private ProgressDialog progressDialog;
 	private ImageButton searchButton;
 	private SearchController searchController;
@@ -44,6 +51,12 @@ public class SearchView extends Activity {
 
 	}
 
+	/*
+	 * Actually it's here that we instantiate the connection and SearchController class and call the Listener
+	 * responsible for the search. We still did not implemented what is supposed to be done if there is no
+	 * connection so this is a bug. If the cellphone is offline and a search is requested so the app crashes.
+	 */
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -60,10 +73,15 @@ public class SearchView extends Activity {
 			searchController.setConnection(true);
 		}
 		else {
-			/* implement a new persistence */
+			// Need to implement a new persistence or define what will be done if the cellphone is offline.
 		}
 	}
 
+	/*
+	 * The Listener responsible for catching the parameters for the search and calls the controller when it
+	 * is pressed. It also validates the entries and returns a message saying that the information is wrong 
+	 * if it is the case.
+	 */
 	private void searchButton_addListener() {
 		searchButton = (ImageButton) findViewById(R.id.search_button);
 		searchButton.setOnClickListener(new OnClickListener() {
@@ -94,21 +112,32 @@ public class SearchView extends Activity {
 		});
 	}
 
+	// Inflate the menu; this adds items to the action bar if it is present.
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main_menu, menu);
 		return true;
 	}
 
 	private class SearchForProjectsTask extends AsyncTask<Void, Void, List<ProjectModel>> {
-
+		
+		/*
+		 * Here it is where we set the progressDialog with the message saying that the search
+		 * it is in progress and offer to the user the option to cancel the actual search.
+		 */
+		
 		@Override
 		protected void onPreExecute() {
 			progressDialog = ProgressDialog.show(SearchView.this, "Espere...", "Recebendo dados", true, true);
 			progressDialog.setOnCancelListener(new CancelTaskOnCancelListener(this));
 		}
 
+		/*
+		 *  Prepares a List with all the projects founds that comes from SearchController and returns it.
+		 *  It is done in background while the progressDialog is on the screen and the user cant see it 
+		 *  happening.
+		 */
+		
 		@Override
 		protected List<ProjectModel> doInBackground(Void... params) {
 			Log.i("LOGGER", "Starting...doInBackground loadList");
@@ -116,6 +145,11 @@ public class SearchView extends Activity {
 			return projectsList;
 		}
 
+		/*
+		 * After the search is done it will close the progressDialog window and call a new intent
+		 * that takes the application to a List of Projects View(ProjectListView class)
+		 */
+		
 		@Override
 		protected void onPostExecute(final List<ProjectModel> result) {
 			runOnUiThread(new Runnable() {
