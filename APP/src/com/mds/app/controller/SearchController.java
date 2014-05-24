@@ -24,6 +24,11 @@ import com.mds.app.services.XMLParser;
 
 public class SearchController {
 
+	/*
+	 * Variables used to placing and checking a connection, receiving a Parser from a XML file
+	 * and storing some informations that will be shown when the phone is offline. 
+	 */
+	
 	private ReceiveHTTP receiveHTTP;
 	private XMLParser xmlParser;
 	private boolean thereIsConnection;
@@ -33,6 +38,11 @@ public class SearchController {
 		xmlParser = new XMLParser();
 	}
 
+	/*
+	 * Replaces the kind of project full name into an Acronym and returns it
+	 * as expected.
+	 */
+	
 	public String transformAcronym(String kindOfProjectAcronym) {
 		
 		if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Lei")) {
@@ -51,16 +61,21 @@ public class SearchController {
 			kindOfProjectAcronym = "PRC";
 		}
 		else {
-			// n�o tem outras op��es
+			
+			/*
+			 *  Exception to be launched if the acronym was not valid
+			 */
+			
 			throw new IllegalArgumentException("Sigla inserida invalida!");
 		}
 		return kindOfProjectAcronym;
 	}
 
 	/*
-	 * If a State is named Distrito Federal so it's State Abbreviation is
-	 * 'DF'. In portuguese we call it "UF".
+	 * Replaces the state full name into an Abbreviation and returns it
+	 * as expected. In Portuguese we call it as "UF"(Unidades da Federacao)
 	 */
+	
 	public String transformStateAbbreviation(String stateAbbreviation) {
 		System.out.println(stateAbbreviation);
 
@@ -156,11 +171,17 @@ public class SearchController {
 		return stateAbbreviation;
 	}
 
+	/*
+	 * If there is nothing at the Search Fields this method updates it setting up everything for
+	 * and empty field and the current year. It also validates the parameters and returns true
+	 * if everything was done as expected and false if it was not.
+	 */
+	
 	public boolean updateDataInsideTheSearch(String year, String kindOfProjectAcronym, String number, String initialDate,
 			String authorName, String politicalPartyAcronym, String stateAbbreviation) {
 
 		if (year.isEmpty()) {
-			year = "2013";
+			year = "2014";
 		}
 		if (number.isEmpty()) {
 			number = "";
@@ -204,6 +225,12 @@ public class SearchController {
 
 	}
 
+	/*
+	 * Receives a XML file, addresses this information as expected and returns 
+	 * a String saying that the informations was received by a webpage(actually
+	 * returns the URL of this webpage) or the offlineText String.
+	 */
+	
 	public String receiveXML() {
 
 		String kindOfProjectAcronym = SearchForProjectModel.getKindOfProjectAcronym().toUpperCase();
@@ -242,11 +269,21 @@ public class SearchController {
 
 	}
 
+	/*
+	 * Receives and XML file and call the Parser to transform it into an
+	 * ArrayList and returns this ArrayList ready to be worked on.
+	 */
+	
 	public ArrayList<ProjectModel> searchIntoXML() {
 		String xmlProjeto = receiveXML();
 		return xmlParser.projectParser(xmlProjeto);
 	}
 
+	/*
+	 * Getters and Setters for these methods. It also have a method that informs if 
+	 * there is connection.
+	 */
+	
 	public boolean isThereConnection() {
 		return thereIsConnection;
 	}
