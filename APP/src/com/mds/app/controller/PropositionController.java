@@ -97,6 +97,10 @@ public class PropositionController extends DefaultHandler {
 
 	}
 
+	/*
+	 * Getters and Setters for the ArrayList's used by the previous methods
+	 */
+	
 	@Override
 	public void characters(char[] ch, int start, int length) {
 		buffer.append(ch, start, length);
