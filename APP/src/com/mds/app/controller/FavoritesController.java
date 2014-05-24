@@ -20,9 +20,18 @@ import com.mds.app.persistence.Persistence;
 
 public class FavoritesController implements ManageProjectsController {
 
+	/*
+	 * Arrays that will receive the favorited projects in two formats: as an object from ProjectModel class
+	 * and as a String.
+	 */
+	
 	private static ArrayList<ProjectModel> favoritedProjects = new ArrayList<ProjectModel>();
 	private static ArrayList<String> favoritedProjectsCompleteString = new ArrayList<String>();
 
+	/*
+	 * Creates a variable for the persistence and instantiate it.
+	 */
+	
 	private Persistence persistence;
 
 	public FavoritesController(Context context) {
@@ -33,6 +42,12 @@ public class FavoritesController implements ManageProjectsController {
 
 	}
 
+	/*
+	 * This method adds a received project into the favorites database
+	 * only if its not there. If the project already exists on favorites
+	 * database so the application does nothing.
+	 */
+	
 	@Override
 	public void addProject(ProjectModel project, String content) {
 		if (!favoritedProjectsCompleteString.contains(content)) {
@@ -47,14 +62,21 @@ public class FavoritesController implements ManageProjectsController {
 			}
 		}
 		else {
+			
 			/*
-			 * Project already exists in favorited file, there is no way
+			 * Project already exists in favorited file, there is no need
 			 * to add it again
 			 */
+			
 			Log.i("ADICIONAR", "ELSE ADICIONAR FAVORITOS");
 		}
 	}
 
+	/*
+	 * This method removes a project from the favorites file. If the project
+	 * does not exist at the favorites file so the application does nothing.
+	 */
+	
 	@Override
 	public void removeProject(ProjectModel project, String projectString) {
 		if (favoritedProjectsCompleteString.contains(projectString)) {
@@ -69,11 +91,18 @@ public class FavoritesController implements ManageProjectsController {
 			}
 		}
 		else {
-			// same thing
+			// The project does not exist here so no need to removing.
 			Log.i("LOGGER", "ELSE REMOVER FAVORITOS");
 		}
 	}
 
+	/*
+	 * Itarates all the Array of projects and catchs the concent of each project
+	 * and concatenates it with the favoritedProjectsContent variable that it is a 
+	 * simple String. At the end the method returns this String with all the content
+	 * found.
+	 */
+	
 	@Override
 	public String transformProjectsIntoString() {
 		String favoritedProjectsContent = "";
@@ -85,6 +114,15 @@ public class FavoritesController implements ManageProjectsController {
 		return favoritedProjectsContent;
 	}
 
+	/*
+	 * It receives a String with all the favorited projects and prepares it to be shown 
+	 * when a user at the Main Menu requests a list with all the favorited projects clicking
+	 * at the favoriteButton. The code looks for separators inside the string("~"), adds all
+	 * the elements of each project into an object from ProjectModel and adds each of these
+	 * objetcs into an ArrayList of ProjectModel's ready to be used by the populateListWithProjects
+	 * method.   
+	 */
+	
 	@Override
 	public void populateProjects(String favoritedContentString) {
 		ArrayList<String> splitParts;
@@ -146,6 +184,13 @@ public class FavoritesController implements ManageProjectsController {
 		populateListWithProjects();
 	}
 
+	/*
+	 * Iterates all the ArrayList created by the populateProjects method, concatenate everything
+	 * into an String and adds it at the favoritedProjectsCompleteString ArrayList ready to
+	 * show each project as an String. If the ArrayList is empty so the code does nothing.
+	 * 
+	 */
+	
 	@Override
 	public void populateListWithProjects() {
 		if (!(favoritedProjects == null)) {
@@ -176,6 +221,10 @@ public class FavoritesController implements ManageProjectsController {
 		}
 	}
 
+	/*
+	 * Getters and Setters for the ArrayList's used by the previous methods
+	 */
+	
 	public static ArrayList<ProjectModel> getFavoritedProjects() {
 		return favoritedProjects;
 	}
