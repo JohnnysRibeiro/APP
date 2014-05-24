@@ -33,9 +33,10 @@ import com.mds.app.model.ProjectModel;
 
 public class ProjectDescriptionView extends Activity {
 
+	// This block of code sets all the Buttons, TextViews, etc that will be used by showing a project.
 	private ListController listController;
 	private ProjectModel actualProject;
-	// private String completeProjectAsString; (never used)
+	// private String completeProjectAsString; (commented because it seems to be never used)
 	private TextView text1;
 	private TextView text2;
 	private TextView text3;
@@ -49,6 +50,7 @@ public class ProjectDescriptionView extends Activity {
 	Context context = this;
 	private boolean isResumed = false;
 
+	// UiLifecycleHelper is from Facebook SDK/Facebook integration
 	private UiLifecycleHelper uiHelper;
 	private Session.StatusCallback callback = new Session.StatusCallback() {
 		@Override
@@ -57,6 +59,11 @@ public class ProjectDescriptionView extends Activity {
 		}
 	};
 
+	/*
+	 *  This method instantiate all the elements that will be needed and call the Listeners for the buttons. It also calls the TextViews that
+	 * 	will be shown on a Project Description View Page.
+	 */
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_for_project_profile);
@@ -98,10 +105,11 @@ public class ProjectDescriptionView extends Activity {
 		HistoryController historyController = new HistoryController(context);
 
 		/*
-		 * Fix removing if higher than the allowed limit at HistoryController
-		 * and dont add the same project more than one time.
+		 * Adds a project into the history only if the project has not reached the maximum number permited.
+		 * In case of the history file is full we delete the oldest project saved and use the new memory space
+		 * for the new one.
 		 */
-		
+
 		if (numberOfProjectsIntoHistory < maxNumberOfProjects) {
 			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
 		}
@@ -115,6 +123,7 @@ public class ProjectDescriptionView extends Activity {
 
 	}
 
+	// Register on log file if the Activity has failed or succeeded.
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
@@ -131,13 +140,18 @@ public class ProjectDescriptionView extends Activity {
 			}
 		});
 	}
-
+	
+	// Inflate the menu; this adds items to the action bar if it is present.
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main_menu, menu);
 		return true;
 	}
 
+	/*
+	 *  Listener for the Facebook share button. It shows the icon button and if pressed it redirects the application to the
+	 *  Facebook app/Post on the wall feature so the user can share the Project webpage at Facebook with friends.
+	 */
+	
 	private void shareOnFacebook_addListener() {
 		final Activity activity = this;
 		facebookShareButton = (ImageButton) findViewById(R.id.logoFacebook);
@@ -154,10 +168,21 @@ public class ProjectDescriptionView extends Activity {
 
 	}
 
+	/*
+	 * If the Favorite Button(a little star) is pressed this is the method that will call its listener and calls the
+	 * controllers responsible for adding or removing the actual project to the favorites file. It also sets the new
+	 * Favorite Button(the little star) according to the actual state of the project(showing if its faved or not).
+	 */
 	private void favoriteAProject_addListener() {
 		favoriteStarImgButton = (ImageButton) findViewById(R.id.notFavoritedProjectStar);
 
 		String stringFromFavoritedProject = listController.getCompleteStringForAFile();
+		
+		/*
+		 *  Block of code that changes the Favorite Button Image according to the actual state of the project
+		 *  (showing if its faved or not).
+		 */
+		
 		if (FavoritesController.getFavoritedProjectsCompleteString().contains(stringFromFavoritedProject)) {
 			favoriteStarImgButton.setImageResource(R.drawable.favorited_star_img);
 			favoritedProject = true;
@@ -191,6 +216,7 @@ public class ProjectDescriptionView extends Activity {
 		});
 	}
 
+	// Android and Facebook stuff for managing the resources/application. It was created by default.
 	@Override
 	protected void onResume() {
 		super.onResume();
