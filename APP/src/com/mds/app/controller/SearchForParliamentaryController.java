@@ -15,6 +15,10 @@ public class SearchForParliamentaryController {
 	public SearchForParliamentaryController() {
 	}
 
+	/*
+	 * Basically updates the name of a parliamentary.
+	 */
+	
 	public static void updateDataFromParliamentarySearch(String authorName) {
 
 		SearchForParliamentaryModel.setName(authorName);
