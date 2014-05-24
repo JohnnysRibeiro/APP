@@ -11,6 +11,12 @@ package com.mds.app.controller;
 
 import com.mds.app.model.ProjectModel;
 
+/*
+ * Here we define the interfaces that needs to be defined by
+ * each class that manages a project. There is a series of 
+ * methods for adding, removing or manipulating the projects.
+ */
+
 public interface ManageProjectsController {
 
 	public void addProject(ProjectModel projeto, String conteudo);
