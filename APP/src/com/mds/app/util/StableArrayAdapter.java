@@ -2,14 +2,8 @@
  * 
  * Package: com.mds.app.util
  * 
- * Description: This is a util class to stable the ArrayAdapter
- * 
- * Author: 
- * 
- * Creation date:
- * 
- * Version: 2.0
- * 
+ * Description: This is an util class responsible for stabling/adapting an Array for a view at the application.
+ *
  */
 
 package com.mds.app.util;
