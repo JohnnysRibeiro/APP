@@ -33,7 +33,10 @@ import com.mds.app.model.ProjectModel;
 
 public class ProjectDescriptionView extends Activity {
 
-	// This block of code sets all the Buttons, TextViews, etc that will be used by showing a project.
+	/*
+	 *  This block of code sets all the Buttons, TextViews, etc that will be used by showing a project.
+	 */
+	
 	private ListController listController;
 	private ProjectModel actualProject;
 	// private String completeProjectAsString; (commented because it seems to be never used)
@@ -50,7 +53,10 @@ public class ProjectDescriptionView extends Activity {
 	Context context = this;
 	private boolean isResumed = false;
 
-	// UiLifecycleHelper is from Facebook SDK/Facebook integration
+	/*
+	 *  UiLifecycleHelper is from Facebook SDK/Facebook integration
+	 */
+	
 	private UiLifecycleHelper uiHelper;
 	private Session.StatusCallback callback = new Session.StatusCallback() {
 		@Override
@@ -123,7 +129,10 @@ public class ProjectDescriptionView extends Activity {
 
 	}
 
-	// Register on log file if the Activity has failed or succeeded.
+	/*
+	 *  Register on log file if the Activity has failed or succeeded.
+	 */
+	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
@@ -141,7 +150,10 @@ public class ProjectDescriptionView extends Activity {
 		});
 	}
 	
-	// Inflate the menu; this adds items to the action bar if it is present.
+	/*
+	 *  Inflate the menu; this adds items to the action bar if it is present.
+	 */
+	
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main_menu, menu);
 		return true;
@@ -173,6 +185,7 @@ public class ProjectDescriptionView extends Activity {
 	 * controllers responsible for adding or removing the actual project to the favorites file. It also sets the new
 	 * Favorite Button(the little star) according to the actual state of the project(showing if its faved or not).
 	 */
+	
 	private void favoriteAProject_addListener() {
 		favoriteStarImgButton = (ImageButton) findViewById(R.id.notFavoritedProjectStar);
 
@@ -216,7 +229,11 @@ public class ProjectDescriptionView extends Activity {
 		});
 	}
 
-	// Android and Facebook stuff for managing the resources/application. It was created by default.
+	/*
+	 *  Android and Facebook stuff for managing the resources/application. It was created 
+	 *  by default.
+	 */
+	
 	@Override
 	protected void onResume() {
 		super.onResume();

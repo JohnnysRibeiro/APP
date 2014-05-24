@@ -82,6 +82,7 @@ public class SearchView extends Activity {
 	 * is pressed. It also validates the entries and returns a message saying that the information is wrong 
 	 * if it is the case.
 	 */
+	
 	private void searchButton_addListener() {
 		searchButton = (ImageButton) findViewById(R.id.search_button);
 		searchButton.setOnClickListener(new OnClickListener() {
@@ -112,7 +113,10 @@ public class SearchView extends Activity {
 		});
 	}
 
-	// Inflate the menu; this adds items to the action bar if it is present.
+	/*
+	 *  Inflate the menu; this adds items to the action bar if it is present.
+	 */
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main_menu, menu);

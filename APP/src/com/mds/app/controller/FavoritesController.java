@@ -64,7 +64,7 @@ public class FavoritesController implements ManageProjectsController {
 		else {
 			
 			/*
-			 * Project already exists in favorited file, there is no need
+			 * Project already exists in favorited ArrayList, there is no need
 			 * to add it again
 			 */
 			
@@ -73,8 +73,8 @@ public class FavoritesController implements ManageProjectsController {
 	}
 
 	/*
-	 * This method removes a project from the favorites file. If the project
-	 * does not exist at the favorites file so the application does nothing.
+	 * This method removes a project from the favorites ArrayList. If the project
+	 * does not exist at the favorites ArrayList so the application does nothing.
 	 */
 	
 	@Override
@@ -97,7 +97,7 @@ public class FavoritesController implements ManageProjectsController {
 	}
 
 	/*
-	 * Itarates all the Array of projects and catchs the concent of each project
+	 * Iterates all the Array of projects and catches the content of each project
 	 * and concatenates it with the favoritedProjectsContent variable that it is a 
 	 * simple String. At the end the method returns this String with all the content
 	 * found.
@@ -119,7 +119,7 @@ public class FavoritesController implements ManageProjectsController {
 	 * when a user at the Main Menu requests a list with all the favorited projects clicking
 	 * at the favoriteButton. The code looks for separators inside the string("~"), adds all
 	 * the elements of each project into an object from ProjectModel and adds each of these
-	 * objetcs into an ArrayList of ProjectModel's ready to be used by the populateListWithProjects
+	 * objects into an ArrayList of ProjectModel's ready to be used by the populateListWithProjects
 	 * method.   
 	 */
 	
@@ -188,7 +188,6 @@ public class FavoritesController implements ManageProjectsController {
 	 * Iterates all the ArrayList created by the populateProjects method, concatenate everything
 	 * into an String and adds it at the favoritedProjectsCompleteString ArrayList ready to
 	 * show each project as an String. If the ArrayList is empty so the code does nothing.
-	 * 
 	 */
 	
 	@Override
