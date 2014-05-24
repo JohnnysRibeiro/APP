@@ -16,6 +16,10 @@ import com.mds.app.model.ProjectModel;
 
 public class ListController {
 
+	/*
+	 * The pattern for separators used when we pass a series of projects as an unique
+	 * String is "~". 
+	 */
 	private static final String SEPARATOR = "~";
 	private static List<ProjectModel> projectsList;
 	private static ProjectModel actualProject;
@@ -27,7 +31,11 @@ public class ListController {
 		setProjectsList(result);
 	}
 
-	/* Transforms List<ProjetoModel> ProjectList into an ArrayList<String> */
+	/* 
+	 * Transforms List<ProjetoModel> ProjectList into an ArrayList<String>
+	 * If there is nothing at the projectsString Array so the code adds a
+	 * String saying that not was found at the projectsString Array.
+	 */
 	public ArrayList<String> transformAProjectListIntoAnArrayList() {
 		ArrayList<String> projectsString = new ArrayList<String>();
 
@@ -50,6 +58,13 @@ public class ListController {
 		return projectsString;
 	}
 
+	/*
+	 * Get the actual project and adds a series of parameters, as name, number, year, kind
+	 * of project, date, brief explanation, parliamentary, etc and concatenates it into a
+	 * projectString String. If there is no actual project so the projectString String 
+	 * receives a string saying that nothing was found.
+	 */
+	
 	public String getCompleteStringForProfile() {
 		String projectString = "";
 
@@ -80,6 +95,12 @@ public class ListController {
 
 	}
 
+	/*
+	 * Does basically the same thing as getCompleteStringForProfile() method but
+	 * with the separator between each parameter. It also returns a String with
+	 * all these elements or a null string if nothing was found.
+	 */
+	
 	public String getCompleteStringForAFile() {
 		String projectString = "";
 
@@ -114,6 +135,10 @@ public class ListController {
 		return projectString;
 	}
 
+	/*
+	 * Getters and Setters for the ArrayList's used by the previous methods
+	 */
+	
 	public static List<ProjectModel> getProjectsList() {
 		return projectsList;
 	}
