@@ -26,12 +26,14 @@ import com.mds.app.persistence.Persistence;
 
 public class MainMenuView extends Activity {
 
+	// These are the buttons(ImageButtons because they seem like images) that will be shown at the Main Menu.
 	Context context = this;
 	ImageButton searchButton;
 	ImageButton aboutButton;
 	ImageButton favoritesButton;
 	ImageButton historyButton;
 
+	// This method instantiate all the elements that will be needed(like persistence and controllers) and call the Listeners for the buttons.
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,6 +55,7 @@ public class MainMenuView extends Activity {
 		history_addListener();
 	}
 
+	// This is the method that inflates/shows the Main Menu.
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -60,6 +63,7 @@ public class MainMenuView extends Activity {
 		return true;
 	}
 
+	// If the Search Button is pressed this is the method that will call its Listener and intent.
 	private void search_addListener() {
 		searchButton = (ImageButton) findViewById(R.id.search_button_id);
 		searchButton.setOnClickListener(new OnClickListener() {
@@ -72,6 +76,7 @@ public class MainMenuView extends Activity {
 		});
 	}
 
+	// If the About Button is pressed this is the method that will call its Listener and intent.
 	private void about_addListener() {
 		aboutButton = (ImageButton) findViewById(R.id.about_button_id);
 		aboutButton.setOnClickListener(new OnClickListener() {
@@ -84,6 +89,7 @@ public class MainMenuView extends Activity {
 		});
 	}
 
+	// If the Favorite Button is pressed this is the method that will call its Listener and intent.
 	private void favorites_addListener() {
 		favoritesButton = (ImageButton) findViewById(R.id.favorites_button_id);
 		favoritesButton.setOnClickListener(new OnClickListener() {
@@ -104,6 +110,7 @@ public class MainMenuView extends Activity {
 		});
 	}
 
+	// If the History Button is pressed this is the method that will call its Listener, intent and sets its persistence.
 	private void history_addListener() {
 		historyButton = (ImageButton) findViewById(R.id.history_button_id);
 		historyButton.setOnClickListener(new OnClickListener() {
