@@ -50,6 +50,11 @@ public abstract class ValidateEntry {
 
 	}
 
+	/*
+	 * Basically an "array for validations", each space from the Array is used for a validation. 
+	 * At the beggining all of them is setted as false and if it is not nil we set it as true.
+	 */
+	
 	public static boolean[] validateEntries(String year, String acronym, String number, String initialDate,
 			String author, String politicalParty, String stateAbbreviation) {
 		boolean entries[] = { false, false, false, false, false, false, false };

@@ -12,12 +12,12 @@ import com.mds.app.model.SearchForProjectModel;
 
 public class SearchForProjectController {
 
-	public SearchForProjectController() {
-	}
-
 	/*
 	 * Basically updates some parameters from a project like year, kind of project, id, date, etc. 
 	 */
+	
+	public SearchForProjectController() {
+	}
 	
 	public static void updateDataFromProjectSearch(String year, String kindofProjectAcronym, String number, String initialDate) {
 

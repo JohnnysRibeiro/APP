@@ -9,6 +9,11 @@
 package com.mds.app.model;
 
 public class ParliamentaryModel {
+	
+	/*
+	 * A Parliamentary has a name and a political party. This model basically
+	 * defines it and its getters and setters.
+	 */
 
 	private String name;
 	private PoliticalPartyModel politicalParty;
