@@ -9,6 +9,11 @@
 package com.mds.app.model;
 
 public abstract class SearchForParliamentaryModel {
+	
+	/*
+	 * A search for a Parliamentary basically requests its name. This Model defines
+	 * it and its getters and setters.
+	 */
 
 	private static String name;
 
