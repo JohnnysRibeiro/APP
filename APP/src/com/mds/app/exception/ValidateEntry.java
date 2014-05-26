@@ -3,6 +3,7 @@
  * Package: com.mds.app.exception
  * 
  * Description: This is an exception class that verifies and validate a lot of information entries.  
+ * The data.matches follows REGEX patterns.
  *
  */
 
