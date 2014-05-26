@@ -10,6 +10,11 @@
 package com.mds.app.model;
 
 public abstract class SearchForPoliticalPartyModel {
+	
+	/*
+	 * A search for a political party basically needs it origin state and
+	 * its acronym. This Model defines it and create its getters and setters.
+	 */
 
 	private static String stateAbbreviation;
 	private static String politicalpartyAcronym;
