@@ -9,6 +9,12 @@
 package com.mds.app.model;
 
 public abstract class SearchForProjectModel {
+	
+	/*
+	 * A Search for a project basically needs its year, the kind of project
+	 * (in state of an acronym), its ID and its initial date. This model defines it
+	 * and creates its getters and setters.
+	 */
 
 	private static String year;
 	private static String id;
