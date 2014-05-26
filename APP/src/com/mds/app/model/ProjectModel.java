@@ -10,6 +10,12 @@
 package com.mds.app.model;
 
 public class ProjectModel {
+	
+	/*
+	 * A project always has an id(used by the database), a origin year, a number, a name, a definition
+	 * of a kind of project acronym, a date, a brief explanation and an parliamentary that created
+	 * it. This model basically defines it and creates getters and setters.	 
+	 */
 
 	private String id;
 	private String year;
