@@ -9,6 +9,11 @@
 package com.mds.app.model;
 
 public class PoliticalPartyModel {
+	
+	/*
+	 * A Political Party has an acronym and an origin state(defined by an abbreviation). 
+	 * This model basically defines it and its getters and setters.
+	 */
 
 	private String politicalPartyAcronym;
 	private String stateAbbreviation;
