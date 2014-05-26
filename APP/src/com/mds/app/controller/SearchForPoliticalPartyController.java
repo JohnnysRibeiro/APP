@@ -12,6 +12,10 @@ import com.mds.app.model.SearchForPoliticalPartyModel;
 
 public class SearchForPoliticalPartyController {
 
+	/*
+	 * Basically updates the acronym and UF from a political party for a search.
+	 */
+	
 	public SearchForPoliticalPartyController() {
 
 	}

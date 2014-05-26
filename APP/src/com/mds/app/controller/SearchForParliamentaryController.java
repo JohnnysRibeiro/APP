@@ -12,12 +12,12 @@ import com.mds.app.model.SearchForParliamentaryModel;
 
 public class SearchForParliamentaryController {
 
-	public SearchForParliamentaryController() {
-	}
-
 	/*
 	 * Basically updates the name of a parliamentary.
 	 */
+	
+	public SearchForParliamentaryController() {
+	}
 	
 	public static void updateDataFromParliamentarySearch(String authorName) {
 
