@@ -44,17 +44,29 @@ public class Persistence extends Activity {
 		historyFile = new File(this.context.getFilesDir(), historyNameFile);
 	}
 
+	/*
+	 * This method is responsible for writing into a file. It verifies if the file
+	 * already exists, then it enters in APPEND mode otherwise the flux goes to the PRIVATE
+	 * MODE, then it writes on a file.
+	 */
+	
 	public void writeInFile(String fileName, String data) {
 		final String TAG = "WRITE";
 		FileOutputStream fileOutputStream = null;
 
+		/*
+		 * Calls a method that verifies if the filename passed as parameter
+		 * exists on the array of favorites and history projects. If it fails
+		 * then the code calls an exception.
+		 */
+		
 		try {
 			verifyFileName(fileName);
 		} catch (IllegalArgumentException e) {
 			Log.i(TAG, e.getMessage());
 			e.printStackTrace();
 		}
-
+		
 		int mode = 0;
 		if (!(new File(fileName)).exists()) {
 			mode = Context.MODE_APPEND;
@@ -63,18 +75,32 @@ public class Persistence extends Activity {
 			mode = Context.MODE_PRIVATE;
 		}
 
+		/*
+		 * Assign the file to the fileOutputStream variable/class
+		 */
+		
 		try {
 			fileOutputStream = (new ContextWrapper(context)).openFileOutput(fileName, mode);
 		} catch (FileNotFoundException e) {
 			Log.i(TAG, e.getMessage());
 			e.printStackTrace();
 		}
+		
+		/*
+		 * Writes the data 
+		 */
+		
 		try {
 			fileOutputStream.write(data.getBytes(charset));
 		} catch (IOException e) {
 			Log.i(TAG, e.getMessage());
 			e.printStackTrace();
 		}
+		
+		/*
+		 * Closes the fileOutputStrem
+		 */
+		
 		try {
 			fileOutputStream.close();
 		} catch (IOException e) {
@@ -84,11 +110,22 @@ public class Persistence extends Activity {
 
 	}
 
+	/*
+	 * Delete the old file and creates a new one, using the same fileName, with
+	 * new content.
+	 */
+	
 	public void rewriteFile(String fileName, String newContent) {
 		removeAFile(fileName);
 		writeInFile(fileName, newContent);
 	}
 
+	/*
+	 * Verify if the fileName exists, concatenates its content to the
+	 * fileContent variable and return this variable. If the file
+	 * doesnt not exist so the method return a string saying it.
+	 */
+	
 	public String readFromFile(String fileName) {
 		final String TAG = "READ";
 		FileInputStream fileInputStream;
@@ -138,6 +175,11 @@ public class Persistence extends Activity {
 		return fileContent;
 	}
 
+	/*
+	 * Get the real path to the fileName and delete it. Returns true if the file
+	 * was deleted and false it it wasnt. 
+	 */
+	
 	private boolean removeAFile(String fileName) {
 		final String pathString;
 		if (fileName.equals(Persistence.getFavoritesNameFile())) {
@@ -157,13 +199,22 @@ public class Persistence extends Activity {
 		return deleted;
 	}
 
+	/*
+	 * Verify if the filename corresponds to the same name inside the Favorites and/or History
+	 * Array and if its not the method throws an Exception.
+	 */
+	
 	private void verifyFileName(String fileName) {
 		if (!fileName.equals(Persistence.getFavoritesNameFile())
-				&& !fileName.equals(Persistence.getHistoryNameFile())) {
+				&& (!fileName.equals(Persistence.getHistoryNameFile()))) {
 			throw new IllegalArgumentException("Deve ser passado o arquivo dos favoritos ou do historico!");
 		}
 	}
 
+	/*
+	 * Getters and setters. 
+	 */
+	
 	public Context getContext() {
 		return context;
 	}
