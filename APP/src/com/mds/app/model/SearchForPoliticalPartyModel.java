@@ -19,11 +19,11 @@ public abstract class SearchForPoliticalPartyModel {
 	private static String stateAbbreviation;
 	private static String politicalpartyAcronym;
 
-	public static String getUf() {
+	public static String getStateAbbreviation() {
 		return stateAbbreviation;
 	}
 
-	public static void setUf(String stateAbbreviation) {
+	public static void setStateAbbreviation(String stateAbbreviation) {
 		SearchForPoliticalPartyModel.stateAbbreviation = stateAbbreviation;
 	}
 
