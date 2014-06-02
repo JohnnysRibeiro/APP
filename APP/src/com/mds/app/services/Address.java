@@ -10,7 +10,7 @@
 package com.mds.app.services;
 
 public abstract class Address {
-
+	
 	private final static String URL_BASE = "http://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?";
 	private final static String EQUAL = "=";
 	private final static String AND = "&";
