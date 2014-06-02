@@ -44,7 +44,6 @@ public class AddressTest extends AndroidTestCase {
 		Address.stateCode = "";
 		Address.organStateCode = "";
 		String returnedAddress = Address.buildAddress();
-		System.out.println(returnedAddress);
 
 		assertEquals(expectedAddress, returnedAddress);
 	}

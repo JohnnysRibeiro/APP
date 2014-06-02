@@ -198,13 +198,13 @@ public class FavoritesController implements ManageProjectsController {
 				projectString += favoritedProjects.get(i).getName();
 				projectString += "\nNumero: ";
 				projectString += favoritedProjects.get(i).getNumber();
-				projectString += "\nAno:  ";
+				projectString += "\nAno: ";
 				projectString += favoritedProjects.get(i).getYear();
 				projectString += "\nSigla: ";
 				projectString += favoritedProjects.get(i).getKindOfProjectAcronym();
-				projectString += "\nData de Apresenta��o: ";
+				projectString += "\nData de Apresentacao: ";
 				projectString += favoritedProjects.get(i).getDate();
-				projectString += "\nDescri��o: ";
+				projectString += "\nDescricao: ";
 				projectString += favoritedProjects.get(i).getExplanation();
 				projectString += "\nParlamentar: ";
 				projectString += favoritedProjects.get(i).getParliamentary().getName();

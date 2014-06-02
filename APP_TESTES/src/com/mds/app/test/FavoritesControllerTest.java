@@ -59,9 +59,8 @@ public class FavoritesControllerTest extends AndroidTestCase {
 	@Test
 	public void testProjetosEmString() {
 		favoritosController.populateListWithProjects();
-		String esperado = "Zordon\nNumero: 6663\nAno:  2013\nSigla: PL\nData de Apresentação: 12/01/2013\nDescrição: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC";
+		String esperado = "Zordon\nNumero: 6663\nAno: 2013\nSigla: PL\nData de Apresentacao: 12/01/2013\nDescricao: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC";
 		String retornado = favoritosController.transformProjectsIntoString();
-
 		assertEquals(esperado, retornado);
 	}
 
@@ -69,7 +68,7 @@ public class FavoritesControllerTest extends AndroidTestCase {
 	public void testPopularListaComProjetos() {
 		FavoritesController.setFavoritedProjects(projetos);
 		favoritosController.populateListWithProjects();
-		String esperado = "[Zordon\nNumero: 6663\nAno:  2013\nSigla: PL\nData de Apresentação: 12/01/2013\nDescrição: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC]";
+		String esperado = "[Zordon\nNumero: 6663\nAno: 2013\nSigla: PL\nData de Apresentacao: 12/01/2013\nDescricao: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC]";
 		String retornado = FavoritesController.getFavoritedProjectsCompleteString().toString();
 		assertEquals(esperado, retornado);
 	}
@@ -101,7 +100,7 @@ public class FavoritesControllerTest extends AndroidTestCase {
 
 	@Test
 	public void testarNomeDaClasse() {
-		String nomeEsperado = "FavoritosController";
+		String nomeEsperado = "FavoritesController";
 		String nomeRetornado = favoritosController.getClass().getSimpleName();
 		assertEquals(nomeEsperado, nomeRetornado);
 	}
