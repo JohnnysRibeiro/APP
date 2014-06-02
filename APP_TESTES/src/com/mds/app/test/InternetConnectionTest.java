@@ -6,15 +6,15 @@ import org.junit.Test;
 
 import android.test.AndroidTestCase;
 
-import com.mds.app.util.ConexaoInternet;
+import com.mds.app.util.InternetConnection;
 
-public class ConexaoInternetTest extends AndroidTestCase {
+public class InternetConnectionTest extends AndroidTestCase {
 
-	ConexaoInternet conexaoInternet;
+	InternetConnection conexaoInternet;
 
 	@Before
 	public void setUp() throws Exception {
-		conexaoInternet = new ConexaoInternet(mContext);
+		conexaoInternet = new InternetConnection(mContext);
 	}
 
 	@After
@@ -29,7 +29,7 @@ public class ConexaoInternetTest extends AndroidTestCase {
 
 	@Test
 	public void testInstanciaConstrutorVazio() {
-		ConexaoInternet conexaoInternetConstrutorVazio = new ConexaoInternet();
+		InternetConnection conexaoInternetConstrutorVazio = new InternetConnection();
 		assertNotNull(conexaoInternetConstrutorVazio);
 	}
 
@@ -45,7 +45,7 @@ public class ConexaoInternetTest extends AndroidTestCase {
 
 	@Test
 	public void testChecarConexaoInternet() {
-		boolean conexao = conexaoInternet.ChecarConexaoInternet();
+		boolean conexao = conexaoInternet.checkInternetConnection();
 		assertTrue(conexao);
 	}
 
