@@ -10,43 +10,43 @@ import com.mds.app.util.InternetConnection;
 
 public class InternetConnectionTest extends AndroidTestCase {
 
-	InternetConnection conexaoInternet;
+	InternetConnection internetConnection;
 
 	@Before
 	public void setUp() throws Exception {
-		conexaoInternet = new InternetConnection(mContext);
+		internetConnection = new InternetConnection(mContext);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		conexaoInternet = null;
+		internetConnection = null;
 	}
 
 	@Test
-	public void testInstancia() {
-		assertNotNull(conexaoInternet);
+	public void testIntance() {
+		assertNotNull(internetConnection);
 	}
 
-	@Test
-	public void testInstanciaConstrutorVazio() {
-		InternetConnection conexaoInternetConstrutorVazio = new InternetConnection();
-		assertNotNull(conexaoInternetConstrutorVazio);
+	@Test 
+	public void testIntanceWithEmptyConstructor() {
+		InternetConnection internetConnectionWithEmptyConstructor = new InternetConnection();
+		assertNotNull(internetConnectionWithEmptyConstructor);
 	}
 
 	@Test
 	public void testGetContext() {
-		assertEquals(mContext, conexaoInternet.getContext());
+		assertEquals(mContext, internetConnection.getContext());
 	}
 
 	@Test
 	public void testNomeClasse() {
-		assertEquals("ConexaoInternet", conexaoInternet.getClass().getSimpleName());
+		assertEquals("InternetConnection", internetConnection.getClass().getSimpleName());
 	}
 
 	@Test
 	public void testChecarConexaoInternet() {
-		boolean conexao = conexaoInternet.checkInternetConnection();
-		assertTrue(conexao);
+		boolean connection = internetConnection.checkInternetConnection();
+		assertTrue(connection);
 	}
 
 }
