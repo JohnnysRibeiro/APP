@@ -239,7 +239,7 @@ public class SearchController {
 		String number = SearchForProjectModel.getId();
 		String authorName = SearchForParliamentaryModel.getName();
 		String politicalPartyAcronym = SearchForPoliticalPartyModel.getPoliticalpartyAcronym();
-		String stateAbbreviation = SearchForPoliticalPartyModel.getUf();
+		String stateAbbreviation = SearchForPoliticalPartyModel.getStateAbbreviation();
 
 		Address.kindOfProjectAcronym = kindOfProjectAcronym;
 		Address.number = number;

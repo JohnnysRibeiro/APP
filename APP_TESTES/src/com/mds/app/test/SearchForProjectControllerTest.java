@@ -6,18 +6,18 @@ import org.junit.Test;
 
 import android.test.AndroidTestCase;
 
-import com.mds.app.controller.ProcuraProjetoController;
-import com.mds.app.model.ProcuraProjetoModel;
+import com.mds.app.controller.SearchForProjectController;
+import com.mds.app.model.SearchForProjectModel;
 
-public class ProcuraProjetoControllerTest extends AndroidTestCase {
+public class SearchForProjectControllerTest extends AndroidTestCase {
 
-	private ProcuraProjetoController procuraProjetoController;
+	private SearchForProjectController procuraProjetoController;
 
 	@Before
 	public void setUp() throws Exception {
-		procuraProjetoController = new ProcuraProjetoController();
+		procuraProjetoController = new SearchForProjectController();
 
-		ProcuraProjetoController.atualizarDadosPesquisaProjeto("2013", "PL", "6555", "14/03/2013");
+		SearchForProjectController.updateDataFromProjectSearch("2013", "PL", "6555", "14/03/2013");
 	}
 
 	@After
@@ -32,30 +32,30 @@ public class ProcuraProjetoControllerTest extends AndroidTestCase {
 
 	@Test
 	public void testarNomeDaClasse() {
-		ProcuraProjetoController procura = new ProcuraProjetoController();
+		SearchForProjectController procura = new SearchForProjectController();
 		assertEquals("ProcuraProjetoController", procura.getClass().getSimpleName());
 	}
 
 	@Test
 	public void testAtualizarDadosPesquisaProjeto_Ano() {
-		assertEquals("2013", ProcuraProjetoModel.getAno());
+		assertEquals("2013", SearchForProjectModel.getYear());
 
 	}
 
 	@Test
 	public void testAtualizarDadosPesquisaProjeto_Sigla() {
-		assertEquals("PL", ProcuraProjetoModel.getSigla());
+		assertEquals("PL", SearchForProjectModel.getKindOfProjectAcronym());
 
 	}
 
 	@Test
 	public void testAtualizarDadosPesquisaProjeto_Numero() {
-		assertEquals("6555", ProcuraProjetoModel.getId());
+		assertEquals("6555", SearchForProjectModel.getId());
 	}
 
 	@Test
 	public void testAtualizarDadosPesquisaProjeto_DataInicio() {
-		assertEquals("14/03/2013", ProcuraProjetoModel.getDataInicio());
+		assertEquals("14/03/2013", SearchForProjectModel.getInitialDate());
 	}
 
 }

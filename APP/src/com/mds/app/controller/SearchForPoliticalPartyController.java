@@ -22,7 +22,7 @@ public class SearchForPoliticalPartyController {
 
 	public static void updateDataForPoliticalPartySearch(String stateAbbreviation, String politicalPartyAcronym) {
 
-		SearchForPoliticalPartyModel.setUf(stateAbbreviation);
+		SearchForPoliticalPartyModel.setStateAbbreviation(stateAbbreviation);
 		SearchForPoliticalPartyModel.setPoliticalpartyAcronym(politicalPartyAcronym);
 
 	}
