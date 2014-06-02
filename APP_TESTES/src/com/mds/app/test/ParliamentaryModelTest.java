@@ -7,18 +7,18 @@ import org.junit.Test;
 
 import android.test.AndroidTestCase;
 
-import com.mds.app.model.ParlamentarModel;
-import com.mds.app.model.PartidoModel;
+import com.mds.app.model.ParliamentaryModel;
+import com.mds.app.model.PoliticalPartyModel;
 
-public class ParlamentarModelTest extends AndroidTestCase {
+public class ParliamentaryModelTest extends AndroidTestCase {
 
-	private ParlamentarModel parlamentarModel;
-	private PartidoModel partidoModel;
+	private ParliamentaryModel parlamentarModel;
+	private PoliticalPartyModel partidoModel;
 
 	@Before
 	public void setUp() throws Exception {
-		partidoModel = new PartidoModel("PMDS", "DF");
-		parlamentarModel = new ParlamentarModel("NomeParlamentar", partidoModel);
+		partidoModel = new PoliticalPartyModel("PMDS", "DF");
+		parlamentarModel = new ParliamentaryModel("NomeParlamentar", partidoModel);
 	}
 
 	@After
@@ -29,7 +29,7 @@ public class ParlamentarModelTest extends AndroidTestCase {
 
 	@Test
 	public void testIntanciaPartido() {
-		PartidoModel partido = new PartidoModel();
+		PoliticalPartyModel partido = new PoliticalPartyModel();
 		assertNotNull(partido);
 	}
 
@@ -45,30 +45,30 @@ public class ParlamentarModelTest extends AndroidTestCase {
 
 	@Test
 	public void testIntanciaParlamentar() {
-		PartidoModel parlamentar = new PartidoModel();
+		PoliticalPartyModel parlamentar = new PoliticalPartyModel();
 		assertNotNull(parlamentar);
 	}
 
 	@Test
 	public void testGetNome() {
-		assertEquals("NomeParlamentar", parlamentarModel.getNome());
+		assertEquals("NomeParlamentar", parlamentarModel.getName());
 	}
 
 	@Test
 	public void testSetNome() {
-		parlamentarModel.setNome("NomeParlamentar");
-		assertEquals("NomeParlamentar", parlamentarModel.getNome());
+		parlamentarModel.setName("NomeParlamentar");
+		assertEquals("NomeParlamentar", parlamentarModel.getName());
 	}
 
 	@Test
 	public void testGetPartido() {
-		assertSame(partidoModel, parlamentarModel.getPartido());
+		assertSame(partidoModel, parlamentarModel.getPoliticalParty());
 	}
 
 	@Test
 	public void testSetPartido() {
-		parlamentarModel.setPartido(partidoModel);
-		assertSame(partidoModel, parlamentarModel.getPartido());
+		parlamentarModel.setPoliticalParty(partidoModel);
+		assertSame(partidoModel, parlamentarModel.getPoliticalParty());
 	}
 
 }
