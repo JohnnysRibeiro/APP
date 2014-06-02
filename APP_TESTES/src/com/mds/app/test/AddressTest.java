@@ -8,29 +8,30 @@ import android.test.AndroidTestCase;
 
 import com.mds.app.services.Address;
 
-public class EnderecoTest extends AndroidTestCase {
+public class AddressTest extends AndroidTestCase {
 
-	Address endereco;
+	Address address;
 
 	@Before
 	public void setUp() throws Exception {
-		endereco = new Address() {
+		address = new Address() {
 		};
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		endereco = null;
+		address = null;
 	}
 
 	@Test
-	public void testConstruirEndereco() {
+	public void testBuildAnAndress() {
 		//String enderecoEsperado = "http://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=PL&numero=&ano=2011&datApresentacaoIni=14/11/2011&datApresentacaoFim=16/11/2011&autor=&parteNomeAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&codOrgaoEstado=&emTramitacao=1";
-
 		//hotfix
-		String enderecoEsperado = "http://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=PL&numero=&ano=2011&datApresentacaoIni=14/11/2011&datApresentacaoFim=16/11/2011&autor=&parteNomeAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&idTipoAutor=&codOrgaoEstado=&emTramitacao=1";
 		
-		Address.politicalPartyAcronym = "PL";
+		String expectedAddress = "http://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=PL&numero=&ano=2011&datApresentacaoIni=14/11/2011&datApresentacaoFim=16/11/2011&autor=&parteNomeAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&idTipoAutor=&codOrgaoEstado=&emTramitacao=1";
+
+		
+		Address.kindOfProjectAcronym = "PL";
 		Address.number = "";
 		Address.year = "2011";
 		Address.initialDate = "14/11/2011";
@@ -42,8 +43,9 @@ public class EnderecoTest extends AndroidTestCase {
 		Address.authorGender = "";
 		Address.stateCode = "";
 		Address.organStateCode = "";
-		String endercoRetornado = Address.construirEndereco();
+		String returnedAddress = Address.buildAddress();
+		System.out.println(returnedAddress);
 
-		assertEquals(enderecoEsperado, endercoRetornado);
+		assertEquals(expectedAddress, returnedAddress);
 	}
 }

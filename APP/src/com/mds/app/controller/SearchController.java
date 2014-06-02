@@ -253,7 +253,7 @@ public class SearchController {
 		Address.authorGender = "";
 		Address.stateCode = "";
 		Address.organStateCode = "";
-		String url = Address.construirEndereco();
+		String url = Address.buildAddress();
 		System.out.println(url);
 
 		String response = null;

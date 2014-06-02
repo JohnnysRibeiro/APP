@@ -42,7 +42,7 @@ public abstract class Address {
 
 	private final static String KIND_OF_AUTHOR_ID = "idTipoAutor";
 
-	public static String construirEndereco() {
+	public static String buildAddress() {
 
 		StringBuffer stringBuffer = new StringBuffer();
 		stringBuffer.append(URL_BASE);
