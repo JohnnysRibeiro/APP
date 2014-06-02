@@ -4,20 +4,20 @@ import org.junit.Test;
 
 import android.test.AndroidTestCase;
 
-import com.mds.app.persistencia.Persistencia;
+import com.mds.app.persistence.Persistence;
 
-public class PersistenciaTest extends AndroidTestCase {
+public class PersistenceTest extends AndroidTestCase {
 
-	Persistencia persistencia;
+	Persistence persistencia;
 
-	public PersistenciaTest() {
+	public PersistenceTest() {
 		super();
 	}
 
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
-		persistencia = new Persistencia(mContext);
+		persistencia = new Persistence(mContext);
 	}
 
 	@Override
@@ -33,29 +33,29 @@ public class PersistenciaTest extends AndroidTestCase {
 
 	@Test
 	public void testArquivoFavoritosComNomeCerto() {
-		String esperado = Persistencia.getFileNameFavoritos();
-		String retornado = persistencia.getFileFavoritos().getName();
+		String esperado = Persistence.getFavoritesNameFile();
+		String retornado = persistencia.getFavoritesFile().getName();
 		assertEquals(esperado, retornado);
 	}
 
 	@Test
 	public void testArquivoHistoricoComNomeCerto() {
-		String esperado = Persistencia.getFileNameHistorico();
-		String retornado = persistencia.getFileHistorico().getName();
+		String esperado = Persistence.getHistoryNameFile();
+		String retornado = persistencia.getHistoryFile().getName();
 		assertEquals(esperado, retornado);
 	}
 
 	@Test
 	public void testGetFileNameFavoritos() {
 		String esperado = "favoritos";
-		String retornado = Persistencia.getFileNameFavoritos();
+		String retornado = Persistence.getFavoritesNameFile();
 		assertEquals(esperado, retornado);
 	}
 
 	@Test
 	public void testGetFileNameHistorico() {
 		String esperado = "historico";
-		String retornado = Persistencia.getFileNameHistorico();
+		String retornado = Persistence.getHistoryNameFile();
 		assertEquals(esperado, retornado);
 	}
 
