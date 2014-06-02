@@ -8,15 +8,15 @@ import org.junit.Test;
 
 import android.test.AndroidTestCase;
 
-import com.mds.app.exception.ValidaEntrada;
+import com.mds.app.exception.ValidateEntry;
 
-public class ValidaEntradaTest extends AndroidTestCase {
+public class ValidateEntryTest extends AndroidTestCase {
 
-	public ValidaEntrada validaEntradaTeste;
+	public ValidateEntry validaEntradaTeste;
 
 	@Before
 	public void setUp() throws Exception {
-		validaEntradaTeste = new ValidaEntrada() {
+		validaEntradaTeste = new ValidateEntry() {
 		};
 	}
 
@@ -27,58 +27,58 @@ public class ValidaEntradaTest extends AndroidTestCase {
 
 	@Test
 	public void testValidaDataVazia() {
-		assertEquals(true, ValidaEntrada.validaData(""));
+		assertEquals(true, ValidateEntry.validateEntry(""));
 	}
 
 	@Test
 	public void testValidaData() {
-		assertEquals(true, ValidaEntrada.validaData("16/04/2013"));
+		assertEquals(true, ValidateEntry.validateEntry("16/04/2013"));
 	}
 
 	@Test
 	public void testValidaAutorVazio() {
-		assertEquals(true, ValidaEntrada.validaAutor(""));
+		assertEquals(true, ValidateEntry.validateAuthor(""));
 	}
 
 	@Test
 	public void testValidaAutor() {
-		assertEquals(true, ValidaEntrada.validaAutor("NomeDoAutor"));
+		assertEquals(true, ValidateEntry.validateAuthor("NomeDoAutor"));
 	}
 
 	@Test
 	public void testValidaNumeroVazio() {
-		assertEquals(true, ValidaEntrada.validaNumero(""));
+		assertEquals(true, ValidateEntry.validateNumber(""));
 	}
 
 	@Test
 	public void testValidaNumero() {
-		assertEquals(true, ValidaEntrada.validaNumero("1234"));
+		assertEquals(true, ValidateEntry.validateNumber("1234"));
 	}
 
 	@Test
 	public void testValidaAno() {
-		assertEquals(true, ValidaEntrada.validaAno("2013"));
+		assertEquals(true, ValidateEntry.validateYear("2013"));
 	}
 
 	@Test
 	public void testValidaSigla() {
-		assertEquals(true, ValidaEntrada.validaSigla("PL"));
+		assertEquals(true, ValidateEntry.validateAcronym("PL"));
 	}
 
 	@Test
 	public void testValidaUfVazia() {
-		assertEquals(true, ValidaEntrada.validaUf(""));
+		assertEquals(true, ValidateEntry.validateStateAbbreviation(""));
 	}
 
 	@Test
 	public void testValidaUf() {
-		assertEquals(true, ValidaEntrada.validaUf("abc"));
+		assertEquals(true, ValidateEntry.validateStateAbbreviation("abc"));
 	}
 
 	@Test
 	public void testValidandoEntradas() {
 		boolean resultadoEsperado[] = { true, true, true, true, true, true, true };
-		boolean retornoDoMetodo[] = ValidaEntrada.validandoEntradas("asd1 d12e ", "asd 1d12e ", "asd 1d12e ",
+		boolean retornoDoMetodo[] = ValidateEntry.validateEntries("asd1 d12e ", "asd 1d12e ", "asd 1d12e ",
 				"asd 1d12e ", "asd1d 12e ", "asd 1d12e ", "asd 1d12e ");
 		boolean teste = Arrays.equals(resultadoEsperado, retornoDoMetodo);
 		assertTrue(teste);
@@ -87,7 +87,7 @@ public class ValidaEntradaTest extends AndroidTestCase {
 	@Test
 	public void testIdentificarErros() {
 		String todosErradosEsperado = " Ano invalido  Sigla Invalida  Numero invalido  Data inicial invalida  Autor invalido  Partido invalido  UF invalida ";
-		String retornoDoMetodo = ValidaEntrada.identificarErros("asd1 d12e ", "asd 1d12e ", "asd 1d12e ",
+		String retornoDoMetodo = ValidateEntry.discoverErrors("asd1 d12e ", "asd 1d12e ", "asd 1d12e ",
 				"asd 1d12e ", "asd1d 12e ", "asd 1d12e ", "asd 1d12e ");
 		assertEquals(todosErradosEsperado, retornoDoMetodo);
 	}
