@@ -6,15 +6,15 @@ import org.junit.Test;
 
 import android.test.AndroidTestCase;
 
-import com.mds.app.services.Endereco;
+import com.mds.app.services.Address;
 
 public class EnderecoTest extends AndroidTestCase {
 
-	Endereco endereco;
+	Address endereco;
 
 	@Before
 	public void setUp() throws Exception {
-		endereco = new Endereco() {
+		endereco = new Address() {
 		};
 	}
 
@@ -30,19 +30,19 @@ public class EnderecoTest extends AndroidTestCase {
 		//hotfix
 		String enderecoEsperado = "http://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=PL&numero=&ano=2011&datApresentacaoIni=14/11/2011&datApresentacaoFim=16/11/2011&autor=&parteNomeAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&idTipoAutor=&codOrgaoEstado=&emTramitacao=1";
 		
-		Endereco.sigla = "PL";
-		Endereco.numero = "";
-		Endereco.ano = "2011";
-		Endereco.dataInicio = "14/11/2011";
-		Endereco.dataFinal = "16/11/2011";
-		Endereco.autor = "";
-		Endereco.nomeAutor = "";
-		Endereco.siglaPartido = "";
-		Endereco.siglaUF = "";
-		Endereco.generoAutor = "";
-		Endereco.codigoEstado = "";
-		Endereco.codigoOrgaoEstado = "";
-		String endercoRetornado = Endereco.construirEndereco();
+		Address.politicalPartyAcronym = "PL";
+		Address.number = "";
+		Address.year = "2011";
+		Address.initialDate = "14/11/2011";
+		Address.finalDate = "16/11/2011";
+		Address.author = "";
+		Address.authorName = "";
+		Address.politicalPartyAcronym = "";
+		Address.stateAbbreviation = "";
+		Address.authorGender = "";
+		Address.stateCode = "";
+		Address.organStateCode = "";
+		String endercoRetornado = Address.construirEndereco();
 
 		assertEquals(enderecoEsperado, endercoRetornado);
 	}
