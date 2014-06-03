@@ -35,12 +35,12 @@ public class ProjectModelTest extends AndroidTestCase {
 
 	@Test
 	public void testarNomeClasse() {
-		Assert.assertEquals("ParlamentarModel", parlamentarModel.getClass().getSimpleName());
+		Assert.assertEquals("ParliamentaryModel", parlamentarModel.getClass().getSimpleName());
 	}
 
 	@Test
 	public void testarNomeClasse2() {
-		Assert.assertEquals("ProjetoModel", projetoModel.getClass().getSimpleName());
+		Assert.assertEquals("ProjectModel", projetoModel.getClass().getSimpleName());
 	}
 
 	@Test
