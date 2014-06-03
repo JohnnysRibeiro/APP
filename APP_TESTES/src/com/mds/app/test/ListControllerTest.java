@@ -15,138 +15,136 @@ import com.mds.app.model.ProjectModel;
 
 public class ListControllerTest extends AndroidTestCase {
 
-	public ListController listaController;
-	public ArrayList<String> stringLista;
-	public ArrayList<ProjectModel> projetos;
-	public ProjectModel projetoModel;
-	public ParliamentaryModel parlamentarModel;
-	public PoliticalPartyModel partidoModel;
+	public ListController listController;
+	public ArrayList<String> arrayOfStrings;
+	public ArrayList<ProjectModel> projects;
+	public ProjectModel projectModel;
+	public ParliamentaryModel parliamentaryModel;
+	public PoliticalPartyModel politicalPartyModel;
 
 	@Before
 	public void setUp() throws Exception {
-		stringLista = new ArrayList<String>();
-		projetos = new ArrayList<ProjectModel>();
-		partidoModel = new PoliticalPartyModel("PMDS", "AC");
-		parlamentarModel = new ParliamentaryModel("Ranger", partidoModel);
-		projetoModel = new ProjectModel("2013", "Zordon", "PL", "12/01/2013", "6663", "explicacao marota",
-				parlamentarModel);
-		projetoModel.setId("1");
-		projetoModel.setStatus("Tramitando");
-		projetos.add(projetoModel);
+		arrayOfStrings = new ArrayList<String>();
+		projects = new ArrayList<ProjectModel>();
+		politicalPartyModel = new PoliticalPartyModel("PMDS", "AC");
+		parliamentaryModel = new ParliamentaryModel("Ranger", politicalPartyModel);
+		projectModel = new ProjectModel("2013", "Zordon", "PL", "12/01/2013", "6663", "explicacao marota",
+				parliamentaryModel);
+		projectModel.setId("1");
+		projectModel.setStatus("Tramitando");
+		projects.add(projectModel);
 
-		listaController = new ListController(projetos);
+		listController = new ListController(projects);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		listaController = null;
-		stringLista = null;
-		projetos = null;
-		projetoModel = null;
-		parlamentarModel = null;
-		partidoModel = null;
+		listController = null;
+		arrayOfStrings = null;
+		projects = null;
+		projectModel = null;
+		parliamentaryModel = null;
+		politicalPartyModel = null;
 	}
 
 	@Test
 	public void testInstance() {
-		assertNotNull(listaController);
+		assertNotNull(listController);
 	}
 
 	@Test
-	public void testInstanceConstrutorVazio() {
-		ListController listaControllerTeste = new ListController();
-		assertNotNull(listaControllerTeste);
+	public void testIntanceWithEmptyConstructor() {
+		ListController listControllerForTestingPurposes = new ListController();
+		assertNotNull(listControllerForTestingPurposes);
 	}
 
 	@Test
-	public void testTransformarLista() {
-		ArrayList<String> retornado = listaController.transformAProjectListIntoAnArrayList();
-
-		String stringEsperada = "[Zordon - 6663 - Ranger]";
-		String stringRetornada = retornado.toString();
-
-		assertEquals(stringEsperada, stringRetornada);
+	public void testTranformAProjectListIntoAnArray() {
+		ArrayList<String> returnArray = listController.transformAProjectListIntoAnArrayList();
+		String expectedString = "[Zordon - 6663 - Ranger]";
+		String returnedString = returnArray.toString();
+		assertEquals(expectedString, returnedString);
 	}
 
 	@Test
-	public void testGetListaProjetos() {
-		assertEquals(projetos, ListController.getProjectsList());
+	public void testGetAListOfProjects() {
+		assertEquals(projects, ListController.getProjectsList());
 	}
 
 	@Test
-	public void testSetListaProjetos() {
-		ArrayList<ProjectModel> novoProjetos = new ArrayList<ProjectModel>();
-		ProjectModel novoProjetoModel = new ProjectModel("2012", "DIFF", "PEC", "12/01/2013", "6263",
-				"explicacao", parlamentarModel);
-		novoProjetos.add(novoProjetoModel);
-		ListController.setProjectsList(novoProjetos);
-		assertSame(novoProjetos, ListController.getProjectsList());
+	public void testSetAListOfProjects() {
+		ArrayList<ProjectModel> newProjects = new ArrayList<ProjectModel>();
+		ProjectModel newProjectModel = new ProjectModel("2012", "DIFF", "PEC", "12/01/2013", "6263",
+				"explicacao", parliamentaryModel);
+		newProjects.add(newProjectModel);
+		ListController.setProjectsList(newProjects);
+		assertSame(newProjects, ListController.getProjectsList());
 	}
 
 	@Test
-	public void testSetThenGetProjetoAtual() {
-		ProjectModel projetoModel2 = new ProjectModel("2012", "nomedois", "PRC", "12/01/2013", "6263",
-				"explicacao marota", parlamentarModel);
-		ListController.setActualProject(projetoModel2);
-		assertSame(projetoModel2, ListController.getActualProject());
+	public void testGetActualProject() {
+		ProjectModel secondProjectModel = new ProjectModel("2012", "nomedois", "PRC", "12/01/2013", "6263",
+				"explicacao marota", parliamentaryModel);
+		ListController.setActualProject(secondProjectModel);
+		assertSame(secondProjectModel, ListController.getActualProject());
 	}
 
 	@Test
-	public void testTransformarListaNull() {
-		ListController listaControllerTeste = new ListController();
+	public void testTransformAProjectListIntoAnArrayPassingANullList() {
+		ListController listControllerForTestingPurposes = new ListController();
 		ListController.setProjectsList(null);
-		ArrayList<String> arrayRetornado = listaControllerTeste.transformAProjectListIntoAnArrayList();
-		String esperado = "[Nada encontrado.]";
-		String retornado = arrayRetornado.toString();
-		assertEquals(esperado, retornado);
+		ArrayList<String> returnedArray = listControllerForTestingPurposes.transformAProjectListIntoAnArrayList();
+		String expectedReturn = "[Nada encontrado.]";
+		String actualReturn = returnedArray.toString();
+		assertEquals(expectedReturn, actualReturn);
 
 	}
 
 	@Test
-	public void testGetStringCompletaParaPerfil() {
-		ListController.setActualProject(projetoModel);
-		String retornado = listaController.getCompleteStringForProfile();
-		String esperado = "Zordon\nNumero: 6663\nAno: 2013\nSigla: PL\nData de Apresentacao: 12/01/2013\nDescricao: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC";
-		assertEquals(esperado, retornado);
+	public void testGetCompleteStringForAProfile() {
+		ListController.setActualProject(projectModel);
+		String actualReturn = listController.getCompleteStringForProfile();
+		String expectedReturn = "Zordon\nNumero: 6663\nAno: 2013\nSigla: PL\nData de Apresentacao: 12/01/2013\nDescricao: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC";
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testGetStringCompletaParaPerfilNull() {
+	public void testGetCompleteStringForAProfilePassingAnEmptyList() {
 		ListController.setActualProject(null);
-		String retornado = listaController.getCompleteStringForProfile();
-		String esperado = "Nada encontrado.";
-		assertEquals(esperado, retornado);
+		String actualReturn = listController.getCompleteStringForProfile();
+		String expectedReturn = "Nada encontrado.";
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testGetStringCompletaParaArquivo() {
-		ListController.setActualProject(projetoModel);
-		String retornado = listaController.getCompleteStringForAFile();
-		System.out.println("Oiee " + retornado);
-		String esperado = "Zordon~6663~2013~PL~12/01/2013~explicacao marota~Tramitando~Ranger~PMDS~AC~1~";
-		assertEquals(esperado, retornado);
+	public void testGetCompleteStringForAFile() {
+		ListController.setActualProject(projectModel);
+		String actualReturn = listController.getCompleteStringForAFile();
+		System.out.println("Oiee " + actualReturn);
+		String expectedReturn = "Zordon~6663~2013~PL~12/01/2013~explicacao marota~Tramitando~Ranger~PMDS~AC~1~";
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testGetStringCompletaParaArquivoNull() {
+	public void testGetCompleteStringForAFilePassingANullList() {
 		ListController.setActualProject(null);
-		String retornado = listaController.getCompleteStringForAFile();
-		String esperado = null;
-		assertEquals(esperado, retornado);
+		String actualReturn = listController.getCompleteStringForAFile();
+		String espectedReturn = null;
+		assertEquals(espectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testGetSeparador() {
-		String esperado = "~";
-		String retornado = ListController.getSeparator();
-		assertEquals(esperado, retornado);
+	public void testSeparator() {
+		String expectedSeparator = "~";
+		String actualSeparator = ListController.getSeparator();
+		assertEquals(expectedSeparator, actualSeparator);
 	}
 
 	@Test
-	public void testarNomeDaClasse() {
-		String nomeEsperado = "ListController";
-		String nomeRetornado = listaController.getClass().getSimpleName();
-		assertEquals(nomeEsperado, nomeRetornado);
+	public void testNameOfTheClass() {
+		String expectedName = "ListController";
+		String actualName = listController.getClass().getSimpleName();
+		assertEquals(expectedName, actualName);
 	}
 
 }
