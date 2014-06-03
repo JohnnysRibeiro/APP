@@ -18,281 +18,280 @@ import com.mds.app.model.ProjectModel;
 
 public class PropositionControllerTest extends AndroidTestCase {
 
-	private PropositionController proposicaoController;
+	private PropositionController propositionController;
 
 	@Before
 	public void setUp() throws Exception {
-		proposicaoController = new PropositionController();
+		propositionController = new PropositionController();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		proposicaoController = null;
+		propositionController = null;
 	}
 
 	@Test
 	public void testInstance() {
-		assertNotNull(proposicaoController);
+		assertNotNull(propositionController);
 	}
 
 	@Test
-	public void testCharacters() {
+	public void testIfPropositionIsPercurringAllTheCharacters() {
 		String inputStr = "abcteste";
 		char input[] = inputStr.toCharArray();
-		proposicaoController.characters(input, 0, 8);
-		String retornado = new String(proposicaoController.getBuffer());
+		propositionController.characters(input, 0, 8);
+		String retornado = new String(propositionController.getBuffer());
 		assertEquals(inputStr, retornado);
 	}
 
 	@Test
-	public void testStartElementProposicaoParlamentar() {
+	public void testStartMethodOfAPropositionGettingAParliamentary() {
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
+			propositionController.startElement("a", "proposicao", "q", null);
 		} catch (SAXException saxe) {
 
 		}
-		assertNotNull(proposicaoController.getParliamentary());
+		assertNotNull(propositionController.getParliamentary());
 	}
 
 	@Test
-	public void testarNomeDaClasse() {
+	public void testNameOfTheClass() {
 		PropositionController p = new PropositionController();
 		Assert.assertEquals("PropositionController", p.getClass().getSimpleName());
 	}
 
 	@Test
-	public void testStartElementProposicaoProjeto() {
+	public void testStartMethodOfAPropositionGettingAProject() {
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
+			propositionController.startElement("a", "proposicao", "q", null);
 		} catch (SAXException saxe) {
 
 		}
-		assertNotNull(proposicaoController.getProject());
+		assertNotNull(propositionController.getProject());
 	}
 
 	@Test
-	public void testStartElementProposicaoPartido() {
+	public void testStartMethodOfAPropositionGettingAPoliticalParty() {
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
+			propositionController.startElement("a", "proposicao", "q", null);
 		} catch (SAXException saxe) {
 
 		}
-		assertNotNull(proposicaoController.getPoliticalParty());
+		assertNotNull(propositionController.getPoliticalParty());
 	}
 
 	@Test
-	public void testStartElementProposicoes() {
+	public void testStartMethodOfAPropositionGettingAListOfProjects() {
 		try {
-			proposicaoController.startElement("a", "proposicoes", "q", null);
+			propositionController.startElement("a", "proposicoes", "q", null);
 		} catch (SAXException saxe) {
 
 		}
-		assertNotNull(proposicaoController.getListOfProjects());
+		assertNotNull(propositionController.getListOfProjects());
 	}
 
 	@Test
-	public void testEndElementProposicaoProjeto() {
+	public void testEndMethodGettingAProject() {
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.startElement("a", "proposicoes", "q", null);
-			proposicaoController.endElement("a", "proposicao", "q");
-		} catch (SAXException saxe) {
-
-		}
-
-		assertEquals(proposicaoController.getProject(), proposicaoController.getListOfProjects().get(0));
-	}
-
-	@Test
-	public void testEndElementProposicaoParlamentar() {
-		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.startElement("a", "proposicoes", "q", null);
-			proposicaoController.endElement("a", "proposicao", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.startElement("a", "proposicoes", "q", null);
+			propositionController.endElement("a", "proposicao", "q");
 		} catch (SAXException saxe) {
 
 		}
 
-		assertEquals(proposicaoController.getParliamentary(), proposicaoController.getProject().getParliamentary());
+		assertEquals(propositionController.getProject(), propositionController.getListOfProjects().get(0));
 	}
 
 	@Test
-	public void testEndElementProposicaoPartido() {
+	public void testEndMethodGettingAParliamentaryFromAProject() {
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.startElement("a", "proposicoes", "q", null);
-			proposicaoController.endElement("a", "proposicao", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.startElement("a", "proposicoes", "q", null);
+			propositionController.endElement("a", "proposicao", "q");
 		} catch (SAXException saxe) {
 
 		}
 
-		assertEquals(proposicaoController.getPoliticalParty(), proposicaoController.getParliamentary().getPoliticalParty());
+		assertEquals(propositionController.getParliamentary(), propositionController.getProject().getParliamentary());
 	}
 
 	@Test
-	public void testEndElementProposicaoAno() {
+	public void testEndMethodGettingAPoliticalPartyFromAProject() {
+		try {
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.startElement("a", "proposicoes", "q", null);
+			propositionController.endElement("a", "proposicao", "q");
+		} catch (SAXException saxe) {
+
+		}
+
+		assertEquals(propositionController.getPoliticalParty(), propositionController.getParliamentary().getPoliticalParty());
+	}
+
+	@Test
+	public void testEndMethodGettingAYearFromAProject() {
 		String esperado = "testeano";
 		int esperadoLength = esperado.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "ano", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(esperado.toCharArray(), 0, esperadoLength);
+			propositionController.endElement("a", "ano", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getProject().getYear();
+		String retornado = propositionController.getProject().getYear();
 		assertEquals(esperado, retornado);
 	}
 
 	@Test
-	public void testEndElementProposicaoId() {
-		String esperado = "testeid";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingAnIdFromAProject() {
+		String expectedReturn = "testeid";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "id", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "id", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getProject().getId();
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getProject().getId();
+		assertEquals(expectedReturn, actualReturn);
 	}
 	
 	@Test
-	public void testEndElementProposicaoStatus() {
-		String esperado = "testestatus";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingAStatusFromAProject() {
+		String expectedReturn = "testestatus";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "descricao", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "descricao", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getProject().getStatus();
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getProject().getStatus();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testEndElementProposicaoNome() {
-		String esperado = "testenomeproj";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingANameFromAProject() {
+		String expectedReturn = "testenomeproj";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "nome", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "nome", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getProject().getName();
-		System.out.println("Oiee " + retornado);
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getProject().getName();
+		System.out.println("Oiee " + actualReturn);
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testEndElementProposicaoSigla() {
-		String esperado = "testesigla";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingTheKindOfProjectAcronymFromAProject() {
+		String expectedReturn = "testesigla";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "sigla", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "sigla", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getProject().getKindOfProjectAcronym();
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getProject().getKindOfProjectAcronym();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testEndElementProposicaoNumero() {
-		String esperado = "testenumero";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingAnTheNumberFromAProject() {
+		String expectedReturn = "testenumero";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "numero", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "numero", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getProject().getNumber();
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getProject().getNumber();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testEndElementProposicaoDataApresentacao() {
-		String esperado = "testedataapresentacao";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingTheDateFromAProject() {
+		String expectedReturn = "testedataapresentacao";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "datApresentacao", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "datApresentacao", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getProject().getDate();
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getProject().getDate();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testEndElementProposicaoTextoEmenta() {
-		String esperado = "testeementa";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingTheExplanationTextFromAProject() {
+		String expectedReturn = "testeementa";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "txtEmenta", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "txtEmenta", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getProject().getExplanation();
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getProject().getExplanation();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testEndElementProposicaoTextoNomeAutor() {
-		String esperado = "testenomeautor";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingTheParliamentaryNameOrAuthorFromAProject() {
+		String expectedReturn = "testenomeautor";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "txtNomeAutor", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "txtNomeAutor", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getParliamentary().getName();
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getParliamentary().getName();
+		assertEquals(expectedReturn, actualReturn);
 	}
 	
 	@Test
-	public void testEndElementProposicaoDiferente() {
+	public void testIfTheStartAndAndMethodsWorksWithDifferentNames() {
 		try {
-			proposicaoController.startElement("a", "localnamediferente1", "q", null);
-			proposicaoController.endElement("a", "localnamediferente2", "q");
+			propositionController.startElement("a", "localnamediferente1", "q", null);
+			propositionController.endElement("a", "localnamediferente2", "q");
 		} catch (SAXException saxe) {
 		}
-		/* Testando os ramo elses, que nao fazem nada */
 		assertTrue(true);
 	}
 
 	@Test
-	public void testEndElementProposicaoTextoSiglaPartido() {
-		String esperado = "testesiglapartido";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingTheAcronymFromThePoliticalPartyNameFromAProject() {
+		String expectedReturn = "testesiglapartido";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "txtSiglaPartido", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "txtSiglaPartido", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getPoliticalParty().getPoliticalPartyAcronym();
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getPoliticalParty().getPoliticalPartyAcronym();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testEndElementProposicaoTextoSiglaUf() {
-		String esperado = "testeUF";
-		int esperadoLength = esperado.length();
+	public void testEndMethodGettingTheStateAbbreviationFromAPoliticalParty() {
+		String expectedReturn = "testeUF";
+		int expectedReturnLength = expectedReturn.length();
 		try {
-			proposicaoController.startElement("a", "proposicao", "q", null);
-			proposicaoController.characters(esperado.toCharArray(), 0, esperadoLength);
-			proposicaoController.endElement("a", "txtSiglaUF", "q");
+			propositionController.startElement("a", "proposicao", "q", null);
+			propositionController.characters(expectedReturn.toCharArray(), 0, expectedReturnLength);
+			propositionController.endElement("a", "txtSiglaUF", "q");
 		} catch (SAXException saxe) {
 		}
-		String retornado = proposicaoController.getPoliticalParty().getStateAbbreviation();
-		assertEquals(esperado, retornado);
+		String actualReturn = propositionController.getPoliticalParty().getStateAbbreviation();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	/* ====================GETS E SETS=================== */
@@ -300,42 +299,42 @@ public class PropositionControllerTest extends AndroidTestCase {
 	@Test
 	public void testGetBuffer() {
 		StringBuffer bufferTest = new StringBuffer();
-		assertEquals(bufferTest.toString(), proposicaoController.getBuffer().toString());
+		assertEquals(bufferTest.toString(), propositionController.getBuffer().toString());
 	}
 
 	@Test
 	public void testSetBuffer() {
 		StringBuffer bufferTest = new StringBuffer();
-		proposicaoController.setBuffer(bufferTest);
-		assertSame(bufferTest, proposicaoController.getBuffer());
+		propositionController.setBuffer(bufferTest);
+		assertSame(bufferTest, propositionController.getBuffer());
 	}
 
 	@Test
-	public void testSetThenGetProjeto() {
-		ProjectModel projeto = new ProjectModel();
-		proposicaoController.setProject(projeto);
-		assertSame(projeto, proposicaoController.getProject());
+	public void testGetAProject() {
+		ProjectModel project = new ProjectModel();
+		propositionController.setProject(project);
+		assertSame(project, propositionController.getProject());
 	}
 
 	@Test
-	public void testSetThenGetParlamentar() {
-		ParliamentaryModel parlamentar = new ParliamentaryModel();
-		proposicaoController.setParliamentary(parlamentar);
-		assertSame(parlamentar, proposicaoController.getParliamentary());
+	public void testGetAParliamentary() {
+		ParliamentaryModel parliamentary = new ParliamentaryModel();
+		propositionController.setParliamentary(parliamentary);
+		assertSame(parliamentary, propositionController.getParliamentary());
 	}
 
 	@Test
-	public void testSetThenGetParitdo() {
-		PoliticalPartyModel partido = new PoliticalPartyModel();
-		proposicaoController.setPoliticalParty(partido);
-		assertSame(partido, proposicaoController.getPoliticalParty());
+	public void testGetAPoliticalParty() {
+		PoliticalPartyModel politicalParty = new PoliticalPartyModel();
+		propositionController.setPoliticalParty(politicalParty);
+		assertSame(politicalParty, propositionController.getPoliticalParty());
 	}
 
 	@Test
-	public void testSetThenGetListaProjetos() {
-		ArrayList<ProjectModel> lista = new ArrayList<ProjectModel>();
-		proposicaoController.setListOfProjects(lista);
-		assertSame(lista, proposicaoController.getListOfProjects());
+	public void testGetAListOfProjects() {
+		ArrayList<ProjectModel> listOfProjects = new ArrayList<ProjectModel>();
+		propositionController.setListOfProjects(listOfProjects);
+		assertSame(listOfProjects, propositionController.getListOfProjects());
 	}
 
 
