@@ -57,7 +57,7 @@ public class PropositionControllerTest extends AndroidTestCase {
 	@Test
 	public void testarNomeDaClasse() {
 		PropositionController p = new PropositionController();
-		Assert.assertEquals("ProposicaoController", p.getClass().getSimpleName());
+		Assert.assertEquals("PropositionController", p.getClass().getSimpleName());
 	}
 
 	@Test
@@ -182,6 +182,7 @@ public class PropositionControllerTest extends AndroidTestCase {
 		} catch (SAXException saxe) {
 		}
 		String retornado = proposicaoController.getProject().getName();
+		System.out.println("Oiee " + retornado);
 		assertEquals(esperado, retornado);
 	}
 

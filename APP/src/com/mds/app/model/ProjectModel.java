@@ -67,12 +67,13 @@ public class ProjectModel {
 	}
 
 	public void setName(String name) {
-		if (this.counter == 1) {
-			this.name = name;
-		}
-		else {
-			// do nothing
-		}
+//		if (this.counter == 1) {
+//			this.name = name;
+//		}
+//		else {
+//			this.name = "counterTaDiferenteDeUm";
+//		}
+		this.name = name;
 		this.counter++;
 	}
 
