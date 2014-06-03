@@ -72,13 +72,13 @@ public class ListController {
 			projectString += getActualProject().getName();
 			projectString += "\nNumero: ";
 			projectString += getActualProject().getNumber();
-			projectString += "\nAno:  ";
+			projectString += "\nAno: ";
 			projectString += getActualProject().getYear();
 			projectString += "\nSigla: ";
 			projectString += getActualProject().getKindOfProjectAcronym();
-			projectString += "\nData de Apresenta��o: ";
+			projectString += "\nData de Apresentacao: ";
 			projectString += getActualProject().getDate();
-			projectString += "\nDescri��o: ";
+			projectString += "\nDescricao: ";
 			projectString += getActualProject().getExplanation();
 			projectString += "\nParlamentar: ";
 			projectString += getActualProject().getParliamentary().getName();

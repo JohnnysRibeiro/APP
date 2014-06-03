@@ -30,6 +30,8 @@ public class ListControllerTest extends AndroidTestCase {
 		parlamentarModel = new ParliamentaryModel("Ranger", partidoModel);
 		projetoModel = new ProjectModel("2013", "Zordon", "PL", "12/01/2013", "6663", "explicacao marota",
 				parlamentarModel);
+		projetoModel.setId("1");
+		projetoModel.setStatus("Tramitando");
 		projetos.add(projetoModel);
 
 		listaController = new ListController(projetos);
@@ -104,7 +106,7 @@ public class ListControllerTest extends AndroidTestCase {
 	public void testGetStringCompletaParaPerfil() {
 		ListController.setActualProject(projetoModel);
 		String retornado = listaController.getCompleteStringForProfile();
-		String esperado = "Zordon\nNumero: 6663\nAno:  2013\nSigla: PL\nData de Apresentação: 12/01/2013\nDescrição: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC";
+		String esperado = "Zordon\nNumero: 6663\nAno: 2013\nSigla: PL\nData de Apresentacao: 12/01/2013\nDescricao: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC";
 		assertEquals(esperado, retornado);
 	}
 
@@ -120,8 +122,8 @@ public class ListControllerTest extends AndroidTestCase {
 	public void testGetStringCompletaParaArquivo() {
 		ListController.setActualProject(projetoModel);
 		String retornado = listaController.getCompleteStringForAFile();
-		System.out.println(retornado);
-		String esperado = "Zordon~6663~2013~PL~12/01/2013~explicacao marota~Ranger~PMDS~AC~";
+		System.out.println("Oiee " + retornado);
+		String esperado = "Zordon~6663~2013~PL~12/01/2013~explicacao marota~Tramitando~Ranger~PMDS~AC~1~";
 		assertEquals(esperado, retornado);
 	}
 
@@ -142,7 +144,7 @@ public class ListControllerTest extends AndroidTestCase {
 
 	@Test
 	public void testarNomeDaClasse() {
-		String nomeEsperado = "ListaController";
+		String nomeEsperado = "ListController";
 		String nomeRetornado = listaController.getClass().getSimpleName();
 		assertEquals(nomeEsperado, nomeRetornado);
 	}
