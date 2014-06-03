@@ -16,102 +16,101 @@ import com.mds.app.model.ProjectModel;
 
 public class HistoryControllerTest extends AndroidTestCase {
 
-	public HistoryController historicoController;
-	public ArrayList<String> projetosString;
-	public ArrayList<ProjectModel> projetos;
-	public ProjectModel projetoModel;
-	public ParliamentaryModel parlamentarModel;
-	public PoliticalPartyModel partidoModel;
+	public HistoryController historyController;
+	public ArrayList<String> arrayOfStringsOfProjects;
+	public ArrayList<ProjectModel> projects;
+	public ProjectModel projectModel;
+	public ParliamentaryModel parliamentaryModel;
+	public PoliticalPartyModel politicalPartyModel;
 
 	@Before
 	public void setUp() throws Exception {
-		projetosString = new ArrayList<String>();
-		projetos = new ArrayList<ProjectModel>();
-		partidoModel = new PoliticalPartyModel("PMDS", "AC");
-		parlamentarModel = new ParliamentaryModel("Ranger", partidoModel);
-		projetoModel = new ProjectModel("2013", "Zordon", "PL", "12/01/2013", "6663", "explicacao marota",
-				parlamentarModel);
-		projetos.add(projetoModel);
+		arrayOfStringsOfProjects = new ArrayList<String>();
+		projects = new ArrayList<ProjectModel>();
+		politicalPartyModel = new PoliticalPartyModel("PMDS", "AC");
+		parliamentaryModel = new ParliamentaryModel("Ranger", politicalPartyModel);
+		projectModel = new ProjectModel("2013", "Zordon", "PL", "12/01/2013", "6663", "explicacao marota",
+				parliamentaryModel);
+		projects.add(projectModel);
 
-		historicoController = new HistoryController();
-		HistoryController.setHistoryOfProjects(projetos);
+		historyController = new HistoryController();
+		HistoryController.setHistoryOfProjects(projects);
 		HistoryController.setHistoryOfProjectsCompleteString(new ArrayList<String>());
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		historicoController = null;
-		projetosString = null;
-		projetos = null;
-		projetoModel = null;
-		parlamentarModel = null;
-		partidoModel = null;
+		historyController = null;
+		arrayOfStringsOfProjects = null;
+		projects = null;
+		projectModel = null;
+		parliamentaryModel = null;
+		politicalPartyModel = null;
 		HistoryController.setHistoryOfProjects(null);
 		HistoryController.setHistoryOfProjectsCompleteString(null);
 	}
 
 	@Test
 	public void testInstance() {
-		assertNotNull(historicoController);
+		assertNotNull(historyController);
 	}
 
 	@Test
-	public void testProjetosEmString() {
-		historicoController.populateListWithProjects();
-		String esperado = "Zordon\nNumero: 6663\nAno: 2013\nSigla: PL\nData de Apresentacao: 12/01/2013\nDescricao: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC";
-		String retornado = historicoController.transformProjectsIntoString();
-		System.out.println("OIEE " + retornado);
-		assertEquals(esperado, retornado);
+	public void testProjectsIntoString() {
+		historyController.populateListWithProjects();
+		String expectedReturn = "Zordon\nNumero: 6663\nAno: 2013\nSigla: PL\nData de Apresentacao: 12/01/2013\nDescricao: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC";
+		String actualReturn = historyController.transformProjectsIntoString();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testPopularListaComProjetos() {
-		HistoryController.setHistoryOfProjects(projetos);
-		historicoController.populateListWithProjects();
-		String esperado = "[Zordon\nNumero: 6663\nAno: 2013\nSigla: PL\nData de Apresentacao: 12/01/2013\nDescricao: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC]";
-		String retornado = HistoryController.getHistoryOfProjectsCompleteString().toString();
-		assertEquals(esperado, retornado);
+	public void testPopulateAListWithProjects() {
+		HistoryController.setHistoryOfProjects(projects);
+		historyController.populateListWithProjects();
+		String expectedReturn = "[Zordon\nNumero: 6663\nAno: 2013\nSigla: PL\nData de Apresentacao: 12/01/2013\nDescricao: explicacao marota\nParlamentar: Ranger\nPartido: PMDS\nEstado: AC]";
+		String actualReturn = HistoryController.getHistoryOfProjectsCompleteString().toString();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testSetThenGetProjetosFavoritadosCompletosStr() {
-		ArrayList<String> arrayTeste = new ArrayList<String>();
-		arrayTeste.add("TESTANDO PROJETO");
-		HistoryController.setHistoryOfProjectsCompleteString(arrayTeste);
-		assertSame(arrayTeste, HistoryController.getHistoryOfProjectsCompleteString());
+	public void testGetHistoryOfProjectsAsAnArrayOfString() {
+		ArrayList<String> arrayForTestingPurposes = new ArrayList<String>();
+		arrayForTestingPurposes.add("TESTANDO PROJETO");
+		HistoryController.setHistoryOfProjectsCompleteString(arrayForTestingPurposes);
+		assertSame(arrayForTestingPurposes, HistoryController.getHistoryOfProjectsCompleteString());
 	}
 
 	@Test
-	public void testSetThenGetProjetosFavoritados() {
-		HistoryController.setHistoryOfProjects(projetos);
-		assertSame(projetos, HistoryController.getHistoryOfProjects());
+	public void testGetHistoryOfProjects() {
+		HistoryController.setHistoryOfProjects(projects);
+		assertSame(projects, HistoryController.getHistoryOfProjects());
 	}
 
 	@Test
-	public void testarNomeDaClasse() {
-		String nomeEsperado = "HistoryController";
-		String nomeRetornado = historicoController.getClass().getSimpleName();
-		assertEquals(nomeEsperado, nomeRetornado);
+	public void testNameOfTheClass() {
+		String expectedNameReturn = "HistoryController";
+		String actualNameReturn = historyController.getClass().getSimpleName();
+		assertEquals(expectedNameReturn, actualNameReturn);
 	}
 
 	@Test
-	public void testGetMaxProjetos() {
-		int esperado = 10;
-		int retornado = HistoryController.getMaxNumberOfProjects();
-		assertEquals(esperado, retornado);
+	public void testMaximumNumberOfProjects() {
+		int expectedMaximumNumberOfProjects = 10;
+		int actualMaximumNumberOfProjects = HistoryController.getMaxNumberOfProjects();
+		assertEquals(expectedMaximumNumberOfProjects, actualMaximumNumberOfProjects);
 	}
 
 	@Test
-	public void testGetNumeroProjetosNoHistorico() {
-		int esperado = 1; // no caso do teste, pois so tem um projeto
-		int retornado = HistoryController.getNumberOfProjectsIntoHistory();
-		assertEquals(esperado, retornado);
+	public void testGetNumberOfProjetsInHistory() {
+		int expectedNumberOfProjectsInHistory = 1; // no caso do teste, pois so tem um projeto
+		int actualNumberOfProjectsInHistory = HistoryController.getNumberOfProjectsIntoHistory();
+		assertEquals(expectedNumberOfProjectsInHistory, actualNumberOfProjectsInHistory);
 	}
 
 	@Test
-	public void testGetProjetoMaisVelho() {
-		ProjectModel retornado = HistoryController.getOldestProject();
-		assertEquals(projetoModel, retornado);
+	public void testGetTheOldestProject() {
+		ProjectModel oldestProjectReturn = HistoryController.getOldestProject();
+		assertEquals(projectModel, oldestProjectReturn);
 	}
 	
 //	@Test(expected=NullPointerException.class)
@@ -122,23 +121,23 @@ public class HistoryControllerTest extends AndroidTestCase {
 //	}
 	
 	@Test
-	public void testPopularProjetos() {
-		ListController listaController = new ListController();
-		ListController.setActualProject(projetoModel);
-		String stringInput = listaController.getCompleteStringForAFile();
-		historicoController.populateProjects(stringInput);
-		String esperado = HistoryController.getHistoryOfProjects().get(0).toString();
-		String retornado = projetoModel.toString();
+	public void testPopulateAHistoryOfProject() {
+		ListController listController = new ListController();
+		ListController.setActualProject(projectModel);
+		String inputString = listController.getCompleteStringForAFile();
+		historyController.populateProjects(inputString);
+		String expectedReturn = HistoryController.getHistoryOfProjects().get(0).toString();
+		String actualReturn = projectModel.toString();
 
-		assertEquals(esperado, retornado);
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testGetStringProjetoMaisVelho() {
-		String esperado = "teste";
-		HistoryController.getHistoryOfProjectsCompleteString().add(esperado);
-		String retornado = HistoryController.getOldestProjectAsString();
-		assertEquals(esperado, retornado);
+	public void testGetTheOldestProjectAsAString() {
+		String expectedReturn = "teste";
+		HistoryController.getHistoryOfProjectsCompleteString().add(expectedReturn);
+		String actualReturn = HistoryController.getOldestProjectAsString();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 //	@Test(expected = IndexOutOfBoundsException.class)
