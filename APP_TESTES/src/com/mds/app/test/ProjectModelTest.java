@@ -12,187 +12,187 @@ import com.mds.app.model.ProjectModel;
 
 public class ProjectModelTest extends AndroidTestCase {
 
-	private ProjectModel projetoModel;
-	private ParliamentaryModel parlamentarModel;
+	private ProjectModel projectModel;
+	private ParliamentaryModel parliamentaryModel;
 
 	@Before
 	public void setUp() throws Exception {
-		parlamentarModel = new ParliamentaryModel();
-		projetoModel = new ProjectModel("2013", "NomeProjeto", "PL", "16/10/2013", "66", "ExplicacaoProjeto",
-				parlamentarModel);
+		parliamentaryModel = new ParliamentaryModel();
+		projectModel = new ProjectModel("2013", "NomeProjeto", "PL", "16/10/2013", "66", "ExplicacaoProjeto",
+				parliamentaryModel);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		parlamentarModel = null;
-		projetoModel = null;
+		parliamentaryModel = null;
+		projectModel = null;
 	}
 
 	@Test
 	public void testInstance() {
-		assertNotNull(projetoModel);
+		assertNotNull(projectModel);
 	}
 
 	@Test
-	public void testarNomeClasse() {
-		Assert.assertEquals("ParliamentaryModel", parlamentarModel.getClass().getSimpleName());
+	public void testParliamentaryModelNameOfClass() {
+		Assert.assertEquals("ParliamentaryModel", parliamentaryModel.getClass().getSimpleName());
 	}
 
 	@Test
-	public void testarNomeClasse2() {
-		Assert.assertEquals("ProjectModel", projetoModel.getClass().getSimpleName());
+	public void testProjectModelNameOfClass() {
+		Assert.assertEquals("ProjectModel", projectModel.getClass().getSimpleName());
 	}
 
 	@Test
-	public void testGetNome() {
-		assertEquals("NomeProjeto", projetoModel.getName());
+	public void testGetNameOfProject() {
+		assertEquals("NomeProjeto", projectModel.getName());
 	}
 
 	@Test
-	public void testGetAno() {
-		assertEquals("2013", projetoModel.getYear());
+	public void testGetYearOfTheProject() {
+		assertEquals("2013", projectModel.getYear());
 	}
 
 	@Test
-	public void testGetSigla() {
-		assertEquals("PL", projetoModel.getKindOfProjectAcronym());
+	public void testGetKindOfProjectAcronym() {
+		assertEquals("PL", projectModel.getKindOfProjectAcronym());
 	}
 
 	@Test
-	public void testGetData() {
-		assertEquals("16/10/2013", projetoModel.getDate());
+	public void testGetDateFromAProject() {
+		assertEquals("16/10/2013", projectModel.getDate());
 	}
 
 	@Test
-	public void testGetNumero() {
-		assertEquals("66", projetoModel.getNumber());
+	public void testGetNumberOfAProject() {
+		assertEquals("66", projectModel.getNumber());
 	}
 
 	@Test
-	public void testGetExplicacao() {
-		assertEquals("ExplicacaoProjeto", projetoModel.getExplanation());
+	public void testGetAnExplanationFromAProject() {
+		assertEquals("ExplicacaoProjeto", projectModel.getExplanation());
 	}
 
 	@Test
-	public void testGetParlamentar() {
+	public void testGetTheParliamentaryFromAProject() {
 		/* ParlamentarModel outroParlamentar = new ParlamentarModel(); */
-		assertEquals(parlamentarModel, projetoModel.getParliamentary());
+		assertEquals(parliamentaryModel, projectModel.getParliamentary());
 	}
 
 	@Test
-	public void testGetContEqualsOne() {
-		assertEquals(1, projetoModel.getCounter());
+	public void testGetTheCounterFromAProjectFirstCase() {
+		assertEquals(1, projectModel.getCounter());
 	}
 
 	@Test
-	public void testGetContMaiorQueUm() {
-		projetoModel.setName("TesteCont");
-		assertEquals(2, projetoModel.getCounter());
+	public void testGetTheCounterFromAProjectSecondCase() {
+		projectModel.setName("TesteCont");
+		assertEquals(2, projectModel.getCounter());
 	}
 
 	@Test
-	public void testSetNome() {
-		projetoModel.setName("SetNomeProjeto");
-		assertEquals("SetNomeProjeto", projetoModel.getName());
+	public void testSetNameForAProject() {
+		projectModel.setName("SetNomeProjeto");
+		assertEquals("SetNomeProjeto", projectModel.getName());
 	}
 
 	@Test
-	public void testSetAno() {
-		projetoModel.setYear("2012");
-		assertEquals("2012", projetoModel.getYear());
+	public void testSetYearForAProject() {
+		projectModel.setYear("2012");
+		assertEquals("2012", projectModel.getYear());
 	}
 
 	@Test
-	public void testSetSigla() {
-		projetoModel.setKindOfProjectAcronym("PDS");
-		assertEquals("PDS", projetoModel.getKindOfProjectAcronym());
+	public void testSetAnAcronymOfAKindOfProjectForAProject() {
+		projectModel.setKindOfProjectAcronym("PDS");
+		assertEquals("PDS", projectModel.getKindOfProjectAcronym());
 	}
 
 	@Test
-	public void testSetData() {
-		projetoModel.setDate("15/10/2013");
-		assertEquals("15/10/2013", projetoModel.getDate());
+	public void testSetADataForAProject() {
+		projectModel.setDate("15/10/2013");
+		assertEquals("15/10/2013", projectModel.getDate());
 	}
 
 	@Test
-	public void testSetNumero() {
-		projetoModel.setNumber("67");
-		assertEquals("67", projetoModel.getNumber());
+	public void testSetANumberForAProject() {
+		projectModel.setNumber("67");
+		assertEquals("67", projectModel.getNumber());
 	}
 	
 	@Test
-	public void testSetThenGetStatus(){
+	public void testSetAStatusForAProject(){
 		String esperado = "statusteste";
-		projetoModel.setStatus(esperado);
-		assertEquals(esperado, projetoModel.getStatus());
+		projectModel.setStatus(esperado);
+		assertEquals(esperado, projectModel.getStatus());
 	}
 
 	@Test
-	public void testSetExplicacao() {
-		projetoModel.setExplanation("SetExplicacaoProjeto");
-		assertEquals("SetExplicacaoProjeto", projetoModel.getExplanation());
+	public void testSetAnExplanationAProject() {
+		projectModel.setExplanation("SetExplicacaoProjeto");
+		assertEquals("SetExplicacaoProjeto", projectModel.getExplanation());
 	}
 
 	@Test
-	public void testSetParlamentar() {
+	public void testSetAParliamentaryForAProject() {
 		ParliamentaryModel outroParlamentar = new ParliamentaryModel();
-		projetoModel.setParliamentary(outroParlamentar);
-		assertEquals(outroParlamentar, projetoModel.getParliamentary());
+		projectModel.setParliamentary(outroParlamentar);
+		assertEquals(outroParlamentar, projectModel.getParliamentary());
 	}
 
 	@Test
-	public void testToString() {
+	public void testGetAProjectAsAString() {
 		ProjectModel outroProjetoModel = new ProjectModel("2013", "NomeProjeto", "PL", "16/10/2013", "66",
-				"ExplicacaoProjeto", parlamentarModel);
-		assertEquals(projetoModel.toString(), outroProjetoModel.toString());
+				"ExplicacaoProjeto", parliamentaryModel);
+		assertEquals(projectModel.toString(), outroProjetoModel.toString());
 	}
 	
 	@Test
-	public void testSetThenGetId() {
+	public void testSetAnIdForAProject() {
 		String esperado = "idset";
-		projetoModel.setId(esperado);
-		assertEquals(esperado, projetoModel.getId());
+		projectModel.setId(esperado);
+		assertEquals(esperado, projectModel.getId());
 
 	}
 
 	@Test
-	public void testGetContId() {
-		projetoModel.setId("qualquer coisa");
-		assertEquals(1, projetoModel.getCounterId());
+	public void testGetACounterIdFromAProject() {
+		projectModel.setId("qualquer coisa");
+		assertEquals(1, projectModel.getCounterId());
 	}
 
 	@Test
-	public void testSetContId() {
+	public void testSetACounterIdForAProject() {
 		int esperado = 3;
-		projetoModel.setCounterId(esperado);
-		assertEquals(esperado, projetoModel.getCounterId());
+		projectModel.setCounterId(esperado);
+		assertEquals(esperado, projectModel.getCounterId());
 	}
 
 	@Test
-	public void testSetCont() {
+	public void testSetACounterForAProject() {
 		int esperado = 5;
-		projetoModel.setCounter(esperado);
-		assertEquals(esperado, projetoModel.getCounter());
+		projectModel.setCounter(esperado);
+		assertEquals(esperado, projectModel.getCounter());
 	}
 
 	@Test
-	public void testConstrutorVazioNaoNulo() {
+	public void testCreateAProjectWithAnEmptyConstructor() {
 		ProjectModel projetoVazio = new ProjectModel();
 		assertNotNull(projetoVazio);
 	}
 
 	@Test
-	public void testSetIdComContIdMaiorQueZero() {
-		projetoModel.setCounterId(3);
-		projetoModel.setId("IDZORDON");
-		assertEquals(3, projetoModel.getCounterId());
+	public void testSetAnIdWhenTheCounterIsBiggerThanZero() {
+		projectModel.setCounterId(3);
+		projectModel.setId("IDZORDON");
+		assertEquals(3, projectModel.getCounterId());
 	}
 
 	@Test
-	public void testSetNomeComContMaiorQueUm() {
-		projetoModel.setCounter(5);
-		projetoModel.setName("NOMEZORDON");
-		assertEquals(6, projetoModel.getCounter());
+	public void testSetANameWithAnCounterBiggerThan1() {
+		projectModel.setCounter(5);
+		projectModel.setName("NOMEZORDON");
+		assertEquals(6, projectModel.getCounter());
 	}	
 
 }
