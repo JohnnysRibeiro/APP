@@ -12,63 +12,63 @@ import com.mds.app.model.PoliticalPartyModel;
 
 public class ParliamentaryModelTest extends AndroidTestCase {
 
-	private ParliamentaryModel parlamentarModel;
-	private PoliticalPartyModel partidoModel;
+	private ParliamentaryModel parliamentaryModel;
+	private PoliticalPartyModel politicalPartyModel;
 
 	@Before
 	public void setUp() throws Exception {
-		partidoModel = new PoliticalPartyModel("PMDS", "DF");
-		parlamentarModel = new ParliamentaryModel("NomeParlamentar", partidoModel);
+		politicalPartyModel = new PoliticalPartyModel("PMDS", "DF");
+		parliamentaryModel = new ParliamentaryModel("NomeParlamentar", politicalPartyModel);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		partidoModel = null;
-		parlamentarModel = null;
+		politicalPartyModel = null;
+		parliamentaryModel = null;
 	}
 
 	@Test
-	public void testIntanciaPartido() {
-		PoliticalPartyModel partido = new PoliticalPartyModel();
-		assertNotNull(partido);
+	public void testInstanceForPoliticalPartyModel() {
+		PoliticalPartyModel politicalParty = new PoliticalPartyModel();
+		assertNotNull(politicalParty);
 	}
 
 	@Test
-	public void testarNomeClasse() {
-		Assert.assertEquals("PoliticalPartyModel", partidoModel.getClass().getSimpleName());
+	public void nameNameOfPoliticalPartyModelClass() {
+		Assert.assertEquals("PoliticalPartyModel", politicalPartyModel.getClass().getSimpleName());
 	}
 
 	@Test
-	public void testarNomeClasse2() {
-		Assert.assertEquals("ParliamentaryModel", parlamentarModel.getClass().getSimpleName());
+	public void testNameOfParliamentaryModelClass() {
+		Assert.assertEquals("ParliamentaryModel", parliamentaryModel.getClass().getSimpleName());
 	}
 
 	@Test
-	public void testIntanciaParlamentar() {
-		PoliticalPartyModel parlamentar = new PoliticalPartyModel();
+	public void testInstanceForParliamentaryModel() {
+		ParliamentaryModel parlamentar = new ParliamentaryModel();
 		assertNotNull(parlamentar);
 	}
 
 	@Test
-	public void testGetNome() {
-		assertEquals("NomeParlamentar", parlamentarModel.getName());
+	public void testGetNameofAParliamentary() {
+		assertEquals("NomeParlamentar", parliamentaryModel.getName());
 	}
 
 	@Test
-	public void testSetNome() {
-		parlamentarModel.setName("NomeParlamentar");
-		assertEquals("NomeParlamentar", parlamentarModel.getName());
+	public void testSetNameOfAParliamentary() {
+		parliamentaryModel.setName("NomeParlamentar");
+		assertEquals("NomeParlamentar", parliamentaryModel.getName());
 	}
 
 	@Test
-	public void testGetPartido() {
-		assertSame(partidoModel, parlamentarModel.getPoliticalParty());
+	public void testGetAPoliticalParty() {
+		assertSame(politicalPartyModel, parliamentaryModel.getPoliticalParty());
 	}
 
 	@Test
-	public void testSetPartido() {
-		parlamentarModel.setPoliticalParty(partidoModel);
-		assertSame(partidoModel, parlamentarModel.getPoliticalParty());
+	public void testSetAPoliticalParty() {
+		parliamentaryModel.setPoliticalParty(politicalPartyModel);
+		assertSame(politicalPartyModel, parliamentaryModel.getPoliticalParty());
 	}
 
 }
