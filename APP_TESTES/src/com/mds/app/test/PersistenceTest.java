@@ -8,7 +8,7 @@ import com.mds.app.persistence.Persistence;
 
 public class PersistenceTest extends AndroidTestCase {
 
-	Persistence persistencia;
+	Persistence persistence;
 
 	public PersistenceTest() {
 		super();
@@ -17,46 +17,46 @@ public class PersistenceTest extends AndroidTestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
-		persistencia = new Persistence(mContext);
+		persistence = new Persistence(mContext);
 	}
 
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		persistencia = null;
+		persistence = null;
 	}
 
 	@Test
 	public void testGetContext() {
-		assertEquals(mContext, persistencia.getContext());
+		assertEquals(mContext, persistence.getContext());
 	}
 
 	@Test
-	public void testArquivoFavoritosComNomeCerto() {
-		String esperado = Persistence.getFavoritesNameFile();
-		String retornado = persistencia.getFavoritesFile().getName();
-		assertEquals(esperado, retornado);
+	public void testNameFromAFavoriteFile() {
+		String expectedReturn = Persistence.getFavoritesNameFile();
+		String actualReturn = persistence.getFavoritesFile().getName();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testArquivoHistoricoComNomeCerto() {
-		String esperado = Persistence.getHistoryNameFile();
-		String retornado = persistencia.getHistoryFile().getName();
-		assertEquals(esperado, retornado);
+	public void testGetNameFromAHistoryFile() {
+		String expectedReturn = Persistence.getHistoryNameFile();
+		String actualReturn = persistence.getHistoryFile().getName();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testGetFileNameFavoritos() {
-		String esperado = "favoritos";
-		String retornado = Persistence.getFavoritesNameFile();
-		assertEquals(esperado, retornado);
+	public void testGetFileNameFromFavorites() {
+		String expectedReturn = "favoritos";
+		String actualReturn = Persistence.getFavoritesNameFile();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
-	public void testGetFileNameHistorico() {
-		String esperado = "historico";
-		String retornado = Persistence.getHistoryNameFile();
-		assertEquals(esperado, retornado);
+	public void testGetFileNameFromHistory() {
+		String expectedReturn = "historico";
+		String actualReturn = Persistence.getHistoryNameFile();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 }
