@@ -202,13 +202,13 @@ public class HistoryController implements ManageProjectsController {
 				projectString += historyOfProjects.get(i).getName();
 				projectString += "\nNumero: ";
 				projectString += historyOfProjects.get(i).getNumber();
-				projectString += "\nAno:  ";
+				projectString += "\nAno: ";
 				projectString += historyOfProjects.get(i).getYear();
 				projectString += "\nSigla: ";
 				projectString += historyOfProjects.get(i).getKindOfProjectAcronym();
-				projectString += "\nData de Apresenta��o: ";
+				projectString += "\nData de Apresentacao: ";
 				projectString += historyOfProjects.get(i).getDate();
-				projectString += "\nDescri��o: ";
+				projectString += "\nDescricao: ";
 				projectString += historyOfProjects.get(i).getExplanation();
 				projectString += "\nParlamentar: ";
 				projectString += historyOfProjects.get(i).getParliamentary().getName();
@@ -232,8 +232,8 @@ public class HistoryController implements ManageProjectsController {
 		return historyOfProjects;
 	}
 
-	public static void setHistoryOfProjects(ArrayList<ProjectModel> historyOfProjects) {
-		HistoryController.historyOfProjects = historyOfProjects;
+	public static void setHistoryOfProjects(ArrayList<ProjectModel> historyOfProjects){
+			HistoryController.historyOfProjects = historyOfProjects;
 	}
 
 	public static ArrayList<String> getHistoryOfProjectsCompleteString() {
@@ -253,9 +253,11 @@ public class HistoryController implements ManageProjectsController {
 	}
 
 	public static ProjectModel getOldestProject() throws NullPointerException {
-		ProjectModel project = historyOfProjects.get(0);
-		project = historyOfProjects.get(0);
-		return project;
+			ProjectModel project = historyOfProjects.get(0);
+			if(project == null)
+				throw new NullPointerException();
+			else
+				return project;
 	}
 
 	public static String getOldestProjectAsString() throws IndexOutOfBoundsException {
