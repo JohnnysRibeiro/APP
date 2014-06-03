@@ -10,43 +10,43 @@ import com.mds.app.model.PoliticalPartyModel;
 
 public class PoliticalPartyModelTest extends AndroidTestCase {
 
-	private PoliticalPartyModel partidoModel;
+	private PoliticalPartyModel politicalPartyModel;
 
 	@Before
 	public void setUp() throws Exception {
-		partidoModel = new PoliticalPartyModel("PMDS", "DF");
+		politicalPartyModel = new PoliticalPartyModel("PMDS", "DF");
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		partidoModel = null;
+		politicalPartyModel = null;
 	}
 
 	@Test
 	public void testInstance() {
-		assertNotNull(partidoModel);
+		assertNotNull(politicalPartyModel);
 	}
 
 	@Test
-	public void testGetSiglaPartido() {
-		assertEquals("PMDS", partidoModel.getPoliticalPartyAcronym());
+	public void testGetPoliticalPartyAcronym() {
+		assertEquals("PMDS", politicalPartyModel.getPoliticalPartyAcronym());
 	}
 
 	@Test
-	public void testGetUf() {
-		assertEquals("DF", partidoModel.getStateAbbreviation());
+	public void testGetStateAbbreviationFromAPoliticalParty() {
+		assertEquals("DF", politicalPartyModel.getStateAbbreviation());
 	}
 
 	@Test
-	public void testSetSiglaPartido() {
-		partidoModel.setPoliticalPartyAcronym("PGPP");
-		assertEquals("PGPP", partidoModel.getPoliticalPartyAcronym());
+	public void testSetAcronymForAPoliticalParty() {
+		politicalPartyModel.setPoliticalPartyAcronym("PGPP");
+		assertEquals("PGPP", politicalPartyModel.getPoliticalPartyAcronym());
 	}
 
 	@Test
-	public void testSetUf() {
-		partidoModel.setStateAbbreviation("MG");
-		assertEquals("MG", partidoModel.getStateAbbreviation());
+	public void testSetStateAbbreviationForAPoliticalParty() {
+		politicalPartyModel.setStateAbbreviation("MG");
+		assertEquals("MG", politicalPartyModel.getStateAbbreviation());
 	}
 
 }
