@@ -41,38 +41,38 @@ public class SearchControllerTest extends AndroidTestCase {
 	}
 
 	@Test
-	public void testIsTemConexao() {
+	public void testIsThereConnection() {
 		assertFalse(searchController.isThereConnection());
 	}
 
 	@Test
-	public void testGetTextoOffline() {
+	public void testGetOfflineText() {
 		assertNull(searchController.getOfflineText());
 	}
 
 	@Test
-	public void testSetTextoOffline() {
-		String esperada = "textoffline";
-		searchController.setOfflineText(esperada);
-		String retornada = searchController.getOfflineText();
-		assertEquals(esperada, retornada);
+	public void testSetOfflineText() {
+		String expectedReturn = "textoffline";
+		searchController.setOfflineText(expectedReturn);
+		String actualReturn = searchController.getOfflineText();
+		assertEquals(expectedReturn, actualReturn);
 	}
 
 	@Test
 	public void testSetXmlParser() {
-		XMLParser novoXmlParser = new XMLParser();
-		searchController.setXmlParser(novoXmlParser);
-		assertSame(novoXmlParser, searchController.getXmlParser());
+		XMLParser newXMLParser = new XMLParser();
+		searchController.setXmlParser(newXMLParser);
+		assertSame(newXMLParser, searchController.getXmlParser());
 	}
 
 	@Test
-	public void testSetTemConexao() {
+	public void testSetIsThereConnection() {
 		searchController.setConnection(true);
 		assertTrue(searchController.isThereConnection());
 	}
 
 	@Test
-	public void testReceberXml() {
+	public void testReceiveXML() {
 		String responseEsperada = "<?xml version=\"1.0\" encoding=\"utf-8\"?><proposicoes>  <proposicao>    <id>596039</id>    <nome>PL 6555/2013</nome>    <tipoProposicao>      <id>139</id>      <sigla>PL</sigla>      <nome>Projeto de Lei</nome>    </tipoProposicao>    <numero>6555</numero>    <ano>2013</ano>    <orgaoNumerador>      <id>180</id>      <sigla>PLEN      </sigla>      <nome>PLENÁRIO</nome>    </orgaoNumerador>    <datApresentacao>10/10/2013 11:04:32</datApresentacao>    <txtEmenta>Institui o Dia Nacional do Blogueiro.</txtEmenta>    <txtExplicacaoEmenta>    </txtExplicacaoEmenta>    <regime>      <codRegime>99</codRegime>      <txtRegime>.</txtRegime>    </regime>    <apreciacao>      <id>99</id>      <txtApreciacao>.</txtApreciacao>    </apreciacao>    <autor1>      <txtNomeAutor>Andre Moura</txtNomeAutor>      <idecadastro>160543</idecadastro>      <codPartido>126</codPartido>      <txtSiglaPartido>PSC       </txtSiglaPartido>      <txtSiglaUF>SE</txtSiglaUF>    </autor1>    <qtdAutores>1</qtdAutores>    <ultimoDespacho>      <datDespacho>29/10/2013 14:44:00</datDespacho>      <txtDespacho>Devolva-se a proposição, com base no art. 137, §1º, inciso I, do Regimento Interno da Câmara dos Deputados, por contrariar o disposto no art. 4º da Lei nº 12.345/2010. Oficie-se ao Autor e, após, publique-se. </txtDespacho>    </ultimoDespacho>    <situacao>      <id>918</id>      <descricao>.</descricao>      <orgao>        <codOrgaoEstado>4</codOrgaoEstado>        <siglaOrgaoEstado>Diversos  </siglaOrgaoEstado>      </orgao>      <principal>        <codProposicaoPrincipal>0</codProposicaoPrincipal>        <proposicaoPrincipal>        </proposicaoPrincipal>      </principal>    </situacao>    <indGenero>o</indGenero>    <qtdOrgaosComEstado>2</qtdOrgaosComEstado>  </proposicao></proposicoes>";
 
 		SearchForProjectController.updateDataFromProjectSearch("2013", "PL", "6555", "");
@@ -104,7 +104,7 @@ public class SearchControllerTest extends AndroidTestCase {
 		SearchForParliamentaryController.updateDataFromParliamentarySearch("");
 		searchController.setConnection(true);
 		ArrayList<ProjectModel> listaRetornada = searchController.searchIntoXML();
-
+		System.out.println("Oie " + listaRetornada);
 		assertNotNull(listaRetornada); /* O teste nao consegue fazer o metodo procurar retornar a lista, mesmo tendo o link correto */
 		assertEquals(listaEsperada, listaRetornada);
 	}
@@ -167,7 +167,7 @@ public class SearchControllerTest extends AndroidTestCase {
 	@Test
 	public void testTransformaUfAmapa() {
 		String ufEsperada = "AP";
-		String resultado = searchController.transformStateAbbreviation("Amapá");
+		String resultado = searchController.transformStateAbbreviation("Amapa");
 		assertEquals(ufEsperada, resultado);
 	}
 
@@ -188,7 +188,7 @@ public class SearchControllerTest extends AndroidTestCase {
 	@Test
 	public void testTransformaUfCeara() {
 		String ufEsperada = "CE";
-		String resultado = searchController.transformStateAbbreviation("Ceará");
+		String resultado = searchController.transformStateAbbreviation("Ceara");
 		assertEquals(ufEsperada, resultado);
 	}
 
@@ -202,21 +202,21 @@ public class SearchControllerTest extends AndroidTestCase {
 	@Test
 	public void testTransformaUfEspIritoSanto() {
 		String ufEsperada = "ES";
-		String resultado = searchController.transformStateAbbreviation("Espírito Santo");
+		String resultado = searchController.transformStateAbbreviation("Espirito Santo");
 		assertEquals(ufEsperada, resultado);
 	}
 
 	@Test
 	public void testTransformaUfGoias() {
 		String ufEsperada = "GO";
-		String resultado = searchController.transformStateAbbreviation("Goiás");
+		String resultado = searchController.transformStateAbbreviation("Goias");
 		assertEquals(ufEsperada, resultado);
 	}
 
 	@Test
 	public void testTransformaUfMaranhao() {
 		String ufEsperada = "MA";
-		String resultado = searchController.transformStateAbbreviation("Maranhão");
+		String resultado = searchController.transformStateAbbreviation("Maranhao");
 		assertEquals(ufEsperada, resultado);
 	}
 
@@ -244,21 +244,21 @@ public class SearchControllerTest extends AndroidTestCase {
 	@Test
 	public void testTransformaUfPara() {
 		String ufEsperada = "PA";
-		String resultado = searchController.transformStateAbbreviation("Pará");
+		String resultado = searchController.transformStateAbbreviation("Para");
 		assertEquals(ufEsperada, resultado);
 	}
 
 	@Test
 	public void testTransformaUfParaiba() {
 		String ufEsperada = "PB";
-		String resultado = searchController.transformStateAbbreviation("Paraíba");
+		String resultado = searchController.transformStateAbbreviation("Paraiba");
 		assertEquals(ufEsperada, resultado);
 	}
 
 	@Test
 	public void testTransformaUfParana() {
 		String ufEsperada = "PR";
-		String resultado = searchController.transformStateAbbreviation("Paraná");
+		String resultado = searchController.transformStateAbbreviation("Parana");
 		assertEquals(ufEsperada, resultado);
 	}
 
@@ -272,7 +272,7 @@ public class SearchControllerTest extends AndroidTestCase {
 	@Test
 	public void testTransformaUfPiaui() {
 		String ufEsperada = "PI";
-		String resultado = searchController.transformStateAbbreviation("Piauí");
+		String resultado = searchController.transformStateAbbreviation("Piaui");
 		assertEquals(ufEsperada, resultado);
 	}
 
@@ -300,7 +300,7 @@ public class SearchControllerTest extends AndroidTestCase {
 	@Test
 	public void testTransformaUfRondonia() {
 		String ufEsperada = "RO";
-		String resultado = searchController.transformStateAbbreviation("Rondônia");
+		String resultado = searchController.transformStateAbbreviation("Rondonia");
 		assertEquals(ufEsperada, resultado);
 	}
 
@@ -321,7 +321,7 @@ public class SearchControllerTest extends AndroidTestCase {
 	@Test
 	public void testTransformaUfSaoPaulo() {
 		String ufEsperada = "SP";
-		String resultado = searchController.transformStateAbbreviation("São Paulo");
+		String resultado = searchController.transformStateAbbreviation("Sao Paulo");
 		assertEquals(ufEsperada, resultado);
 	}
 
@@ -355,7 +355,7 @@ public class SearchControllerTest extends AndroidTestCase {
 	@Test
 	public void testTransformaSiglaPEC() {
 		String siglaEsperada = "PEC";
-		String retornado = searchController.transformAcronym("Projeto de Emenda à Constituição");
+		String retornado = searchController.transformAcronym("Projeto de Emenda Constitucional");
 		assertEquals(siglaEsperada, retornado);
 	}
 
@@ -376,13 +376,13 @@ public class SearchControllerTest extends AndroidTestCase {
 	@Test
 	public void testTransformaSiglaPRC() {
 		String siglaEsperada = "PRC";
-		String retornado = searchController.transformAcronym("Projeto de Resolução");
+		String retornado = searchController.transformAcronym("Projeto de Resolucao");
 		assertEquals(siglaEsperada, retornado);
 	}
 
 	@Test
 	public void testarNomeDaClasse() {
-		assertEquals("BuscaController", searchController.getClass().getSimpleName());
+		assertEquals("SearchController", searchController.getClass().getSimpleName());
 	}
 
 }
