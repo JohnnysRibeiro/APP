@@ -10,21 +10,21 @@ import com.mds.app.model.SearchForParliamentaryModel;
 
 public class SearchForParliamentaryModelTest extends AndroidTestCase {
 
-	public SearchForParliamentaryModel procuraParlamentarModel;
+	public SearchForParliamentaryModel searchForParliamentaryModel;
 
 	@Before
 	public void setUp() throws Exception {
-		procuraParlamentarModel = new SearchForParliamentaryModel() {
+		searchForParliamentaryModel = new SearchForParliamentaryModel() {
 		};
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		procuraParlamentarModel = null;
+		searchForParliamentaryModel = null;
 	}
 
 	@Test
-	public void testSetThenGetNome() {
+	public void testGetNameOfAParliamentary() {
 		SearchForParliamentaryModel.setName("NomeProcuraParlamentarModel");
 		assertEquals("NomeProcuraParlamentarModel", SearchForParliamentaryModel.getName());
 	}
