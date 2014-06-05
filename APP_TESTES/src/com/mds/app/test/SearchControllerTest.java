@@ -338,7 +338,7 @@ public class SearchControllerTest extends AndroidTestCase {
 		assertEquals(expectedReturn, actualReturn);
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test (expected = IllegalArgumentException.class)
 	public void testTransformAcronymCathingException() {
 		String actualReturn = searchController.transformAcronym("sigla invalida");
 		fail("teste falhou");

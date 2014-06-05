@@ -11,32 +11,32 @@ import com.mds.app.model.SearchForParliamentaryModel;
 
 public class SearchForParliamentaryControllerTest extends AndroidTestCase {
 
-	private SearchForParliamentaryController procuraParlamentarController;
+	private SearchForParliamentaryController searchForParliamentaryController;
 
 	@Before
 	public void setUp() throws Exception {
-		procuraParlamentarController = new SearchForParliamentaryController();
+		searchForParliamentaryController = new SearchForParliamentaryController();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		procuraParlamentarController = null;
+		searchForParliamentaryController = null;
 	}
 
 	@Test
 	public void testInstance() {
-		procuraParlamentarController = new SearchForParliamentaryController();
-		assertNotNull(procuraParlamentarController);
+		searchForParliamentaryController = new SearchForParliamentaryController();
+		assertNotNull(searchForParliamentaryController);
 	}
 
 	@Test
-	public void testarNomeDaClasse() {
-		SearchForParliamentaryController procura = new SearchForParliamentaryController();
-		assertEquals("ProcuraParlamentarController", procura.getClass().getSimpleName());
+	public void testNameOfTheClass() {
+		SearchForParliamentaryController searchForParliamentaryInstance = new SearchForParliamentaryController();
+		assertEquals("SearchForParliamentaryController", searchForParliamentaryInstance.getClass().getSimpleName());
 	}
 
 	@Test
-	public void testAtualizarDadosPesquisaParlamentar() {
+	public void testUpdateDataForAParliamentarySearch() {
 		SearchForParliamentaryController.updateDataFromParliamentarySearch("Joao");
 		assertEquals("Joao", SearchForParliamentaryModel.getName());
 
