@@ -11,37 +11,37 @@ import com.mds.app.model.SearchForPoliticalPartyModel;
 
 public class SearchForPoliticalPartyControllerTest extends AndroidTestCase {
 
-	private SearchForPoliticalPartyController procuraPartidoController;
+	private SearchForPoliticalPartyController searchForPoliticalPartyController;
 
 	@Before
 	public void setUp() throws Exception {
-		procuraPartidoController = new SearchForPoliticalPartyController();
+		searchForPoliticalPartyController = new SearchForPoliticalPartyController();
 		SearchForPoliticalPartyController.updateDataForPoliticalPartySearch("DF", "PMDB");
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		procuraPartidoController = null;
+		searchForPoliticalPartyController = null;
 	}
 
 	@Test
 	public void testInstance() {
-		assertNotNull(procuraPartidoController);
+		assertNotNull(searchForPoliticalPartyController);
 	}
 
 	@Test
-	public void testarNomeDaClasse() {
+	public void testNameOfTheClass() {
 		SearchForPoliticalPartyController procura = new SearchForPoliticalPartyController();
-		assertEquals("ProcuraPartidoController", procura.getClass().getSimpleName());
+		assertEquals("SearchForPoliticalPartyController", procura.getClass().getSimpleName());
 	}
 
 	@Test
-	public void testAtualizaDadosPesquisaPartido_UF() {
+	public void testUpdateDataForASearchAndGetTheStateAbbreviation() {
 		assertEquals("DF", SearchForPoliticalPartyModel.getStateAbbreviation());
 	}
 
 	@Test
-	public void testAtualizaDadosPesquisaPartido_Sigla() {
+	public void testUpdateDataForASearchAndGetThePoliticalPartyAcronym() {
 		assertEquals("PMDB", SearchForPoliticalPartyModel.getPoliticalpartyAcronym());
 	}
 
