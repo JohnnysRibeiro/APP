@@ -14,7 +14,7 @@ import com.mds.app.util.StableArrayAdapter;
 public class StableArrayAdapterTest extends AndroidTestCase {
 
 	StableArrayAdapter stableArrayAdapter;
-	ArrayList<String> listStr;
+	ArrayList<String> arrayListOfString;
 	Context context;
 
 	public StableArrayAdapterTest() {
@@ -24,8 +24,8 @@ public class StableArrayAdapterTest extends AndroidTestCase {
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		listStr = new ArrayList<String>();
-		listStr.add("teste");
+		arrayListOfString = new ArrayList<String>();
+		arrayListOfString.add("teste");
 		context = mContext;
 	}
 
@@ -33,14 +33,14 @@ public class StableArrayAdapterTest extends AndroidTestCase {
 	public void tearDown() throws Exception {
 		super.tearDown();
 		stableArrayAdapter = null;
-		listStr = null;
+		arrayListOfString = null;
 		context = null;
 	}
 
 	@Test
-	public void testContextNulo() {
+	public void testWithNullContext() {
 		try {
-			stableArrayAdapter = new StableArrayAdapter(null, 20, listStr);
+			stableArrayAdapter = new StableArrayAdapter(null, 20, arrayListOfString);
 		} catch (NullPointerException e) {
 		}
 		assertNull(stableArrayAdapter);
@@ -48,7 +48,7 @@ public class StableArrayAdapterTest extends AndroidTestCase {
 
 	@Test
 	public void testGetItem() {
-		stableArrayAdapter = new StableArrayAdapter(context, 77, listStr);
+		stableArrayAdapter = new StableArrayAdapter(context, 77, arrayListOfString);
 
 		String str = stableArrayAdapter.getItem(0);
 		assertEquals("teste", str);
@@ -56,7 +56,7 @@ public class StableArrayAdapterTest extends AndroidTestCase {
 
 	@Test
 	public void testGetItemId() {
-		stableArrayAdapter = new StableArrayAdapter(context, 80, listStr);
+		stableArrayAdapter = new StableArrayAdapter(context, 80, arrayListOfString);
 		long esperado = 0;
 		long retornado = stableArrayAdapter.getItemId(0);
 		assertEquals(esperado, retornado);
@@ -64,7 +64,7 @@ public class StableArrayAdapterTest extends AndroidTestCase {
 
 	@Test
 	public void testHasStableIds() {
-		stableArrayAdapter = new StableArrayAdapter(context, 80, listStr);
+		stableArrayAdapter = new StableArrayAdapter(context, 80, arrayListOfString);
 		assertTrue(stableArrayAdapter.hasStableIds());
 	}
 
