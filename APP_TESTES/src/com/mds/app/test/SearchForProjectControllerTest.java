@@ -11,50 +11,50 @@ import com.mds.app.model.SearchForProjectModel;
 
 public class SearchForProjectControllerTest extends AndroidTestCase {
 
-	private SearchForProjectController procuraProjetoController;
+	private SearchForProjectController searchForProjectController;
 
 	@Before
 	public void setUp() throws Exception {
-		procuraProjetoController = new SearchForProjectController();
+		searchForProjectController = new SearchForProjectController();
 
 		SearchForProjectController.updateDataFromProjectSearch("2013", "PL", "6555", "14/03/2013");
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		procuraProjetoController = null;
+		searchForProjectController = null;
 	}
 
 	@Test
 	public void testInstance() {
-		assertNotNull(procuraProjetoController);
+		assertNotNull(searchForProjectController);
 	}
 
 	@Test
-	public void testarNomeDaClasse() {
-		SearchForProjectController procura = new SearchForProjectController();
-		assertEquals("ProcuraProjetoController", procura.getClass().getSimpleName());
+	public void testNameOfTheClass() {
+		SearchForProjectController searchForProjectInstance = new SearchForProjectController();
+		assertEquals("SearchForProjectController", searchForProjectInstance.getClass().getSimpleName());
 	}
 
 	@Test
-	public void testAtualizarDadosPesquisaProjeto_Ano() {
+	public void testUpdateDataForASearchAndGetTheYearOfTheProject() {
 		assertEquals("2013", SearchForProjectModel.getYear());
 
 	}
 
 	@Test
-	public void testAtualizarDadosPesquisaProjeto_Sigla() {
+	public void testUpdateDataForASearchAndGetTheAcronymOfTheProject() {
 		assertEquals("PL", SearchForProjectModel.getKindOfProjectAcronym());
 
 	}
 
 	@Test
-	public void testAtualizarDadosPesquisaProjeto_Numero() {
+	public void testUpdateDataForASearchAndGetTheNumberIdOfTheProject() {
 		assertEquals("6555", SearchForProjectModel.getId());
 	}
 
 	@Test
-	public void testAtualizarDadosPesquisaProjeto_DataInicio() {
+	public void testUpdateDataForASearchAndGetTheInitialDateOfTheProject() {
 		assertEquals("14/03/2013", SearchForProjectModel.getInitialDate());
 	}
 
