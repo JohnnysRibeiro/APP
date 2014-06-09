@@ -45,7 +45,7 @@ public class SearchController {
 	
 	public String transformAcronym(String kindOfProjectAcronym) {
 		
-		if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Lei")) {
+		if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Lei") || kindOfProjectAcronym.equalsIgnoreCase("Law Project")) {
 			kindOfProjectAcronym = "PL";
 		}
 		else if (kindOfProjectAcronym.equalsIgnoreCase("Projeto de Emenda Constitucional")) {

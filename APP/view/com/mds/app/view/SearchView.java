@@ -103,6 +103,7 @@ public class SearchView extends Activity {
 						textInitialDate.getText().toString(), textAuthorName.getText().toString(),
 						String.valueOf(textPoliticalPartyAcronym.getSelectedItem()),
 						String.valueOf(spinner2.getSelectedItem()));
+				
 				if (validation) {
 					new SearchForProjectsTask().execute();
 				}
