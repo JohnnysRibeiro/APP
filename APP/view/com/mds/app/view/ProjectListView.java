@@ -54,6 +54,7 @@ public class ProjectListView extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
 				view.animate().setDuration(1).alpha(1).withEndAction(new Runnable() {
+					
 					@Override
 					public void run() {
 						if (!stringOfAProject.get(position).equals("Nada encontrado.")) {
