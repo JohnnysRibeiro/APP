@@ -153,35 +153,46 @@ public class FavoritesController implements ManageProjectsController {
 					splitParts.add(j, parts[j + (separatorsPerProject * i)]);
 				}
 
-				String politicalPartyAcronym = splitParts.get(8);
-				String politicalPartyStateAbbreviation = splitParts.get(9);
-				String parliamentaryName = splitParts.get(7);
-				String projectName = splitParts.get(0);
-				String projectNumber = splitParts.get(1);
-				String projectYear = splitParts.get(2);
-				String projectAcronym = splitParts.get(3);
-				String projectDate = splitParts.get(4);
-				String projectExplanation = splitParts.get(5);
-				String projectStatus = splitParts.get(6);
-				String projectId = splitParts.get(10);
-
-				PoliticalPartyModel politicalParty = new PoliticalPartyModel(politicalPartyAcronym, politicalPartyStateAbbreviation);
-				ParliamentaryModel parliamentary = new ParliamentaryModel(parliamentaryName, politicalParty);
-				ProjectModel project = new ProjectModel(projectYear, projectName, projectAcronym, projectDate,
-						projectNumber, projectExplanation, parliamentary);
-				project.setStatus(projectStatus);
-				project.setId(projectId);
-
-				favoritedProjects.add(project);
-
-				Log.i("POPPROJ-F", "Adicionando: " + project.toString());
+				setUpAProjectAndAddItToAnFavoritedProjectsArray(splitParts);
 			}
 		}
 		else {
 			Log.i("POPPROJ-F", "Favoritos esta vazio");
 		}
-
+		
 		populateListWithProjects();
+	}
+	
+	/*
+	 * An ArrayList of Strings that receives a series of arguments from a 
+	 * projects ready to be passed for the creation of a project instance
+	 * that will be used by a list. 
+	 */
+	
+	void setUpAProjectAndAddItToAnFavoritedProjectsArray(ArrayList<String> splitParts){
+		String politicalPartyAcronym = splitParts.get(8);
+		String politicalPartyStateAbbreviation = splitParts.get(9);
+		String parliamentaryName = splitParts.get(7);
+		String projectName = splitParts.get(0);
+		String projectNumber = splitParts.get(1);
+		String projectYear = splitParts.get(2);
+		String projectAcronym = splitParts.get(3);
+		String projectDate = splitParts.get(4);
+		String projectExplanation = splitParts.get(5);
+		String projectStatus = splitParts.get(6);
+		String projectId = splitParts.get(10);
+
+		PoliticalPartyModel politicalParty = new PoliticalPartyModel(politicalPartyAcronym, politicalPartyStateAbbreviation);
+		ParliamentaryModel parliamentary = new ParliamentaryModel(parliamentaryName, politicalParty);
+		
+		ProjectModel project = new ProjectModel(projectYear, projectName, projectAcronym, projectDate,
+				projectNumber, projectExplanation, parliamentary);
+		project.setStatus(projectStatus);
+		project.setId(projectId);
+		
+		favoritedProjects.add(project);
+		
+		Log.i("POPPROJ-F", "Adicionando: " + project.toString());
 	}
 
 	/*
@@ -193,31 +204,50 @@ public class FavoritesController implements ManageProjectsController {
 	@Override
 	public void populateListWithProjects() {
 		if (!(favoritedProjects == null)) {
-			for (int i = 0; i < favoritedProjects.size(); i++) {
-				String projectString = "";
-				projectString += favoritedProjects.get(i).getName();
-				projectString += "\nNumero: ";
-				projectString += favoritedProjects.get(i).getNumber();
-				projectString += "\nAno: ";
-				projectString += favoritedProjects.get(i).getYear();
-				projectString += "\nSigla: ";
-				projectString += favoritedProjects.get(i).getKindOfProjectAcronym();
-				projectString += "\nData de Apresentacao: ";
-				projectString += favoritedProjects.get(i).getDate();
-				projectString += "\nDescricao: ";
-				projectString += favoritedProjects.get(i).getExplanation();
-				projectString += "\nParlamentar: ";
-				projectString += favoritedProjects.get(i).getParliamentary().getName();
-				projectString += "\nPartido: ";
-				projectString += favoritedProjects.get(i).getParliamentary().getPoliticalParty().getPoliticalPartyAcronym();
-				projectString += "\nEstado: ";
-				projectString += favoritedProjects.get(i).getParliamentary().getPoliticalParty().getStateAbbreviation();
-				favoritedProjectsCompleteString.add(i, projectString);
+			for (int position = 0; position < favoritedProjects.size(); position++) {
+				concatenateProjectStringAndAddItToArrayList(position);
 			}
 		}
 		else {
 			// Log.i("POPSTR-F", "Favoritos esta vazio");
 		}
+	}
+	
+	/*
+	 * Gets all the atributes from a project and adds it into a single string
+	 * that will store data from all the projects in form of string.
+	 */
+	
+	void concatenateProjectStringAndAddItToArrayList(int position){
+		String projectString = "";
+		
+		projectString += favoritedProjects.get(position).getName();
+		
+		projectString += "\nNumero: ";
+		projectString += favoritedProjects.get(position).getNumber();
+		
+		projectString += "\nAno: ";
+		projectString += favoritedProjects.get(position).getYear();
+		
+		projectString += "\nSigla: ";
+		projectString += favoritedProjects.get(position).getKindOfProjectAcronym();
+		
+		projectString += "\nData de Apresentacao: ";
+		projectString += favoritedProjects.get(position).getDate();
+		
+		projectString += "\nDescricao: ";
+		projectString += favoritedProjects.get(position).getExplanation();
+		
+		projectString += "\nParlamentar: ";
+		projectString += favoritedProjects.get(position).getParliamentary().getName();
+		
+		projectString += "\nPartido: ";
+		projectString += favoritedProjects.get(position).getParliamentary().getPoliticalParty().getPoliticalPartyAcronym();
+		
+		projectString += "\nEstado: ";
+		projectString += favoritedProjects.get(position).getParliamentary().getPoliticalParty().getStateAbbreviation();
+		
+		favoritedProjectsCompleteString.add(position, projectString);
 	}
 
 	/*

@@ -39,19 +39,21 @@ public class ProjectDescriptionView extends Activity {
 	
 	private ListController listController;
 	private ProjectModel actualProject;
-	// private String completeProjectAsString; (commented because it seems to be never used)
-	private TextView text1;
-	private TextView text2;
-	private TextView text3;
-	private TextView text4;
-	private TextView text5;
-	private TextView text6;
-	private TextView text7;
+	
+	private TextView nameOfTheProjectTextView;
+	private TextView characteristicsOfTheProjectTextView;
+	private TextView descriptionOfTheProjectTextView;
+	private TextView parliamentaryOfTheProjectTextView;
+	private TextView characteristicsFromParliamentaryTextView;
+	private TextView moreInformationAboutProjectTextView;
+	private TextView statusFromTheProjectTextView;
+	
 	private ImageButton favoriteStarImgButton;
 	private ImageButton facebookShareButton;
+	
 	private boolean favoritedProject;
-	Context context = this;
 	private boolean isResumed = false;
+	Context context = this;
 
 	/*
 	 *  UiLifecycleHelper is from Facebook SDK/Facebook integration
@@ -81,56 +83,12 @@ public class ProjectDescriptionView extends Activity {
 
 		actualProject = ListController.getActualProject();
 		listController = new ListController();
-
-		// completeProjectAsString = listController.getCompleteStringForProfile(); (never used)
 		
 		createDescriptionFormForAProject();
 		
-//		text1 = (TextView) findViewById(R.id.projectTypeText);
-//		text1.setText(actualProject.getName());
-//		text2 = (TextView) findViewById(R.id.projectCharacteristicsText);
-//		text2.setText("Numero: " + actualProject.getNumber() + "\n" + "Ano: " + actualProject.getYear() + "\n"
-//				+ "Sigla: " + actualProject.getKindOfProjectAcronym() + "\n" + "Data de Apresentacao: " + "\n"
-//				+ actualProject.getDate());
-//		text3 = (TextView) findViewById(R.id.descriptionText);
-//		text3.setText("Descricao:" + "\n" + actualProject.getExplanation());
-//		text4 = (TextView) findViewById(R.id.parliamentaryText);
-//		text4.setText("Parlamentar");
-//		text5 = (TextView) findViewById(R.id.parliamentaryCharacteristicsText);
-//		text5.setText("Nome: " + actualProject.getParliamentary().getName() + "\n" + "Partido: "
-//				+ actualProject.getParliamentary().getPoliticalParty().getPoliticalPartyAcronym());
-//		text6 = (TextView) findViewById(R.id.moreText);
-//		text6.setText("Para visualizar o perfil completo do projeto acesse: "
-//				+ "http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=" + actualProject.getId());
-//		text7 = (TextView) findViewById(R.id.textStatus);
-//		text7.setText("Status: " + actualProject.getStatus());
-
 		favoriteAProject_addListener();
-
-		/*
-		 * Adds a project into the history only if the project has not reached the maximum number permited.
-		 * In case of the history file is full we delete the oldest project saved and use the new memory space
-		 * for the new one.
-		 */
 		
 		addProjectIntoTheHistoryAfterViewed();
-		
-//		final int numberOfProjectsIntoHistory = HistoryController.getNumberOfProjectsIntoHistory();
-//		final int maxNumberOfProjects = HistoryController.getMaxNumberOfProjects();
-//		String completeStringFromProjectFromHistory = listController.getCompleteStringForAFile();
-//		HistoryController historyController = new HistoryController(context);
-//
-//		if (numberOfProjectsIntoHistory < maxNumberOfProjects) {
-//			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
-//		}
-//		else {
-//			Log.i("LOGGER", "Remove from history: " + HistoryController.getOldestProject().getNumber());
-//			historyController.removeProject(HistoryController.getOldestProject(),
-//					HistoryController.getOldestProjectAsString());
-//			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
-//		}
-//		Log.i("LOGGER", "Adding to the history: " + actualProject.getNumber());
-
 	}
 	
 	/*
@@ -154,6 +112,7 @@ public class ProjectDescriptionView extends Activity {
 					HistoryController.getOldestProjectAsString());
 			historyController.addProject(actualProject, completeStringFromProjectFromHistory);
 		}
+		
 		Log.i("LOGGER", "Adding to the history: " + actualProject.getNumber());
 	}
 	
@@ -162,24 +121,30 @@ public class ProjectDescriptionView extends Activity {
 	 */
 
 	private void createDescriptionFormForAProject(){
-		text1 = (TextView) findViewById(R.id.projectTypeText);
-		text1.setText(actualProject.getName());
-		text2 = (TextView) findViewById(R.id.projectCharacteristicsText);
-		text2.setText("Numero: " + actualProject.getNumber() + "\n" + "Ano: " + actualProject.getYear() + "\n"
-				+ "Sigla: " + actualProject.getKindOfProjectAcronym() + "\n" + "Data de Apresentacao: " + "\n"
-				+ actualProject.getDate());
-		text3 = (TextView) findViewById(R.id.descriptionText);
-		text3.setText("Descricao:" + "\n" + actualProject.getExplanation());
-		text4 = (TextView) findViewById(R.id.parliamentaryText);
-		text4.setText("Parlamentar");
-		text5 = (TextView) findViewById(R.id.parliamentaryCharacteristicsText);
-		text5.setText("Nome: " + actualProject.getParliamentary().getName() + "\n" + "Partido: "
-				+ actualProject.getParliamentary().getPoliticalParty().getPoliticalPartyAcronym());
-		text6 = (TextView) findViewById(R.id.moreText);
-		text6.setText("Para visualizar o perfil completo do projeto acesse: "
+		nameOfTheProjectTextView = (TextView) findViewById(R.id.projectTypeText);
+		nameOfTheProjectTextView.setText(actualProject.getName());
+		
+		characteristicsOfTheProjectTextView = (TextView) findViewById(R.id.projectCharacteristicsText);
+		characteristicsOfTheProjectTextView.setText("Numero: " + actualProject.getNumber() + "\n" + "Ano: " 
+				+ actualProject.getYear() + "\n" + "Sigla: " + actualProject.getKindOfProjectAcronym() + "\n" 
+				+ "Data de Apresentacao: " + "\n" + actualProject.getDate());
+		
+		descriptionOfTheProjectTextView = (TextView) findViewById(R.id.descriptionText);
+		descriptionOfTheProjectTextView.setText("Descricao:" + "\n" + actualProject.getExplanation());
+		
+		parliamentaryOfTheProjectTextView = (TextView) findViewById(R.id.parliamentaryText);
+		parliamentaryOfTheProjectTextView.setText("Parlamentar");
+		
+		characteristicsFromParliamentaryTextView = (TextView) findViewById(R.id.parliamentaryCharacteristicsText);
+		characteristicsFromParliamentaryTextView.setText("Nome: " + actualProject.getParliamentary().getName() + 
+				"\n" + "Partido: " + actualProject.getParliamentary().getPoliticalParty().getPoliticalPartyAcronym());
+		
+		moreInformationAboutProjectTextView = (TextView) findViewById(R.id.moreText);
+		moreInformationAboutProjectTextView.setText("Para visualizar o perfil completo do projeto acesse: "
 				+ "http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=" + actualProject.getId());
-		text7 = (TextView) findViewById(R.id.textStatus);
-		text7.setText("Status: " + actualProject.getStatus());
+		
+		statusFromTheProjectTextView = (TextView) findViewById(R.id.textStatus);
+		statusFromTheProjectTextView.setText("Status: " + actualProject.getStatus());
 	}
 	
 	/*
@@ -240,52 +205,14 @@ public class ProjectDescriptionView extends Activity {
 	 */
 	
 	private void favoriteAProject_addListener() {
-		
-		/*
-		 *  Block of code that changes the Favorite Button Image according to the actual state of the project
-		 *  (showing if its faved or not).
-		 */
-		
 		setImageResourceForFavoriteStarImgButton();
-		
-//		favoriteStarImgButton = (ImageButton) findViewById(R.id.notFavoritedProjectStar);
-//		
-//		String stringFromFavoritedProject = listController.getCompleteStringForAFile();
-//		
-//		if (FavoritesController.getFavoritedProjectsCompleteString().contains(stringFromFavoritedProject)) {
-//			favoriteStarImgButton.setImageResource(R.drawable.favorited_star_img);
-//			favoritedProject = true;
-//		}
-//		else {
-//			favoriteStarImgButton.setImageResource(R.drawable.not_favorited_star_img);
-//			favoritedProject = false;
-//		}
-
 		onClickListenerForFavoriteStarImgButton();
-		
-//		favoriteStarImgButton.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//
-//				FavoritesController favoritesController = new FavoritesController(context);
-//				String stringFromProjectToBeFavorited = listController.getCompleteStringForAFile();
-//
-//				if (!favoritedProject) {
-//					favoriteStarImgButton.setImageResource(R.drawable.favorited_star_img);
-//					favoritedProject = true;
-//					favoritesController.addProject(actualProject, stringFromProjectToBeFavorited);
-//					Log.i("LOGGER", "Favoriting: " + actualProject.getNumber());
-//				}
-//				else {
-//					favoriteStarImgButton.setImageResource(R.drawable.not_favorited_star_img);
-//					favoritedProject = false;
-//					favoritesController.removeProject(actualProject, stringFromProjectToBeFavorited);
-//					Log.i("LOGGER", "Unfavoriting: " + actualProject.getNumber());
-//				}
-//			}
-//		});
 	}
+	
+	/*
+	 *  Block of code that changes the Favorite Button Image according to the actual state of the project
+	 *  (showing if its faved or not).
+	 */
 	
 	private void setImageResourceForFavoriteStarImgButton(){
 		favoriteStarImgButton = (ImageButton) findViewById(R.id.notFavoritedProjectStar);
