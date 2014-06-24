@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>APP</name>
+	<name>APP_TESTES</name>
 	<comment></comment>
 	<projects>
+		<project>APP</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -25,15 +26,9 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>com.structure101.java.eclipse.plugin.JDMEclipseBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>com.structure101.java.eclipse.plugin.JDMEclipseNature</nature>
 	</natures>
 </projectDescription>
