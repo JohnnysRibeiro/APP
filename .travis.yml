@@ -5,5 +5,5 @@ android:
     - android-18
     - extra
 script: 
-- ant emma debug
-- ant emma install test
+- ant debug
+- ant install test
