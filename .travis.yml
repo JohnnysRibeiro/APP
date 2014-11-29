@@ -6,4 +6,4 @@ android:
     - extra
 script: 
 - ant debug
-- ant install test
+- ant installt test
