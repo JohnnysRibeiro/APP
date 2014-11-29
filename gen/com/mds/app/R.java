@@ -105,7 +105,6 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int apptext=0x7f05001a;
         public static final int estadoFrase=0x7f050019;
-        public static final int facebook_app_id=0x7f05001b;
         public static final int hello_world=0x7f050013;
         public static final int hintAno=0x7f050005;
         public static final int hintDataInicio=0x7f050007;
@@ -125,7 +124,7 @@ public final class R {
         public static final int imgviewSOBREPROV=0x7f050011;
         public static final int partidos=0x7f050015;
         public static final int projetoFrase=0x7f050014;
-        public static final int textoTitulo=0x7f05001c;
+        public static final int textoTitulo=0x7f05001b;
         public static final int title_activity_perfil=0x7f050012;
         public static final int title_activity_sobre=0x7f050003;
     }
