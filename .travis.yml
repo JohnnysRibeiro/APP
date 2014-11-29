@@ -4,3 +4,6 @@ android:
     - build-tools-18.1.1
     - android-18
     - extra
+script: 
+- ant emma debug
+- ant emma install test
