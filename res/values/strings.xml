@@ -102,5 +102,6 @@
     </string-array>
         <string name="apptext">Acompanhamento de Projetos Parlamentares</string>
         <string name="textoTitulo">Prrencha os dados para fazer a pesquisa</string>
+        <string name="facebook_app_id">1501562850118391</string>
 
 </resources>
