@@ -20,11 +20,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facebook.FacebookOperationCanceledException;
-import com.facebook.Session;
-import com.facebook.SessionState;
-import com.facebook.UiLifecycleHelper;
-import com.facebook.widget.FacebookDialog;
+//import com.facebook.FacebookOperationCanceledException;
+//import com.facebook.Session;
+//import com.facebook.SessionState;
+//import com.facebook.UiLifecycleHelper;
+//import com.facebook.widget.FacebookDialog;
 import com.mds.app.R;
 import com.mds.app.controller.FavoritesController;
 import com.mds.app.controller.HistoryController;
@@ -59,13 +59,13 @@ public class ProjectDescriptionView extends Activity {
 	 *  UiLifecycleHelper is from Facebook SDK/Facebook integration
 	 */
 	
-	private UiLifecycleHelper uiHelper;
-	private Session.StatusCallback callback = new Session.StatusCallback() {
-		@Override
-		public void call(Session session, SessionState state, Exception exception) {
-			onSessionStateChange(session, state, exception);
-		}
-	};
+//	private UiLifecycleHelper uiHelper;
+//	private Session.StatusCallback callback = new Session.StatusCallback() {
+//		@Override
+//		public void call(Session session, SessionState state, Exception exception) {
+//			onSessionStateChange(session, state, exception);
+//		}
+//	};
 
 	/*
 	 *  This method instantiate all the elements that will be needed and call the Listeners for the buttons. It also calls the TextViews that
@@ -74,12 +74,12 @@ public class ProjectDescriptionView extends Activity {
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_for_project_profile);
+//		setContentView(R.layout.activity_for_project_profile);
+//
+//		uiHelper = new UiLifecycleHelper(this, callback);
+//		uiHelper.onCreate(savedInstanceState);
 
-		uiHelper = new UiLifecycleHelper(this, callback);
-		uiHelper.onCreate(savedInstanceState);
-
-		shareOnFacebook_addListener();
+//		shareOnFacebook_addListener();
 
 		actualProject = ListController.getActualProject();
 		listController = new ListController();
@@ -151,22 +151,22 @@ public class ProjectDescriptionView extends Activity {
 	 *  Register on log file if the Activity has failed or succeeded.
 	 */
 	
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-
-		uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
-			@Override
-			public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
-				Log.e("Activity", String.format("Error: %s", error.toString()));
-			}
-
-			@Override
-			public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
-				Log.i("Activity", "Success!");
-			}
-		});
-	}
+//	@Override
+//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//		super.onActivityResult(requestCode, resultCode, data);
+//
+//		uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
+//			@Override
+//			public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
+//				Log.e("Activity", String.format("Error: %s", error.toString()));
+//			}
+//
+//			@Override
+//			public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
+//				Log.i("Activity", "Success!");
+//			}
+//		});
+//	}
 	
 	/*
 	 *  Inflate the menu; this adds items to the action bar if it is present.
@@ -182,21 +182,21 @@ public class ProjectDescriptionView extends Activity {
 	 *  Facebook app/Post on the wall feature so the user can share the Project webpage at Facebook with friends.
 	 */
 	
-	private void shareOnFacebook_addListener() {
-		final Activity activity = this;
-		facebookShareButton = (ImageButton) findViewById(R.id.logoFacebook);
-
-		facebookShareButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(activity).setLink(
-						"http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao="
-								+ actualProject.getId()).build();
-				uiHelper.trackPendingDialogCall(shareDialog.present());
-			}
-		});
-
-	}
+//	private void shareOnFacebook_addListener() {
+//		final Activity activity = this;
+//		facebookShareButton = (ImageButton) findViewById(R.id.logoFacebook);
+//
+//		facebookShareButton.setOnClickListener(new OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(activity).setLink(
+//						"http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao="
+//								+ actualProject.getId()).build();
+//				uiHelper.trackPendingDialogCall(shareDialog.present());
+//			}
+//		});
+//
+//	}
 
 	/*
 	 * If the Favorite Button(a little star) is pressed this is the method that will call its listener and calls the
@@ -262,36 +262,36 @@ public class ProjectDescriptionView extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		uiHelper.onResume();
+//		uiHelper.onResume();
 		isResumed = true;
 	}
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
-		uiHelper.onSaveInstanceState(outState);
+//		uiHelper.onSaveInstanceState(outState);
 	}
 
 	@Override
 	public void onPause() {
 		super.onPause();
-		uiHelper.onPause();
+//		uiHelper.onPause();
 		isResumed = false;
 	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		uiHelper.onDestroy();
+//		uiHelper.onDestroy();
 	}
 
-	private void onSessionStateChange(Session session, SessionState state, Exception exception) {
-		if (isResumed) {
-			if (exception != null && !(exception instanceof FacebookOperationCanceledException)) {
-				Toast.makeText(this, "ERRO!", Toast.LENGTH_SHORT).show();
-				return;
-			}
-		}
-	}
+//	private void onSessionStateChange(Session session, SessionState state, Exception exception) {
+//		if (isResumed) {
+//			if (exception != null && !(exception instanceof FacebookOperationCanceledException)) {
+//				Toast.makeText(this, "ERRO!", Toast.LENGTH_SHORT).show();
+//				return;
+//			}
+//		}
+//	}
 
 }
