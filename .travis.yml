@@ -9,7 +9,7 @@ before_script:
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
-  - android update project &
+  - android update project -p . 
 script: 
 - ant emma debug
 - ant emma installt test
