@@ -13,3 +13,8 @@ before_script:
 script: 
 - ant emma debug
 - ant emma installt test
+notifications:
+  campfire:
+    rooms:
+      secure: "jwCORhfS7ENknvKt7Lhmoe4LXVcBjX336BG7YOvtyA9xkwpPbzOx8OysdmIPXOPWDwo5uNMlFkXGiBCM8k5LWoSshAniYqvYod6NeEJg2RhSScAdDXoGEfntayOIBNsGeCX5p8JMJxXjhE4jwgYr+JZtQ4+ds0+boIMVhBtTcy8="
+
