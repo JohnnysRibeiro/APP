@@ -10,6 +10,7 @@ before_script:
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
   - android update project -p . 
+  - .utility/push_javadoc_on_gh_page.sh 
 script: 
 - ant emma debug
 - ant emma installt test
@@ -17,5 +18,4 @@ notifications:
   campfire:
     rooms:
       secure: "jwCORhfS7ENknvKt7Lhmoe4LXVcBjX336BG7YOvtyA9xkwpPbzOx8OysdmIPXOPWDwo5uNMlFkXGiBCM8k5LWoSshAniYqvYod6NeEJg2RhSScAdDXoGEfntayOIBNsGeCX5p8JMJxXjhE4jwgYr+JZtQ4+ds0+boIMVhBtTcy8="
-after_success:
-- .utility/push_javadoc_on_gh_page.sh 
+      
