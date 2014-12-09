@@ -16,6 +16,6 @@ script:
 notifications:
   campfire:
     rooms:
-      secure: "jwCORhfS7ENknvKt7Lhmoe4LXVcBjX336BG7YOvtyA9xkwpPbzOx8OysdmIPXOPWDwo5uNMlFkXGiBCM8k5LWoSshAniYqvYod6NeEJg2RhSScAdDXoGEfntayOIBNsGeCX5p8JMJxXjhE4jwgYr+JZtQ4+ds0+boIMVhBtTcy8="
+       secure: "Fw67wY4NQzHYW4VkPqCBGP0SUy5fw5mIoimC2m0JwU3N6cSI/4UQ5Rp6TMbRTP9s03HCfjSvJZJb7CZOWydpOyO5hbHzl3GnTUzk0RAuv0BKI0AA1E9hxPgdLIvI7DschoZfqOBEaHzTKCXHt/1qFgSEES3kNhpCBCWDpjYvj6I="
 after_script:
   - .utility/push_javadoc_on_gh_page.sh       
