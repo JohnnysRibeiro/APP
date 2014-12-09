@@ -1,0 +1,18 @@
+# view AndroidManifest.xml #generated:21
+-keep class android.test.InstrumentationTestRunner { <init>(...); }
+
+# view AndroidManifest.xml #generated:58
+-keep class com.mds.app.view.AboutApplicationView { <init>(...); }
+
+# view AndroidManifest.xml #generated:48
+-keep class com.mds.app.view.MainMenuView { <init>(...); }
+
+# view AndroidManifest.xml #generated:43
+-keep class com.mds.app.view.ProjectDescriptionView { <init>(...); }
+
+# view AndroidManifest.xml #generated:38
+-keep class com.mds.app.view.ProjectListView { <init>(...); }
+
+# view AndroidManifest.xml #generated:33
+-keep class com.mds.app.view.SearchView { <init>(...); }
+
