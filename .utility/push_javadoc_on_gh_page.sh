@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$TRAVIS_REPO_SLUG" == "ReadyTalk/swt-bling" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+if [ "$TRAVIS_REPO_SLUG" == "JohnnysRibeiro/APP" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 	echo -e "Publishing javadoc...\n"
 	cp -R build/docs/javadoc $HOME/javadoc-latest
 	cd $HOME
