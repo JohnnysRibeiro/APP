@@ -13,8 +13,6 @@ before_script:
 
 script: 
 - ant emma debug
-- cd APP_TESTES
-- ant emma installt test
 notifications:
   campfire:
     rooms:
