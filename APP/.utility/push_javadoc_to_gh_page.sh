@@ -1,6 +1,6 @@
 echo -e "Starting JavaDoc publish script."
 
-if [ "$TRAVIS_REPO_SLUG" == "JohnnysRibeiro/APP" ] && [ "$TRAVIS_JDK_VERSION" == "oraclejdk7" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+if [ "$TRAVIS_REPO_SLUG" == "JohnnysRibeiro/APP" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
 echo -e "Publishing javadoc...\n"
 cp -R build/docs/javadoc $HOME/javadoc-latest
