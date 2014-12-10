@@ -10,10 +10,11 @@ before_script:
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
   - android update project -p .
-
+  - cd APP/
 script:
 - ant emma debug
 - mv bin/APP-debug.apk APP_TESTES/bin/
+- cd ..
 - cd APP_TESTES/
 - ant emma installt test
 notifications:
