@@ -1,4 +1,7 @@
+echo -e "Starting JavaDoc publish script."
+
 if [ "$TRAVIS_REPO_SLUG" == "JohnnysRibeiro/APP" ] && [ "$TRAVIS_JDK_VERSION" == "oraclejdk7" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+
 echo -e "Publishing javadoc...\n"
 cp -R build/docs/javadoc $HOME/javadoc-latest
 cd $HOME
@@ -12,4 +15,9 @@ git add -f .
 git commit -m "Lastest javadoc on travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
 git push -fq origin gh-pages > /dev/null
 echo -e "Published Javadoc to gh-pages.\n"
+
+else
+
+echo -e "Could not publish JavaDoc."
+
 fi
