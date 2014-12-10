@@ -13,7 +13,7 @@ before_script:
   - cd APP/
 script:
 - ant emma debug
-- mv bin/APP-debug.apk APP_TESTES/bin/
+- mv bin/APP-debug.apk ../APP_TESTES/bin/
 - cd ..
 - cd APP_TESTES/
 - ant emma installt test
