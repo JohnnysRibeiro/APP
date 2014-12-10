@@ -20,3 +20,4 @@ notifications:
 after_success:
   - cd ..
   - chmod +x APP/.utility/push_javadoc_to_gh_page.sh
+  - ./APP/.utility/push_javadoc_to_gh_page.sh
