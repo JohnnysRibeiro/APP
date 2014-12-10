@@ -23,4 +23,4 @@ notifications:
 after_script:
   - cd ..
   - cd APP/
-  - chmod +x .utility/push_javadoc_on_gh_page.sh
+  - chmod +x .utility/push_javadoc_to_gh_page.sh
