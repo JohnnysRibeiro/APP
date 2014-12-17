@@ -1,22 +1,21 @@
 language: android
 android:
   components:
-    - build-tools-18.1.1
-    - android-19
-    - extra
+  - build-tools-18.1.1
+  - android-19
+  - extra
 before_script:
-  - echo no | android create avd --force -n test -t android-18 --abi armeabi-v7a
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
-  - android update project -p .
-  - cd APP/
+- echo no | android create avd --force -n test -t android-18 --abi armeabi-v7a
+- emulator -avd test -no-skin -no-audio -no-window &
+- android-wait-for-emulator
+- adb shell input keyevent 82 &
+- android update project -p .
+- cd APP/
 script:
 - ant emma debug
-notifications:
-  campfire:
-    rooms:
-       secure: "Fw67wY4NQzHYW4VkPqCBGP0SUy5fw5mIoimC2m0JwU3N6cSI/4UQ5Rp6TMbRTP9s03HCfjSvJZJb7CZOWydpOyO5hbHzl3GnTUzk0RAuv0BKI0AA1E9hxPgdLIvI7DschoZfqOBEaHzTKCXHt/1qFgSEES3kNhpCBCWDpjYvj6I="
-after_success:
-  - cd ..
-  - chmod +x APP/.utility/push_javadoc_to_gh_page.sh
+after_script:
+- cd ..
+- chmod +x APP/.utility/push_javadoc_to_gh_page.sh
+env:
+  global:
+    secure: INVZ1COe8NGLKl52BcEErnrnvdtfUKSLLFQXn2hdTSjN0CIUz5ZMQDJkVRi2yaFFYiW9TFXuvyM/m6DDXCb7y5PmA8fe85HJt/9tJlohILFAcMD6y7NCoT8QfgjqYSALyQK7p9KuIKvFymU0wIn6kIOrMzyKUdsa1iAqdqt+S8Q=
