@@ -13,9 +13,11 @@ before_script:
 - cd APP/
 script:
 - ant emma debug
-after_script:
-- cd ..
-- chmod +x APP/.utility/push_javadoc_to_gh_page.sh
 env:
   global:
     secure: INVZ1COe8NGLKl52BcEErnrnvdtfUKSLLFQXn2hdTSjN0CIUz5ZMQDJkVRi2yaFFYiW9TFXuvyM/m6DDXCb7y5PmA8fe85HJt/9tJlohILFAcMD6y7NCoT8QfgjqYSALyQK7p9KuIKvFymU0wIn6kIOrMzyKUdsa1iAqdqt+S8Q=
+after_script:
+  - cd ..
+  - chmod +x push_javadoc_to_gh_page.sh
+  - javadoc -d ./javadoc/ -sourcepath ./APP/src/ -subpackages com
+  - ./push_javadoc_to_gh_page.sh

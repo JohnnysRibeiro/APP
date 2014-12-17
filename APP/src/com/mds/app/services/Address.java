@@ -2,7 +2,7 @@
  * 
  * Package: com.mds.app.services
  * 
- * Description: This is a service class responsible for catching the real information at the "Chamber of deputies"/"C‰mara dos Deputados" website and returning
+ * Description: This is a service class responsible for catching the real information at the "Chamber of deputies"/"Camara dos Deputados" website and returning
  * it to the application.
  *
  */
